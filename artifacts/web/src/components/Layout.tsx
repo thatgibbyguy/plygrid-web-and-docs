@@ -130,7 +130,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
       </div>
 
-      <footer className="border-top padding-top--extra padding-bottom--extra text-sm">
+      <footer className="padding-top--extra padding-bottom--extra text-sm">
         <div className="units-container">
           <div className="units-row">
             <div className="unit-50 phone-unit-100">

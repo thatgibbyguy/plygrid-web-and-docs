@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       <div className="units-container">
-        <section className="padding-bottom--extra border-top padding-top--extra">
+        <section className="padding-bottom--extra padding-top--extra">
           <div className="units-row centered-content">
             <div className="unit-80 phone-unit-100">
               <div className="units-row">
@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="padding-top--extra padding-bottom--extra border-top">
+        <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">Why ply</p>
@@ -142,7 +142,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="padding-top--extra padding-bottom--extra border-top">
+        <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">Get started</p>
@@ -164,7 +164,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="padding-top--extra padding-bottom--extra border-top">
+        <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">What's inside</p>
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="padding-top--extra padding-bottom--extra border-top">
+        <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">Built different</p>
