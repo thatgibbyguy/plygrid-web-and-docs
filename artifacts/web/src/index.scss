@@ -1,0 +1,50 @@
+@use 'plygrid/src/scss/ply' as *;
+@use 'plygrid/src/scss/components/colors' as colors;
+
+.background-blue {
+  background-color: colors.$color-blue;
+}
+
+.background-red {
+  background-color: colors.$color-red;
+}
+
+.background-green {
+  background-color: colors.$color-green;
+}
+
+.background-yellow {
+  background-color: colors.$color-yellow;
+}
+
+.background-blue-pastel {
+  background-color: colors.$color-blue-pastel;
+}
+
+.background-red-pastel {
+  background-color: colors.$color-red-pastel;
+}
+
+.background-green-pastel {
+  background-color: colors.$color-green-pastel;
+}
+
+.background-yellow-pastel {
+  background-color: colors.$color-yellow-pastel;
+}
+
+.background-indigo {
+  background-color: colors.$color-indigo;
+}
+
+.background-purple {
+  background-color: colors.$color-purple;
+}
+
+.background-teal {
+  background-color: colors.$color-teal;
+}
+
+.background-orange {
+  background-color: colors.$color-orange;
+}

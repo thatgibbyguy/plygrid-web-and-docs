@@ -142,21 +142,26 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="padding-top--extra padding-bottom--extra">
+      </div>
+
+      <section className="background-blue padding-top--extra padding-bottom--extra">
+        <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-60 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase text-muted">Get started</p>
-              <h2 className="text-balance">One line. That's it.</h2>
-              <p className="text-secondary no-orphan">
+              <h2 className="text-balance text-inverse">One line. That's it.</h2>
+              <p className="text-inverse no-orphan">
                 Drop the CDN link into any HTML file — no install, no build step.
               </p>
               <pre><code>{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code></pre>
-              <p className="text-sm text-muted no-orphan padding-top">
+              <p className="text-sm text-inverse no-orphan padding-top">
                 Or <code>npm install plygrid</code> for access to Sass source files, variables, and mixins.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      <div className="units-container">
 
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
