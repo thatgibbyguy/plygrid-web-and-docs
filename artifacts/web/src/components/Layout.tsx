@@ -2,7 +2,6 @@ import { Link, useLocation } from "wouter";
 import { useState, useEffect, type ReactNode } from "react";
 
 const navLinks = [
-  { path: "/", label: "Home" },
   { path: "/grid", label: "Grid" },
   { path: "/typography", label: "Typography" },
   { path: "/buttons", label: "Buttons" },
@@ -37,22 +36,28 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className="top-navbar">
-        <nav className="navbar">
-          <ul>
-            <li>
-              <Link href="/" style={{ fontWeight: 700, letterSpacing: "-0.02em" }}>
-                ply
-              </Link>
-            </li>
-            {navLinks.slice(1).map((link) => (
-              <li key={link.path} className={location === link.path ? "active" : ""}>
-                <Link href={link.path}>{link.label}</Link>
-              </li>
-            ))}
-            <li style={{ marginLeft: "auto" }}>
+      <header className="navigation-fixed" style={{ width: "100%" }}>
+        <div className="units-row" style={{ margin: 0, alignItems: "center" }}>
+          <div className="unit-auto" style={{ padding: 0 }}>
+            <nav className="navbar navbar--left">
+              <ul>
+                <li className={location === "/" ? "active" : ""}>
+                  <Link href="/" style={{ fontWeight: 700, letterSpacing: "-0.02em", fontSize: "1rem" }}>
+                    ply
+                  </Link>
+                </li>
+                {navLinks.map((link) => (
+                  <li key={link.path} className={location === link.path ? "active" : ""}>
+                    <Link href={link.path}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div style={{ padding: "0 1rem", flexShrink: 0 }}>
+            <div className="form-inline">
               <select
-                className="theme-select"
+                className="input-sm select-outlined"
                 value={theme}
                 onChange={(e) => setTheme(e.target.value)}
                 aria-label="Choose theme"
@@ -61,12 +66,12 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <option value="light">Light</option>
                 <option value="dark">Dark</option>
               </select>
-            </li>
-          </ul>
-        </nav>
+            </div>
+          </div>
+        </div>
       </header>
 
-      <main>{children}</main>
+      <main style={{ paddingTop: "3.5rem" }}>{children}</main>
 
       <footer className="footer">
         <div className="units-container">

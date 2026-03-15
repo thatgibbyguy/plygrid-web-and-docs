@@ -158,18 +158,6 @@ body {
   opacity: 1;
 }
 
-.top-navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--ply-bg-body);
-  border-bottom: 1px solid var(--ply-border-color);
-  backdrop-filter: blur(12px);
-}
-
-.top-navbar .navbar ul {
-  margin: 0;
-}
 
 .page-sidebar {
   position: sticky;
@@ -229,15 +217,6 @@ body {
   font-size: 0.85rem;
 }
 
-.theme-select {
-  font-size: 0.85rem;
-  padding: 0.3rem 1.5rem 0.3rem 0.5rem;
-  border-radius: 4px;
-  border: 1px solid var(--ply-border-color);
-  background: var(--ply-bg-body);
-  color: var(--ply-color-body);
-  cursor: pointer;
-}
 
 .spacer-sm { height: 1rem; }
 .spacer-md { height: 2rem; }
