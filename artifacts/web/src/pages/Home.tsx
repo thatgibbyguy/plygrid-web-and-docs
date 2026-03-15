@@ -142,8 +142,8 @@ export default function Home() {
           </p>
 
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
-              <div className="border border-radius padding bottom-margin fill-height">
+            <div className="unit-33 tablet-unit-100 display--flex">
+              <div className="border border-radius padding bottom-margin fill-width">
                 <h3 className="text-lg font-semibold no-top-margin">AI-Native</h3>
                 <p className="text-sm no-margin">
                   Ships with PLY.md and ply-classes.json — a complete class reference any AI can read.
@@ -151,8 +151,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <div className="border border-radius padding bottom-margin fill-height">
+            <div className="unit-33 tablet-unit-100 display--flex">
+              <div className="border border-radius padding bottom-margin fill-width">
                 <h3 className="text-lg font-semibold no-top-margin">Accessible by Default</h3>
                 <p className="text-sm no-margin">
                   :focus-visible outlines, prefers-reduced-motion, semantic HTML styling, and WCAG AA
@@ -160,8 +160,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <div className="border border-radius padding bottom-margin fill-height">
+            <div className="unit-33 tablet-unit-100 display--flex">
+              <div className="border border-radius padding bottom-margin fill-width">
                 <h3 className="text-lg font-semibold no-top-margin">Small Footprint</h3>
                 <p className="text-sm no-margin">
                   ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step,
