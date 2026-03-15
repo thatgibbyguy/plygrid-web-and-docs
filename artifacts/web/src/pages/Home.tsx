@@ -114,7 +114,7 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row">
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Cpu size={28} className="text-secondary" />
+                  <Cpu size={28} className="color-blue" />
                   <h3 className="text-lg font-semibold">AI-Native</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
                     Ships with PLY.md and ply-classes.json — a complete class reference
@@ -122,7 +122,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Accessibility size={28} className="text-secondary" />
+                  <Accessibility size={28} className="color-blue" />
                   <h3 className="text-lg font-semibold">Accessible by Default</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
                     Focus-visible outlines, prefers-reduced-motion, semantic HTML,
@@ -130,7 +130,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Feather size={28} className="text-secondary" />
+                  <Feather size={28} className="color-blue" />
                   <h3 className="text-lg font-semibold">Small Footprint</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
                     ~18KB gzipped. No JavaScript runtime. No build step.
@@ -221,14 +221,12 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="units-container">
-
-        <section className="padding-top--extra padding-bottom--extra">
+      <section className="background-blue padding-top--extra padding-bottom--extra">
+        <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase text-muted">Built different</p>
-              <h2 className="text-balance">Why not Tailwind?</h2>
-              <p className="text-secondary no-orphan">
+              <h2 className="text-balance text-inverse">Why not Tailwind?</h2>
+              <p className="text-inverse no-orphan">
                 Tailwind is powerful. But ply solves a different problem.
               </p>
             </div>
@@ -238,25 +236,25 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row">
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Zap size={28} className="text-secondary" />
-                  <h3 className="text-lg font-semibold">No Build Step</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
+                  <Zap size={28} className="text-inverse" />
+                  <h3 className="text-lg font-semibold text-inverse">No Build Step</h3>
+                  <p className="text-sm text-inverse no-orphan no-margin">
                     Drop a link tag in your HTML. Works in any environment —
                     no PostCSS, no purging, no config files.
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <FileCode size={28} className="text-secondary" />
-                  <h3 className="text-lg font-semibold">Readable Classes</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    <code>unit-50</code> means 50% width. <code>btn-blue</code> means a blue button.
+                  <FileCode size={28} className="text-inverse" />
+                  <h3 className="text-lg font-semibold text-inverse">Readable Classes</h3>
+                  <p className="text-sm text-inverse no-orphan no-margin">
+                    <code className="text-inverse">unit-50</code> means 50% width. <code className="text-inverse">btn-blue</code> means a blue button.
                     No memorizing utility shorthand.
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Palette size={28} className="text-secondary" />
-                  <h3 className="text-lg font-semibold">Semantic Theming</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
+                  <Palette size={28} className="text-inverse" />
+                  <h3 className="text-lg font-semibold text-inverse">Semantic Theming</h3>
+                  <p className="text-sm text-inverse no-orphan no-margin">
                     CSS custom properties for every color, spacing value, and font size.
                     Dark mode is one attribute toggle.
                   </p>
@@ -264,8 +262,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
