@@ -94,3 +94,18 @@ Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHea
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+
+### `artifacts/web` (`@workspace/web`)
+
+Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite, no Tailwind — uses plygrid exclusively for styling. Swiss modernist design aesthetic.
+
+- **CSS Framework**: `plygrid@1.0.0` — ratio-based CSS grid framework (~118KB unminified). Import via `plygrid/dist/css/ply.min.css`.
+- **Routing**: React Router v7, 10 pages — Home, Grid, Typography, Buttons, Forms, Navigation, Alerts, Tables, Helpers, Theming.
+- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Layout.tsx with Auto/Light/Dark switcher.
+- **No backend dependencies** — pure frontend showcase.
+- **Key files**:
+  - `src/App.tsx` — route definitions
+  - `src/index.css` — plygrid import + custom showcase CSS variables
+  - `src/components/Layout.tsx` — sticky navbar, theme switcher, footer
+  - `src/components/CodeBlock.tsx` — syntax-highlighted code snippets
+  - `src/pages/` — all 10 page components
