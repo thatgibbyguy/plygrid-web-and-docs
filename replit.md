@@ -107,7 +107,7 @@ Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Sw
 - **Key files**:
   - `src/App.tsx` — route definitions (wouter)
   - `src/index.css` — single line: `@import "plygrid/dist/css/ply.min.css";`
-  - `src/components/Layout.tsx` — sticky navbar (`navigation-fixed`), footer (no theme switcher — that's in Home hero)
+  - `src/components/Layout.tsx` — desktop: horizontal navbar with Lucide Home icon + links; mobile: `navigation-toggle` hamburger with `nav-stacked`. Theme switcher in footer.
   - `src/components/CodeBlock.tsx` — native `<pre><code>` (ply auto-styles)
   - `src/pages/` — all 10 page components
 - **Common ply class patterns used**:
@@ -116,9 +116,10 @@ Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Sw
   - Page subtitles: `lead` (no color override — ply handles text color via CSS custom properties)
   - Grid demo cells: `border border-radius padding text-center text-sm` (NOT alerts)
   - Section separators: `padding-top--extra padding-bottom--extra border-bottom`
-  - Surface elevation: `layer-0` (base) through `layer-3` (highest) — theme-aware backgrounds with shadows
-  - Feature cards: `layer-1 border-radius padding bottom-margin` (elevated, no explicit border needed)
+  - Surface elevation: `layer-1` used sparingly (hero background only); cards use `border border-radius padding`
   - Links styled as buttons: `<Link className="btn btn-blue">` (never nest `<button>` inside `<Link>` or `<a>`)
 - **Dark mode safe**: No `color-gray-*` on body text — those classes use `rgba(0,0,0,*)` which is invisible on dark backgrounds. Color utilities are only demonstrated in the Helpers page color section.
-- **Theme switcher**: Lives in the Home page hero section (not the nav). ThemingPage has its own independent toggle. Layout is stateless re: theme.
+- **Theme switcher**: In the footer (Layout.tsx). ThemingPage also has its own independent toggle for demo purposes.
+- **Icons**: `lucide-react` for inline SVG icons (Home icon in nav). No icon CSS from ply — icons are React components rendering SVGs.
+- **Responsive nav**: `hide-on-mobile` / `hide-on-desktop` classes switch between horizontal navbar (desktop) and `navigation-toggle` hamburger (mobile).
 - **pnpm-workspace.yaml**: includes `minimumReleaseAgeExclude: - plygrid` to bypass release age policy

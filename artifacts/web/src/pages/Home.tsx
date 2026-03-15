@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
 
 const features = [
   {
@@ -50,24 +49,9 @@ const features = [
 ];
 
 export default function Home() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.getAttribute("data-theme") || "";
-    }
-    return "";
-  });
-
-  useEffect(() => {
-    if (theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-  }, [theme]);
-
   return (
     <>
-      <section className="layer-1 padding-top--extra padding-bottom--extra border-bottom">
+      <section className="layer-1 padding-top--extra padding-bottom--extra">
         <div className="units-container">
           <div className="units-row">
             <div className="unit-66 tablet-unit-100">
@@ -84,54 +68,29 @@ export default function Home() {
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn btn-outline">GitHub</a>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <div className="layer-2 border-radius padding margin-bottom">
-                <p className="text-xs font-semibold uppercase no-margin bottom-margin">Theme</p>
-                <div className="btn-group fill-width">
-                  <button
-                    className={`btn btn-sm ${theme === "" ? "btn-blue" : ""}`}
-                    onClick={() => setTheme("")}
-                  >
-                    Auto
-                  </button>
-                  <button
-                    className={`btn btn-sm ${theme === "light" ? "btn-blue" : ""}`}
-                    onClick={() => setTheme("light")}
-                  >
-                    Light
-                  </button>
-                  <button
-                    className={`btn btn-sm ${theme === "dark" ? "btn-blue" : ""}`}
-                    onClick={() => setTheme("dark")}
-                  >
-                    Dark
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div className="units-row margin-top--extra">
+          <div className="units-row">
             <div className="unit-25 phone-unit-50">
-              <div className="layer-2 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <span className="text-2xl font-bold display--block">~18KB</span>
                 <span className="text-xs uppercase">Gzipped</span>
               </div>
             </div>
             <div className="unit-25 phone-unit-50">
-              <div className="layer-2 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <span className="text-2xl font-bold display--block">0</span>
                 <span className="text-xs uppercase">JavaScript</span>
               </div>
             </div>
             <div className="unit-25 phone-unit-50">
-              <div className="layer-2 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <span className="text-2xl font-bold display--block">AA</span>
                 <span className="text-xs uppercase">WCAG Contrast</span>
               </div>
             </div>
             <div className="unit-25 phone-unit-50">
-              <div className="layer-2 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <span className="text-2xl font-bold display--block">1</span>
                 <span className="text-xs uppercase">Link Tag</span>
               </div>
@@ -152,7 +111,7 @@ export default function Home() {
 
           <div className="units-row">
             <div className="unit-33 tablet-unit-100">
-              <div className="layer-1 border-radius padding bottom-margin">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">AI-Native</h3>
                 <p className="text-sm no-margin">
                   Ships with PLY.md and ply-classes.json — a complete class reference any AI can read.
@@ -161,7 +120,7 @@ export default function Home() {
               </div>
             </div>
             <div className="unit-33 tablet-unit-100">
-              <div className="layer-1 border-radius padding bottom-margin">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">Accessible by Default</h3>
                 <p className="text-sm no-margin">
                   :focus-visible outlines, prefers-reduced-motion, semantic HTML styling, and WCAG AA
@@ -170,7 +129,7 @@ export default function Home() {
               </div>
             </div>
             <div className="unit-33 tablet-unit-100">
-              <div className="layer-1 border-radius padding bottom-margin">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">Small Footprint</h3>
                 <p className="text-sm no-margin">
                   ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step,
@@ -204,28 +163,28 @@ export default function Home() {
 
           <div className="units-row">
             <div className="unit-25 tablet-unit-50 phone-unit-100">
-              <div className="layer-1 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <p className="text-3xl font-bold no-margin">~18KB</p>
                 <p className="text-sm bottom-margin">ply.min.css</p>
                 <p className="text-xs no-margin">Everything</p>
               </div>
             </div>
             <div className="unit-25 tablet-unit-50 phone-unit-100">
-              <div className="layer-1 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <p className="text-3xl font-bold no-margin">~16KB</p>
                 <p className="text-sm bottom-margin">ply-core.min.css</p>
                 <p className="text-xs no-margin">Core features</p>
               </div>
             </div>
             <div className="unit-25 tablet-unit-50 phone-unit-100">
-              <div className="layer-1 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <p className="text-3xl font-bold no-margin">~5KB</p>
                 <p className="text-sm bottom-margin">ply-essentials.min.css</p>
                 <p className="text-xs no-margin">Grid + helpers</p>
               </div>
             </div>
             <div className="unit-25 tablet-unit-50 phone-unit-100">
-              <div className="layer-1 border-radius padding text-center bottom-margin">
+              <div className="border border-radius padding text-center bottom-margin">
                 <p className="text-3xl font-bold no-margin">~3KB</p>
                 <p className="text-sm bottom-margin">ply-helpers.min.css</p>
                 <p className="text-xs no-margin">Helpers only</p>
@@ -244,7 +203,7 @@ export default function Home() {
           <div className="units-row">
             {features.map((f) => (
               <div className="unit-33 tablet-unit-50 phone-unit-100" key={f.path}>
-                <Link href={f.path} className="display--block layer-1 border-radius padding bottom-margin cursor-finger">
+                <Link href={f.path} className="display--block border border-radius padding bottom-margin cursor-finger">
                   <h3 className="text-lg font-semibold no-top-margin">{f.title} →</h3>
                   <p className="text-sm no-margin">{f.desc}</p>
                 </Link>

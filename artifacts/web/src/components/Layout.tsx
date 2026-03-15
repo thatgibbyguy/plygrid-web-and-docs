@@ -39,43 +39,59 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className="navigation-fixed width-100 layer-1">
-        <div className="units-row no-margin align-middle">
-          <div className="unit-auto no-padding">
-            <div
-              className={`navigation-toggle${navOpen ? " navigation-toggle-show" : ""}`}
-              onClick={() => setNavOpen(!navOpen)}
-              role="button"
-              tabIndex={0}
-              aria-expanded={navOpen}
-              aria-label="Toggle navigation"
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setNavOpen(!navOpen);
-                }
-              }}
-            >
-              <span>Menu</span>
+      <header className="navigation-fixed width-100">
+        <nav className="navbar">
+          <ul className="hide-on-mobile">
+            <li className={location === "/" ? "active" : ""}>
+              <Link href="/" aria-label="Home">
+                <Home size={16} />
+              </Link>
+            </li>
+            {navLinks.map((link) => (
+              <li key={link.path} className={location === link.path ? "active" : ""}>
+                <Link href={link.path}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="hide-on-desktop">
+          <div className="units-row no-margin align-middle">
+            <div className="unit-auto no-padding">
+              <div
+                className={`navigation-toggle${navOpen ? " navigation-toggle-show" : ""}`}
+                onClick={() => setNavOpen(!navOpen)}
+                role="button"
+                tabIndex={0}
+                aria-expanded={navOpen}
+                aria-label="Toggle navigation"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setNavOpen(!navOpen);
+                  }
+                }}
+              >
+                <span>Menu</span>
+              </div>
+            </div>
+            <div className="unit-auto no-padding">
+              <Link href="/" className="padding display--inline-block" aria-label="Home">
+                <Home size={16} />
+              </Link>
             </div>
           </div>
-          <div className="unit-auto no-padding">
-            <Link href="/" className="padding display--inline-block" aria-label="Home">
-              <Home size={18} />
-            </Link>
-          </div>
+          {navOpen && (
+            <nav className="nav-stacked">
+              <ul>
+                {navLinks.map((link) => (
+                  <li key={link.path} className={location === link.path ? "active" : ""}>
+                    <Link href={link.path}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
         </div>
-        {navOpen && (
-          <nav className="navbar">
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.path} className={location === link.path ? "active" : ""}>
-                  <Link href={link.path}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
       </header>
 
       <main className="padding-top--extra margin-top--extra">{children}</main>
