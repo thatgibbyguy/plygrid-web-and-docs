@@ -4,7 +4,7 @@ import {
   Sun, Moon, Monitor,
   Cpu, Accessibility, Feather,
   LayoutGrid, Type, ToggleLeft, Compass, Table2, Wrench,
-  Zap, FileCode, Palette
+  Zap, Smartphone, Keyboard, Globe, Puzzle, BarChart3
 } from "lucide-react";
 
 export default function Home() {
@@ -56,10 +56,10 @@ export default function Home() {
                 </button>
               </div>
 
-              <h1 className="text-5xl font-bold text-balance">Build interfaces with ply</h1>
+              <h1 className="text-5xl font-bold text-balance">Ship faster. Ship accessible.</h1>
               <p className="text-xl text-secondary no-orphan">
-                A ratio-based CSS framework built for AI agents, accessible by default,
-                and small enough to ship anywhere.
+                A semantic CSS framework that gives you responsive layouts, dark mode,
+                and WCAG compliance on the first pass — so you can focus on what you're building.
               </p>
 
               <div className="padding-top">
@@ -101,11 +101,101 @@ export default function Home() {
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Why ply</p>
-              <h2 className="text-balance">Designed for a new world</h2>
+              <p className="text-xs font-semibold uppercase color-blue">Built for speed</p>
+              <h2 className="text-balance">Develop fast. Load fast.</h2>
               <p className="text-secondary no-orphan">
-                CSS frameworks were built for humans reading docs. But increasingly,
-                the first consumer is an AI generating UI from a prompt.
+                Readable class names mean less time in the docs. Semantic HTML means
+                tablet, phone, screen reader, and keyboard support is done on your first pass —
+                not bolted on later.
+              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row">
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Smartphone size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Multi-Modal First</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Responsive breakpoints, dark mode, reduced motion, and keyboard
+                    navigation — all built in, not afterthoughts.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Accessibility size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Accessible by Default</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Focus-visible outlines, semantic markup, and WCAG AA contrast
+                    baked into the CSS itself. Ship compliant from day one.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Feather size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Small Footprint</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    ~18KB gzipped. No JavaScript runtime. Perfect for low-bandwidth
+                    connections and offline-capable apps.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="padding-top--extra padding-bottom--extra">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
+              <p className="text-xs font-semibold uppercase color-blue">Composable</p>
+              <h2 className="text-balance">Bring your own everything</h2>
+              <p className="text-secondary no-orphan">
+                ply handles layout, typography, and controls. You pick the icon library,
+                the charting library, the JS framework. It stays out of your way.
+              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row">
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Puzzle size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Icon Library</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Lucide, Feather, Heroicons, Font Awesome — ply doesn't ship icons,
+                    so you're never locked into one set.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <BarChart3 size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Data Library</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Recharts, D3, Chart.js — drop in any visualization library.
+                    ply's grid gives it structure without fighting your styles.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Globe size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Framework</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    React, Vue, Svelte, plain HTML — ply is just CSS.
+                    No JavaScript opinions, no framework coupling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="padding-top--extra padding-bottom--extra">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
+              <p className="text-xs font-semibold uppercase color-blue">AI-native</p>
+              <h2 className="text-balance">Built for humans and machines</h2>
+              <p className="text-secondary no-orphan">
+                ply ships with PLY.md and ply-classes.json — a complete class reference
+                any coding agent can read. The same readable names that help you
+                also help AI generate correct UI on the first try.
               </p>
             </div>
           </div>
@@ -115,49 +205,74 @@ export default function Home() {
               <div className="units-row">
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
                   <Cpu size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">AI-Native</h3>
+                  <h3 className="text-lg font-semibold">Machine-Readable Docs</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
-                    Ships with PLY.md and ply-classes.json — a complete class reference
-                    any coding agent can read and use correctly.
+                    PLY.md is designed for LLM context windows. Every class, every
+                    modifier, every responsive prefix — documented for agents.
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Accessibility size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Accessible by Default</h3>
+                  <Zap size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Semantic Names</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
-                    Focus-visible outlines, prefers-reduced-motion, semantic HTML,
-                    and WCAG AA contrast baked into the CSS itself.
+                    <code>unit-50</code> means 50%. <code>btn-blue</code> means a blue button.
+                    No shorthand to memorize, no ambiguity to resolve.
                   </p>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Feather size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Small Footprint</h3>
+                  <Keyboard size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Predictable Output</h3>
                   <p className="text-sm text-secondary no-orphan no-margin">
-                    ~18KB gzipped. No JavaScript runtime. No build step.
-                    No tree-shaking needed. Ship the whole thing.
+                    Ratio-based classes produce consistent results whether
+                    a human or an AI writes the markup.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
       </div>
 
       <section className="background-blue padding-top--extra padding-bottom--extra">
         <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-80 phone-unit-100 text-center">
-              <h2 className="text-balance text-inverse">One line. That's it.</h2>
+              <p className="text-xs font-semibold uppercase text-inverse">Two paths, one framework</p>
+              <h2 className="text-balance text-inverse">Start fast. Go deep.</h2>
               <p className="text-inverse no-orphan">
-                Drop the CDN link into any HTML file — no install, no build step.
+                Use the CDN for prototyping and lightweight apps. Switch to Sass when you need full control.
               </p>
-              <p className="text-inverse no-orphan nowrap">
-                <code className="text-inverse text-sm">{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code>
-              </p>
-              <p className="text-sm text-inverse no-orphan padding-top">
-                Or <code className="text-inverse">npm install plygrid</code> for access to Sass source files, variables, and mixins.
-              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row equal-height">
+                <div className="unit-50 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding">
+                    <h3 className="text-lg font-semibold">CDN — Prototype</h3>
+                    <p className="text-sm text-secondary no-orphan">
+                      One link tag. No install, no build step. Great for wireframing ideas
+                      and apps that need to support low bandwidth or offline mode.
+                    </p>
+                    <p className="no-orphan">
+                      <code className="text-sm">{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code>
+                    </p>
+                  </div>
+                </div>
+                <div className="unit-50 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding">
+                    <h3 className="text-lg font-semibold">Sass — Customize</h3>
+                    <p className="text-sm text-secondary no-orphan">
+                      Full access to color variables, mixins, and the ability to extend
+                      ply at the Sass level. For when you're building a real product.
+                    </p>
+                    <p className="no-orphan">
+                      <code className="text-sm">npm install plygrid</code>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -226,51 +341,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className="units-container">
-        <section className="padding-top--extra padding-bottom--extra">
-          <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Built different</p>
-              <h2 className="text-balance">Why not Tailwind?</h2>
-              <p className="text-secondary no-orphan">
-                Tailwind is powerful. But ply solves a different problem.
-              </p>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Zap size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">No Build Step</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Drop a link tag in your HTML. Works in any environment —
-                    no PostCSS, no purging, no config files.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <FileCode size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Readable Classes</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    <code>unit-50</code> means 50% width. <code>btn-blue</code> means a blue button.
-                    No memorizing utility shorthand.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Palette size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Semantic Theming</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    CSS custom properties for every color, spacing value, and font size.
-                    Dark mode is one attribute toggle.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
     </>
   );
 }
