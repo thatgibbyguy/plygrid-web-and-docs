@@ -192,24 +192,14 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
       </div>
 
-      <footer className="padding-top--extra padding-bottom--extra text-sm">
+      <footer className="padding-top padding-bottom text-sm text-muted">
         <div className="units-container">
-          <div className="units-row">
-            <div className="unit-50 phone-unit-100">
-              <p className="no-orphan">
-                <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
-              </p>
-              <p>MIT License. Built for humans and machines.</p>
-            </div>
-            <div className="unit-50 phone-unit-100 text-right">
-              <p>~18KB gzipped. No JavaScript. No build step.</p>
-              <p>
-                <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>
-                {" · "}
-                <a href="https://www.npmjs.com/package/plygrid" target="_blank" rel="noopener noreferrer">npm</a>
-              </p>
-            </div>
-          </div>
+          <p className="text-center no-margin">
+            <strong>ply</strong> · MIT License ·{" "}
+            <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>
+            {" · "}
+            <a href="https://www.npmjs.com/package/plygrid" target="_blank" rel="noopener noreferrer">npm</a>
+          </p>
         </div>
       </footer>
     </>

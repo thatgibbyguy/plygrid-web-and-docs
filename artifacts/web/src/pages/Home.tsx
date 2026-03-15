@@ -53,6 +53,105 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </div>
+
+      <section className="background-blue padding-top--extra padding-bottom--extra">
+        <div className="units-container">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
+              <p className="text-xs font-semibold uppercase text-inverse">AI-native</p>
+              <h2 className="text-balance text-inverse">Built for humans and machines</h2>
+              <p className="text-inverse no-orphan">
+                ply ships with PLY.md and ply-classes.json — a complete class reference
+                any coding agent can read. The same readable names that help you
+                also help AI generate correct UI on the first try.
+              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row equal-height">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <Cpu size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">Machine-Readable Docs</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      PLY.md is designed for LLM context windows. Every class, every
+                      modifier, every responsive prefix — documented for agents.
+                    </p>
+                  </div>
+                </div>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <Zap size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">Semantic Names</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      <code>unit-50</code> means 50%. <code>btn-blue</code> means a blue button.
+                      No shorthand to memorize, no ambiguity to resolve.
+                    </p>
+                  </div>
+                </div>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <Keyboard size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">Predictable Output</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      Ratio-based classes produce consistent results whether
+                      a human or an AI writes the markup.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="units-container">
+        <section className="padding-top--extra padding-bottom--extra">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
+              <p className="text-xs font-semibold uppercase color-blue">Composable</p>
+              <h2 className="text-balance">Bring your own everything</h2>
+              <p className="text-secondary no-orphan">
+                ply handles layout, typography, and controls. You pick the icon library,
+                the charting library, the JS framework. It stays out of your way.
+              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row">
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Puzzle size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Icon Library</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Lucide, Feather, Heroicons, Font Awesome — ply doesn't ship icons,
+                    so you're never locked into one set.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <BarChart3 size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Data Library</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    Recharts, D3, Chart.js — drop in any visualization library.
+                    ply's grid gives it structure without fighting your styles.
+                  </p>
+                </div>
+                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
+                  <Globe size={28} className="color-blue display--inline-block bottom-margin" />
+                  <h3 className="text-lg font-semibold">Any Framework</h3>
+                  <p className="text-sm text-secondary no-orphan no-margin">
+                    React, Vue, Svelte, plain HTML — ply is just CSS.
+                    No JavaScript opinions, no framework coupling.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
@@ -101,100 +200,9 @@ export default function Home() {
 
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Composable</p>
-              <h2 className="text-balance">Bring your own everything</h2>
-              <p className="text-secondary no-orphan">
-                ply handles layout, typography, and controls. You pick the icon library,
-                the charting library, the JS framework. It stays out of your way.
-              </p>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Puzzle size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Icon Library</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Lucide, Feather, Heroicons, Font Awesome — ply doesn't ship icons,
-                    so you're never locked into one set.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <BarChart3 size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Data Library</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Recharts, D3, Chart.js — drop in any visualization library.
-                    ply's grid gives it structure without fighting your styles.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Globe size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Framework</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    React, Vue, Svelte, plain HTML — ply is just CSS.
-                    No JavaScript opinions, no framework coupling.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="padding-top--extra padding-bottom--extra">
-          <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">AI-native</p>
-              <h2 className="text-balance">Built for humans and machines</h2>
-              <p className="text-secondary no-orphan">
-                ply ships with PLY.md and ply-classes.json — a complete class reference
-                any coding agent can read. The same readable names that help you
-                also help AI generate correct UI on the first try.
-              </p>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Cpu size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Machine-Readable Docs</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    PLY.md is designed for LLM context windows. Every class, every
-                    modifier, every responsive prefix — documented for agents.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Zap size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Semantic Names</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    <code>unit-50</code> means 50%. <code>btn-blue</code> means a blue button.
-                    No shorthand to memorize, no ambiguity to resolve.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Keyboard size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Predictable Output</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Ratio-based classes produce consistent results whether
-                    a human or an AI writes the markup.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <section className="background-blue padding-top--extra padding-bottom--extra">
-        <div className="units-container">
-          <div className="units-row centered-content">
             <div className="unit-80 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase text-inverse">Get started</p>
-              <h2 className="text-balance text-inverse">Two paths, one framework</h2>
+              <p className="text-xs font-semibold uppercase color-blue">Get started</p>
+              <h2 className="text-balance">Two paths, one framework</h2>
             </div>
           </div>
 
@@ -202,7 +210,7 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
                 <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="background-white border-radius padding">
+                  <div className="border-radius padding border">
                     <p className="text-xs font-semibold uppercase color-blue no-margin">Prototype</p>
                     <h3 className="text-lg font-semibold">CDN</h3>
                     <p className="text-sm text-secondary no-orphan">
@@ -216,7 +224,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="background-white border-radius padding">
+                  <div className="border-radius padding border">
                     <p className="text-xs font-semibold uppercase color-blue no-margin">Customize</p>
                     <h3 className="text-lg font-semibold">Sass</h3>
                     <p className="text-sm text-secondary no-orphan">
@@ -232,17 +240,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
 
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-30 phone-unit-100">
-              <hr className="text-inverse" />
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
+        <section className="padding-top--extra padding-bottom--extra">
+          <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <h3 className="text-balance text-inverse">Everything you need</h3>
-              <p className="text-inverse no-orphan">
+              <p className="text-xs font-semibold uppercase color-blue">Explore</p>
+              <h2 className="text-balance">Everything you need</h2>
+              <p className="text-secondary no-orphan">
                 A complete design system in a single stylesheet.
               </p>
             </div>
@@ -252,42 +257,42 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/grid" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/grid" className="display--block border border-radius padding cursor-finger">
                     <LayoutGrid size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Grid</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Ratio-based flexbox with responsive prefixes</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/typography" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/typography" className="display--block border border-radius padding cursor-finger">
                     <Type size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Typography</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Type scale from text-xs to text-5xl</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/controls" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/controls" className="display--block border border-radius padding cursor-finger">
                     <ToggleLeft size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Controls</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Buttons, forms, alerts, and labels</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/navigation" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/navigation" className="display--block border border-radius padding cursor-finger">
                     <Compass size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Navigation</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Navbar, pills, tabs, breadcrumbs</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/tables" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/tables" className="display--block border border-radius padding cursor-finger">
                     <Table2 size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Tables</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Bordered, striped, and hoverable</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/utilities" className="display--block background-white border-radius padding cursor-finger">
+                  <Link href="/utilities" className="display--block border border-radius padding cursor-finger">
                     <Wrench size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Utilities</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Spacing, display, theming, dark mode</p>
@@ -296,8 +301,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
