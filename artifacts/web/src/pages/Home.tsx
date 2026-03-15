@@ -193,11 +193,8 @@ export default function Home() {
         <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-80 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase text-inverse">Two paths, one framework</p>
-              <h2 className="text-balance text-inverse">Start fast. Go deep.</h2>
-              <p className="text-inverse no-orphan">
-                Use the CDN for prototyping and lightweight apps. Switch to Sass when you need full control.
-              </p>
+              <p className="text-xs font-semibold uppercase text-inverse">Get started</p>
+              <h2 className="text-balance text-inverse">Two paths, one framework</h2>
             </div>
           </div>
 
@@ -206,26 +203,26 @@ export default function Home() {
               <div className="units-row equal-height">
                 <div className="unit-50 phone-unit-100 bottom-margin">
                   <div className="background-white border-radius padding">
-                    <h3 className="text-lg font-semibold">CDN — Prototype</h3>
+                    <p className="text-xs font-semibold uppercase color-blue no-margin">Prototype</p>
+                    <h3 className="text-lg font-semibold">CDN</h3>
                     <p className="text-sm text-secondary no-orphan">
                       One link tag. No install, no build step. Great for wireframing ideas
                       and apps that need to support low bandwidth or offline mode.
                     </p>
-                    <p className="no-orphan">
-                      <code className="text-sm">{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code>
-                    </p>
+                    <pre className="text-sm"><code>{`<link rel="stylesheet" href=
+  "https://cdn.jsdelivr.net/npm/
+   plygrid@1/dist/css/ply.min.css">`}</code></pre>
                   </div>
                 </div>
                 <div className="unit-50 phone-unit-100 bottom-margin">
                   <div className="background-white border-radius padding">
-                    <h3 className="text-lg font-semibold">Sass — Customize</h3>
+                    <p className="text-xs font-semibold uppercase color-blue no-margin">Customize</p>
+                    <h3 className="text-lg font-semibold">Sass</h3>
                     <p className="text-sm text-secondary no-orphan">
                       Full access to color variables, mixins, and the ability to extend
                       ply at the Sass level. For when you're building a real product.
                     </p>
-                    <p className="no-orphan">
-                      <code className="text-sm">npm install plygrid</code>
-                    </p>
+                    <pre className="text-sm"><code>npm install plygrid</code></pre>
                   </div>
                 </div>
               </div>
