@@ -390,8 +390,8 @@ importers:
   artifacts/web:
     dependencies:
       plygrid:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@hookform/resolvers':
         specifier: ^3.10.0
@@ -2555,8 +2555,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  plygrid@1.0.0:
-    resolution: {integrity: sha512-y6NEuaNTz3pe5QuIjpzp+i5FuE1X7Y4Ty/m7GwtpQlUdb4C+YVT2pNkSThrFwR5zRv/A07Tz49Xe8AAfH07Tqg==}
+  plygrid@1.0.1:
+    resolution: {integrity: sha512-jQa1ZdaCQj1Ds3uV8wZfug/Bt+K2BTJ/ooVZRBcSnIh59kVrwz1iH/vZV7mie05zAvpOTzMcPmg6ItpJSvIB1w==}
     engines: {node: '>=18'}
 
   postcss-selector-parser@6.0.10:
@@ -5038,7 +5038,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  plygrid@1.0.0: {}
+  plygrid@1.0.1: {}
 
   postcss-selector-parser@6.0.10:
     dependencies:
