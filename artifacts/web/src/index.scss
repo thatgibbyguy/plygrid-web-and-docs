@@ -2,7 +2,7 @@
 @use 'plygrid/src/scss/components/colors' as colors;
 
 .background-blue {
-  background-color: #2070e0;
+  background-color: colors.$color-blue;
 }
 
 .background-red {
