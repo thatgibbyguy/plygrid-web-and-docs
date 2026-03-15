@@ -57,6 +57,17 @@
   color: #fff;
 }
 
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: colors.$color-blue;
+  color: #fff;
+}
+
 .margin-left-auto {
   margin-left: auto;
 }

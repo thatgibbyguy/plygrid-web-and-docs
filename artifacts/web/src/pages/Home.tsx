@@ -71,30 +71,42 @@ export default function Home() {
 
           <div className="units-row centered-content padding-top--extra">
             <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Cpu size={28} className="color-white display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold text-inverse">One-File Reference</h3>
-                  <p className="text-sm text-inverse no-orphan no-margin">
-                    PLY.md fits in a single LLM context window. Every class,
-                    modifier, and responsive prefix — no doc-searching required.
-                  </p>
+              <div className="units-row equal-height">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <span className="icon-badge bottom-margin">
+                      <Cpu size={22} />
+                    </span>
+                    <h3 className="text-lg font-semibold">One-File Reference</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      PLY.md fits in a single LLM context window. Every class,
+                      modifier, and responsive prefix — no doc-searching required.
+                    </p>
+                  </div>
                 </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Zap size={28} className="color-white display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold text-inverse">Obvious Names</h3>
-                  <p className="text-sm text-inverse no-orphan no-margin">
-                    <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
-                    No shorthand to memorize, no ambiguity to hallucinate.
-                  </p>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <span className="icon-badge bottom-margin">
+                      <Zap size={22} />
+                    </span>
+                    <h3 className="text-lg font-semibold">Obvious Names</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
+                      No shorthand to memorize, no ambiguity to hallucinate.
+                    </p>
+                  </div>
                 </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Keyboard size={28} className="color-white display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold text-inverse">~200 Classes</h3>
-                  <p className="text-sm text-inverse no-orphan no-margin">
-                    Small surface area means fewer wrong answers.
-                    Humans and agents pick the right class on the first try.
-                  </p>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="background-white border-radius padding text-center">
+                    <span className="icon-badge bottom-margin">
+                      <Keyboard size={22} />
+                    </span>
+                    <h3 className="text-lg font-semibold">~200 Classes</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      Small surface area means fewer wrong answers.
+                      Humans and agents pick the right class on the first try.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
