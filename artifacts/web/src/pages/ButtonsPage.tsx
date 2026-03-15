@@ -3,20 +3,20 @@ import CodeBlock from "../components/CodeBlock";
 export default function ButtonsPage() {
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Interactive</p>
-        <h1 className="page-title">Buttons</h1>
-        <p className="page-subtitle">
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
+        <h1>Buttons</h1>
+        <p className="lead color-gray-60">
           Six color variants, four sizes, outline and active states, button groups, and full-width options.
           All accessible with proper focus states.
         </p>
       </section>
 
-      <section className="showcase-section" id="colors">
-        <p className="section-label">Colors</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="colors">
+        <p className="text-xs font-semibold uppercase color-gray-50">Colors</p>
         <h2>Color Variants</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button className="btn">Default</button>{" "}
           <button className="btn btn-blue">Blue</button>{" "}
           <button className="btn btn-red">Red</button>{" "}
@@ -34,11 +34,11 @@ export default function ButtonsPage() {
 <button class="btn btn-black">Black</button>`} />
       </section>
 
-      <section className="showcase-section" id="outline">
-        <p className="section-label">Variants</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="outline">
+        <p className="text-xs font-semibold uppercase color-gray-50">Variants</p>
         <h2>Outline Buttons</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button className="btn btn-outline">Outline</button>{" "}
           <button className="btn btn-outline bold">Outline Bold</button>
         </div>
@@ -47,11 +47,11 @@ export default function ButtonsPage() {
 <button class="btn btn-outline bold">Outline Bold</button>`} />
       </section>
 
-      <section className="showcase-section" id="sizes">
-        <p className="section-label">Sizes</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="sizes">
+        <p className="text-xs font-semibold uppercase color-gray-50">Sizes</p>
         <h2>Button Sizes</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button className="btn btn-blue btn-big">Large (btn-big)</button>{" "}
           <button className="btn btn-blue">Default</button>{" "}
           <button className="btn btn-blue btn-small">Small (btn-sm)</button>{" "}
@@ -63,19 +63,19 @@ export default function ButtonsPage() {
             <tr><th>Class</th><th>Alias</th><th>Size</th></tr>
           </thead>
           <tbody>
-            <tr><td><code className="inline-code">btn-big</code></td><td><code className="inline-code">btn-lg</code></td><td>Large</td></tr>
+            <tr><td><code>btn-big</code></td><td><code>btn-lg</code></td><td>Large</td></tr>
             <tr><td>(default)</td><td>—</td><td>Normal</td></tr>
-            <tr><td><code className="inline-code">btn-small</code></td><td><code className="inline-code">btn-sm</code></td><td>Small</td></tr>
-            <tr><td><code className="inline-code">btn-smaller</code></td><td><code className="inline-code">btn-xs</code></td><td>Extra small</td></tr>
+            <tr><td><code>btn-small</code></td><td><code>btn-sm</code></td><td>Small</td></tr>
+            <tr><td><code>btn-smaller</code></td><td><code>btn-xs</code></td><td>Extra small</td></tr>
           </tbody>
         </table>
       </section>
 
-      <section className="showcase-section" id="states">
-        <p className="section-label">States</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="states">
+        <p className="text-xs font-semibold uppercase color-gray-50">States</p>
         <h2>Active & Disabled</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button className="btn btn-active">Active</button>{" "}
           <button className="btn btn-disabled">Disabled</button>{" "}
           <button className="btn btn-blue" disabled>Native Disabled</button>
@@ -86,11 +86,11 @@ export default function ButtonsPage() {
 <button class="btn" disabled>Native Disabled</button>`} />
       </section>
 
-      <section className="showcase-section" id="shapes">
-        <p className="section-label">Shapes</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="shapes">
+        <p className="text-xs font-semibold uppercase color-gray-50">Shapes</p>
         <h2>Square / Straight Buttons</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button className="btn btn-blue btn-straight">Square Corners</button>{" "}
           <button className="btn btn-outline btn-straight">Outline Square</button>
         </div>
@@ -98,11 +98,11 @@ export default function ButtonsPage() {
         <CodeBlock code={`<button class="btn btn-blue btn-straight">No border-radius</button>`} />
       </section>
 
-      <section className="showcase-section" id="groups">
-        <p className="section-label">Groups</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="groups">
+        <p className="text-xs font-semibold uppercase color-gray-50">Groups</p>
         <h2>Button Groups</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="btn-group">
             <button className="btn btn-blue">Save</button>
             <button className="btn">Cancel</button>
@@ -110,36 +110,30 @@ export default function ButtonsPage() {
           </div>
         </div>
 
-        <div className="spacer-md" />
-
         <h3>Aligned Groups</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="btn-group align-left">
             <button className="btn btn-sm">Left</button>
             <button className="btn btn-sm">Aligned</button>
           </div>
-          <div className="spacer-sm" />
           <div className="btn-group align-center">
             <button className="btn btn-sm">Center</button>
             <button className="btn btn-sm">Aligned</button>
           </div>
-          <div className="spacer-sm" />
           <div className="btn-group align-right">
             <button className="btn btn-sm">Right</button>
             <button className="btn btn-sm">Aligned</button>
           </div>
         </div>
 
-        <div className="spacer-md" />
-
         <h3>Full Width & Rounded</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="btn-group fill-width">
             <button className="btn btn-blue">Option A</button>
             <button className="btn">Option B</button>
             <button className="btn">Option C</button>
           </div>
-          <div className="spacer-md" />
+          <div className="bottom-margin--extra"></div>
           <div className="btn-group rounded">
             <button className="btn btn-sm">Rounded</button>
             <button className="btn btn-sm">Group</button>
@@ -158,15 +152,15 @@ export default function ButtonsPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="full-width">
-        <p className="section-label">Layout</p>
+      <section className="padding-top--extra padding-bottom--extra" id="full-width">
+        <p className="text-xs font-semibold uppercase color-gray-50">Layout</p>
         <h2>Full Width Buttons</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50">
               <button className="btn btn-blue width-100">Full Width Primary</button>
-              <div className="spacer-sm" />
+              <div className="bottom-margin"></div>
               <button className="btn btn-outline width-100">Full Width Outline</button>
             </div>
           </div>

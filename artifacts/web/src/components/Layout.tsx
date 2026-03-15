@@ -36,13 +36,13 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <header className="navigation-fixed" style={{ width: "100%" }}>
-        <div className="units-row" style={{ margin: 0, alignItems: "center" }}>
-          <div className="unit-auto" style={{ padding: 0 }}>
+      <header className="navigation-fixed width-100">
+        <div className="units-row no-margin align-middle">
+          <div className="unit-auto no-padding">
             <nav className="navbar navbar--left">
               <ul>
                 <li className={location === "/" ? "active" : ""}>
-                  <Link href="/" style={{ fontWeight: 700, letterSpacing: "-0.02em", fontSize: "1rem" }}>
+                  <Link href="/" className="font-bold">
                     ply
                   </Link>
                 </li>
@@ -54,10 +54,10 @@ export default function Layout({ children }: { children: ReactNode }) {
               </ul>
             </nav>
           </div>
-          <div style={{ padding: "0 1rem", flexShrink: 0 }}>
+          <div className="padding-left padding-right">
             <div className="form-inline">
               <select
-                className="input-sm select-outlined"
+                className="input-xs select-outlined"
                 value={theme}
                 onChange={(e) => setTheme(e.target.value)}
                 aria-label="Choose theme"
@@ -71,18 +71,18 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      <main style={{ paddingTop: "3.5rem" }}>{children}</main>
+      <main className="padding-top--extra margin-top--extra">{children}</main>
 
-      <footer className="footer">
+      <footer className="border-top padding-top--extra padding-bottom--extra color-gray-50 text-sm">
         <div className="units-container">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50">
               <p>
                 <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
               </p>
               <p>MIT License. Built for humans and machines.</p>
             </div>
-            <div className="unit-50 tablet-unit-100 text-right">
+            <div className="unit-50 text-right">
               <p>~18KB gzipped. No JavaScript. No build step.</p>
               <p>
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">

@@ -3,22 +3,22 @@ import CodeBlock from "../components/CodeBlock";
 export default function FormsPage() {
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Input</p>
-        <h1 className="page-title">Forms</h1>
-        <p className="page-subtitle">
-          Wrap your form in a <code className="inline-code">.form</code> class to enable ply styling.
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Input</p>
+        <h1>Forms</h1>
+        <p className="lead color-gray-60">
+          Wrap your form in a <code>.form</code> class to enable ply styling.
           Inputs, selects, textareas, checkboxes, and radios are all covered.
         </p>
       </section>
 
-      <section className="showcase-section" id="basic">
-        <p className="section-label">Basics</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="basic">
+        <p className="text-xs font-semibold uppercase color-gray-50">Basics</p>
         <h2>Standard Form</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-60 tablet-unit-100">
+            <div className="unit-60">
               <form className="form" onSubmit={(e) => e.preventDefault()}>
                 <label>
                   Full Name
@@ -60,11 +60,11 @@ export default function FormsPage() {
 </form>`} />
       </section>
 
-      <section className="showcase-section" id="sizes">
-        <p className="section-label">Sizes</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="sizes">
+        <p className="text-xs font-semibold uppercase color-gray-50">Sizes</p>
         <h2>Input Sizes</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <label>
               Large Input
@@ -86,11 +86,11 @@ export default function FormsPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="states">
-        <p className="section-label">Validation</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="states">
+        <p className="text-xs font-semibold uppercase color-gray-50">Validation</p>
         <h2>Input States</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <label>
               Error State
@@ -112,23 +112,23 @@ export default function FormsPage() {
 <input type="text" class="input-gray" placeholder="Neutral">`} />
       </section>
 
-      <section className="showcase-section" id="input-groups">
-        <p className="section-label">Groups</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="input-groups">
+        <p className="text-xs font-semibold uppercase color-gray-50">Groups</p>
         <h2>Input Groups</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="input-groups">
               <span className="input-prepend">$</span>
               <input type="text" placeholder="Amount" />
               <span className="input-append">.00</span>
             </div>
-            <div className="spacer-md" />
+            <div className="bottom-margin--extra"></div>
             <div className="input-groups">
               <span className="input-prepend">https://</span>
               <input type="text" placeholder="example.com" />
             </div>
-            <div className="spacer-md" />
+            <div className="bottom-margin--extra"></div>
             <div className="input-groups">
               <input type="text" placeholder="Search..." />
               <span className="input-append">
@@ -145,14 +145,14 @@ export default function FormsPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="select">
-        <p className="section-label">Select</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="select">
+        <p className="text-xs font-semibold uppercase color-gray-50">Select</p>
         <h2>Select Elements</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <label>
                   Default Select
                   <select>
@@ -162,7 +162,7 @@ export default function FormsPage() {
                   </select>
                 </label>
               </div>
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <label>
                   Outlined Select
                   <select className="select-outlined">
@@ -177,21 +177,21 @@ export default function FormsPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="checkboxes">
-        <p className="section-label">Controls</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="checkboxes">
+        <p className="text-xs font-semibold uppercase color-gray-50">Controls</p>
         <h2>Checkboxes & Radios</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <h4>Checkboxes</h4>
                 <label><input type="checkbox" defaultChecked /> Grid System</label>
                 <label><input type="checkbox" defaultChecked /> Typography</label>
                 <label><input type="checkbox" /> Forms</label>
                 <label><input type="checkbox" /> Navigation</label>
               </div>
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <h4>Radio Buttons</h4>
                 <label><input type="radio" name="plan" defaultChecked /> Starter</label>
                 <label><input type="radio" name="plan" /> Professional</label>
@@ -202,21 +202,21 @@ export default function FormsPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="types">
-        <p className="section-label">Input Types</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="types">
+        <p className="text-xs font-semibold uppercase color-gray-50">Input Types</p>
         <h2>All Input Types</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <label>Text<input type="text" placeholder="Text input" /></label>
                 <label>Password<input type="password" placeholder="Password" /></label>
                 <label>Number<input type="number" placeholder="42" /></label>
                 <label>Date<input type="date" /></label>
                 <label>Time<input type="time" /></label>
               </div>
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50">
                 <label>URL<input type="url" placeholder="https://example.com" /></label>
                 <label>Tel<input type="tel" placeholder="+1 (555) 000-0000" /></label>
                 <label>Search<input type="search" placeholder="Search..." /></label>
@@ -228,25 +228,25 @@ export default function FormsPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="progress">
-        <p className="section-label">Progress</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="progress">
+        <p className="text-xs font-semibold uppercase color-gray-50">Progress</p>
         <h2>Progress & Meter</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <label>Progress (70%)</label>
           <progress value={70} max={100}></progress>
-          <div className="spacer-md" />
+          <div className="bottom-margin--extra"></div>
           <label>Meter (0.6)</label>
           <meter min={0} max={1} value={0.6}></meter>
         </div>
       </section>
 
-      <section className="showcase-section" id="layouts">
-        <p className="section-label">Layouts</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="layouts">
+        <p className="text-xs font-semibold uppercase color-gray-50">Layouts</p>
         <h2>Form Layouts</h2>
 
         <h3>Inline Form</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <form className="form form-inline" onSubmit={(e) => e.preventDefault()}>
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
@@ -261,12 +261,12 @@ export default function FormsPage() {
 </form>`} />
       </section>
 
-      <section className="showcase-section" id="dialog">
-        <p className="section-label">Modal</p>
+      <section className="padding-top--extra padding-bottom--extra" id="dialog">
+        <p className="text-xs font-semibold uppercase color-gray-50">Modal</p>
         <h2>Dialog Element</h2>
         <p>Native HTML dialog element, styled automatically by ply.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <button
             className="btn btn-blue"
             onClick={() => {

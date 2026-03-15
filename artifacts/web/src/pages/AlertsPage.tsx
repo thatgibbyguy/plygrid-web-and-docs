@@ -9,19 +9,19 @@ export default function AlertsPage() {
 
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Feedback</p>
-        <h1 className="page-title">Alerts & Notifications</h1>
-        <p className="page-subtitle">
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Feedback</p>
+        <h1>Alerts & Notifications</h1>
+        <p className="lead color-gray-60">
           Five color variants with solid, outline, and ghost styles. Dismissible with an accessible close button.
         </p>
       </section>
 
-      <section className="showcase-section" id="solid">
-        <p className="section-label">Solid</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="solid">
+        <p className="text-xs font-semibold uppercase color-gray-50">Solid</p>
         <h2>Standard Alerts</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="alert">
             <span className="alert-content"><strong>Default</strong> — A neutral notification message.</span>
           </div>
@@ -53,12 +53,12 @@ export default function AlertsPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="outline">
-        <p className="section-label">Outline</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="outline">
+        <p className="text-xs font-semibold uppercase color-gray-50">Outline</p>
         <h2>Outlined Alerts</h2>
-        <p>Tinted background with a full border using <code className="inline-code">alert-outline</code>.</p>
+        <p>Tinted background with a full border using <code>alert-outline</code>.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="alert alert-outline">
             <span className="alert-content">Default outlined alert.</span>
           </div>
@@ -81,12 +81,12 @@ export default function AlertsPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="ghost">
-        <p className="section-label">Ghost</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="ghost">
+        <p className="text-xs font-semibold uppercase color-gray-50">Ghost</p>
         <h2>Ghost Alerts</h2>
-        <p>Transparent background with border only using <code className="inline-code">alert-ghost</code>.</p>
+        <p>Transparent background with border only using <code>alert-ghost</code>.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="alert alert-blue alert-ghost">
             <span className="alert-content">Ghost info alert — transparent background.</span>
           </div>
@@ -99,20 +99,20 @@ export default function AlertsPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="dismissible">
-        <p className="section-label">Interactive</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="dismissible">
+        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
         <h2>Dismissible Alerts</h2>
         <p>
-          Add an <code className="inline-code">alert-dismiss</code> button to make alerts closeable.
+          Add an <code>alert-dismiss</code> button to make alerts closeable.
         </p>
 
         {Object.keys(dismissed).length > 0 && (
-          <button className="btn btn-sm btn-outline" onClick={resetAll} style={{ marginBottom: "1rem" }}>
+          <button className="btn btn-sm btn-outline bottom-margin" onClick={resetAll}>
             Reset all dismissed alerts
           </button>
         )}
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           {!dismissed["d1"] && (
             <div className="alert alert-blue" role="alert">
               <span className="alert-content"><strong>Tip:</strong> Click the × to dismiss this alert.</span>
@@ -145,11 +145,11 @@ export default function AlertsPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="labels">
-        <p className="section-label">Labels</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="labels">
+        <p className="text-xs font-semibold uppercase color-gray-50">Labels</p>
         <h2>Inline Labels</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <span className="label">Default</span>{" "}
           <span className="label label-blue">Blue</span>{" "}
           <span className="label label-red">Red</span>{" "}
@@ -164,11 +164,11 @@ export default function AlertsPage() {
 <span class="label label-red">Red</span>`} />
       </section>
 
-      <section className="showcase-section" id="status">
-        <p className="section-label">Status</p>
+      <section className="padding-top--extra padding-bottom--extra" id="status">
+        <p className="text-xs font-semibold uppercase color-gray-50">Status</p>
         <h2>Success & Error Text</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <p><span className="success">Active</span> — The success class for status text.</p>
           <p><span className="error">Inactive</span> — The error class for status text.</p>
         </div>

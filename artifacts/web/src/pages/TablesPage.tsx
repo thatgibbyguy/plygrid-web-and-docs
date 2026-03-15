@@ -11,20 +11,20 @@ const sampleData = [
 export default function TablesPage() {
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Data</p>
-        <h1 className="page-title">Tables</h1>
-        <p className="page-subtitle">
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Data</p>
+        <h1>Tables</h1>
+        <p className="lead color-gray-60">
           Tables are styled automatically with semantic HTML. Add modifier classes for bordered, striped,
           hoverable, and simple variants.
         </p>
       </section>
 
-      <section className="showcase-section" id="default">
-        <p className="section-label">Default</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="default">
+        <p className="text-xs font-semibold uppercase color-gray-50">Default</p>
         <h2>Standard Table</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table>
             <thead>
               <tr>
@@ -48,11 +48,11 @@ export default function TablesPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="bordered">
-        <p className="section-label">Bordered</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="bordered">
+        <p className="text-xs font-semibold uppercase color-gray-50">Bordered</p>
         <h2>Bordered Table</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table className="table-bordered">
             <thead>
               <tr>
@@ -85,11 +85,11 @@ export default function TablesPage() {
 </table>`} />
       </section>
 
-      <section className="showcase-section" id="striped">
-        <p className="section-label">Striped</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="striped">
+        <p className="text-xs font-semibold uppercase color-gray-50">Striped</p>
         <h2>Striped Table</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table className="table-stripped">
             <thead>
               <tr>
@@ -117,12 +117,12 @@ export default function TablesPage() {
 </table>`} />
       </section>
 
-      <section className="showcase-section" id="hoverable">
-        <p className="section-label">Interactive</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="hoverable">
+        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
         <h2>Hoverable Table</h2>
         <p>Hover over the rows to see the highlight effect.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table className="table-hovered">
             <thead>
               <tr>
@@ -146,14 +146,14 @@ export default function TablesPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="simple">
-        <p className="section-label">Minimal</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="simple">
+        <p className="text-xs font-semibold uppercase color-gray-50">Minimal</p>
         <h2>Simple & Stroked Tables</h2>
 
         <div className="units-row">
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50">
             <h3>Simple (no borders, no left padding)</h3>
-            <div className="demo-box">
+            <div className="border border-radius padding">
               <table className="table-simple">
                 <tbody>
                   <tr><td>Grid System</td><td>16 widths</td></tr>
@@ -164,9 +164,9 @@ export default function TablesPage() {
               </table>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50">
             <h3>Stroked (bottom borders only)</h3>
-            <div className="demo-box">
+            <div className="border border-radius padding">
               <table className="table-stroked">
                 <tbody>
                   <tr><td>Typography</td><td>9 sizes</td></tr>
@@ -180,12 +180,12 @@ export default function TablesPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="flat">
-        <p className="section-label">Flat</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="flat">
+        <p className="text-xs font-semibold uppercase color-gray-50">Flat</p>
         <h2>Flat Table</h2>
-        <p>No borders and no padding with <code className="inline-code">table-flat</code>.</p>
+        <p>No borders and no padding with <code>table-flat</code>.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table className="table-flat">
             <thead>
               <tr>
@@ -202,14 +202,14 @@ export default function TablesPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="responsive">
-        <p className="section-label">Responsive</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="responsive">
+        <p className="text-xs font-semibold uppercase color-gray-50">Responsive</p>
         <h2>Responsive Table Container</h2>
         <p>
-          Wrap tables in <code className="inline-code">table-container</code> for horizontal scrolling on small screens.
+          Wrap tables in <code>table-container</code> for horizontal scrolling on small screens.
         </p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="table-container">
             <table className="table-bordered">
               <thead>
@@ -240,12 +240,12 @@ export default function TablesPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="combined">
-        <p className="section-label">Combined</p>
+      <section className="padding-top--extra padding-bottom--extra" id="combined">
+        <p className="text-xs font-semibold uppercase color-gray-50">Combined</p>
         <h2>Combined Modifiers</h2>
         <p>Classes can be combined for richer table styles.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <table className="table-bordered table-stripped table-hovered">
             <thead>
               <tr>

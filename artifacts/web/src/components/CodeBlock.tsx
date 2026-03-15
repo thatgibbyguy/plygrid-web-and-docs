@@ -1,6 +1,6 @@
 export default function CodeBlock({ code }: { code: string }) {
   return (
-    <pre className="code-preview">
+    <pre>
       <code>{code.trim()}</code>
     </pre>
   );

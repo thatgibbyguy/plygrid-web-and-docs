@@ -3,60 +3,60 @@ import CodeBlock from "../components/CodeBlock";
 export default function GridPage() {
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Layout</p>
-        <h1 className="page-title">Grid System</h1>
-        <p className="page-subtitle">
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Layout</p>
+        <h1>Grid System</h1>
+        <p className="lead color-gray-60">
           A ratio-based flexbox grid. Think in percentages — unit-50 is 50%, unit-33 is 33%.
           Responsive prefixes handle every breakpoint.
         </p>
       </section>
 
-      <section className="showcase-section" id="basic">
-        <p className="section-label">Basics</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="basic">
+        <p className="text-xs font-semibold uppercase color-gray-50">Basics</p>
         <h2>Container, Row, and Units</h2>
         <p>
-          Wrap content in <code className="inline-code">units-container</code> (max-width 1200px, centered),
-          then use <code className="inline-code">units-row</code> with <code className="inline-code">unit-*</code> children.
+          Wrap content in <code>units-container</code> (max-width 1200px, centered),
+          then use <code>units-row</code> with <code>unit-*</code> children.
         </p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-100">
-              <div className="grid-demo-cell">unit-100</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-100</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-50">
-              <div className="grid-demo-cell">unit-50</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-50</div>
             </div>
             <div className="unit-50">
-              <div className="grid-demo-cell">unit-50</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-50</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-33">
-              <div className="grid-demo-cell">unit-33</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
             </div>
             <div className="unit-33">
-              <div className="grid-demo-cell">unit-33</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
             </div>
             <div className="unit-33">
-              <div className="grid-demo-cell">unit-33</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-25">
-              <div className="grid-demo-cell">unit-25</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="grid-demo-cell">unit-25</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="grid-demo-cell">unit-25</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="grid-demo-cell">unit-25</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
             </div>
           </div>
         </div>
@@ -69,86 +69,86 @@ export default function GridPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="all-widths">
-        <p className="section-label">Widths</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="all-widths">
+        <p className="text-xs font-semibold uppercase color-gray-50">Widths</p>
         <h2>All Available Widths</h2>
         <p>Every ratio from 10% to 100% in logical increments.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           {[10, 20, 25, 30, 33, 35, 40, 50, 60, 65, 66, 70, 75, 80, 90, 100].map((w) => (
             <div className="units-row" key={w}>
               <div className={`unit-${w}`}>
-                <div className="grid-demo-cell">unit-{w}</div>
+                <div className="alert alert-blue text-center text-sm no-margin">unit-{w}</div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="showcase-section" id="mixed">
-        <p className="section-label">Combinations</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="mixed">
+        <p className="text-xs font-semibold uppercase color-gray-50">Combinations</p>
         <h2>Mixed Widths</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-25">
-              <div className="grid-demo-cell">25%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">25%</div>
             </div>
             <div className="unit-75">
-              <div className="grid-demo-cell">75%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">75%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-30">
-              <div className="grid-demo-cell">30%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">30%</div>
             </div>
             <div className="unit-70">
-              <div className="grid-demo-cell">70%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">70%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-40">
-              <div className="grid-demo-cell">40%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">40%</div>
             </div>
             <div className="unit-60">
-              <div className="grid-demo-cell">60%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">60%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-20">
-              <div className="grid-demo-cell">20%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">20%</div>
             </div>
             <div className="unit-60">
-              <div className="grid-demo-cell">60%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">60%</div>
             </div>
             <div className="unit-20">
-              <div className="grid-demo-cell">20%</div>
+              <div className="alert alert-blue text-center text-sm no-margin">20%</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="showcase-section" id="nested">
-        <p className="section-label">Nesting</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="nested">
+        <p className="text-xs font-semibold uppercase color-gray-50">Nesting</p>
         <h2>Nested Grids</h2>
         <p>
-          Place a <code className="inline-code">units-row</code> inside any unit for complex layouts.
+          Place a <code>units-row</code> inside any unit for complex layouts.
         </p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-50">
               <div className="units-row">
                 <div className="unit-50">
-                  <div className="grid-demo-cell">Quarter A</div>
+                  <div className="alert alert-blue text-center text-sm no-margin">Quarter A</div>
                 </div>
                 <div className="unit-50">
-                  <div className="grid-demo-cell">Quarter B</div>
+                  <div className="alert alert-blue text-center text-sm no-margin">Quarter B</div>
                 </div>
               </div>
             </div>
             <div className="unit-50">
-              <div className="grid-demo-cell" style={{ height: "100%" }}>Half</div>
+              <div className="alert alert-blue text-center text-sm no-margin fill-height">Half</div>
             </div>
           </div>
         </div>
@@ -164,8 +164,8 @@ export default function GridPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="responsive">
-        <p className="section-label">Responsive</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="responsive">
+        <p className="text-xs font-semibold uppercase color-gray-50">Responsive</p>
         <h2>Responsive Prefixes</h2>
         <p>Override the base width at specific breakpoints. Resize your browser to see the effect.</p>
 
@@ -177,37 +177,35 @@ export default function GridPage() {
             </tr>
           </thead>
           <tbody>
-            <tr><td><code className="inline-code">x-large-screen-unit-*</code></td><td>≥ 1800px</td></tr>
-            <tr><td><code className="inline-code">large-screen-unit-*</code></td><td>≥ 1400px</td></tr>
-            <tr><td><code className="inline-code">small-desktop-unit-*</code></td><td>≤ 1024px</td></tr>
-            <tr><td><code className="inline-code">tablet-unit-*</code></td><td>≤ 767px</td></tr>
-            <tr><td><code className="inline-code">large-phone-unit-*</code></td><td>≤ 650px</td></tr>
-            <tr><td><code className="inline-code">phone-unit-*</code></td><td>≤ 480px</td></tr>
-            <tr><td><code className="inline-code">forever-unit-*</code></td><td>Never collapses</td></tr>
+            <tr><td><code>x-large-screen-unit-*</code></td><td>≥ 1800px</td></tr>
+            <tr><td><code>large-screen-unit-*</code></td><td>≥ 1400px</td></tr>
+            <tr><td><code>small-desktop-unit-*</code></td><td>≤ 1024px</td></tr>
+            <tr><td><code>tablet-unit-*</code></td><td>≤ 767px</td></tr>
+            <tr><td><code>large-phone-unit-*</code></td><td>≤ 650px</td></tr>
+            <tr><td><code>phone-unit-*</code></td><td>≤ 480px</td></tr>
+            <tr><td><code>forever-unit-*</code></td><td>Never collapses</td></tr>
           </tbody>
         </table>
 
-        <div className="spacer-md" />
-
-        <div className="demo-box">
+        <div className="border border-radius padding margin-top--extra">
           <div className="units-row">
-            <div className="unit-25 tablet-unit-100">
-              <div className="grid-demo-cell">Sidebar (stacks on tablet)</div>
+            <div className="unit-25">
+              <div className="alert alert-blue text-center text-sm no-margin">Sidebar (stacks on tablet)</div>
             </div>
-            <div className="unit-75 tablet-unit-100">
-              <div className="grid-demo-cell">Content (stacks on tablet)</div>
+            <div className="unit-75">
+              <div className="alert alert-blue text-center text-sm no-margin">Content (stacks on tablet)</div>
             </div>
           </div>
         </div>
 
         <CodeBlock code={`<div class="units-row">
-  <div class="unit-25 tablet-unit-100">Sidebar</div>
-  <div class="unit-75 tablet-unit-100">Content</div>
+  <div class="unit-25">Sidebar</div>
+  <div class="unit-75">Content</div>
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="modifiers">
-        <p className="section-label">Modifiers</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="modifiers">
+        <p className="text-xs font-semibold uppercase color-gray-50">Modifiers</p>
         <h2>Row & Unit Modifiers</h2>
 
         <h3>Row Modifiers</h3>
@@ -216,67 +214,65 @@ export default function GridPage() {
             <tr><th>Class</th><th>Effect</th></tr>
           </thead>
           <tbody>
-            <tr><td><code className="inline-code">reverse-direction</code></td><td>Reverse row order</td></tr>
-            <tr><td><code className="inline-code">split</code></td><td>Remove gutters</td></tr>
-            <tr><td><code className="inline-code">centered-content</code></td><td>Center children horizontally</td></tr>
-            <tr><td><code className="inline-code">stacked</code></td><td>Remove bottom margin</td></tr>
+            <tr><td><code>reverse-direction</code></td><td>Reverse row order</td></tr>
+            <tr><td><code>split</code></td><td>Remove gutters</td></tr>
+            <tr><td><code>centered-content</code></td><td>Center children horizontally</td></tr>
+            <tr><td><code>stacked</code></td><td>Remove bottom margin</td></tr>
           </tbody>
         </table>
 
-        <div className="spacer-md" />
-
         <h3>Reversed Row</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row reverse-direction">
-            <div className="unit-33"><div className="grid-demo-cell">First</div></div>
-            <div className="unit-33"><div className="grid-demo-cell">Second</div></div>
-            <div className="unit-33"><div className="grid-demo-cell">Third</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">First</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">Second</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">Third</div></div>
           </div>
         </div>
 
         <h3>Centered Content</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row centered-content">
-            <div className="unit-30"><div className="grid-demo-cell">Centered 30%</div></div>
+            <div className="unit-30"><div className="alert alert-blue text-center text-sm no-margin">Centered 30%</div></div>
           </div>
         </div>
 
         <h3>Split (No Gutters)</h3>
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row split">
-            <div className="unit-33"><div className="grid-demo-cell">No gap</div></div>
-            <div className="unit-33"><div className="grid-demo-cell">No gap</div></div>
-            <div className="unit-33"><div className="grid-demo-cell">No gap</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
+            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
           </div>
         </div>
       </section>
 
-      <section className="showcase-section" id="offsets">
-        <p className="section-label">Offsets</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="offsets">
+        <p className="text-xs font-semibold uppercase color-gray-50">Offsets</p>
         <h2>Push Units</h2>
         <p>
-          Use <code className="inline-code">unit-push-*</code> to offset units with margin-left.
+          Use <code>unit-push-*</code> to offset units with margin-left.
         </p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-33 unit-push-33">
-              <div className="grid-demo-cell">unit-33 push-33</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-33 push-33</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-50 unit-push-25">
-              <div className="grid-demo-cell">unit-50 push-25</div>
+              <div className="alert alert-blue text-center text-sm no-margin">unit-50 push-25</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="showcase-section" id="fullwidth">
-        <p className="section-label">Full Width</p>
+      <section className="padding-top--extra padding-bottom--extra" id="fullwidth">
+        <p className="text-xs font-semibold uppercase color-gray-50">Full Width</p>
         <h2>Fill Width Container</h2>
         <p>
-          Add <code className="inline-code">fill-width</code> to <code className="inline-code">units-container</code> for
+          Add <code>fill-width</code> to <code>units-container</code> for
           edge-to-edge layouts.
         </p>
         <CodeBlock code={`<div class="units-container fill-width">

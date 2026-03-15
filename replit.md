@@ -97,15 +97,24 @@ Utility scripts package. Each script is a `.ts` file in `src/` with a correspond
 
 ### `artifacts/web` (`@workspace/web`)
 
-Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite, no Tailwind — uses plygrid exclusively for styling. Swiss modernist design aesthetic.
+Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Swiss modernist design aesthetic.
 
-- **CSS Framework**: `plygrid@1.0.0` — ratio-based CSS grid framework (~118KB unminified). Import via `plygrid/dist/css/ply.min.css`.
-- **Routing**: React Router v7, 10 pages — Home, Grid, Typography, Buttons, Forms, Navigation, Alerts, Tables, Helpers, Theming.
-- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Layout.tsx with Auto/Light/Dark switcher.
+- **CSS Framework**: `plygrid@1.0.0` — ratio-based CSS grid framework. Import via `plygrid/dist/css/ply.min.css`.
+- **Critical constraint**: Zero custom CSS and zero inline styles — exclusively plygrid classes throughout.
+- **Routing**: wouter, 10 pages — Home, Grid, Typography, Buttons, Forms, Navigation, Alerts, Tables, Helpers, Theming.
+- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Layout.tsx with Auto/Light/Dark select.
 - **No backend dependencies** — pure frontend showcase.
 - **Key files**:
-  - `src/App.tsx` — route definitions
-  - `src/index.css` — plygrid import + custom showcase CSS variables
-  - `src/components/Layout.tsx` — sticky navbar, theme switcher, footer
-  - `src/components/CodeBlock.tsx` — syntax-highlighted code snippets
+  - `src/App.tsx` — route definitions (wouter)
+  - `src/index.css` — single line: `@import "plygrid/dist/css/ply.min.css";`
+  - `src/components/Layout.tsx` — sticky navbar (`navigation-fixed`), theme switcher, footer
+  - `src/components/CodeBlock.tsx` — native `<pre><code>` (ply auto-styles)
   - `src/pages/` — all 10 page components
+- **Common ply class patterns used**:
+  - Demo containers: `border border-radius padding`
+  - Section labels: `text-xs font-semibold uppercase color-gray-50`
+  - Page subtitles: `lead color-gray-60`
+  - Grid demo cells: `alert alert-blue text-center text-sm no-margin`
+  - Section separators: `padding-top--extra padding-bottom--extra border-bottom`
+  - Feature cards: `border border-radius padding bottom-margin`
+- **pnpm-workspace.yaml**: includes `minimumReleaseAgeExclude: - plygrid` to bypass release age policy

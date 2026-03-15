@@ -3,20 +3,20 @@ import CodeBlock from "../components/CodeBlock";
 export default function NavigationPage() {
   return (
     <div className="units-container">
-      <section className="showcase-section">
-        <p className="section-label">Wayfinding</p>
-        <h1 className="page-title">Navigation</h1>
-        <p className="page-subtitle">
+      <section className="padding-top--extra padding-bottom--extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-gray-50">Wayfinding</p>
+        <h1>Navigation</h1>
+        <p className="lead color-gray-60">
           Horizontal navbars, pill navigation, tabs, stacked vertical nav, breadcrumbs, and pagination.
           All built on semantic HTML.
         </p>
       </section>
 
-      <section className="showcase-section" id="navbar">
-        <p className="section-label">Horizontal</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="navbar">
+        <p className="text-xs font-semibold uppercase color-gray-50">Horizontal</p>
         <h2>Navbar</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <nav className="navbar">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -36,8 +36,8 @@ export default function NavigationPage() {
 </nav>`} />
 
         <h3>Navbar Alignment</h3>
-        <div className="demo-box">
-          <p className="text-sm" style={{ color: "var(--ply-color-muted)", marginBottom: "0.5rem" }}>Centered</p>
+        <div className="border border-radius padding">
+          <p className="text-sm color-gray-50">Centered</p>
           <nav className="navbar navbar--centered">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -45,8 +45,8 @@ export default function NavigationPage() {
               <li><a href="#">Contact</a></li>
             </ul>
           </nav>
-          <div className="spacer-md" />
-          <p className="text-sm" style={{ color: "var(--ply-color-muted)", marginBottom: "0.5rem" }}>Right-aligned</p>
+          <div className="bottom-margin--extra"></div>
+          <p className="text-sm color-gray-50">Right-aligned</p>
           <nav className="navbar navbar--right">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -57,11 +57,11 @@ export default function NavigationPage() {
         </div>
       </section>
 
-      <section className="showcase-section" id="pills">
-        <p className="section-label">Pills</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="pills">
+        <p className="text-xs font-semibold uppercase color-gray-50">Pills</p>
         <h2>Pill Navigation</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <nav className="navbar-pills">
             <ul>
               <li className="active"><a href="#">All</a></li>
@@ -81,11 +81,11 @@ export default function NavigationPage() {
 </nav>`} />
       </section>
 
-      <section className="showcase-section" id="tabs">
-        <p className="section-label">Tabs</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="tabs">
+        <p className="text-xs font-semibold uppercase color-gray-50">Tabs</p>
         <h2>Tab Navigation</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="nav-tabs">
             <ul>
               <li className="active"><a href="#">Overview</a></li>
@@ -105,13 +105,13 @@ export default function NavigationPage() {
 </div>`} />
       </section>
 
-      <section className="showcase-section" id="stacked">
-        <p className="section-label">Vertical</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="stacked">
+        <p className="text-xs font-semibold uppercase color-gray-50">Vertical</p>
         <h2>Stacked Navigation</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Dashboard</a></li>
@@ -134,11 +134,11 @@ export default function NavigationPage() {
 </nav>`} />
       </section>
 
-      <section className="showcase-section" id="breadcrumbs">
-        <p className="section-label">Breadcrumbs</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="breadcrumbs">
+        <p className="text-xs font-semibold uppercase color-gray-50">Breadcrumbs</p>
         <h2>Breadcrumb Navigation</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <ul>
               <li><a href="#">Home</a></li>
@@ -158,11 +158,11 @@ export default function NavigationPage() {
 </nav>`} />
       </section>
 
-      <section className="showcase-section" id="pagination">
-        <p className="section-label">Pagination</p>
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="pagination">
+        <p className="text-xs font-semibold uppercase color-gray-50">Pagination</p>
         <h2>Page Navigation</h2>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <ul className="pagination">
             <li><a href="#">&laquo;</a></li>
             <li><a href="#">1</a></li>
@@ -183,12 +183,12 @@ export default function NavigationPage() {
 </ul>`} />
       </section>
 
-      <section className="showcase-section" id="combined">
-        <p className="section-label">Pattern</p>
+      <section className="padding-top--extra padding-bottom--extra" id="combined">
+        <p className="text-xs font-semibold uppercase color-gray-50">Pattern</p>
         <h2>Dashboard Layout</h2>
         <p>Combining navbar with stacked sidebar navigation and content area.</p>
 
-        <div className="demo-box">
+        <div className="border border-radius padding">
           <nav className="navbar">
             <ul>
               <li className="active"><a href="#">Dashboard</a></li>
@@ -196,8 +196,8 @@ export default function NavigationPage() {
               <li><a href="#">Settings</a></li>
             </ul>
           </nav>
-          <div className="units-row" style={{ marginTop: "1rem" }}>
-            <aside className="unit-20 tablet-unit-100">
+          <div className="units-row margin-top--extra">
+            <aside className="unit-20">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Overview</a></li>
@@ -206,21 +206,21 @@ export default function NavigationPage() {
                 </ul>
               </nav>
             </aside>
-            <main className="unit-80 tablet-unit-100">
+            <main className="unit-80">
               <div className="units-row">
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Revenue</h4>
                     <p className="text-3xl font-bold">$12,340</p>
                   </div>
                 </div>
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Users</h4>
                     <p className="text-3xl font-bold">1,234</p>
                   </div>
                 </div>
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Orders</h4>
                     <p className="text-3xl font-bold">567</p>

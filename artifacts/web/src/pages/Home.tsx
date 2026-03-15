@@ -52,12 +52,12 @@ export default function Home() {
   return (
     <>
       <div className="units-container">
-        <section className="showcase-hero">
+        <section className="padding-top--extra padding-bottom--extra border-bottom">
           <div className="units-row">
-            <div className="unit-60 tablet-unit-100">
-              <p className="section-label">CSS Framework / v1.0</p>
-              <h1>ply</h1>
-              <p className="lead">
+            <div className="unit-60">
+              <p className="text-xs font-semibold uppercase color-gray-50">CSS Framework / v1.0</p>
+              <h1 className="text-5xl font-bold">ply</h1>
+              <p className="lead color-gray-60">
                 A ratio-based CSS framework built for AI agents, accessible by default, and small
                 enough to ship anywhere. One stylesheet. ~18KB gzipped. No JavaScript, no build step,
                 no configuration.
@@ -71,62 +71,62 @@ export default function Home() {
                   <button className="btn btn-outline">GitHub</button>
                 </a>
               </div>
-              <div className="stat-grid">
-                <div className="stat-item">
-                  <span className="stat-value">~18KB</span>
-                  <span className="stat-label">Gzipped</span>
+              <div className="units-row margin-top--extra">
+                <div className="unit-25 phone-unit-50">
+                  <span className="text-2xl font-bold display--block">~18KB</span>
+                  <span className="text-xs uppercase color-gray-50">Gzipped</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-value">0</span>
-                  <span className="stat-label">JavaScript</span>
+                <div className="unit-25 phone-unit-50">
+                  <span className="text-2xl font-bold display--block">0</span>
+                  <span className="text-xs uppercase color-gray-50">JavaScript</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-value">AA</span>
-                  <span className="stat-label">WCAG Contrast</span>
+                <div className="unit-25 phone-unit-50">
+                  <span className="text-2xl font-bold display--block">AA</span>
+                  <span className="text-xs uppercase color-gray-50">WCAG Contrast</span>
                 </div>
-                <div className="stat-item">
-                  <span className="stat-value">1</span>
-                  <span className="stat-label">Link Tag</span>
+                <div className="unit-25 phone-unit-50">
+                  <span className="text-2xl font-bold display--block">1</span>
+                  <span className="text-xs uppercase color-gray-50">Link Tag</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="showcase-section">
-          <p className="section-label">Rationale</p>
+        <section className="padding-top--extra padding-bottom--extra border-bottom">
+          <p className="text-xs font-semibold uppercase color-gray-50">Rationale</p>
           <h2>Why ply exists</h2>
-          <p style={{ maxWidth: 650, color: "var(--ply-color-secondary)" }}>
+          <p className="color-gray-60">
             CSS frameworks were designed for humans reading documentation. But increasingly, the first
             consumer of your framework is an AI — a coding agent generating UI from a prompt. ply is
             designed for that world.
           </p>
 
-          <div className="spacer-md" />
+          <div className="bottom-margin--extra"></div>
 
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
-              <div className="feature-card">
-                <h3>AI-Native</h3>
-                <p>
+            <div className="unit-33">
+              <div className="border border-radius padding bottom-margin">
+                <h3 className="text-lg font-semibold no-top-margin">AI-Native</h3>
+                <p className="text-sm color-gray-60 no-margin">
                   Ships with PLY.md and ply-classes.json — a complete class reference any AI can read.
                   Class names are predictable: .alert-blue, .btn-sm, .unit-50.
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <div className="feature-card">
-                <h3>Accessible by Default</h3>
-                <p>
+            <div className="unit-33">
+              <div className="border border-radius padding bottom-margin">
+                <h3 className="text-lg font-semibold no-top-margin">Accessible by Default</h3>
+                <p className="text-sm color-gray-60 no-margin">
                   :focus-visible outlines, prefers-reduced-motion, semantic HTML styling, and WCAG AA
                   contrast baked into the CSS itself.
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <div className="feature-card">
-                <h3>Small Footprint</h3>
-                <p>
+            <div className="unit-33">
+              <div className="border border-radius padding bottom-margin">
+                <h3 className="text-lg font-semibold no-top-margin">Small Footprint</h3>
+                <p className="text-sm color-gray-60 no-margin">
                   ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step,
                   no tree-shaking needed. Ship the whole thing.
                 </p>
@@ -135,35 +135,34 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="showcase-section">
-          <p className="section-label">Quick Start</p>
+        <section className="padding-top--extra padding-bottom--extra border-bottom">
+          <p className="text-xs font-semibold uppercase color-gray-50">Quick Start</p>
           <h2>One line of HTML</h2>
-          <p style={{ color: "var(--ply-color-secondary)" }}>
+          <p className="color-gray-60">
             Add a single link tag. That's the entire setup.
           </p>
-          <pre className="code-preview">
-{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}
+          <pre>
+            <code>{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code>
           </pre>
-          <div className="spacer-sm" />
-          <p style={{ color: "var(--ply-color-muted)", fontSize: "0.9rem" }}>
-            Or install via npm: <code className="inline-code">npm install plygrid</code>
+          <p className="text-sm color-gray-50">
+            Or install via npm: <code>npm install plygrid</code>
           </p>
         </section>
 
-        <section className="showcase-section">
-          <p className="section-label">Components</p>
+        <section className="padding-top--extra padding-bottom--extra border-bottom">
+          <p className="text-xs font-semibold uppercase color-gray-50">Components</p>
           <h2>Everything you need</h2>
-          <p style={{ maxWidth: 550, color: "var(--ply-color-secondary)", marginBottom: "2rem" }}>
+          <p className="color-gray-60 bottom-margin--extra">
             Explore every component and utility class in the framework.
           </p>
 
           <div className="units-row">
             {features.map((f) => (
               <div className="unit-33 tablet-unit-50 phone-unit-100" key={f.path}>
-                <Link href={f.path} style={{ textDecoration: "none", color: "inherit" }}>
-                  <div className="feature-card" style={{ marginBottom: "1rem", cursor: "pointer" }}>
-                    <h3>{f.title} →</h3>
-                    <p>{f.desc}</p>
+                <Link href={f.path} className="color-black">
+                  <div className="border border-radius padding bottom-margin cursor-finger">
+                    <h3 className="text-lg font-semibold no-top-margin">{f.title} →</h3>
+                    <p className="text-sm color-gray-60 no-margin">{f.desc}</p>
                   </div>
                 </Link>
               </div>
@@ -171,10 +170,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="showcase-section">
-          <p className="section-label">Bundles</p>
+        <section className="padding-top--extra padding-bottom--extra">
+          <p className="text-xs font-semibold uppercase color-gray-50">Bundles</p>
           <h2>Choose your size</h2>
-          <div className="spacer-sm" />
           <table>
             <thead>
               <tr>
@@ -185,22 +183,22 @@ export default function Home() {
             </thead>
             <tbody>
               <tr>
-                <td><code className="inline-code">ply.min.css</code></td>
+                <td><code>ply.min.css</code></td>
                 <td>Everything</td>
                 <td>~18KB</td>
               </tr>
               <tr>
-                <td><code className="inline-code">ply-core.min.css</code></td>
+                <td><code>ply-core.min.css</code></td>
                 <td>Grid, buttons, forms, nav, alerts, tables, typography, helpers</td>
                 <td>~16KB</td>
               </tr>
               <tr>
-                <td><code className="inline-code">ply-essentials.min.css</code></td>
+                <td><code>ply-essentials.min.css</code></td>
                 <td>Grid + helpers only</td>
                 <td>~5KB</td>
               </tr>
               <tr>
-                <td><code className="inline-code">ply-helpers.min.css</code></td>
+                <td><code>ply-helpers.min.css</code></td>
                 <td>Helper utilities only</td>
                 <td>~3KB</td>
               </tr>
