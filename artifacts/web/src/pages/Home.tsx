@@ -143,64 +143,73 @@ export default function Home() {
         </section>
 
         <section className="padding-top--extra padding-bottom--extra">
-          <div className="units-row">
-            <div className="unit-40 phone-unit-100 bottom-margin">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">Get started</p>
-              <h2 className="text-balance no-top-margin">One line. That's it.</h2>
-              <p className="text-secondary no-orphan">
-                No build tools. No configuration. Add a single link tag and start building.
+              <h2 className="text-balance">One line. That's it.</h2>
+              <p className="no-orphan">
+                <code>{`npm install plygrid`}</code>
               </p>
-              <pre>
-                <code>{`<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/
-  plygrid@1/dist/css/ply.min.css">`}</code>
-              </pre>
-              <p className="text-sm text-muted">
-                Or install via npm: <code>npm install plygrid</code>
+              <p className="text-sm text-muted no-orphan">
+                Or link directly from a CDN — no build step required.
               </p>
             </div>
-            <div className="unit-60 phone-unit-100 no-link-style">
+          </div>
+        </section>
+
+        <section className="padding-top--extra padding-bottom--extra">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-muted">What's inside</p>
-              <div className="units-row">
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/grid" className="display--block padding cursor-finger">
+              <h2 className="text-balance">Everything you need</h2>
+              <p className="text-secondary no-orphan">
+                A complete design system in a single stylesheet.
+              </p>
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra no-link-style">
+            <div className="unit-80 phone-unit-100">
+              <div className="units-row equal-height">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/grid" className="display--block layer-1 border-radius padding cursor-finger">
                     <LayoutGrid size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Grid</h3>
+                    <h3 className="text-base font-semibold">Grid</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Ratio-based flexbox with responsive prefixes</p>
                   </Link>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/typography" className="display--block padding cursor-finger">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/typography" className="display--block layer-1 border-radius padding cursor-finger">
                     <Type size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Typography</h3>
+                    <h3 className="text-base font-semibold">Typography</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Type scale from text-xs to text-5xl</p>
                   </Link>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/controls" className="display--block padding cursor-finger">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/controls" className="display--block layer-1 border-radius padding cursor-finger">
                     <ToggleLeft size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Controls</h3>
+                    <h3 className="text-base font-semibold">Controls</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Buttons, forms, alerts, and labels</p>
                   </Link>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/navigation" className="display--block padding cursor-finger">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/navigation" className="display--block layer-1 border-radius padding cursor-finger">
                     <Compass size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Navigation</h3>
+                    <h3 className="text-base font-semibold">Navigation</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Navbar, pills, tabs, breadcrumbs</p>
                   </Link>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/tables" className="display--block padding cursor-finger">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/tables" className="display--block layer-1 border-radius padding cursor-finger">
                     <Table2 size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Tables</h3>
+                    <h3 className="text-base font-semibold">Tables</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Bordered, striped, and hoverable</p>
                   </Link>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <Link href="/utilities" className="display--block padding cursor-finger">
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/utilities" className="display--block layer-1 border-radius padding cursor-finger">
                     <Wrench size={20} className="text-muted" />
-                    <h3 className="text-base font-semibold no-margin">Utilities</h3>
+                    <h3 className="text-base font-semibold">Utilities</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Spacing, display, theming, dark mode</p>
                   </Link>
                 </div>
