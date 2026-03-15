@@ -76,6 +76,6 @@
     "zod": "catalog:"
   },
   "dependencies": {
-    "plygrid": "^1.0.1"
+    "plygrid": "^1.0.2"
   }
 }
