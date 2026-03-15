@@ -59,9 +59,9 @@ export default function Home() {
         <div className="units-container">
           <div className="units-row">
             <div className="unit-66 tablet-unit-100">
-              <p className="text-xs font-semibold uppercase">CSS Framework / v1.0</p>
-              <h1 className="text-5xl font-bold">ply</h1>
-              <p className="lead">
+              <p className="text-xs font-semibold uppercase">CSS Framework / v1.0.1</p>
+              <h1 className="text-5xl font-bold text-balance">ply</h1>
+              <p className="lead no-orphan">
                 A ratio-based CSS framework built for AI agents, accessible by default, and small
                 enough to ship anywhere. One stylesheet. ~18KB gzipped. No JavaScript, no build step,
                 no configuration.
@@ -102,7 +102,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="units-row">
+          <div className="units-row equal-height">
             <div className="unit-25 phone-unit-50">
               <div className="border border-radius padding text-center bottom-margin">
                 <span className="text-2xl font-bold display--block">~18KB</span>
@@ -134,36 +134,36 @@ export default function Home() {
       <div className="units-container">
         <section className="padding-top--extra padding-bottom--extra border-bottom">
           <p className="text-xs font-semibold uppercase">Rationale</p>
-          <h2>Why ply exists</h2>
-          <p className="bottom-margin--extra">
+          <h2 className="text-balance">Why ply exists</h2>
+          <p className="bottom-margin--extra no-orphan">
             CSS frameworks were designed for humans reading documentation. But increasingly, the first
             consumer of your framework is an AI — a coding agent generating UI from a prompt. ply is
             designed for that world.
           </p>
 
-          <div className="units-row">
-            <div className="unit-33 tablet-unit-100 display--flex">
-              <div className="border border-radius padding bottom-margin fill-width">
+          <div className="units-row equal-height">
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">AI-Native</h3>
-                <p className="text-sm no-margin">
+                <p className="text-sm no-margin no-orphan">
                   Ships with PLY.md and ply-classes.json — a complete class reference any AI can read.
                   Class names are predictable: .alert-blue, .btn-sm, .unit-50.
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100 display--flex">
-              <div className="border border-radius padding bottom-margin fill-width">
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">Accessible by Default</h3>
-                <p className="text-sm no-margin">
+                <p className="text-sm no-margin no-orphan">
                   :focus-visible outlines, prefers-reduced-motion, semantic HTML styling, and WCAG AA
                   contrast baked into the CSS itself.
                 </p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100 display--flex">
-              <div className="border border-radius padding bottom-margin fill-width">
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding bottom-margin">
                 <h3 className="text-lg font-semibold no-top-margin">Small Footprint</h3>
-                <p className="text-sm no-margin">
+                <p className="text-sm no-margin no-orphan">
                   ~18KB gzipped (full), ~16KB (core). No JavaScript runtime, no build step,
                   no tree-shaking needed. Ship the whole thing.
                 </p>
@@ -174,8 +174,8 @@ export default function Home() {
 
         <section className="padding-top--extra padding-bottom--extra border-bottom">
           <p className="text-xs font-semibold uppercase">Quick Start</p>
-          <h2>One line of HTML</h2>
-          <p className="bottom-margin--extra">
+          <h2 className="text-balance">One line of HTML</h2>
+          <p className="bottom-margin--extra no-orphan">
             Add a single link tag. That's the entire setup.
           </p>
           <pre>
@@ -188,12 +188,12 @@ export default function Home() {
 
         <section className="padding-top--extra padding-bottom--extra border-bottom">
           <p className="text-xs font-semibold uppercase">Bundles</p>
-          <h2>Choose your size</h2>
-          <p className="bottom-margin--extra">
+          <h2 className="text-balance">Choose your size</h2>
+          <p className="bottom-margin--extra no-orphan">
             Four bundles from full-featured to helpers-only. Pick the one that fits.
           </p>
 
-          <div className="units-row">
+          <div className="units-row equal-height">
             <div className="unit-25 tablet-unit-50 phone-unit-100">
               <div className="border border-radius padding text-center bottom-margin">
                 <p className="text-3xl font-bold no-margin">~18KB</p>
@@ -227,26 +227,18 @@ export default function Home() {
 
         <section className="padding-top--extra padding-bottom--extra">
           <p className="text-xs font-semibold uppercase">Components</p>
-          <h2>Everything you need</h2>
-          <p className="bottom-margin--extra">
+          <h2 className="text-balance">Everything you need</h2>
+          <p className="bottom-margin--extra no-orphan">
             Explore every component and utility class in the framework.
           </p>
 
-          <div className="units-row">
+          <div className="units-row equal-height no-link-style">
             {features.map((f) => (
               <div className="unit-33 tablet-unit-50 phone-unit-100" key={f.path}>
-                <div
-                  className="border border-radius padding bottom-margin cursor-finger"
-                  onClick={() => navigate(f.path)}
-                  role="link"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") navigate(f.path);
-                  }}
-                >
+                <Link href={f.path} className="border border-radius padding bottom-margin display--block cursor-finger">
                   <h3 className="text-lg font-semibold no-top-margin">{f.title}</h3>
-                  <p className="text-sm no-margin">{f.desc}</p>
-                </div>
+                  <p className="text-sm no-margin no-orphan">{f.desc}</p>
+                </Link>
               </div>
             ))}
           </div>

@@ -5,8 +5,8 @@ export default function GridPage() {
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Layout</p>
-        <h1>Grid System</h1>
-        <p className="lead">
+        <h1 className="text-balance">Grid System</h1>
+        <p className="lead no-orphan">
           A ratio-based flexbox grid. Think in percentages — unit-50 is 50%, unit-33 is 33%.
           Responsive prefixes handle every breakpoint.
         </p>
@@ -218,6 +218,7 @@ export default function GridPage() {
             <tr><td><code>split</code></td><td>Remove gutters</td></tr>
             <tr><td><code>centered-content</code></td><td>Center children horizontally</td></tr>
             <tr><td><code>stacked</code></td><td>Remove bottom margin</td></tr>
+            <tr><td><code>equal-height</code></td><td>Stretch all children to same height</td></tr>
           </tbody>
         </table>
 
@@ -245,6 +246,33 @@ export default function GridPage() {
             <div className="unit-33"><div className="border border-radius padding text-center text-sm">No gap</div></div>
           </div>
         </div>
+
+        <h3>Equal Height</h3>
+        <div className="border border-radius padding">
+          <div className="units-row equal-height">
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding text-center text-sm">
+                <p className="no-margin">Short card</p>
+              </div>
+            </div>
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding text-center text-sm">
+                <p className="no-margin">Taller card with more content to demonstrate how equal-height stretches siblings</p>
+              </div>
+            </div>
+            <div className="unit-33 tablet-unit-100">
+              <div className="border border-radius padding text-center text-sm">
+                <p className="no-margin">Medium card</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <CodeBlock code={`<div class="units-row equal-height">
+  <div class="unit-33">Short</div>
+  <div class="unit-33">Taller content here</div>
+  <div class="unit-33">Medium</div>
+</div>`} />
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="offsets">

@@ -99,17 +99,26 @@ Utility scripts package. Each script is a `.ts` file in `src/` with a correspond
 
 Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Swiss modernist design aesthetic.
 
-- **CSS Framework**: `plygrid@1.0.0` — ratio-based CSS grid framework. Import via `plygrid/dist/css/ply.min.css`.
+- **CSS Framework**: `plygrid@1.0.1` — ratio-based CSS grid framework. Import via `plygrid/dist/css/ply.min.css`. Reference: `artifacts/web/node_modules/plygrid/PLY.md`.
 - **Critical constraint**: Zero custom CSS and zero inline styles — exclusively plygrid classes throughout.
-- **Routing**: wouter, 10 pages — Home, Grid, Typography, Buttons, Forms, Navigation, Alerts, Tables, Helpers, Theming.
-- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Layout.tsx with Auto/Light/Dark select.
+- **Routing**: wouter, 6 pages — Home, Grid (/grid), Typography (/typography), Controls (/controls), Navigation (/navigation), Tables (/tables), Utilities (/utilities).
+- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Home.tsx hero with icon-only toggle buttons (Monitor/Sun/Moon from lucide-react).
 - **No backend dependencies** — pure frontend showcase.
 - **Key files**:
   - `src/App.tsx` — route definitions (wouter)
   - `src/index.css` — single line: `@import "plygrid/dist/css/ply.min.css";`
-  - `src/components/Layout.tsx` — desktop: horizontal navbar with Lucide Home icon + links; mobile: `navigation-toggle` hamburger with `nav-stacked`. Theme switcher in footer.
+  - `src/components/Layout.tsx` — desktop: `navbar navbar--borderless` with Lucide Home icon + links; mobile: `navigation-toggle` hamburger with `nav-stacked`.
   - `src/components/CodeBlock.tsx` — native `<pre><code>` (ply auto-styles)
   - `src/pages/` — 6 content pages + Home + 404 (ControlsPage merges buttons/forms/alerts; UtilitiesPage merges helpers/theming)
+- **v1.0.1 features in use**:
+  - `equal-height` on `units-row` for same-height card rows (replaces display--flex workaround)
+  - `text-balance` on all page h1 headings
+  - `no-orphan` on lead paragraphs and body text
+  - `no-link-style` on feature card containers (allows `<Link>` without blue text)
+  - `text-primary`/`text-secondary`/`text-tertiary`/`text-muted` semantic text colors (replaces removed `color-gray-*`)
+  - `gap-*` utilities documented on Utilities page
+  - `navbar--borderless` on site nav; border variant demos on Navigation page
+  - CSS custom properties reference with `--ply-nav-*` variables on Utilities page
 - **Common ply class patterns used**:
   - Demo containers: `border border-radius padding`
   - Section labels: `text-xs font-semibold uppercase`
@@ -118,9 +127,8 @@ Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Sw
   - Section separators: `padding-top--extra padding-bottom--extra border-bottom`
   - Surface elevation: `layer-1` used sparingly (hero background only); cards use `border border-radius padding`
   - Links styled as buttons: `<Link className="btn btn-blue">` (never nest `<button>` inside `<Link>` or `<a>`)
-- **Dark mode safe**: No `color-gray-*` on body text — those classes use `rgba(0,0,0,*)` which is invisible on dark backgrounds. Color utilities are only demonstrated in the Utilities page color section.
-- **Theme switcher**: In the footer (Layout.tsx). UtilitiesPage also has its own independent toggle for demo purposes.
-- **IA (6 pages)**: Grid, Typography, Controls (/controls), Navigation, Tables, Utilities (/utilities). Old routes /buttons, /forms, /alerts, /helpers, /theming are removed (404).
-- **Icons**: `lucide-react` for inline SVG icons (Home icon in nav). No icon CSS from ply — icons are React components rendering SVGs.
+- **Dark mode safe**: No `color-gray-*` classes used — they don't exist in v1.0.1. Use semantic `text-primary`/`text-secondary`/`text-tertiary` instead.
+- **Theme switcher**: In Home.tsx hero (right column). Uses Monitor/Sun/Moon icons. All `btn btn-smaller`, active adds `btn-blue`. UtilitiesPage also has its own independent toggle for demo purposes.
+- **Icons**: `lucide-react` for inline SVG icons (Home icon in nav, Monitor/Sun/Moon in theme switcher). No icon CSS from ply — icons are React components rendering SVGs.
 - **Responsive nav**: `hide-on-mobile` / `hide-on-desktop` classes switch between horizontal navbar (desktop) and `navigation-toggle` hamburger (mobile).
 - **pnpm-workspace.yaml**: includes `minimumReleaseAgeExclude: - plygrid` to bypass release age policy

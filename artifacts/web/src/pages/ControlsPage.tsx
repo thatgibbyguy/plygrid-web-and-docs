@@ -10,8 +10,8 @@ export default function ControlsPage() {
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Interactive</p>
-        <h1>Controls</h1>
-        <p className="lead">
+        <h1 className="text-balance">Controls</h1>
+        <p className="lead no-orphan">
           Buttons, forms, alerts, and labels — everything interactive in ply. Six button
           colors, accessible form inputs, dismissible notifications, and inline status labels.
         </p>

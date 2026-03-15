@@ -5,8 +5,8 @@ export default function NavigationPage() {
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Wayfinding</p>
-        <h1>Navigation</h1>
-        <p className="lead">
+        <h1 className="text-balance">Navigation</h1>
+        <p className="lead no-orphan">
           Horizontal navbars, pill navigation, tabs, stacked vertical nav, breadcrumbs, and pagination.
           All built on semantic HTML.
         </p>
@@ -37,7 +37,7 @@ export default function NavigationPage() {
 
         <h3>Navbar Alignment</h3>
         <div className="border border-radius padding">
-          <p className="text-sm">Centered</p>
+          <p className="text-sm text-secondary">Centered</p>
           <nav className="navbar navbar--centered">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -46,7 +46,7 @@ export default function NavigationPage() {
             </ul>
           </nav>
           <div className="bottom-margin--extra"></div>
-          <p className="text-sm">Right-aligned</p>
+          <p className="text-sm text-secondary">Right-aligned</p>
           <nav className="navbar navbar--right">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -55,6 +55,117 @@ export default function NavigationPage() {
             </ul>
           </nav>
         </div>
+      </section>
+
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="navbar-borders">
+        <p className="text-xs font-semibold uppercase">Border Variants</p>
+        <h2>Navbar Border Styles</h2>
+        <p className="no-orphan">Control the border weight, remove it entirely, or apply a color accent.</p>
+
+        <h3>Thick Border</h3>
+        <div className="border border-radius padding bottom-margin">
+          <nav className="navbar navbar--thick">
+            <ul>
+              <li className="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <h3>Borderless</h3>
+        <div className="border border-radius padding bottom-margin">
+          <nav className="navbar navbar--borderless">
+            <ul>
+              <li className="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <h3>Colored Borders</h3>
+        <div className="border border-radius padding">
+          <p className="text-sm text-secondary">Blue</p>
+          <nav className="navbar navbar--border-blue">
+            <ul>
+              <li className="active"><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div className="bottom-margin--extra"></div>
+          <p className="text-sm text-secondary">Green</p>
+          <nav className="navbar navbar--border-green">
+            <ul>
+              <li className="active"><a href="#">Dashboard</a></li>
+              <li><a href="#">Analytics</a></li>
+              <li><a href="#">Reports</a></li>
+            </ul>
+          </nav>
+          <div className="bottom-margin--extra"></div>
+          <p className="text-sm text-secondary">Red</p>
+          <nav className="navbar navbar--border-red">
+            <ul>
+              <li className="active"><a href="#">Alerts</a></li>
+              <li><a href="#">Incidents</a></li>
+              <li><a href="#">Logs</a></li>
+            </ul>
+          </nav>
+          <div className="bottom-margin--extra"></div>
+          <p className="text-sm text-secondary">Yellow</p>
+          <nav className="navbar navbar--border-yellow">
+            <ul>
+              <li className="active"><a href="#">Warnings</a></li>
+              <li><a href="#">Notices</a></li>
+              <li><a href="#">Queue</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <table>
+          <thead>
+            <tr><th>Class</th><th>Effect</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>navbar--thick</code></td><td>Bold 2px border</td></tr>
+            <tr><td><code>navbar--borderless</code></td><td>No border, active uses background highlight</td></tr>
+            <tr><td><code>navbar--border-blue</code></td><td>Blue bottom border</td></tr>
+            <tr><td><code>navbar--border-green</code></td><td>Green bottom border</td></tr>
+            <tr><td><code>navbar--border-red</code></td><td>Red bottom border</td></tr>
+            <tr><td><code>navbar--border-yellow</code></td><td>Yellow bottom border</td></tr>
+          </tbody>
+        </table>
+
+        <CodeBlock code={`<nav class="navbar navbar--thick">...</nav>
+<nav class="navbar navbar--borderless">...</nav>
+<nav class="navbar navbar--border-blue">...</nav>`} />
+      </section>
+
+      <section className="padding-top--extra padding-bottom--extra border-bottom" id="navbar-mobile">
+        <p className="text-xs font-semibold uppercase">Mobile</p>
+        <h2>Mobile Overflow</h2>
+        <p className="no-orphan">
+          By default, navbars scroll horizontally on mobile. Use <code>navbar--stack</code> to wrap items instead.
+        </p>
+
+        <table>
+          <thead>
+            <tr><th>Class</th><th>Effect</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>(default)</td><td>Horizontal scroll on mobile</td></tr>
+            <tr><td><code>navbar--stack</code></td><td>Wrap items instead of scrolling</td></tr>
+          </tbody>
+        </table>
+
+        <CodeBlock code={`<nav class="navbar navbar--stack">
+  <ul>
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>`} />
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="pills">
@@ -186,10 +297,10 @@ export default function NavigationPage() {
       <section className="padding-top--extra padding-bottom--extra" id="combined">
         <p className="text-xs font-semibold uppercase">Pattern</p>
         <h2>Dashboard Layout</h2>
-        <p>Combining navbar with stacked sidebar navigation and content area.</p>
+        <p className="no-orphan">Combining navbar with stacked sidebar navigation and content area.</p>
 
         <div className="border border-radius padding">
-          <nav className="navbar">
+          <nav className="navbar navbar--border-blue">
             <ul>
               <li className="active"><a href="#">Dashboard</a></li>
               <li><a href="#">Reports</a></li>
@@ -207,7 +318,7 @@ export default function NavigationPage() {
               </nav>
             </aside>
             <div className="unit-80 tablet-unit-100">
-              <div className="units-row">
+              <div className="units-row equal-height">
                 <div className="unit-33 tablet-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Revenue</h4>

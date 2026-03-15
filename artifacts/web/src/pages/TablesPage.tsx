@@ -13,8 +13,8 @@ export default function TablesPage() {
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Data</p>
-        <h1>Tables</h1>
-        <p className="lead">
+        <h1 className="text-balance">Tables</h1>
+        <p className="lead no-orphan">
           Tables are styled automatically with semantic HTML. Add modifier classes for bordered, striped,
           hoverable, and simple variants.
         </p>

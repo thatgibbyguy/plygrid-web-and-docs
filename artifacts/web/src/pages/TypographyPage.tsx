@@ -5,8 +5,8 @@ export default function TypographyPage() {
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Design</p>
-        <h1>Typography</h1>
-        <p className="lead">
+        <h1 className="text-balance">Typography</h1>
+        <p className="lead no-orphan">
           A complete type scale from 12px to 60px with weight, alignment, and line-height utilities.
           Semantic HTML elements are styled automatically.
         </p>

@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <header className="navigation-fixed width-100">
-        <nav className="navbar">
+        <nav className="navbar navbar--borderless">
           <ul className="hide-on-mobile">
             <li className={location === "/" ? "active" : ""}>
               <Link href="/" aria-label="Home">
@@ -83,7 +83,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <div className="units-container">
           <div className="units-row">
             <div className="unit-50 tablet-unit-100">
-              <p>
+              <p className="no-orphan">
                 <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
               </p>
               <p>MIT License. Built for humans and machines.</p>
