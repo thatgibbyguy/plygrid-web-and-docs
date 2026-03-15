@@ -18,16 +18,16 @@ export default function ThemingPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Customization</p>
+        <p className="text-xs font-semibold uppercase">Customization</p>
         <h1>Dark Mode & Theming</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           ply auto-detects your OS color scheme. Force light or dark with a data attribute.
           Override any color via CSS custom properties.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="dark-mode">
-        <p className="text-xs font-semibold uppercase color-gray-50">Dark Mode</p>
+        <p className="text-xs font-semibold uppercase">Dark Mode</p>
         <h2>Toggle Dark Mode</h2>
         <p>
           ply respects <code>prefers-color-scheme</code> automatically.
@@ -35,7 +35,7 @@ export default function ThemingPage() {
         </p>
 
         <div className="border border-radius padding">
-          <p className="text-sm color-gray-50 bottom-margin">
+          <p className="text-sm bottom-margin">
             Current: <strong>{currentTheme}</strong>
           </p>
           <div className="btn-group">
@@ -78,7 +78,7 @@ document.documentElement.dataset.theme =
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="css-vars">
-        <p className="text-xs font-semibold uppercase color-gray-50">Custom Properties</p>
+        <p className="text-xs font-semibold uppercase">Custom Properties</p>
         <h2>CSS Custom Properties</h2>
         <p>
           Override <code>--ply-*</code> variables to create any theme.
@@ -156,7 +156,7 @@ document.documentElement.dataset.theme =
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="custom-theme">
-        <p className="text-xs font-semibold uppercase color-gray-50">Custom</p>
+        <p className="text-xs font-semibold uppercase">Custom</p>
         <h2>Creating a Custom Theme</h2>
         <p>
           Define a new <code>data-theme</code> value and override the
@@ -179,40 +179,40 @@ document.documentElement.dataset.theme =
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="accessibility">
-        <p className="text-xs font-semibold uppercase color-gray-50">A11y</p>
+        <p className="text-xs font-semibold uppercase">A11y</p>
         <h2>Accessibility Features</h2>
         <p>ply includes these accessibility features by default — no configuration needed.</p>
 
         <div className="units-row">
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Focus Visible</h3>
-              <p className="text-sm color-gray-60 no-margin">All interactive elements show clear <code>:focus-visible</code> outlines for keyboard navigation.</p>
+              <p className="text-sm no-margin">All interactive elements show clear <code>:focus-visible</code> outlines for keyboard navigation.</p>
             </div>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Reduced Motion</h3>
-              <p className="text-sm color-gray-60 no-margin">Animations respect <code>prefers-reduced-motion</code> — disabled automatically for users who prefer it.</p>
+              <p className="text-sm no-margin">Animations respect <code>prefers-reduced-motion</code> — disabled automatically for users who prefer it.</p>
             </div>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Color Contrast</h3>
-              <p className="text-sm color-gray-60 no-margin">All default color combinations meet WCAG AA contrast requirements out of the box.</p>
+              <p className="text-sm no-margin">All default color combinations meet WCAG AA contrast requirements out of the box.</p>
             </div>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Screen Reader</h3>
-              <p className="text-sm color-gray-60 no-margin">The <code>sr-only</code> class hides content visually while keeping it accessible to assistive technology.</p>
+              <p className="text-sm no-margin">The <code>sr-only</code> class hides content visually while keeping it accessible to assistive technology.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="bundles">
-        <p className="text-xs font-semibold uppercase color-gray-50">Bundles</p>
+        <p className="text-xs font-semibold uppercase">Bundles</p>
         <h2>Bundle Options</h2>
         <p>Choose the right bundle for your project size requirements.</p>
 
@@ -221,28 +221,28 @@ document.documentElement.dataset.theme =
             <div className="border border-radius padding text-center bottom-margin">
               <p className="text-3xl font-bold">~18KB</p>
               <p className="text-sm">ply.min.css</p>
-              <p className="text-xs color-gray-50">Everything</p>
+              <p className="text-xs">Everything</p>
             </div>
           </div>
           <div className="unit-25 tablet-unit-50 phone-unit-100">
             <div className="border border-radius padding text-center bottom-margin">
               <p className="text-3xl font-bold">~16KB</p>
               <p className="text-sm">ply-core.min.css</p>
-              <p className="text-xs color-gray-50">Core features</p>
+              <p className="text-xs">Core features</p>
             </div>
           </div>
           <div className="unit-25 tablet-unit-50 phone-unit-100">
             <div className="border border-radius padding text-center bottom-margin">
               <p className="text-3xl font-bold">~5KB</p>
               <p className="text-sm">ply-essentials.min.css</p>
-              <p className="text-xs color-gray-50">Grid + helpers</p>
+              <p className="text-xs">Grid + helpers</p>
             </div>
           </div>
           <div className="unit-25 tablet-unit-50 phone-unit-100">
             <div className="border border-radius padding text-center bottom-margin">
               <p className="text-3xl font-bold">~3KB</p>
               <p className="text-sm">ply-helpers.min.css</p>
-              <p className="text-xs color-gray-50">Helpers only</p>
+              <p className="text-xs">Helpers only</p>
             </div>
           </div>
         </div>
@@ -261,21 +261,21 @@ document.documentElement.dataset.theme =
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="ai">
-        <p className="text-xs font-semibold uppercase color-gray-50">AI</p>
+        <p className="text-xs font-semibold uppercase">AI</p>
         <h2>AI Integration</h2>
         <p>ply ships with machine-readable files so AI agents can use it without reading documentation.</p>
 
         <div className="units-row">
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">PLY.md</h3>
-              <p className="text-sm color-gray-60 no-margin">Complete class reference, usage rules, anti-patterns, and copy-paste snippets in a Markdown format that AI agents parse natively.</p>
+              <p className="text-sm no-margin">Complete class reference, usage rules, anti-patterns, and copy-paste snippets in a Markdown format that AI agents parse natively.</p>
             </div>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">ply-classes.json</h3>
-              <p className="text-sm color-gray-60 no-margin">Machine-readable JSON class map with categories, descriptions, and examples. Perfect for programmatic tool use.</p>
+              <p className="text-sm no-margin">Machine-readable JSON class map with categories, descriptions, and examples. Perfect for programmatic tool use.</p>
             </div>
           </div>
         </div>

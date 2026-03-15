@@ -4,16 +4,16 @@ export default function TypographyPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Design</p>
+        <p className="text-xs font-semibold uppercase">Design</p>
         <h1>Typography</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           A complete type scale from 12px to 60px with weight, alignment, and line-height utilities.
           Semantic HTML elements are styled automatically.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="scale">
-        <p className="text-xs font-semibold uppercase color-gray-50">Scale</p>
+        <p className="text-xs font-semibold uppercase">Scale</p>
         <h2>Text Sizes</h2>
 
         <div className="border border-radius padding">
@@ -34,7 +34,7 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="headings">
-        <p className="text-xs font-semibold uppercase color-gray-50">Headings</p>
+        <p className="text-xs font-semibold uppercase">Headings</p>
         <h2>Heading Elements & Classes</h2>
         <p>
           Native heading elements are styled automatically. Use <code>.h1</code> through <code>.h6</code> classes
@@ -61,7 +61,7 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="weights">
-        <p className="text-xs font-semibold uppercase color-gray-50">Weight</p>
+        <p className="text-xs font-semibold uppercase">Weight</p>
         <h2>Font Weights</h2>
 
         <div className="border border-radius padding">
@@ -76,7 +76,7 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="styles">
-        <p className="text-xs font-semibold uppercase color-gray-50">Styles</p>
+        <p className="text-xs font-semibold uppercase">Styles</p>
         <h2>Text Styles</h2>
 
         <div className="border border-radius padding">
@@ -88,7 +88,7 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="alignment">
-        <p className="text-xs font-semibold uppercase color-gray-50">Alignment</p>
+        <p className="text-xs font-semibold uppercase">Alignment</p>
         <h2>Text Alignment</h2>
 
         <div className="border border-radius padding">
@@ -102,12 +102,12 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="line-height">
-        <p className="text-xs font-semibold uppercase color-gray-50">Line Height</p>
+        <p className="text-xs font-semibold uppercase">Line Height</p>
         <h2>Leading</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50">
+            <div className="unit-50 tablet-unit-100">
               <p className="leading-tight border padding bottom-margin">
                 <strong>leading-tight (1.25)</strong><br />
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
@@ -117,7 +117,7 @@ export default function TypographyPage() {
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
               </p>
             </div>
-            <div className="unit-50">
+            <div className="unit-50 tablet-unit-100">
               <p className="leading-normal border padding bottom-margin">
                 <strong>leading-normal (1.5)</strong><br />
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
@@ -132,7 +132,7 @@ export default function TypographyPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="semantic">
-        <p className="text-xs font-semibold uppercase color-gray-50">Semantic</p>
+        <p className="text-xs font-semibold uppercase">Semantic</p>
         <h2>Native HTML Elements</h2>
         <p>These elements are styled automatically without classes.</p>
 
@@ -172,7 +172,7 @@ function hello() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="details">
-        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
+        <p className="text-xs font-semibold uppercase">Interactive</p>
         <h2>Details & Summary</h2>
         <p>Styled accordion using native HTML elements.</p>
 

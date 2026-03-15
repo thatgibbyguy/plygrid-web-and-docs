@@ -4,16 +4,16 @@ export default function ButtonsPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
+        <p className="text-xs font-semibold uppercase">Interactive</p>
         <h1>Buttons</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           Six color variants, four sizes, outline and active states, button groups, and full-width options.
           All accessible with proper focus states.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="colors">
-        <p className="text-xs font-semibold uppercase color-gray-50">Colors</p>
+        <p className="text-xs font-semibold uppercase">Colors</p>
         <h2>Color Variants</h2>
 
         <div className="border border-radius padding">
@@ -35,7 +35,7 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="outline">
-        <p className="text-xs font-semibold uppercase color-gray-50">Variants</p>
+        <p className="text-xs font-semibold uppercase">Variants</p>
         <h2>Outline Buttons</h2>
 
         <div className="border border-radius padding">
@@ -48,7 +48,7 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="sizes">
-        <p className="text-xs font-semibold uppercase color-gray-50">Sizes</p>
+        <p className="text-xs font-semibold uppercase">Sizes</p>
         <h2>Button Sizes</h2>
 
         <div className="border border-radius padding">
@@ -72,7 +72,7 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="states">
-        <p className="text-xs font-semibold uppercase color-gray-50">States</p>
+        <p className="text-xs font-semibold uppercase">States</p>
         <h2>Active & Disabled</h2>
 
         <div className="border border-radius padding">
@@ -87,7 +87,7 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="shapes">
-        <p className="text-xs font-semibold uppercase color-gray-50">Shapes</p>
+        <p className="text-xs font-semibold uppercase">Shapes</p>
         <h2>Square / Straight Buttons</h2>
 
         <div className="border border-radius padding">
@@ -99,7 +99,7 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="groups">
-        <p className="text-xs font-semibold uppercase color-gray-50">Groups</p>
+        <p className="text-xs font-semibold uppercase">Groups</p>
         <h2>Button Groups</h2>
 
         <div className="border border-radius padding">
@@ -153,12 +153,12 @@ export default function ButtonsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="full-width">
-        <p className="text-xs font-semibold uppercase color-gray-50">Layout</p>
+        <p className="text-xs font-semibold uppercase">Layout</p>
         <h2>Full Width Buttons</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50">
+            <div className="unit-50 tablet-unit-100">
               <button className="btn btn-blue width-100">Full Width Primary</button>
               <div className="bottom-margin"></div>
               <button className="btn btn-outline width-100">Full Width Outline</button>

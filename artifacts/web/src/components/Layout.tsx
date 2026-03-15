@@ -54,7 +54,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               </ul>
             </nav>
           </div>
-          <div className="padding-left padding-right">
+          <div className="unit-auto padding-left padding-right">
             <div className="form-inline">
               <select
                 className="input-xs select-outlined"
@@ -73,16 +73,16 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <main className="padding-top--extra margin-top--extra">{children}</main>
 
-      <footer className="border-top padding-top--extra padding-bottom--extra color-gray-50 text-sm">
+      <footer className="border-top padding-top--extra padding-bottom--extra text-sm">
         <div className="units-container">
           <div className="units-row">
-            <div className="unit-50">
+            <div className="unit-50 tablet-unit-100">
               <p>
                 <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
               </p>
               <p>MIT License. Built for humans and machines.</p>
             </div>
-            <div className="unit-50 text-right">
+            <div className="unit-50 tablet-unit-100 text-right">
               <p>~18KB gzipped. No JavaScript. No build step.</p>
               <p>
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">

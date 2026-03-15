@@ -4,16 +4,16 @@ export default function HelpersPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Utilities</p>
+        <p className="text-xs font-semibold uppercase">Utilities</p>
         <h1>Helpers</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           A comprehensive set of utility classes for spacing, display, position, visibility, borders,
           width/height, colors, and more.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="display">
-        <p className="text-xs font-semibold uppercase color-gray-50">Display</p>
+        <p className="text-xs font-semibold uppercase">Display</p>
         <h2>Display Utilities</h2>
 
         <table>
@@ -33,7 +33,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="position">
-        <p className="text-xs font-semibold uppercase color-gray-50">Position</p>
+        <p className="text-xs font-semibold uppercase">Position</p>
         <h2>Position Utilities</h2>
 
         <table>
@@ -51,11 +51,11 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="spacing">
-        <p className="text-xs font-semibold uppercase color-gray-50">Spacing</p>
+        <p className="text-xs font-semibold uppercase">Spacing</p>
         <h2>Margin & Padding</h2>
 
         <div className="units-row">
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <h3>Margin</h3>
             <table className="table-stroked">
               <tbody>
@@ -72,7 +72,7 @@ export default function HelpersPage() {
               </tbody>
             </table>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <h3>Padding</h3>
             <table className="table-stroked">
               <tbody>
@@ -92,17 +92,17 @@ export default function HelpersPage() {
         <h3>Visual Demo</h3>
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-33">
+            <div className="unit-33 tablet-unit-100">
               <div className="padding border border-radius bottom-margin">
                 <code>.padding</code>
               </div>
             </div>
-            <div className="unit-33">
+            <div className="unit-33 tablet-unit-100">
               <div className="padding-top padding-bottom border border-radius bottom-margin">
                 <code>.padding-top .padding-bottom</code>
               </div>
             </div>
-            <div className="unit-33">
+            <div className="unit-33 tablet-unit-100">
               <div className="margin border border-radius padding bottom-margin">
                 <code>.margin</code>
               </div>
@@ -112,7 +112,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="borders">
-        <p className="text-xs font-semibold uppercase color-gray-50">Borders</p>
+        <p className="text-xs font-semibold uppercase">Borders</p>
         <h2>Border Utilities</h2>
 
         <div className="border border-radius padding">
@@ -139,7 +139,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="width-height">
-        <p className="text-xs font-semibold uppercase color-gray-50">Dimensions</p>
+        <p className="text-xs font-semibold uppercase">Dimensions</p>
         <h2>Width & Height</h2>
 
         <p>
@@ -151,7 +151,7 @@ export default function HelpersPage() {
         <div className="border border-radius padding">
           {[100, 80, 60, 40, 20].map((w) => (
             <div key={w} className={`width-${w} bottom-margin`}>
-              <div className="alert alert-blue text-center text-sm no-margin">width-{w}</div>
+              <div className="border border-radius padding text-center text-sm">width-{w}</div>
             </div>
           ))}
         </div>
@@ -163,7 +163,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="visibility">
-        <p className="text-xs font-semibold uppercase color-gray-50">Visibility</p>
+        <p className="text-xs font-semibold uppercase">Visibility</p>
         <h2>Show & Hide</h2>
 
         <table>
@@ -180,7 +180,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="colors">
-        <p className="text-xs font-semibold uppercase color-gray-50">Colors</p>
+        <p className="text-xs font-semibold uppercase">Colors</p>
         <h2>Color Utilities</h2>
 
         <div className="border border-radius padding">
@@ -196,7 +196,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="animation">
-        <p className="text-xs font-semibold uppercase color-gray-50">Animation</p>
+        <p className="text-xs font-semibold uppercase">Animation</p>
         <h2>Animation Utilities</h2>
 
         <div className="border border-radius padding">
@@ -218,7 +218,7 @@ export default function HelpersPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="misc">
-        <p className="text-xs font-semibold uppercase color-gray-50">Miscellaneous</p>
+        <p className="text-xs font-semibold uppercase">Miscellaneous</p>
         <h2>Other Utilities</h2>
 
         <table>

@@ -4,21 +4,21 @@ export default function FormsPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Input</p>
+        <p className="text-xs font-semibold uppercase">Input</p>
         <h1>Forms</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           Wrap your form in a <code>.form</code> class to enable ply styling.
           Inputs, selects, textareas, checkboxes, and radios are all covered.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="basic">
-        <p className="text-xs font-semibold uppercase color-gray-50">Basics</p>
+        <p className="text-xs font-semibold uppercase">Basics</p>
         <h2>Standard Form</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-60">
+            <div className="unit-60 tablet-unit-100">
               <form className="form" onSubmit={(e) => e.preventDefault()}>
                 <label>
                   Full Name
@@ -61,7 +61,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="sizes">
-        <p className="text-xs font-semibold uppercase color-gray-50">Sizes</p>
+        <p className="text-xs font-semibold uppercase">Sizes</p>
         <h2>Input Sizes</h2>
 
         <div className="border border-radius padding">
@@ -87,7 +87,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="states">
-        <p className="text-xs font-semibold uppercase color-gray-50">Validation</p>
+        <p className="text-xs font-semibold uppercase">Validation</p>
         <h2>Input States</h2>
 
         <div className="border border-radius padding">
@@ -113,7 +113,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="input-groups">
-        <p className="text-xs font-semibold uppercase color-gray-50">Groups</p>
+        <p className="text-xs font-semibold uppercase">Groups</p>
         <h2>Input Groups</h2>
 
         <div className="border border-radius padding">
@@ -146,13 +146,13 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="select">
-        <p className="text-xs font-semibold uppercase color-gray-50">Select</p>
+        <p className="text-xs font-semibold uppercase">Select</p>
         <h2>Select Elements</h2>
 
         <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <label>
                   Default Select
                   <select>
@@ -162,7 +162,7 @@ export default function FormsPage() {
                   </select>
                 </label>
               </div>
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <label>
                   Outlined Select
                   <select className="select-outlined">
@@ -178,20 +178,20 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="checkboxes">
-        <p className="text-xs font-semibold uppercase color-gray-50">Controls</p>
+        <p className="text-xs font-semibold uppercase">Controls</p>
         <h2>Checkboxes & Radios</h2>
 
         <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <h4>Checkboxes</h4>
                 <label><input type="checkbox" defaultChecked /> Grid System</label>
                 <label><input type="checkbox" defaultChecked /> Typography</label>
                 <label><input type="checkbox" /> Forms</label>
                 <label><input type="checkbox" /> Navigation</label>
               </div>
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <h4>Radio Buttons</h4>
                 <label><input type="radio" name="plan" defaultChecked /> Starter</label>
                 <label><input type="radio" name="plan" /> Professional</label>
@@ -203,20 +203,20 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="types">
-        <p className="text-xs font-semibold uppercase color-gray-50">Input Types</p>
+        <p className="text-xs font-semibold uppercase">Input Types</p>
         <h2>All Input Types</h2>
 
         <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <label>Text<input type="text" placeholder="Text input" /></label>
                 <label>Password<input type="password" placeholder="Password" /></label>
                 <label>Number<input type="number" placeholder="42" /></label>
                 <label>Date<input type="date" /></label>
                 <label>Time<input type="time" /></label>
               </div>
-              <div className="unit-50">
+              <div className="unit-50 tablet-unit-100">
                 <label>URL<input type="url" placeholder="https://example.com" /></label>
                 <label>Tel<input type="tel" placeholder="+1 (555) 000-0000" /></label>
                 <label>Search<input type="search" placeholder="Search..." /></label>
@@ -229,7 +229,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="progress">
-        <p className="text-xs font-semibold uppercase color-gray-50">Progress</p>
+        <p className="text-xs font-semibold uppercase">Progress</p>
         <h2>Progress & Meter</h2>
 
         <div className="border border-radius padding">
@@ -242,7 +242,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="layouts">
-        <p className="text-xs font-semibold uppercase color-gray-50">Layouts</p>
+        <p className="text-xs font-semibold uppercase">Layouts</p>
         <h2>Form Layouts</h2>
 
         <h3>Inline Form</h3>
@@ -262,7 +262,7 @@ export default function FormsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="dialog">
-        <p className="text-xs font-semibold uppercase color-gray-50">Modal</p>
+        <p className="text-xs font-semibold uppercase">Modal</p>
         <h2>Dialog Element</h2>
         <p>Native HTML dialog element, styled automatically by ply.</p>
 

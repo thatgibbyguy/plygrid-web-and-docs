@@ -10,15 +10,15 @@ export default function AlertsPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Feedback</p>
+        <p className="text-xs font-semibold uppercase">Feedback</p>
         <h1>Alerts & Notifications</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           Five color variants with solid, outline, and ghost styles. Dismissible with an accessible close button.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="solid">
-        <p className="text-xs font-semibold uppercase color-gray-50">Solid</p>
+        <p className="text-xs font-semibold uppercase">Solid</p>
         <h2>Standard Alerts</h2>
 
         <div className="border border-radius padding">
@@ -54,7 +54,7 @@ export default function AlertsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="outline">
-        <p className="text-xs font-semibold uppercase color-gray-50">Outline</p>
+        <p className="text-xs font-semibold uppercase">Outline</p>
         <h2>Outlined Alerts</h2>
         <p>Tinted background with a full border using <code>alert-outline</code>.</p>
 
@@ -82,7 +82,7 @@ export default function AlertsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="ghost">
-        <p className="text-xs font-semibold uppercase color-gray-50">Ghost</p>
+        <p className="text-xs font-semibold uppercase">Ghost</p>
         <h2>Ghost Alerts</h2>
         <p>Transparent background with border only using <code>alert-ghost</code>.</p>
 
@@ -100,7 +100,7 @@ export default function AlertsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="dismissible">
-        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
+        <p className="text-xs font-semibold uppercase">Interactive</p>
         <h2>Dismissible Alerts</h2>
         <p>
           Add an <code>alert-dismiss</code> button to make alerts closeable.
@@ -146,7 +146,7 @@ export default function AlertsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="labels">
-        <p className="text-xs font-semibold uppercase color-gray-50">Labels</p>
+        <p className="text-xs font-semibold uppercase">Labels</p>
         <h2>Inline Labels</h2>
 
         <div className="border border-radius padding">
@@ -165,7 +165,7 @@ export default function AlertsPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="status">
-        <p className="text-xs font-semibold uppercase color-gray-50">Status</p>
+        <p className="text-xs font-semibold uppercase">Status</p>
         <h2>Success & Error Text</h2>
 
         <div className="border border-radius padding">

@@ -112,9 +112,11 @@ Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Sw
   - `src/pages/` — all 10 page components
 - **Common ply class patterns used**:
   - Demo containers: `border border-radius padding`
-  - Section labels: `text-xs font-semibold uppercase color-gray-50`
-  - Page subtitles: `lead color-gray-60`
-  - Grid demo cells: `alert alert-blue text-center text-sm no-margin`
+  - Section labels: `text-xs font-semibold uppercase`
+  - Page subtitles: `lead` (no color override — ply handles text color via CSS custom properties)
+  - Grid demo cells: `border border-radius padding text-center text-sm` (NOT alerts)
   - Section separators: `padding-top--extra padding-bottom--extra border-bottom`
   - Feature cards: `border border-radius padding bottom-margin`
+  - Links styled as buttons: `<Link className="btn btn-blue">` (never nest `<button>` inside `<Link>` or `<a>`)
+- **Dark mode safe**: No `color-gray-*` on body text — those classes use `rgba(0,0,0,*)` which is invisible on dark backgrounds. Color utilities are only demonstrated in the Helpers page color section.
 - **pnpm-workspace.yaml**: includes `minimumReleaseAgeExclude: - plygrid` to bypass release age policy

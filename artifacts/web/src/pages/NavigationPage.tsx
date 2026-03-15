@@ -4,16 +4,16 @@ export default function NavigationPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Wayfinding</p>
+        <p className="text-xs font-semibold uppercase">Wayfinding</p>
         <h1>Navigation</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           Horizontal navbars, pill navigation, tabs, stacked vertical nav, breadcrumbs, and pagination.
           All built on semantic HTML.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="navbar">
-        <p className="text-xs font-semibold uppercase color-gray-50">Horizontal</p>
+        <p className="text-xs font-semibold uppercase">Horizontal</p>
         <h2>Navbar</h2>
 
         <div className="border border-radius padding">
@@ -37,7 +37,7 @@ export default function NavigationPage() {
 
         <h3>Navbar Alignment</h3>
         <div className="border border-radius padding">
-          <p className="text-sm color-gray-50">Centered</p>
+          <p className="text-sm">Centered</p>
           <nav className="navbar navbar--centered">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -46,7 +46,7 @@ export default function NavigationPage() {
             </ul>
           </nav>
           <div className="bottom-margin--extra"></div>
-          <p className="text-sm color-gray-50">Right-aligned</p>
+          <p className="text-sm">Right-aligned</p>
           <nav className="navbar navbar--right">
             <ul>
               <li className="active"><a href="#">Home</a></li>
@@ -58,7 +58,7 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="pills">
-        <p className="text-xs font-semibold uppercase color-gray-50">Pills</p>
+        <p className="text-xs font-semibold uppercase">Pills</p>
         <h2>Pill Navigation</h2>
 
         <div className="border border-radius padding">
@@ -82,7 +82,7 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="tabs">
-        <p className="text-xs font-semibold uppercase color-gray-50">Tabs</p>
+        <p className="text-xs font-semibold uppercase">Tabs</p>
         <h2>Tab Navigation</h2>
 
         <div className="border border-radius padding">
@@ -106,12 +106,12 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="stacked">
-        <p className="text-xs font-semibold uppercase color-gray-50">Vertical</p>
+        <p className="text-xs font-semibold uppercase">Vertical</p>
         <h2>Stacked Navigation</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-33">
+            <div className="unit-33 tablet-unit-100">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Dashboard</a></li>
@@ -135,7 +135,7 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="breadcrumbs">
-        <p className="text-xs font-semibold uppercase color-gray-50">Breadcrumbs</p>
+        <p className="text-xs font-semibold uppercase">Breadcrumbs</p>
         <h2>Breadcrumb Navigation</h2>
 
         <div className="border border-radius padding">
@@ -159,7 +159,7 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="pagination">
-        <p className="text-xs font-semibold uppercase color-gray-50">Pagination</p>
+        <p className="text-xs font-semibold uppercase">Pagination</p>
         <h2>Page Navigation</h2>
 
         <div className="border border-radius padding">
@@ -184,7 +184,7 @@ export default function NavigationPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="combined">
-        <p className="text-xs font-semibold uppercase color-gray-50">Pattern</p>
+        <p className="text-xs font-semibold uppercase">Pattern</p>
         <h2>Dashboard Layout</h2>
         <p>Combining navbar with stacked sidebar navigation and content area.</p>
 
@@ -197,7 +197,7 @@ export default function NavigationPage() {
             </ul>
           </nav>
           <div className="units-row margin-top--extra">
-            <aside className="unit-20">
+            <aside className="unit-20 tablet-unit-100">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Overview</a></li>
@@ -206,28 +206,28 @@ export default function NavigationPage() {
                 </ul>
               </nav>
             </aside>
-            <main className="unit-80">
+            <div className="unit-80 tablet-unit-100">
               <div className="units-row">
-                <div className="unit-33">
+                <div className="unit-33 tablet-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Revenue</h4>
                     <p className="text-3xl font-bold">$12,340</p>
                   </div>
                 </div>
-                <div className="unit-33">
+                <div className="unit-33 tablet-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Users</h4>
                     <p className="text-3xl font-bold">1,234</p>
                   </div>
                 </div>
-                <div className="unit-33">
+                <div className="unit-33 tablet-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Orders</h4>
                     <p className="text-3xl font-bold">567</p>
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
           </div>
         </div>
       </section>

@@ -4,16 +4,16 @@ export default function GridPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Layout</p>
+        <p className="text-xs font-semibold uppercase">Layout</p>
         <h1>Grid System</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           A ratio-based flexbox grid. Think in percentages — unit-50 is 50%, unit-33 is 33%.
           Responsive prefixes handle every breakpoint.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="basic">
-        <p className="text-xs font-semibold uppercase color-gray-50">Basics</p>
+        <p className="text-xs font-semibold uppercase">Basics</p>
         <h2>Container, Row, and Units</h2>
         <p>
           Wrap content in <code>units-container</code> (max-width 1200px, centered),
@@ -23,40 +23,40 @@ export default function GridPage() {
         <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-100">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-100</div>
+              <div className="border border-radius padding text-center text-sm">unit-100</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-50">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-50</div>
+              <div className="border border-radius padding text-center text-sm">unit-50</div>
             </div>
             <div className="unit-50">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-50</div>
+              <div className="border border-radius padding text-center text-sm">unit-50</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-33">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
+              <div className="border border-radius padding text-center text-sm">unit-33</div>
             </div>
             <div className="unit-33">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
+              <div className="border border-radius padding text-center text-sm">unit-33</div>
             </div>
             <div className="unit-33">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-33</div>
+              <div className="border border-radius padding text-center text-sm">unit-33</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
+              <div className="border border-radius padding text-center text-sm">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
+              <div className="border border-radius padding text-center text-sm">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
+              <div className="border border-radius padding text-center text-sm">unit-25</div>
             </div>
             <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-25</div>
+              <div className="border border-radius padding text-center text-sm">unit-25</div>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function GridPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="all-widths">
-        <p className="text-xs font-semibold uppercase color-gray-50">Widths</p>
+        <p className="text-xs font-semibold uppercase">Widths</p>
         <h2>All Available Widths</h2>
         <p>Every ratio from 10% to 100% in logical increments.</p>
 
@@ -78,7 +78,7 @@ export default function GridPage() {
           {[10, 20, 25, 30, 33, 35, 40, 50, 60, 65, 66, 70, 75, 80, 90, 100].map((w) => (
             <div className="units-row" key={w}>
               <div className={`unit-${w}`}>
-                <div className="alert alert-blue text-center text-sm no-margin">unit-{w}</div>
+                <div className="border border-radius padding text-center text-sm">unit-{w}</div>
               </div>
             </div>
           ))}
@@ -86,50 +86,50 @@ export default function GridPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="mixed">
-        <p className="text-xs font-semibold uppercase color-gray-50">Combinations</p>
+        <p className="text-xs font-semibold uppercase">Combinations</p>
         <h2>Mixed Widths</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">25%</div>
+              <div className="border border-radius padding text-center text-sm">25%</div>
             </div>
             <div className="unit-75">
-              <div className="alert alert-blue text-center text-sm no-margin">75%</div>
+              <div className="border border-radius padding text-center text-sm">75%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-30">
-              <div className="alert alert-blue text-center text-sm no-margin">30%</div>
+              <div className="border border-radius padding text-center text-sm">30%</div>
             </div>
             <div className="unit-70">
-              <div className="alert alert-blue text-center text-sm no-margin">70%</div>
+              <div className="border border-radius padding text-center text-sm">70%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-40">
-              <div className="alert alert-blue text-center text-sm no-margin">40%</div>
+              <div className="border border-radius padding text-center text-sm">40%</div>
             </div>
             <div className="unit-60">
-              <div className="alert alert-blue text-center text-sm no-margin">60%</div>
+              <div className="border border-radius padding text-center text-sm">60%</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-20">
-              <div className="alert alert-blue text-center text-sm no-margin">20%</div>
+              <div className="border border-radius padding text-center text-sm">20%</div>
             </div>
             <div className="unit-60">
-              <div className="alert alert-blue text-center text-sm no-margin">60%</div>
+              <div className="border border-radius padding text-center text-sm">60%</div>
             </div>
             <div className="unit-20">
-              <div className="alert alert-blue text-center text-sm no-margin">20%</div>
+              <div className="border border-radius padding text-center text-sm">20%</div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="nested">
-        <p className="text-xs font-semibold uppercase color-gray-50">Nesting</p>
+        <p className="text-xs font-semibold uppercase">Nesting</p>
         <h2>Nested Grids</h2>
         <p>
           Place a <code>units-row</code> inside any unit for complex layouts.
@@ -140,15 +140,15 @@ export default function GridPage() {
             <div className="unit-50">
               <div className="units-row">
                 <div className="unit-50">
-                  <div className="alert alert-blue text-center text-sm no-margin">Quarter A</div>
+                  <div className="border border-radius padding text-center text-sm">Quarter A</div>
                 </div>
                 <div className="unit-50">
-                  <div className="alert alert-blue text-center text-sm no-margin">Quarter B</div>
+                  <div className="border border-radius padding text-center text-sm">Quarter B</div>
                 </div>
               </div>
             </div>
             <div className="unit-50">
-              <div className="alert alert-blue text-center text-sm no-margin fill-height">Half</div>
+              <div className="border border-radius padding text-center text-sm fill-height">Half</div>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function GridPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="responsive">
-        <p className="text-xs font-semibold uppercase color-gray-50">Responsive</p>
+        <p className="text-xs font-semibold uppercase">Responsive</p>
         <h2>Responsive Prefixes</h2>
         <p>Override the base width at specific breakpoints. Resize your browser to see the effect.</p>
 
@@ -189,23 +189,23 @@ export default function GridPage() {
 
         <div className="border border-radius padding margin-top--extra">
           <div className="units-row">
-            <div className="unit-25">
-              <div className="alert alert-blue text-center text-sm no-margin">Sidebar (stacks on tablet)</div>
+            <div className="unit-25 tablet-unit-100">
+              <div className="border border-radius padding text-center text-sm">Sidebar (stacks on tablet)</div>
             </div>
-            <div className="unit-75">
-              <div className="alert alert-blue text-center text-sm no-margin">Content (stacks on tablet)</div>
+            <div className="unit-75 tablet-unit-100">
+              <div className="border border-radius padding text-center text-sm">Content (stacks on tablet)</div>
             </div>
           </div>
         </div>
 
         <CodeBlock code={`<div class="units-row">
-  <div class="unit-25">Sidebar</div>
-  <div class="unit-75">Content</div>
+  <div class="unit-25 tablet-unit-100">Sidebar</div>
+  <div class="unit-75 tablet-unit-100">Content</div>
 </div>`} />
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="modifiers">
-        <p className="text-xs font-semibold uppercase color-gray-50">Modifiers</p>
+        <p className="text-xs font-semibold uppercase">Modifiers</p>
         <h2>Row & Unit Modifiers</h2>
 
         <h3>Row Modifiers</h3>
@@ -224,31 +224,31 @@ export default function GridPage() {
         <h3>Reversed Row</h3>
         <div className="border border-radius padding">
           <div className="units-row reverse-direction">
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">First</div></div>
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">Second</div></div>
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">Third</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">First</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">Second</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">Third</div></div>
           </div>
         </div>
 
         <h3>Centered Content</h3>
         <div className="border border-radius padding">
           <div className="units-row centered-content">
-            <div className="unit-30"><div className="alert alert-blue text-center text-sm no-margin">Centered 30%</div></div>
+            <div className="unit-30"><div className="border border-radius padding text-center text-sm">Centered 30%</div></div>
           </div>
         </div>
 
         <h3>Split (No Gutters)</h3>
         <div className="border border-radius padding">
           <div className="units-row split">
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
-            <div className="unit-33"><div className="alert alert-blue text-center text-sm no-margin">No gap</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">No gap</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">No gap</div></div>
+            <div className="unit-33"><div className="border border-radius padding text-center text-sm">No gap</div></div>
           </div>
         </div>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="offsets">
-        <p className="text-xs font-semibold uppercase color-gray-50">Offsets</p>
+        <p className="text-xs font-semibold uppercase">Offsets</p>
         <h2>Push Units</h2>
         <p>
           Use <code>unit-push-*</code> to offset units with margin-left.
@@ -257,19 +257,19 @@ export default function GridPage() {
         <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-33 unit-push-33">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-33 push-33</div>
+              <div className="border border-radius padding text-center text-sm">unit-33 push-33</div>
             </div>
           </div>
           <div className="units-row">
             <div className="unit-50 unit-push-25">
-              <div className="alert alert-blue text-center text-sm no-margin">unit-50 push-25</div>
+              <div className="border border-radius padding text-center text-sm">unit-50 push-25</div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="fullwidth">
-        <p className="text-xs font-semibold uppercase color-gray-50">Full Width</p>
+        <p className="text-xs font-semibold uppercase">Full Width</p>
         <h2>Fill Width Container</h2>
         <p>
           Add <code>fill-width</code> to <code>units-container</code> for

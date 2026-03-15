@@ -12,16 +12,16 @@ export default function TablesPage() {
   return (
     <div className="units-container">
       <section className="padding-top--extra padding-bottom--extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-gray-50">Data</p>
+        <p className="text-xs font-semibold uppercase">Data</p>
         <h1>Tables</h1>
-        <p className="lead color-gray-60">
+        <p className="lead">
           Tables are styled automatically with semantic HTML. Add modifier classes for bordered, striped,
           hoverable, and simple variants.
         </p>
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="default">
-        <p className="text-xs font-semibold uppercase color-gray-50">Default</p>
+        <p className="text-xs font-semibold uppercase">Default</p>
         <h2>Standard Table</h2>
 
         <div className="border border-radius padding">
@@ -49,7 +49,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="bordered">
-        <p className="text-xs font-semibold uppercase color-gray-50">Bordered</p>
+        <p className="text-xs font-semibold uppercase">Bordered</p>
         <h2>Bordered Table</h2>
 
         <div className="border border-radius padding">
@@ -86,7 +86,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="striped">
-        <p className="text-xs font-semibold uppercase color-gray-50">Striped</p>
+        <p className="text-xs font-semibold uppercase">Striped</p>
         <h2>Striped Table</h2>
 
         <div className="border border-radius padding">
@@ -118,7 +118,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="hoverable">
-        <p className="text-xs font-semibold uppercase color-gray-50">Interactive</p>
+        <p className="text-xs font-semibold uppercase">Interactive</p>
         <h2>Hoverable Table</h2>
         <p>Hover over the rows to see the highlight effect.</p>
 
@@ -147,11 +147,11 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="simple">
-        <p className="text-xs font-semibold uppercase color-gray-50">Minimal</p>
+        <p className="text-xs font-semibold uppercase">Minimal</p>
         <h2>Simple & Stroked Tables</h2>
 
         <div className="units-row">
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <h3>Simple (no borders, no left padding)</h3>
             <div className="border border-radius padding">
               <table className="table-simple">
@@ -164,7 +164,7 @@ export default function TablesPage() {
               </table>
             </div>
           </div>
-          <div className="unit-50">
+          <div className="unit-50 tablet-unit-100">
             <h3>Stroked (bottom borders only)</h3>
             <div className="border border-radius padding">
               <table className="table-stroked">
@@ -181,7 +181,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="flat">
-        <p className="text-xs font-semibold uppercase color-gray-50">Flat</p>
+        <p className="text-xs font-semibold uppercase">Flat</p>
         <h2>Flat Table</h2>
         <p>No borders and no padding with <code>table-flat</code>.</p>
 
@@ -203,7 +203,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra border-bottom" id="responsive">
-        <p className="text-xs font-semibold uppercase color-gray-50">Responsive</p>
+        <p className="text-xs font-semibold uppercase">Responsive</p>
         <h2>Responsive Table Container</h2>
         <p>
           Wrap tables in <code>table-container</code> for horizontal scrolling on small screens.
@@ -241,7 +241,7 @@ export default function TablesPage() {
       </section>
 
       <section className="padding-top--extra padding-bottom--extra" id="combined">
-        <p className="text-xs font-semibold uppercase color-gray-50">Combined</p>
+        <p className="text-xs font-semibold uppercase">Combined</p>
         <h2>Combined Modifiers</h2>
         <p>Classes can be combined for richer table styles.</p>
 
