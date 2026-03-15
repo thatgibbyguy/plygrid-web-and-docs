@@ -51,63 +51,57 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <header className="navigation-fixed width-100">
-        <div className="hide-on-mobile">
-        <div className="units-row no-margin align-middle">
-          <div className="unit-auto no-padding">
-            <nav className="navbar navbar--borderless">
-              <ul>
-                <li className={isHome ? "active" : ""}>
-                  <Link href="/" aria-label="Home">
-                    <Home size={16} />
-                  </Link>
-                </li>
-                <li className={location === "/grid" || location === "/typography" ? "active" : ""}>
-                  <Link href="/grid">Docs</Link>
-                </li>
-                <li className={location === "/controls" || location === "/navigation" || location === "/tables" ? "active" : ""}>
-                  <Link href="/controls">Components</Link>
-                </li>
-                <li className={location === "/utilities" ? "active" : ""}>
-                  <Link href="/utilities">Utilities</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div className="unit-auto no-padding padding-right">
-            <div className="btn-group">
-              <button
-                className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
-                onClick={() => setTheme("")}
-                aria-label="Auto theme"
-                title="System"
-              >
-                <Monitor size={14} />
-              </button>
-              <button
-                className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
-                onClick={() => setTheme("light")}
-                aria-label="Light theme"
-                title="Light"
-              >
-                <Sun size={14} />
-              </button>
-              <button
-                className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
-                onClick={() => setTheme("dark")}
-                aria-label="Dark theme"
-                title="Dark"
-              >
-                <Moon size={14} />
-              </button>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div className="hide-on-desktop">
-          <div className="units-row no-margin align-middle">
-            <div className="phone-unit-50 no-padding">
-              <div
-                className={`navigation-toggle${navOpen ? " navigation-toggle-show" : ""}`}
+        <nav className="navbar navbar--borderless hide-on-mobile">
+          <ul>
+            <li className={isHome ? "active" : ""}>
+              <Link href="/" aria-label="Home">
+                <Home size={16} />
+              </Link>
+            </li>
+            <li className={location === "/grid" || location === "/typography" ? "active" : ""}>
+              <Link href="/grid">Docs</Link>
+            </li>
+            <li className={location === "/controls" || location === "/navigation" || location === "/tables" ? "active" : ""}>
+              <Link href="/controls">Components</Link>
+            </li>
+            <li className={location === "/utilities" ? "active" : ""}>
+              <Link href="/utilities">Utilities</Link>
+            </li>
+            <li className="margin-left-auto">
+              <div className="btn-group">
+                <button
+                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("")}
+                  aria-label="Auto theme"
+                  title="System"
+                >
+                  <Monitor size={14} />
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("light")}
+                  aria-label="Light theme"
+                  title="Light"
+                >
+                  <Sun size={14} />
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("dark")}
+                  aria-label="Dark theme"
+                  title="Dark"
+                >
+                  <Moon size={14} />
+                </button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <nav className="navbar navbar--borderless hide-on-desktop">
+          <ul>
+            <li>
+              <span
+                className={`navigation-toggle display--inline-block${navOpen ? " navigation-toggle-show" : ""}`}
                 onClick={() => setNavOpen(!navOpen)}
                 role="button"
                 tabIndex={0}
@@ -121,9 +115,9 @@ export default function Layout({ children }: { children: ReactNode }) {
                 }}
               >
                 <span>Menu</span>
-              </div>
-            </div>
-            <div className="phone-unit-50 no-padding text-right padding-right">
+              </span>
+            </li>
+            <li className="margin-left-auto">
               <div className="btn-group">
                 <button
                   className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
@@ -147,8 +141,8 @@ export default function Layout({ children }: { children: ReactNode }) {
                   <Moon size={14} />
                 </button>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
           {navOpen && (
             <nav className="nav-stacked">
               <ul>
@@ -160,7 +154,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               </ul>
             </nav>
           )}
-        </div>
+        </nav>
       </header>
 
       <div className="padding-top--extra margin-top--extra">
