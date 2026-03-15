@@ -5,13 +5,10 @@ import { Home } from "lucide-react";
 const navLinks = [
   { path: "/grid", label: "Grid" },
   { path: "/typography", label: "Typography" },
-  { path: "/buttons", label: "Buttons" },
-  { path: "/forms", label: "Forms" },
+  { path: "/controls", label: "Controls" },
   { path: "/navigation", label: "Navigation" },
-  { path: "/alerts", label: "Alerts" },
   { path: "/tables", label: "Tables" },
-  { path: "/helpers", label: "Helpers" },
-  { path: "/theming", label: "Theming" },
+  { path: "/utilities", label: "Utilities" },
 ];
 
 export default function Layout({ children }: { children: ReactNode }) {

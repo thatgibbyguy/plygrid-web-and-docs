@@ -3,13 +3,10 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import GridPage from "./pages/GridPage";
 import TypographyPage from "./pages/TypographyPage";
-import ButtonsPage from "./pages/ButtonsPage";
-import FormsPage from "./pages/FormsPage";
+import ControlsPage from "./pages/ControlsPage";
 import NavigationPage from "./pages/NavigationPage";
-import AlertsPage from "./pages/AlertsPage";
 import TablesPage from "./pages/TablesPage";
-import HelpersPage from "./pages/HelpersPage";
-import ThemingPage from "./pages/ThemingPage";
+import UtilitiesPage from "./pages/UtilitiesPage";
 import NotFound from "./pages/not-found";
 
 function Router() {
@@ -19,13 +16,10 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/grid" component={GridPage} />
         <Route path="/typography" component={TypographyPage} />
-        <Route path="/buttons" component={ButtonsPage} />
-        <Route path="/forms" component={FormsPage} />
+        <Route path="/controls" component={ControlsPage} />
         <Route path="/navigation" component={NavigationPage} />
-        <Route path="/alerts" component={AlertsPage} />
         <Route path="/tables" component={TablesPage} />
-        <Route path="/helpers" component={HelpersPage} />
-        <Route path="/theming" component={ThemingPage} />
+        <Route path="/utilities" component={UtilitiesPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

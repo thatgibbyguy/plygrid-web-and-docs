@@ -12,14 +12,9 @@ const features = [
     path: "/typography",
   },
   {
-    title: "Buttons & Groups",
-    desc: "Six color variants, four sizes, outline/active/disabled states, and button groups.",
-    path: "/buttons",
-  },
-  {
-    title: "Form Controls",
-    desc: "Inputs, selects, textareas, checkboxes, radios — all styled with a single .form wrapper.",
-    path: "/forms",
+    title: "Controls",
+    desc: "Buttons, forms, alerts, and labels — six color variants, accessible inputs, dismissible notifications.",
+    path: "/controls",
   },
   {
     title: "Navigation",
@@ -27,24 +22,14 @@ const features = [
     path: "/navigation",
   },
   {
-    title: "Alerts & Labels",
-    desc: "Five color variants with solid, outline, and ghost styles. Dismissible notifications.",
-    path: "/alerts",
-  },
-  {
     title: "Data Tables",
     desc: "Bordered, striped, hoverable, and simple table variants with responsive containers.",
     path: "/tables",
   },
   {
-    title: "Helper Utilities",
-    desc: "Spacing, display, position, visibility, borders, width/height, and color utilities.",
-    path: "/helpers",
-  },
-  {
-    title: "Dark Mode & Theming",
-    desc: "Auto-detect OS preference or force light/dark. Full CSS custom property theming.",
-    path: "/theming",
+    title: "Utilities",
+    desc: "Spacing, display, visibility, borders, colors, dark mode, and CSS custom property theming.",
+    path: "/utilities",
   },
 ];
 
