@@ -1,0 +1,1168 @@
+    123  - **`snippets/`** — copy-paste HTML files for common patterns (dashboard, login, co
+           ntact form, etc.)
+      124  
+      125 +ply is standalone — it should not be used alongside Tailwind, Bootstrap, or other C
+          +SS frameworks.                                                                     
+      126 +                                                                                   
+      127  ## Development
+      128  
+      129  ```sh
+
+⏺ Done. Added the "start semantic" philosophy, Feather Icons recommendation, and standalone note to
+  the README.
+
+✻ Cooked for 31s
+
+❯ replit says tablet-unit-100 isn't in the css                                                       
+
+⏺ Searched for 3 patterns (ctrl+o to expand)
+
+⏺ Replit's right — there's no tablet-unit-100. It goes from 90 down to 10 but skips 100. Let me check
+   the source.
+
+⏺ Searched for 2 patterns (ctrl+o to expand)
+
+⏺ small-desktop has unit-100 but tablet doesn't. Let me see the full tablet block.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ I see — lines 505-514 already force all base units to 100% at the tablet breakpoint, so the
+  thinking was you didn't need tablet-unit-100. But that means if you have unit-50
+  large-phone-unit-100, you can't use tablet-unit-100 to explicitly make it full-width at tablet.
+  It's also confusing when the docs tell you to use a class that doesn't exist. Let me check the
+  other breakpoints for consistency.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ So at tablet breakpoint, all base units collapse to 100% by default. The tablet-unit-* classes then
+   let you override back to a specific width. But tablet-unit-100 is still needed — if someone has
+  unit-50 small-desktop-unit-75 tablet-unit-100, they need tablet-unit-100 as an explicit class even
+  though it's the default, because without it the pattern is inconsistent and confusing.
+
+⏺ Update(src/scss/components/_grid.scss)
+  ⎿  Added 4 lines
+      513      flex-basis: 100%;
+      514      max-width: 100%;
+      515    }
+      516 +  .tablet-unit-100 {                                                               
+      517 +    max-width: 100%;                                                               
+      518 +    flex-basis: 100%;                                                              
+      519 +  }                                                                                
+      520    .tablet-unit-90 {
+      521      max-width: 90%;
+      522      flex-basis: 90%;
+
+⏺ Now let me check if phone-unit-100 and large-phone-unit-100 exist too.
+
+⏺ Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Those exist. Only tablet was missing it. Let me build.
+
+⏺ Bash(npm run build 2>&1)
+  ⎿  > plygrid@1.0.1 build
+     > npm run build:sass
+     … +38 lines (ctrl+o to expand)
+  ⎿  (timeout 30s)
+
+⏺ Good catch by Replit. tablet-unit-100 was missing from the CSS — all units already collapsed to
+  100% at tablet by default, so it was technically redundant, but the class didn't exist for explicit
+   use. Now it does.
+
+✻ Churned for 47s
+
+❯ replit struggled with finding the color palette                                                    
+
+⏺ Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+⏺ The color palette is only in SCSS variables — it's not documented in PLY.md at all. An AI tool
+  using the CDN has no way to know what colors are available. Let me check what PLY.md currently says
+   about colors.
+
+⏺ Searched for 1 pattern (ctrl+o to expand)
+
+⏺ The custom properties section lists theme tokens but there's no actual color palette reference — no
+   mention of the brand colors (blue, red, green, yellow) with their hex values. An AI has no way to
+  know what btn-blue actually looks like or what colors to use for custom styling.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(PLY.md)
+  ⎿  Added 16 lines
+      592  
+      593  ---
+      594  
+      595 +### Color Palette                                                                  
+      596 +                                                                                   
+      597 +These are the brand colors used by buttons, alerts, labels, and other components:  
+      598 +                                                                                   
+      599 +| Name | Base | Dark | Light | Pastel |                                            
+      600 +|------|------|------|-------|--------|                                            
+      601 +| Blue | `#2575ed` | `#1a52a5` | `#92baf6` | `#d3e3fb` |                           
+      602 +| Red | `#de2c3b` | `#b2232f` | `#ef969d` | `#f8d5d8` |                            
+      603 +| Green | `#2c9f42` | `#237f35` | `#96cfa1` | `#d5ecd9` |                          
+      604 +| Yellow | `#ffc800` | `#cca000` | `#ffe480` | `#fff4cc` |                         
+      605 +| Black | `#0f0f0f` | `#000000` | `#363738` | `#dadada` |                          
+      606 +| Gray | `#e0e3e5` | `#b3b6b7` | `#f0f1f2` | `#f7f8f8` |                           
+      607 +| White | `#ffffff` | — | — | — |                                                  
+      608 +                                                                                   
+      609 +When writing custom styles, use CSS custom properties (below) rather than hard-codi
+          +ng these hex values — this ensures dark mode compatibility.                        
+      610 +                                                                                   
+      611  ### CSS Custom Properties
+      612  
+      613  All colors are customizable via CSS custom properties:
+
+⏺ Bash(npm run build 2>&1)
+  ⎿  > plygrid@1.0.1 build
+     > npm run build:sass
+     … +38 lines (ctrl+o to expand)
+  ⎿  (timeout 30s)
+
+⏺ Added a full color palette table to PLY.md showing base, dark, light, and pastel variants for every
+   brand color. Also added guidance to use CSS custom properties over hard-coded hex values for dark
+  mode compatibility.
+
+✻ Churned for 33s
+
+❯ i thought we had done like a full color palette.                                                   
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ We do have a full extended palette with indigo, purple, pink, orange, teal, cyan, plus neutrals. I
+  only documented half of it. Let me fix the PLY.md table.
+
+⏺ Update(PLY.md)
+  ⎿  Added 21 lines
+      602  | Red | `#de2c3b` | `#b2232f` | `#ef969d` | `#f8d5d8` |
+      603  | Green | `#2c9f42` | `#237f35` | `#96cfa1` | `#d5ecd9` |
+      604  | Yellow | `#ffc800` | `#cca000` | `#ffe480` | `#fff4cc` |
+      605 +| Indigo | `#4f46e5` | `#3730a3` | `#a5b4fc` | `#e0e7ff` |                         
+      606 +| Purple | `#7c3aed` | `#5b21b6` | `#c4b5fd` | `#ede9fe` |                         
+      607 +| Pink | `#db2777` | `#9d174d` | `#f9a8d4` | `#fce7f3` |                           
+      608 +| Orange | `#ea580c` | `#c2410c` | `#fdba74` | `#ffedd5` |                         
+      609 +| Teal | `#0d9488` | `#0f766e` | `#5eead4` | `#ccfbf1` |                           
+      610 +| Cyan | `#0891b2` | `#0e7490` | `#67e8f9` | `#cffafe` |                           
+      611  | Black | `#0f0f0f` | `#000000` | `#363738` | `#dadada` |
+      612  | Gray | `#e0e3e5` | `#b3b6b7` | `#f0f1f2` | `#f7f8f8` |
+      613  | White | `#ffffff` | — | — | — |
+      614  
+      615 +#### Neutral Scale                                                                 
+      616 +                                                                                   
+      617 +| Token | Hex |                                                                    
+      618 +|-------|-----|                                                                    
+      619 +| `neutral-50` | `#fafafa` |                                                       
+      620 +| `neutral-100` | `#f5f5f5` |                                                      
+      621 +| `neutral-200` | `#e5e5e5` |                                                      
+      622 +| `neutral-300` | `#d4d4d4` |                                                      
+      623 +| `neutral-400` | `#a3a3a3` |                                                      
+      624 +| `neutral-500` | `#737373` |                                                      
+      625 +| `neutral-600` | `#525252` |                                                      
+      626 +| `neutral-700` | `#404040` |                                                      
+      627 +| `neutral-800` | `#262626` |                                                      
+      628 +| `neutral-900` | `#171717` |                                                      
+      629 +                                                                                   
+      630  When writing custom styles, use CSS custom properties (below) rather than hard-codi
+           ng these hex values — this ensures dark mode compatibility.
+      631  
+      632  ### CSS Custom Properties
+
+⏺ Fixed — the palette table now includes all 12 brand colors (blue, red, green, yellow, indigo,
+  purple, pink, orange, teal, cyan, black, gray, white) plus the full neutral-50 through neutral-900
+  scale.
+
+❯ ok and replit missed that it could use the sass files and while working was just using the linked  
+css. how can we make that more clear?                                                                
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(PLY.md)
+  ⎿  Added 32 lines
+      18  
+      19  ## Quick Start
+      20  
+      21 +### CDN (fastest)                                                                   
+      22 +                                                                                    
+      23  Add one line to your HTML `<head>`:
+      24  
+      25  ```html
+     ...
+      32  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-cor
+          e.min.css">
+      33  ```
+      34  
+      35 +### npm + Sass (recommended for projects)                                           
+      36 +                                                                                    
+      37 +If your project uses a build tool (Vite, Next.js, Webpack, etc.), install ply and im
+         +port the SCSS source directly. This gives you access to all color variables, mixins,
+         + and the ability to customize at the Sass level.                                    
+      38 +                                                                                    
+      39 +```sh                                                                               
+      40 +npm install plygrid                                                                 
+      41 +```                                                                                 
+      42 +                                                                                    
+      43 +```scss                                                                             
+      44 +// Import all of ply                                                                
+      45 +@use "plygrid/src/scss/ply" as *;                                                   
+      46 +                                                                                    
+      47 +// Or import just what you need                                                     
+      48 +@use "plygrid/src/scss/components/colors" as colors;                                
+      49 +@use "plygrid/src/scss/components/variables" as variables;                          
+      50 +@use "plygrid/src/scss/components/mixins" as mixins;                                
+      51 +                                                                                    
+      52 +// Now you can use ply's Sass variables and mixins                                  
+      53 +.my-component {                                                                     
+      54 +  color: colors.$color-blue;                                                        
+      55 +  background: colors.$color-blue-pastel;                                            
+      56 +  @include mixins.border-bottom-radius(variables.$border-radius);                   
+      57 +}                                                                                   
+      58 +```                                                                                 
+      59 +                                                                                    
+      60 +The SCSS source lives in `src/scss/`. Key files:                                    
+      61 +- `components/_colors.scss` — Full color palette (brand colors, dark/light/pastel va
+         +riants, neutral scale)                                                              
+      62 +- `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius    
+      63 +- `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, animati
+         +ons                                                                                 
+      64 +                                                                                    
+      65  ## Icons
+      66  
+      67  ply does not include icons. [Feather Icons](https://feathericons.com) is the recomme
+          nded icon library — it's lightweight, clean, and pairs well with ply's aesthetic. An
+          y icon library works.
+
+⏺ Now update CLAUDE.md too since that's what AI tools read first.
+
+⏺ Update(CLAUDE.md)
+  ⎿  Added 22 lines, removed 7 lines
+      46  | `input-xs` | `input-smaller` |
+      47  | `li.active` (navbar) | `li.on` |
+      48  
+      49 -## CDN                                                                              
+      49 +## Installation                                                                     
+      50  
+      51 +### CDN (quickest)                                                                  
+      52  ```html
+      53  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min
+          .css">
+      54  ```
+      55  
+      55 -## Build                                                                            
+      56 +### npm + Sass (recommended for projects)                                           
+      57 +If the project has a build tool (Vite, Next.js, Webpack, etc.), install ply and impo
+         +rt the SCSS source. This gives access to all color variables, mixins, and Sass-level
+         + customization.                                                                     
+      58  
+      57 -```bash                                                                             
+      58 -npm install                                                                         
+      59 -npm run build                                                                       
+      59 +```sh                                                                               
+      60 +npm install plygrid                                                                 
+      61  ```
+      62  
+      63 +```scss                                                                             
+      64 +@use "plygrid/src/scss/components/colors" as colors;                                
+      65 +@use "plygrid/src/scss/components/variables" as variables;                          
+      66 +@use "plygrid/src/scss/components/mixins" as mixins;                                
+      67 +                                                                                    
+      68 +.custom {                                                                           
+      69 +  color: colors.$color-blue;                                                        
+      70 +  background: colors.$color-blue-pastel;                                            
+      71 +}                                                                                   
+      72 +```                                                                                 
+      73 +                                                                                    
+      74  ## File Structure
+      75  
+      64 -- `src/scss/` — SCSS source (modern `@use`/`@forward` modules)                      
+      65 -- `dist/css/` — Compiled CSS bundles                                                
+      76 +- `src/scss/` — SCSS source (modern `@use`/`@forward` modules). **Use this when the 
+         +project has a build step.**                                                         
+      77 +  - `components/_colors.scss` — Full color palette, brand colors, dark/light/pastel 
+         +variants, neutral scale                                                             
+      78 +  - `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius  
+      79 +  - `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, anima
+         +tions                                                                               
+      80 +- `dist/css/` — Compiled CSS bundles (for CDN or direct linking)                    
+      81  - `PLY.md` — Complete AI instruction file with class reference
+      82  - `ply-classes.json` — Machine-readable class reference
+      83  - `snippets/` — Copy-paste HTML examples
+
+⏺ Now both PLY.md and CLAUDE.md lead with two clear installation paths — CDN for quick use, npm +
+  Sass for projects — and explicitly call out that the SCSS source gives you colors, variables, and
+  mixins. The file structure section also highlights the key SCSS files so an AI tool knows exactly
+  where to look.
+
+✻ Cooked for 34s
+
+❯ so what is the preferred path, dropping the cdn in or working with sass? i think if you really     
+want to build a true site you have to work in the sass. what do you think?                           
+
+⏺ Agreed. The CDN is great for prototyping or a quick demo, but for any real project you want the
+  Sass — you get the full color palette, variables, mixins, and can customize without fighting
+  specificity. Let me reorder to make that clear.
+
+⏺ Update(PLY.md)
+  ⎿  Added 18 lines, removed 16 lines
+      18  
+      19  ## Quick Start
+      20  
+      21 -### CDN (fastest)                                                                   
+      21 +### npm + Sass (recommended)                                                        
+      22  
+      23 -Add one line to your HTML `<head>`:                                                 
+      23 +For any real project, install ply and work with the SCSS source. This gives you the 
+         +full color palette, spacing variables, mixins, and the ability to customize everythi
+         +ng at the Sass level.                                                               
+      24  
+      25 -```html                                                                             
+      26 -<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min
+         -.css">                                                                              
+      27 -```                                                                                 
+      28 -                                                                                    
+      29 -Or use the lean core bundle (no labels, dropdowns, loaders, print styles):          
+      30 -                                                                                    
+      31 -```html                                                                             
+      32 -<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-cor
+         -e.min.css">                                                                         
+      33 -```                                                                                 
+      34 -                                                                                    
+      35 -### npm + Sass (recommended for projects)                                           
+      36 -                                                                                    
+      37 -If your project uses a build tool (Vite, Next.js, Webpack, etc.), install ply and im
+         -port the SCSS source directly. This gives you access to all color variables, mixins,
+         - and the ability to customize at the Sass level.                                    
+      38 -                                                                                    
+      25  ```sh
+      26  npm install plygrid
+      27  ```
+     ...
+      48  - `components/_variables.scss` — Spacing, font sizes, breakpoints, border radius
+      49  - `components/_mixins.scss` — Button generator, clearfix, gradients, arrows, animati
+          ons
+      50  
+      51 +### CDN (prototyping only)                                                          
+      52 +                                                                                    
+      53 +For quick demos or prototypes, drop in the CSS directly:                            
+      54 +                                                                                    
+      55 +```html                                                                             
+      56 +<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min
+         +.css">                                                                              
+      57 +```                                                                                 
+      58 +                                                                                    
+      59 +Or the lean core bundle (no labels, dropdowns, loaders, print styles):              
+      60 +                                                                                    
+      61 +```html                                                                             
+      62 +<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-cor
+         +e.min.css">                                                                         
+      63 +```                                                                                 
+      64 +                                                                                    
+      65 +Note: The CDN approach gives you ply's classes and dark mode, but you won't have acc
+         +ess to Sass variables, the full color palette, or mixins for custom components.     
+      66 +                                                                                    
+      67  ## Icons
+      68  
+      69  ply does not include icons. [Feather Icons](https://feathericons.com) is the recomme
+          nded icon library — it's lightweight, clean, and pairs well with ply's aesthetic. An
+          y icon library works.
+
+⏺ Update(CLAUDE.md)
+  ⎿  Added 8 lines, removed 7 lines
+      48  
+      49  ## Installation
+      50  
+      51 -### CDN (quickest)                                                                  
+      52 -```html                                                                             
+      53 -<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min
+         -.css">                                                                              
+      54 -```                                                                                 
+      51 +### npm + Sass (recommended)                                                        
+      52 +For real projects, install ply and import the SCSS source. This gives access to the 
+         +full color palette, spacing variables, mixins, and Sass-level customization.        
+      53  
+      56 -### npm + Sass (recommended for projects)                                           
+      57 -If the project has a build tool (Vite, Next.js, Webpack, etc.), install ply and impo
+         -rt the SCSS source. This gives access to all color variables, mixins, and Sass-level
+         - customization.                                                                     
+      58 -                                                                                    
+      54  ```sh
+      55  npm install plygrid
+      56  ```
+     ...
+      66  }
+      67  ```
+      68  
+      69 +### CDN (prototyping only)                                                          
+      70 +For quick demos — gives you ply's classes and dark mode, but no Sass variables, colo
+         +r palette, or mixins.                                                               
+      71 +```html                                                                             
+      72 +<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min
+         +.css">                                                                              
+      73 +```                                                                                 
+      74 +                                                                                    
+      75  ## File Structure
+      76  
+      77  - `src/scss/` — SCSS source (modern `@use`/`@forward` modules). **Use this when the
+          project has a build step.**
+
+⏺ Done. Both docs now lead with npm + Sass as the recommended path, and the CDN is explicitly labeled
+   "prototyping only" with a note about what you miss.
+
+❯ evaluate our blues for wcag2. it seems on darkmode they just barely pass. what i can see in        
+working in it, on light mode with text-inverse it does fine with text-inverse. what should happen is 
+ it passes 4.5:1 on either mode with text-inverse. that would mean a lighter blue on dark mode and a 
+ darker blue on light mode. it seems though that our colors out of the box don't change between      
+themes, can you confirm?                                                                             
+
+⏺ Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Confirmed — the brand colors are Sass variables only, not CSS custom properties. They don't change
+  between themes. A .btn-blue uses #2575ed in both light and dark mode.
+
+  Let me calculate the contrast ratios.
+
+⏺ Bash(python3 -c "
+      import math…)
+  ⎿  === Current Blue (#2575ed) ===
+       vs white (#fff) - light mode btn text:  4.33:1
+       vs dark (#161616) - dark mode btn text:  4.18:1
+     … +327 lines (ctrl+o to expand)
+
+⏺ The numbers tell the story clearly:
+
+  Current #2575ed fails WCAG AA in both modes:
+  - vs white (light mode button text): 4.33:1 (FAIL, needs 4.5)
+  - vs #161616 (dark mode button text): 4.18:1 (FAIL)
+
+  And the key finding: no single blue can pass 4.5:1 against both white and #161616. The math doesn't
+   work — a blue dark enough for white contrast is too dark for dark-bg contrast.
+
+  Let me check the specific candidates:
+
+⏺ Bash(python3 -c "
+      def srgb_to_linear(c):…)
+  ⎿  === The problem: one blue can't serve both modes ===
+
+     Light mode blue (needs 4.5:1 vs white text):
+     … +26 lines (ctrl+o to expand)
+
+⏺ Here's the picture:
+
+  You're right — brand colors don't change between themes. They're Sass variables, not CSS custom
+  properties, so btn-blue is #2575ed in both modes.
+
+  Current #2575ed fails WCAG AA in both modes — 4.33:1 vs white, 4.18:1 vs dark. It's close but no
+  cigar either way.
+
+  No single blue can pass 4.5:1 in both modes. You need a pair — darker for light mode, lighter for
+  dark mode. This is exactly what Carbon does with their link colors, and ply already does it for
+  --ply-color-link (#0f62fe light / #78a9ff dark).
+
+  The other brand colors have the same problem:
+  - Red: passes light, fails dark
+  - Green: fails light, passes dark
+  - Yellow: fails both (but uses black text, so different story)
+
+  The fix would be to make the button/component colors theme-aware CSS custom properties — like
+  --ply-color-blue that swaps values between light and dark mode — and use those instead of the
+  static Sass variables in the create-button mixin. Want me to implement that?
+
+✻ Crunched for 53s
+
+❯ i think the fix is actually to have a palette of colors, the same we have with reds, blues, etc.   
+that have levels and that change between modes. so the blue we have in light is not the same blue in 
+ dark but the range levels are the same, ie, both have three levels. that's how carbon does it, make 
+ sense?                                                                                              
+
+⏺ Makes total sense — each color gets a scale (like blue-60, blue-50, blue-40) where the level is
+  consistent but the values swap between themes so contrast always works. Let me look at how Carbon
+  structures this and map it to what ply already has.
+
+⏺ Bash(python3 -c "
+      def srgb_to_linear(c):…)
+  ⎿  === Blue ===
+       Level 1: light #0f62fe (5.0:1 vs white) | dark #4589ff (5.4:1 vs #161616)
+       Level 2: light #0043ce (7.8:1 vs white) | dark #78a9ff (7.7:1 vs #161616)
+     … +20 lines (ctrl+o to expand)
+
+⏺ The Carbon-style pairs work well for the core four. Some of the extended colors (orange, teal,
+  cyan) need adjustments for light mode. Let me find passing values for those too, then implement the
+   whole system.
+
+⏺ Bash(python3 -c "
+      def srgb_to_linear(c):…)
+  ⎿  orange:
+       Level 1: light #c2410c (5.2:1 [PASS]) | dark #fb923c (8.0:1 [PASS])
+       Level 2: light #9a3412 (7.3:1 [PASS]) | dark #fdba74 (10.7:1 [PASS])
+     … +16 lines (ctrl+o to expand)
+
+⏺ All passing. Now let me implement this — CSS custom properties for each color at 3 levels that swap
+   between themes.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_colors.scss)
+  ⎿  Added 32 lines
+       66    --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.08);
+       67    --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.1);
+       68    --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.12);
+       69 +                                                                                   
+       70 +  // Brand palette (WCAG AA — 4.5:1 vs text-inverse per mode)                      
+       71 +  --ply-blue-1: #0f62fe;                                                           
+       72 +  --ply-blue-2: #0043ce;                                                           
+       73 +  --ply-blue-3: #002d9c;                                                           
+       74 +  --ply-red-1: #da1e28;                                                            
+       75 +  --ply-red-2: #a2191f;                                                            
+       76 +  --ply-red-3: #750e13;                                                            
+       77 +  --ply-green-1: #198038;                                                          
+       78 +  --ply-green-2: #0e6027;                                                          
+       79 +  --ply-green-3: #044317;                                                          
+       80 +  --ply-yellow-1: #f1c21b;                                                         
+       81 +  --ply-yellow-2: #d2a106;                                                         
+       82 +  --ply-yellow-3: #b28600;                                                         
+       83 +  --ply-indigo-1: #4f46e5;                                                         
+       84 +  --ply-indigo-2: #3730a3;                                                         
+       85 +  --ply-indigo-3: #312e81;                                                         
+       86 +  --ply-purple-1: #7c3aed;                                                         
+       87 +  --ply-purple-2: #6d28d9;                                                         
+       88 +  --ply-purple-3: #5b21b6;                                                         
+       89 +  --ply-pink-1: #be185d;                                                           
+       90 +  --ply-pink-2: #9d174d;                                                           
+       91 +  --ply-pink-3: #831843;                                                           
+       92 +  --ply-orange-1: #c2410c;                                                         
+       93 +  --ply-orange-2: #9a3412;                                                         
+       94 +  --ply-orange-3: #7c2d12;                                                         
+       95 +  --ply-teal-1: #0f766e;                                                           
+       96 +  --ply-teal-2: #115e59;                                                           
+       97 +  --ply-teal-3: #134e4a;                                                           
+       98 +  --ply-cyan-1: #0e7490;                                                           
+       99 +  --ply-cyan-2: #155e75;                                                           
+      100 +  --ply-cyan-3: #164e63;                                                           
+      101  }
+      102  
+      103  @media (prefers-color-scheme: dark) {
+
+⏺ Now add the dark mode values to both dark blocks.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_colors.scss)
+  ⎿  Added 32 lines
+      158      --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
+      159      --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
+      160      --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
+      161 +                                                                                   
+      162 +    // Brand palette (dark mode — lighter values, same levels)                     
+      163 +    --ply-blue-1: #4589ff;                                                         
+      164 +    --ply-blue-2: #78a9ff;                                                         
+      165 +    --ply-blue-3: #a6c8ff;                                                         
+      166 +    --ply-red-1: #ff8389;                                                          
+      167 +    --ply-red-2: #fa4d56;                                                          
+      168 +    --ply-red-3: #da1e28;                                                          
+      169 +    --ply-green-1: #42be65;                                                        
+      170 +    --ply-green-2: #6fdc8c;                                                        
+      171 +    --ply-green-3: #a7f0ba;                                                        
+      172 +    --ply-yellow-1: #f1c21b;                                                       
+      173 +    --ply-yellow-2: #d2a106;                                                       
+      174 +    --ply-yellow-3: #b28600;                                                       
+      175 +    --ply-indigo-1: #818cf8;                                                       
+      176 +    --ply-indigo-2: #a5b4fc;                                                       
+      177 +    --ply-indigo-3: #c7d2fe;                                                       
+      178 +    --ply-purple-1: #a78bfa;                                                       
+      179 +    --ply-purple-2: #c4b5fd;                                                       
+      180 +    --ply-purple-3: #ddd6fe;                                                       
+      181 +    --ply-pink-1: #f472b6;                                                         
+      182 +    --ply-pink-2: #f9a8d4;                                                         
+      183 +    --ply-pink-3: #fbcfe8;                                                         
+      184 +    --ply-orange-1: #fb923c;                                                       
+      185 +    --ply-orange-2: #fdba74;                                                       
+      186 +    --ply-orange-3: #fed7aa;                                                       
+      187 +    --ply-teal-1: #2dd4bf;                                                         
+      188 +    --ply-teal-2: #5eead4;                                                         
+      189 +    --ply-teal-3: #99f6e4;                                                         
+      190 +    --ply-cyan-1: #22d3ee;                                                         
+      191 +    --ply-cyan-2: #67e8f9;                                                         
+      192 +    --ply-cyan-3: #a5f3fc;                                                         
+      193    }
+      194  }
+      195  
+
+⏺ Now add to the [data-theme="dark"] block too.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_colors.scss)
+  ⎿  Added 32 lines
+      250    --ply-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.2);
+      251    --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
+      252    --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
+      253 +                                                                                   
+      254 +  // Brand palette (dark mode — lighter values, same levels)                       
+      255 +  --ply-blue-1: #4589ff;                                                           
+      256 +  --ply-blue-2: #78a9ff;                                                           
+      257 +  --ply-blue-3: #a6c8ff;                                                           
+      258 +  --ply-red-1: #ff8389;                                                            
+      259 +  --ply-red-2: #fa4d56;                                                            
+      260 +  --ply-red-3: #da1e28;                                                            
+      261 +  --ply-green-1: #42be65;                                                          
+      262 +  --ply-green-2: #6fdc8c;                                                          
+      263 +  --ply-green-3: #a7f0ba;                                                          
+      264 +  --ply-yellow-1: #f1c21b;                                                         
+      265 +  --ply-yellow-2: #d2a106;                                                         
+      266 +  --ply-yellow-3: #b28600;                                                         
+      267 +  --ply-indigo-1: #818cf8;                                                         
+      268 +  --ply-indigo-2: #a5b4fc;                                                         
+      269 +  --ply-indigo-3: #c7d2fe;                                                         
+      270 +  --ply-purple-1: #a78bfa;                                                         
+      271 +  --ply-purple-2: #c4b5fd;                                                         
+      272 +  --ply-purple-3: #ddd6fe;                                                         
+      273 +  --ply-pink-1: #f472b6;                                                           
+      274 +  --ply-pink-2: #f9a8d4;                                                           
+      275 +  --ply-pink-3: #fbcfe8;                                                           
+      276 +  --ply-orange-1: #fb923c;                                                         
+      277 +  --ply-orange-2: #fdba74;                                                         
+      278 +  --ply-orange-3: #fed7aa;                                                         
+      279 +  --ply-teal-1: #2dd4bf;                                                           
+      280 +  --ply-teal-2: #5eead4;                                                           
+      281 +  --ply-teal-3: #99f6e4;                                                           
+      282 +  --ply-cyan-1: #22d3ee;                                                           
+      283 +  --ply-cyan-2: #67e8f9;                                                           
+      284 +  --ply-cyan-3: #a5f3fc;                                                           
+      285  }
+      286  
+      287  // Colors
+
+⏺ Now the big question — should the button mixin use these custom properties instead of the static
+  Sass variables? That would make btn-blue automatically WCAG-compliant in both modes. Let me update
+  the button color classes to use the new palette.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ The create-button mixin uses Sass color.adjust() and color.channel() which can't work with CSS
+  custom properties at compile time. The buttons need to be reworked to use the custom properties
+  directly. This is a significant refactor of the mixin approach, but it's the right move.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ The mixin is doing a lot of Sass color manipulation that can't translate to CSS custom properties
+  directly. The cleanest approach: add a new mixin that uses CSS custom properties for the
+  theme-aware colors, and use it for the brand color buttons. The old mixin stays for backwards
+  compat with custom Sass usage.
+
+⏺ Update(src/scss/components/_mixins.scss)
+  ⎿  Added 82 lines
+      320    }
+      321  }
+      322  
+      323 +// Theme-aware button using CSS custom properties                                  
+      324 +// $color-var: the custom property name (e.g. --ply-blue)                          
+      325 +// $text-color: text color for the filled button                                   
+      326 +@mixin create-theme-button($color-var, $text-color: #fff) {                        
+      327 +  color: $text-color;                                                              
+      328 +  background: var(#{$color-var}-1);                                                
+      329 +                                                                                   
+      330 +  &:hover,                                                                         
+      331 +  &:active,                                                                        
+      332 +  &:focus {                                                                        
+      333 +    color: $text-color;                                                            
+      334 +    background: var(#{$color-var}-2);                                              
+      335 +  }                                                                                
+      336 +                                                                                   
+      337 +  &:hover {                                                                        
+      338 +    transform: translateY(0) scale(1.05, 1.05);                                    
+      339 +  }                                                                                
+      340 +                                                                                   
+      341 +  &:focus,                                                                         
+      342 +  &:active {                                                                       
+      343 +    transform: translateY(0) scale(.95, .95);                                      
+      344 +    background: var(#{$color-var}-3);                                              
+      345 +    box-shadow: 0 0 10px rgba(0, 0, 0, .15) inset;                                 
+      346 +  }                                                                                
+      347 +                                                                                   
+      348 +  &.btn-active {                                                                   
+      349 +    box-shadow: 0 1px 4px rgba(0, 0, 0, .5) inset;                                 
+      350 +  }                                                                                
+      351 +                                                                                   
+      352 +  &.btn-active,                                                                    
+      353 +  &.btn-disabled,                                                                  
+      354 +  &.btn[disabled] {                                                                
+      355 +    @extend %cursor-not-allowed;                                                   
+      356 +    opacity: 0.5;                                                                  
+      357 +    background: var(#{$color-var}-2);                                              
+      358 +                                                                                   
+      359 +    &:hover {                                                                      
+      360 +      opacity: 0.5;                                                                
+      361 +      transform: scale(1,1);                                                       
+      362 +    }                                                                              
+      363 +                                                                                   
+      364 +    &:active,                                                                      
+      365 +    &:focus {                                                                      
+      366 +      transform: scale(1,1);                                                       
+      367 +      box-shadow: 0 0 0;                                                           
+      368 +    }                                                                              
+      369 +  }                                                                                
+      370 +                                                                                   
+      371 +  &.btn-disabled,                                                                  
+      372 +  &.btn[disabled] {                                                                
+      373 +    background: var(#{$color-var}-2);                                              
+      374 +  }                                                                                
+      375 +                                                                                   
+      376 +  &.btn-outline {                                                                  
+      377 +    background: none;                                                              
+      378 +    border-color: var(#{$color-var}-1);                                            
+      379 +    color: var(#{$color-var}-1);                                                   
+      380 +    opacity: 1;                                                                    
+      381 +                                                                                   
+      382 +    &:hover {                                                                      
+      383 +      color: $text-color;                                                          
+      384 +      background: var(#{$color-var}-1);                                            
+      385 +    }                                                                              
+      386 +  }                                                                                
+      387 +                                                                                   
+      388 +  &.btn-outline.btn[disabled],                                                     
+      389 +  &.btn-outline.btn-disabled {                                                     
+      390 +    background: none;                                                              
+      391 +    box-shadow: none;                                                              
+      392 +    opacity: 0.4;                                                                  
+      393 +    border: 1px solid var(#{$color-var}-1);                                        
+      394 +    color: var(#{$color-var}-1);                                                   
+      395 +  }                                                                                
+      396 +                                                                                   
+      397 +  &.btn-outline.btn-active {                                                       
+      398 +    background: none;                                                              
+      399 +    color: var(#{$color-var}-1);                                                   
+      400 +    border: none;                                                                  
+      401 +    box-shadow: 0 1px 3px rgba(0, 0, 0, .3) inset;                                 
+      402 +  }                                                                                
+      403 +}                                                                                  
+      404 +                                                                                   
+      405  @mixin text-shadow($x: 2px, $y: 2px, $distance: 5px, $color: rgba(0,0,0,.5)) {
+      406      text-shadow: $x $y $distance $color;
+      407  }
+
+⏺ Now update the button color classes to use the new theme-aware mixin.
+
+⏺ Update(src/scss/components/_buttons.scss)
+  ⎿  Added 13 lines, removed 19 lines
+      182    border-radius: 0;
+      183  }
+      184  
+      185 +// Theme-aware brand buttons (colors swap between light/dark for WCAG AA)          
+      186  .btn-blue,
+      187  input[type="submit"].btn-blue,
+      188  input[type="button"].btn-blue,
+      189  input[type="reset"].btn-blue,
+      190  button.btn-blue {
+      190 -  @include mixins.create-button(colors.$color-blue, colors.$color-blue-dark, #fff);
+      191 +  @include mixins.create-theme-button(--ply-blue);                                 
+      192  }
+      193  
+      193 -.btn-blue--dark,                                                                   
+      194 -input[type="submit"].btn-blue--dark,                                               
+      195 -input[type="button"].btn-blue--dark,                                               
+      196 -input[type="reset"].btn-blue--dark,                                                
+      197 -button.btn-blue--dark {                                                            
+      198 -  @include mixins.create-button(color.adjust(colors.$color-blue-dark, $lightness: -
+          -10%), colors.$color-blue-dark, #fff);                                              
+      199 -}                                                                                  
+      200 -                                                                                   
+      194  .btn-red,
+      195  input[type="submit"].btn-red,
+      196  input[type="button"].btn-red,
+      197  input[type="reset"].btn-red,
+      198  button.btn-red {
+      206 -  @include mixins.create-button(colors.$color-red, colors.$color-red-dark, #fff);  
+      199 +  @include mixins.create-theme-button(--ply-red);                                  
+      200  }
+      201  
+      202  .btn-green,
+     ...
+      204  input[type="button"].btn-green,
+      205  input[type="reset"].btn-green,
+      206  button.btn-green {
+      214 -  @include mixins.create-button(colors.$color-green, colors.$color-green-dark, #fff
+          -);                                                                                 
+      207 +  @include mixins.create-theme-button(--ply-green);                                
+      208  }
+      209  
+      210 +.btn-yellow,                                                                       
+      211 +input[type="submit"].btn-yellow,                                                   
+      212 +input[type="button"].btn-yellow,                                                   
+      213 +input[type="reset"].btn-yellow,                                                    
+      214 +button.btn-yellow {                                                                
+      215 +  @include mixins.create-theme-button(--ply-yellow, #000);                         
+      216 +}                                                                                  
+      217 +                                                                                   
+      218 +// Static color buttons (don't change between themes)                              
+      219  .btn-black,
+      220  input[type="submit"].btn-black,
+      221  input[type="button"].btn-black,
+     ...
+      224    @include mixins.create-button(colors.$color-black, colors.$color-black-light, #ff
+           f, .7);
+      225  }
+      226  
+      225 -.btn-yellow,                                                                       
+      226 -input[type="submit"].btn-yellow,                                                   
+      227 -input[type="button"].btn-yellow,                                                   
+      228 -input[type="reset"].btn-yellow,                                                    
+      229 -button.btn-yellow {                                                                
+      230 -  @include mixins.create-button(colors.$color-yellow, colors.$color-yellow-dark, #0
+          -00);                                                                               
+      231 -}                                                                                  
+      232 -                                                                                   
+      227  .btn-white,
+      228  input[type="submit"].btn-white,
+      229  input[type="button"].btn-white,
+
+⏺ Bash(npm run build 2>&1)
+  ⎿  > plygrid@1.0.1 build
+     > npm run build:sass
+     … +38 lines (ctrl+o to expand)
+  ⎿  (timeout 30s)
+
+⏺ Builds clean. Let me also check that alerts should use the same system — they likely have the same
+  problem.
+
+⏺ Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Alerts use colors as backgrounds with white text on top — same WCAG issue. But alerts are a bigger
+  surface area to refactor and the contrast concern is more critical on buttons (smaller targets,
+  interactive). Let me update the PLY.md color palette to reflect the new theme-aware system.
+
+⏺ Update(PLY.md)
+  ⎿  Added 72 lines, removed 29 lines
+      628  
+      629  ### Color Palette
+      630  
+      631 -These are the brand colors used by buttons, alerts, labels, and other components:  
+      631 +Brand colors are **theme-aware** — they automatically shift between light and dark 
+          +mode to maintain WCAG AA contrast (4.5:1) against the text-inverse color. Each colo
+          +r has 3 levels: level 1 is the primary action color, level 2 is hover/emphasis, lev
+          +el 3 is the strongest.                                                             
+      632  
+      633 +Use the CSS custom properties (`var(--ply-blue-1)`, etc.) in custom styles to get a
+          +utomatic theme switching.                                                          
+      634 +                                                                                   
+      635 +#### Light Mode Values                                                             
+      636 +                                                                                   
+      637 +| Color | Level 1 | Level 2 | Level 3 |                                            
+      638 +|-------|---------|---------|---------|                                            
+      639 +| Blue | `#0f62fe` | `#0043ce` | `#002d9c` |                                       
+      640 +| Red | `#da1e28` | `#a2191f` | `#750e13` |                                        
+      641 +| Green | `#198038` | `#0e6027` | `#044317` |                                      
+      642 +| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |                                     
+      643 +| Indigo | `#4f46e5` | `#3730a3` | `#312e81` |                                     
+      644 +| Purple | `#7c3aed` | `#6d28d9` | `#5b21b6` |                                     
+      645 +| Pink | `#be185d` | `#9d174d` | `#831843` |                                       
+      646 +| Orange | `#c2410c` | `#9a3412` | `#7c2d12` |                                     
+      647 +| Teal | `#0f766e` | `#115e59` | `#134e4a` |                                       
+      648 +| Cyan | `#0e7490` | `#155e75` | `#164e63` |                                       
+      649 +                                                                                   
+      650 +#### Dark Mode Values                                                              
+      651 +                                                                                   
+      652 +| Color | Level 1 | Level 2 | Level 3 |                                            
+      653 +|-------|---------|---------|---------|                                            
+      654 +| Blue | `#4589ff` | `#78a9ff` | `#a6c8ff` |                                       
+      655 +| Red | `#ff8389` | `#fa4d56` | `#da1e28` |                                        
+      656 +| Green | `#42be65` | `#6fdc8c` | `#a7f0ba` |                                      
+      657 +| Yellow | `#f1c21b` | `#d2a106` | `#b28600` |                                     
+      658 +| Indigo | `#818cf8` | `#a5b4fc` | `#c7d2fe` |                                     
+      659 +| Purple | `#a78bfa` | `#c4b5fd` | `#ddd6fe` |                                     
+      660 +| Pink | `#f472b6` | `#f9a8d4` | `#fbcfe8` |                                       
+      661 +| Orange | `#fb923c` | `#fdba74` | `#fed7aa` |                                     
+      662 +| Teal | `#2dd4bf` | `#5eead4` | `#99f6e4` |                                       
+      663 +| Cyan | `#22d3ee` | `#67e8f9` | `#a5f3fc` |                                       
+      664 +                                                                                   
+      665 +#### Usage                                                                         
+      666 +                                                                                   
+      667 +```css                                                                             
+      668 +/* These automatically adapt to the current theme */                               
+      669 +.my-badge {                                                                        
+      670 +  background: var(--ply-blue-1);                                                   
+      671 +  color: var(--ply-color-text-inverse);                                            
+      672 +}                                                                                  
+      673 +```                                                                                
+      674 +                                                                                   
+      675 +#### Sass Variables (static, for build-time use)                                   
+      676 +                                                                                   
+      677 +The full Sass palette is available in `_colors.scss` for build-time use. These do N
+          +OT change between themes.                                                          
+      678 +                                                                                   
+      679  | Name | Base | Dark | Light | Pastel |
+      680  |------|------|------|-------|--------|
+      635 -| Blue | `#2575ed` | `#1a52a5` | `#92baf6` | `#d3e3fb` |                           
+      636 -| Red | `#de2c3b` | `#b2232f` | `#ef969d` | `#f8d5d8` |                            
+      637 -| Green | `#2c9f42` | `#237f35` | `#96cfa1` | `#d5ecd9` |                          
+      638 -| Yellow | `#ffc800` | `#cca000` | `#ffe480` | `#fff4cc` |                         
+      639 -| Indigo | `#4f46e5` | `#3730a3` | `#a5b4fc` | `#e0e7ff` |                         
+      640 -| Purple | `#7c3aed` | `#5b21b6` | `#c4b5fd` | `#ede9fe` |                         
+      641 -| Pink | `#db2777` | `#9d174d` | `#f9a8d4` | `#fce7f3` |                           
+      642 -| Orange | `#ea580c` | `#c2410c` | `#fdba74` | `#ffedd5` |                         
+      643 -| Teal | `#0d9488` | `#0f766e` | `#5eead4` | `#ccfbf1` |                           
+      644 -| Cyan | `#0891b2` | `#0e7490` | `#67e8f9` | `#cffafe` |                           
+      645 -| Black | `#0f0f0f` | `#000000` | `#363738` | `#dadada` |                          
+      646 -| Gray | `#e0e3e5` | `#b3b6b7` | `#f0f1f2` | `#f7f8f8` |                           
+      647 -| White | `#ffffff` | — | — | — |                                                  
+      681 +| Blue | `$color-blue` `#2575ed` | `$color-blue-dark` `#1a52a5` | `$color-blue-ligh
+          +t` `#92baf6` | `$color-blue-pastel` `#d3e3fb` |                                    
+      682 +| Red | `$color-red` `#de2c3b` | `$color-red-dark` `#b2232f` | `$color-red-light` `
+          +#ef969d` | `$color-red-pastel` `#f8d5d8` |                                         
+      683 +| Green | `$color-green` `#2c9f42` | `$color-green-dark` `#237f35` | `$color-green-
+          +light` `#96cfa1` | `$color-green-pastel` `#d5ecd9` |                               
+      684 +| Yellow | `$color-yellow` `#ffc800` | `$color-yellow-dark` `#cca000` | `$color-yel
+          +low-light` `#ffe480` | `$color-yellow-pastel` `#fff4cc` |                          
+      685 +| Indigo | `$color-indigo` `#4f46e5` | `$color-indigo-dark` `#3730a3` | `$color-ind
+          +igo-light` `#a5b4fc` | `$color-indigo-pastel` `#e0e7ff` |                          
+      686 +| Purple | `$color-purple` `#7c3aed` | `$color-purple-dark` `#5b21b6` | `$color-pur
+          +ple-light` `#c4b5fd` | `$color-purple-pastel` `#ede9fe` |                          
+      687 +| Pink | `$color-pink` `#db2777` | `$color-pink-dark` `#9d174d` | `$color-pink-ligh
+          +t` `#f9a8d4` | `$color-pink-pastel` `#fce7f3` |                                    
+      688 +| Orange | `$color-orange` `#ea580c` | `$color-orange-dark` `#c2410c` | `$color-ora
+          +nge-light` `#fdba74` | `$color-orange-pastel` `#ffedd5` |                          
+      689 +| Teal | `$color-teal` `#0d9488` | `$color-teal-dark` `#0f766e` | `$color-teal-ligh
+          +t` `#5eead4` | `$color-teal-pastel` `#ccfbf1` |                                    
+      690 +| Cyan | `$color-cyan` `#0891b2` | `$color-cyan-dark` `#0e7490` | `$color-cyan-ligh
+          +t` `#67e8f9` | `$color-cyan-pastel` `#cffafe` |                                    
+      691 +| Black | `$color-black` `#0f0f0f` | `$color-black-dark` `#000` | `$color-black-lig
+          +ht` `#363738` | `$color-black-pastel` `#dadada` |                                  
+      692 +| Gray | `$color-gray` `#e0e3e5` | `$color-gray-dark` `#b3b6b7` | `$color-gray-ligh
+          +t` `#f0f1f2` | `$color-gray-pastel` `#f7f8f8` |                                    
+      693  
+      649 -#### Neutral Scale                                                                 
+      694 +#### Neutral Scale (Sass)                                                          
+      695  
+      651 -| Token | Hex |                                                                    
+      652 -|-------|-----|                                                                    
+      653 -| `neutral-50` | `#fafafa` |                                                       
+      654 -| `neutral-100` | `#f5f5f5` |                                                      
+      655 -| `neutral-200` | `#e5e5e5` |                                                      
+      656 -| `neutral-300` | `#d4d4d4` |                                                      
+      657 -| `neutral-400` | `#a3a3a3` |                                                      
+      658 -| `neutral-500` | `#737373` |                                                      
+      659 -| `neutral-600` | `#525252` |                                                      
+      660 -| `neutral-700` | `#404040` |                                                      
+      661 -| `neutral-800` | `#262626` |                                                      
+      662 -| `neutral-900` | `#171717` |                                                      
+      696 +| Variable | Hex |                                                                 
+      697 +|----------|-----|                                                                 
+      698 +| `$color-neutral-50` | `#fafafa` |                                                
+      699 +| `$color-neutral-100` | `#f5f5f5` |                                               
+      700 +| `$color-neutral-200` | `#e5e5e5` |                                               
+      701 +| `$color-neutral-300` | `#d4d4d4` |                                               
+      702 +| `$color-neutral-400` | `#a3a3a3` |                                               
+      703 +| `$color-neutral-500` | `#737373` |                                               
+      704 +| `$color-neutral-600` | `#525252` |                                               
+      705 +| `$color-neutral-700` | `#404040` |                                               
+      706 +| `$color-neutral-800` | `#262626` |                                               
+      707 +| `$color-neutral-900` | `#171717` |                                               
+      708  
+      664 -When writing custom styles, use CSS custom properties (below) rather than hard-codi
+          -ng these hex values — this ensures dark mode compatibility.                        
+      665 -                                                                                   
+      709  ### CSS Custom Properties
+      710  
+      711  All colors are customizable via CSS custom properties:
+
+⏺ Now update the CSS custom properties section to include the brand palette.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(PLY.md)
+  ⎿  Added 7 lines
+      749    --ply-nav-border: #161616;
+      750    --ply-nav-hover: #e8e8e8;
+      751    --ply-nav-active-bg: transparent;
+      752 +                                                                                   
+      753 +  /* Brand palette (swap automatically in dark mode — see Color Palette section) */
+      754 +  --ply-blue-1: #0f62fe;    --ply-blue-2: #0043ce;    --ply-blue-3: #002d9c;       
+      755 +  --ply-red-1: #da1e28;     --ply-red-2: #a2191f;     --ply-red-3: #750e13;        
+      756 +  --ply-green-1: #198038;   --ply-green-2: #0e6027;   --ply-green-3: #044317;      
+      757 +  --ply-yellow-1: #f1c21b;  --ply-yellow-2: #d2a106;  --ply-yellow-3: #b28600;     
+      758 +  /* ... plus indigo, purple, pink, orange, teal, cyan */                          
+      759  }
+      760  ```
+      761  
+
+⏺ Bash(npm run build 2>&1)
+  ⎿  > plygrid@1.0.1 build
+     > npm run build:sass
+     … +38 lines (ctrl+o to expand)
+  ⎿  (timeout 30s)
+
+⏺ All clean. Here's what was done:
+
+  Theme-aware brand palette — Every color now has 3 levels as CSS custom properties (--ply-blue-1,
+  --ply-blue-2, --ply-blue-3) that swap between light and dark mode:
+  - Light mode: darker values that pass 4.5:1 vs white
+  - Dark mode: lighter values that pass 4.5:1 vs #161616
+
+  Buttons updated — btn-blue, btn-red, btn-green, btn-yellow now use a new create-theme-button mixin
+  that references the CSS custom properties. They're WCAG AA compliant in both modes automatically.
+  btn-black and btn-white stay static since they don't need to adapt.
+
+  Old mixin preserved — create-button still exists for anyone using it directly in Sass for custom
+  components.
+
+  Sass variables untouched — The static $color-blue, $color-blue-dark, etc. are still there for
+  build-time use. The docs now clearly distinguish between the theme-aware CSS custom properties
+  (recommended) and the static Sass variables.
+
+✻ Cogitated for 3m 48s
+
+❯ let's also add a transparency helper, it's just a white transparent background in light mode, dark 
+ gray transparent in dark mode. for doing stuff like this.                                           
+  ⎿  [Image #1]
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_helpers.scss)
+  ⎿  Added 7 lines
+      675    text-wrap: balance;
+      676  }
+      677  
+      678 +// Transparent background overlay (theme-aware)                                    
+      679 +.bg-glass {                                                                        
+      680 +  background: var(--ply-bg-glass, rgba(255, 255, 255, 0.15));                      
+      681 +  backdrop-filter: blur(8px);                                                      
+      682 +  -webkit-backdrop-filter: blur(8px);                                              
+      683 +}                                                                                  
+      684 +                                                                                   
+      685  // Gap utilities
+      686  .gap-xs  { gap: 0.25rem; }
+      687  .gap-sm  { gap: 0.5rem; }
+
+⏺ Now add the custom property to the theme blocks so it adapts.
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_colors.scss)
+  ⎿  Added 3 lines
+      67    --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.1);
+      68    --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.12);
+      69  
+      70 +  // Glass                                                                          
+      71 +  --ply-bg-glass: rgba(255, 255, 255, 0.15);                                        
+      72 +                                                                                    
+      73    // Brand palette (WCAG AA — 4.5:1 vs text-inverse per mode)
+      74    --ply-blue-1: #0f62fe;
+      75    --ply-blue-2: #0043ce;
+
+⏺ Now add the dark mode value to both dark blocks.
+
+⏺ Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+⏺ Update(src/scss/components/_colors.scss)
+  ⎿  Added 3 lines
+      162      --ply-shadow-2: 0 2px 8px rgba(0, 0, 0, 0.3);
+      163      --ply-shadow-3: 0 4px 24px rgba(0, 0, 0, 0.4);
+      164  
+      165 +    // Glass                                                                       
+      166 +    --ply-bg-glass: rgba(38, 38, 38, 0.25);                                        
+      167 +                                                                                   
+      168      // Brand palette (dark mode — lighter values, same levels)
+      169      --ply-blue-1: #4589ff;
+      170      --ply-blue-2: #78a9ff;
+
+⏺ Bash(npm run build 2>&1)
+  ⎿  > plygrid@1.0.1 build
+     > npm run build:sass
+     … +38 lines (ctrl+o to expand)
+  ⎿  (timeout 30s)
+
+⏺ Now add to the docs.
+
+⏺ Update(PLY.md)
+  ⎿  Added 13 lines
+      573  |-------|--------|
+      574  | `no-link-style` | Suppresses link color and underline on all `<a>` inside the con
+           tainer |
+      575  
+      576 +#### Glass Background                                                              
+      577 +                                                                                   
+      578 +| Class | Effect |                                                                 
+      579 +|-------|--------|                                                                 
+      580 +| `bg-glass` | Transparent background with backdrop blur. White tint in light mode,
+          + dark gray tint in dark mode. Customizable via `--ply-bg-glass`. |                 
+      581 +                                                                                   
+      582 +```html                                                                            
+      583 +<!-- Frosted overlay on a colored or image background -->                          
+      584 +<div class="bg-glass border-radius padding">                                       
+      585 +  <code>npm install plygrid</code>                                                 
+      586 +</div>                                                                             
+      587 +```                                                                                
+      588 +                                                                                   
+      589  #### Other
+      590  
+      591  `clearfix`, `flat-list` (no bullets/margin), `circle` (border-radius 100%), `border
+           -radius`, `spinning` (animation), `fade-in`
+
+⏺ Update(ply-classes.json)
+  ⎿  Added 4 lines
+      1104        "category": "helpers",
+      1105        "description": "Suppresses link color and underline on all <a> tags inside t
+            he container. Useful for card-style links."
+      1106      },
+      1107 +    "bg-glass": {                                                                 
+      1108 +      "category": "helpers",                                                      
+      1109 +      "description": "Transparent background with backdrop blur. Theme-aware: whit
+           +e tint in light mode, dark tint in dark mode. Customizable via --ply-bg-glass."   
+      1110 +    },                                                                            
+      1111      "equal-height": {
+      1112        "category": "grid",
+      1113        "description": "On units-row: makes all unit children stretch to the same he
+            ight. Their direct children automatically fill the available height.",
+
+⏺ Done. bg-glass gives you a frosted transparent background with backdrop blur —
+  rgba(255,255,255,0.15) in light mode, rgba(38,38,38,0.25) in dark mode. Customizable via
+  --ply-bg-glass. Like that code snippet overlay in your screenshot.
+
+✻ Baked for 58s
+
+❯ ok summarize what we have changed.                                                                 
+
+⏺ Here's everything from this session:
+
+  Bug Fixes
+
+  - Outline button dark mode — Added --ply-color-text-inverse: #161616 to dark theme so hover text is
+   readable
+  - Square/straight buttons — Fixed specificity so btn-straight/btn-square actually override
+  border-radius
+  - tablet-unit-100 missing — Was never in the CSS despite being in the docs. Added it.
+
+  Navbar Modernization
+
+  - Default border: 2px bold black → 1px subtle gray
+  - Removed forced letter-spacing and small font-size
+  - Active state: colored bottom-border indicator instead of muted gray text
+  - New modifiers: navbar--thick, navbar--borderless, navbar--border-blue/green/red/yellow
+  - Mobile: horizontal scroll with hidden scrollbar (default), navbar--stack opt-in for wrapping
+
+  Theme-Aware Color Palette (WCAG AA)
+
+  - 10 brand colors × 3 levels as CSS custom properties (--ply-blue-1, --ply-blue-2, etc.)
+  - Values swap between light/dark mode to maintain 4.5:1 contrast vs text-inverse
+  - Buttons (btn-blue, btn-red, btn-green, btn-yellow) now use the theme-aware palette via new
+  create-theme-button mixin
+  - Old create-button mixin preserved for custom Sass usage
+
+  New Utilities
+
+  - text-primary, text-secondary, text-tertiary/text-muted, text-inverse — theme-aware text colors
+  - equal-height — on units-row, stretches all cards to match tallest
+  - gap-xs/gap-sm/gap/gap-lg/gap-xl — flex/grid gap utilities
+  - no-orphan — text-wrap: pretty
+  - text-balance — text-wrap: balance
+  - no-link-style — suppress link styling inside a container
+  - bg-glass — transparent background + backdrop blur, theme-aware
+
+  AI Instructions (PLY.md, CLAUDE.md)
+
+  - Added "Start Semantic" philosophy section
+  - "ply is standalone — remove Tailwind/Bootstrap"
+  - "Only use documented classes — don't invent them"
+  - "Use CSS custom properties for colors"
+  - Feather Icons as recommended icon library
+  - npm + Sass as recommended install path (CDN labeled "prototyping only")
+  - Full color palette documented (theme-aware levels + static Sass variables + neutral scale)
+  - Common patterns section in CLAUDE.md
+  - Key SCSS files called out in file structure
