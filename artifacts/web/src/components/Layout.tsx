@@ -14,20 +14,6 @@ const navLinks = [
 export default function Layout({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [navOpen, setNavOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.getAttribute("data-theme") || "";
-    }
-    return "";
-  });
-
-  useEffect(() => {
-    if (theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-  }, [theme]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -96,36 +82,13 @@ export default function Layout({ children }: { children: ReactNode }) {
       <footer className="border-top padding-top--extra padding-bottom--extra text-sm">
         <div className="units-container">
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-50 tablet-unit-100">
               <p>
                 <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
               </p>
               <p>MIT License. Built for humans and machines.</p>
             </div>
-            <div className="unit-33 tablet-unit-100">
-              <p className="text-xs font-semibold uppercase">Theme</p>
-              <div className="btn-group">
-                <button
-                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("")}
-                >
-                  Auto
-                </button>
-                <button
-                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("light")}
-                >
-                  Light
-                </button>
-                <button
-                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("dark")}
-                >
-                  Dark
-                </button>
-              </div>
-            </div>
-            <div className="unit-33 tablet-unit-100 text-right">
+            <div className="unit-50 tablet-unit-100 text-right">
               <p>~18KB gzipped. No JavaScript. No build step.</p>
               <p>
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>

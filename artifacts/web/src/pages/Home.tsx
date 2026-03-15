@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
 
 const features = [
   {
@@ -34,6 +35,21 @@ const features = [
 ];
 
 export default function Home() {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return document.documentElement.getAttribute("data-theme") || "";
+    }
+    return "";
+  });
+
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }, [theme]);
+
   return (
     <>
       <section className="layer-1 padding-top--extra padding-bottom--extra">
@@ -51,6 +67,29 @@ export default function Home() {
                 <Link href="/grid" className="btn btn-blue">Explore Components</Link>
                 {" "}
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn btn-outline">GitHub</a>
+              </div>
+            </div>
+            <div className="unit-33 tablet-unit-100 text-right">
+              <p className="text-xs font-semibold uppercase">Theme</p>
+              <div className="btn-group">
+                <button
+                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("")}
+                >
+                  Auto
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("light")}
+                >
+                  Light
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("dark")}
+                >
+                  Dark
+                </button>
               </div>
             </div>
           </div>
