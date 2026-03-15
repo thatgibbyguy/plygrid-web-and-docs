@@ -1,5 +1,7 @@
 import { Link } from "wouter";
+import { useLocation } from "wouter";
 import { useState, useEffect } from "react";
+import { Sun, Moon, Monitor } from "lucide-react";
 
 const features = [
   {
@@ -35,6 +37,7 @@ const features = [
 ];
 
 export default function Home() {
+  const [, navigate] = useLocation();
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
       return document.documentElement.getAttribute("data-theme") || "";
@@ -70,25 +73,30 @@ export default function Home() {
               </div>
             </div>
             <div className="unit-33 tablet-unit-100 text-right">
-              <p className="text-xs font-semibold uppercase">Theme</p>
               <div className="btn-group">
                 <button
-                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
+                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : "btn-outline"}`}
                   onClick={() => setTheme("")}
+                  aria-label="Auto theme"
+                  title="Auto"
                 >
-                  Auto
+                  <Monitor size={14} />
                 </button>
                 <button
-                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
+                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : "btn-outline"}`}
                   onClick={() => setTheme("light")}
+                  aria-label="Light theme"
+                  title="Light"
                 >
-                  Light
+                  <Sun size={14} />
                 </button>
                 <button
-                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
+                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : "btn-outline"}`}
                   onClick={() => setTheme("dark")}
+                  aria-label="Dark theme"
+                  title="Dark"
                 >
-                  Dark
+                  <Moon size={14} />
                 </button>
               </div>
             </div>
@@ -227,10 +235,18 @@ export default function Home() {
           <div className="units-row">
             {features.map((f) => (
               <div className="unit-33 tablet-unit-50 phone-unit-100" key={f.path}>
-                <Link href={f.path} className="display--block border border-radius padding bottom-margin cursor-finger">
-                  <h3 className="text-lg font-semibold no-top-margin">{f.title} →</h3>
+                <div
+                  className="border border-radius padding bottom-margin cursor-finger"
+                  onClick={() => navigate(f.path)}
+                  role="link"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") navigate(f.path);
+                  }}
+                >
+                  <h3 className="text-lg font-semibold no-top-margin">{f.title}</h3>
                   <p className="text-sm no-margin">{f.desc}</p>
-                </Link>
+                </div>
               </div>
             ))}
           </div>
