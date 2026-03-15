@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import {
   Cpu, Accessibility, Feather,
   LayoutGrid, Type, ToggleLeft, Compass, Table2, Wrench,
-  Zap, Keyboard, Globe, Puzzle
+  Zap, Keyboard, Puzzle
 } from "lucide-react";
 
 export default function Home() {
