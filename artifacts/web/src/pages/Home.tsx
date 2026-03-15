@@ -209,9 +209,10 @@ export default function Home() {
                       One link tag. No install, no build step. Great for wireframing ideas
                       and apps that need to support low bandwidth or offline mode.
                     </p>
-                    <pre className="text-sm"><code>{`<link rel="stylesheet" href=
-  "https://cdn.jsdelivr.net/npm/
-   plygrid@1/dist/css/ply.min.css">`}</code></pre>
+                    <p className="text-sm no-margin">
+                      <code>plygrid@1/dist/css/ply.min.css</code>
+                    </p>
+                    <p className="text-xs text-muted no-margin">via jsdelivr CDN</p>
                   </div>
                 </div>
                 <div className="unit-50 phone-unit-100 bottom-margin">
@@ -222,7 +223,10 @@ export default function Home() {
                       Full access to color variables, mixins, and the ability to extend
                       ply at the Sass level. For when you're building a real product.
                     </p>
-                    <pre className="text-sm"><code>npm install plygrid</code></pre>
+                    <p className="text-sm no-margin">
+                      <code>npm install plygrid</code>
+                    </p>
+                    <p className="text-xs text-muted no-margin">then import the Sass source</p>
                   </div>
                 </div>
               </div>
