@@ -162,8 +162,14 @@ export default function Home() {
           </div>
 
           <div className="units-row centered-content padding-top--extra">
+            <div className="unit-30 phone-unit-100">
+              <hr className="text-inverse" />
+            </div>
+          </div>
+
+          <div className="units-row centered-content padding-top--extra">
             <div className="unit-50 phone-unit-100 text-center">
-              <h2 className="text-balance text-inverse">Everything you need</h2>
+              <h3 className="text-balance text-inverse">Everything you need</h3>
               <p className="text-inverse no-orphan">
                 A complete design system in a single stylesheet.
               </p>
@@ -175,42 +181,42 @@ export default function Home() {
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/grid" className="display--block background-white border-radius padding cursor-finger">
-                    <LayoutGrid size={20} className="color-blue display--inline-block" />
+                    <LayoutGrid size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Grid</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Ratio-based flexbox with responsive prefixes</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/typography" className="display--block background-white border-radius padding cursor-finger">
-                    <Type size={20} className="color-blue display--inline-block" />
+                    <Type size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Typography</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Type scale from text-xs to text-5xl</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/controls" className="display--block background-white border-radius padding cursor-finger">
-                    <ToggleLeft size={20} className="color-blue display--inline-block" />
+                    <ToggleLeft size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Controls</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Buttons, forms, alerts, and labels</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/navigation" className="display--block background-white border-radius padding cursor-finger">
-                    <Compass size={20} className="color-blue display--inline-block" />
+                    <Compass size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Navigation</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Navbar, pills, tabs, breadcrumbs</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/tables" className="display--block background-white border-radius padding cursor-finger">
-                    <Table2 size={20} className="color-blue display--inline-block" />
+                    <Table2 size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Tables</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Bordered, striped, and hoverable</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <Link href="/utilities" className="display--block background-white border-radius padding cursor-finger">
-                    <Wrench size={20} className="color-blue display--inline-block" />
+                    <Wrench size={20} className="color-blue display--inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Utilities</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Spacing, display, theming, dark mode</p>
                   </Link>
