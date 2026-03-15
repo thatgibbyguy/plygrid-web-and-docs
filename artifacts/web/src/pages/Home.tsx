@@ -142,14 +142,12 @@ export default function Home() {
           </div>
         </section>
 
-      </div>
-
-      <section className="alert alert-blue padding-top--extra padding-bottom--extra">
-        <div className="units-container">
+        <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <h2 className="text-balance text-inverse">One line. That's it.</h2>
-              <p className="text-inverse no-orphan">
+              <p className="text-xs font-semibold uppercase text-muted">Get started</p>
+              <h2 className="text-balance">One line. That's it.</h2>
+              <p className="text-secondary no-orphan">
                 No build tools. No configuration. Add a single link tag and start building.
               </p>
             </div>
@@ -159,15 +157,13 @@ export default function Home() {
               <pre>
                 <code>{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}</code>
               </pre>
-              <p className="text-sm text-inverse text-center">
+              <p className="text-sm text-muted text-center">
                 Or install via npm: <code>npm install plygrid</code>
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div className="units-container">
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
