@@ -7,8 +7,8 @@ export default function ControlsPage() {
   const resetAll = () => setDismissed({});
 
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Interactive</p>
         <h1 className="text-balance">Controls</h1>
         <p className="lead no-orphan">
@@ -163,7 +163,7 @@ export default function ControlsPage() {
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-60 tablet-unit-100">
+            <div className="unit-60 phone-unit-100">
               <form className="form" onSubmit={(e) => e.preventDefault()}>
                 <label>
                   Full Name
@@ -297,14 +297,14 @@ export default function ControlsPage() {
         <div className="border border-radius padding">
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50 phone-unit-100">
                 <h4>Checkboxes</h4>
                 <label><input type="checkbox" defaultChecked /> Grid System</label>
                 <label><input type="checkbox" defaultChecked /> Typography</label>
                 <label><input type="checkbox" /> Forms</label>
                 <label><input type="checkbox" /> Navigation</label>
               </div>
-              <div className="unit-50 tablet-unit-100">
+              <div className="unit-50 phone-unit-100">
                 <h4>Radio Buttons</h4>
                 <label><input type="radio" name="plan" defaultChecked /> Starter</label>
                 <label><input type="radio" name="plan" /> Professional</label>

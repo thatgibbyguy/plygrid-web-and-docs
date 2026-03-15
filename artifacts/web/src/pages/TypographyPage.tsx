@@ -2,8 +2,8 @@ import CodeBlock from "../components/CodeBlock";
 
 export default function TypographyPage() {
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Design</p>
         <h1 className="text-balance">Typography</h1>
         <p className="lead no-orphan">
@@ -107,7 +107,7 @@ export default function TypographyPage() {
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="leading-tight border padding bottom-margin">
                 <strong>leading-tight (1.25)</strong><br />
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
@@ -117,7 +117,7 @@ export default function TypographyPage() {
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.
               </p>
             </div>
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="leading-normal border padding bottom-margin">
                 <strong>leading-normal (1.5)</strong><br />
                 The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.

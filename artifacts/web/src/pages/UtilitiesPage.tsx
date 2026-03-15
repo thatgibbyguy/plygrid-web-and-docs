@@ -16,8 +16,8 @@ export default function UtilitiesPage() {
   };
 
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Configuration</p>
         <h1 className="text-balance">Utilities</h1>
         <p className="lead no-orphan">
@@ -69,7 +69,7 @@ export default function UtilitiesPage() {
         <h2>Margin & Padding</h2>
 
         <div className="units-row">
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <h3>Margin</h3>
             <table className="table-stroked">
               <tbody>
@@ -86,7 +86,7 @@ export default function UtilitiesPage() {
               </tbody>
             </table>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <h3>Padding</h3>
             <table className="table-stroked">
               <tbody>
@@ -106,17 +106,17 @@ export default function UtilitiesPage() {
         <h3>Visual Demo</h3>
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="padding border border-radius bottom-margin">
                 <code>.padding</code>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="padding-top padding-bottom border border-radius bottom-margin">
                 <code>.padding-top .padding-bottom</code>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="margin border border-radius padding bottom-margin">
                 <code>.margin</code>
               </div>
@@ -283,11 +283,11 @@ export default function UtilitiesPage() {
         <h3>Visual Demo</h3>
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">Without text-balance</p>
               <h3>This heading demonstrates what happens without balanced text wrapping enabled</h3>
             </div>
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">With text-balance</p>
               <h3 className="text-balance">This heading demonstrates what happens with balanced text wrapping enabled</h3>
             </div>
@@ -308,13 +308,13 @@ export default function UtilitiesPage() {
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">Without no-link-style</p>
               <div className="border border-radius padding bottom-margin">
                 <a href="#">This link has default styling</a>
               </div>
             </div>
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">With no-link-style</p>
               <div className="border border-radius padding bottom-margin no-link-style">
                 <a href="#">This link has reset styling</a>
@@ -528,25 +528,25 @@ document.documentElement.dataset.theme =
         <p className="no-orphan">ply includes these accessibility features by default — no configuration needed.</p>
 
         <div className="units-row equal-height">
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Focus Visible</h3>
               <p className="text-sm no-margin no-orphan">All interactive elements show clear <code>:focus-visible</code> outlines for keyboard navigation.</p>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Reduced Motion</h3>
               <p className="text-sm no-margin no-orphan">Animations respect <code>prefers-reduced-motion</code> — disabled automatically for users who prefer it.</p>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Color Contrast</h3>
               <p className="text-sm no-margin no-orphan">All default color combinations meet WCAG AA contrast requirements out of the box.</p>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">Screen Reader</h3>
               <p className="text-sm no-margin no-orphan">The <code>sr-only</code> class hides content visually while keeping it accessible to assistive technology.</p>
@@ -561,13 +561,13 @@ document.documentElement.dataset.theme =
         <p className="no-orphan">ply ships with machine-readable files so AI agents can use it without reading documentation.</p>
 
         <div className="units-row equal-height">
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">PLY.md</h3>
               <p className="text-sm no-margin no-orphan">Complete class reference, usage rules, anti-patterns, and copy-paste snippets in a Markdown format that AI agents parse natively.</p>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <div className="border border-radius padding bottom-margin">
               <h3 className="text-lg font-semibold no-top-margin">ply-classes.json</h3>
               <p className="text-sm no-margin no-orphan">Machine-readable JSON class map with categories, descriptions, and examples. Perfect for programmatic tool use.</p>

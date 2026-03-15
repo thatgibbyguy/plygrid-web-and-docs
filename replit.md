@@ -107,9 +107,11 @@ Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Sw
 - **Key files**:
   - `src/App.tsx` — route definitions (wouter)
   - `src/index.css` — single line: `@import "plygrid/dist/css/ply.min.css";`
-  - `src/components/Layout.tsx` — desktop: `navbar navbar--borderless` with Lucide Home icon + links; mobile: `navigation-toggle` hamburger with `nav-stacked`.
+  - `src/components/Layout.tsx` — shadcn-style layout: minimal top navbar (`navbar navbar--borderless`) with Home icon + Docs/Components/Utilities links; inner pages get left sidebar (unit-20) with grouped section nav + main content (unit-80); Home page has no sidebar. Mobile: `navigation-toggle` hamburger with `nav-stacked`.
   - `src/components/CodeBlock.tsx` — native `<pre><code>` (ply auto-styles)
   - `src/pages/` — 6 content pages + Home + 404 (ControlsPage merges buttons/forms/alerts; UtilitiesPage merges helpers/theming)
+- **Layout architecture**: Follows shadcn/ui pattern — minimal top nav, grouped sidebar for inner pages (Getting Started / Layout / Design / Components / Configuration sections), centered hero on Home.
+- **Known plygrid v1.0.1 quirk**: `tablet-unit-100` is documented in PLY.md but NOT compiled into ply.min.css. Use `phone-unit-100` instead for full-width stacking on small screens.
 - **v1.0.1 features in use**:
   - `equal-height` on `units-row` for same-height card rows (replaces display--flex workaround)
   - `text-balance` on all page h1 headings

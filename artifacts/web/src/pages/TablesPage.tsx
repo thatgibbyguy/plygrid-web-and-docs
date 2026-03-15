@@ -10,8 +10,8 @@ const sampleData = [
 
 export default function TablesPage() {
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Data</p>
         <h1 className="text-balance">Tables</h1>
         <p className="lead no-orphan">
@@ -151,7 +151,7 @@ export default function TablesPage() {
         <h2>Simple & Stroked Tables</h2>
 
         <div className="units-row">
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <h3>Simple (no borders, no left padding)</h3>
             <div className="border border-radius padding">
               <table className="table-simple">
@@ -164,7 +164,7 @@ export default function TablesPage() {
               </table>
             </div>
           </div>
-          <div className="unit-50 tablet-unit-100">
+          <div className="unit-50 phone-unit-100">
             <h3>Stroked (bottom borders only)</h3>
             <div className="border border-radius padding">
               <table className="table-stroked">

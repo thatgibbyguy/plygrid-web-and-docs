@@ -2,8 +2,8 @@ import CodeBlock from "../components/CodeBlock";
 
 export default function NavigationPage() {
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Wayfinding</p>
         <h1 className="text-balance">Navigation</h1>
         <p className="lead no-orphan">
@@ -222,7 +222,7 @@ export default function NavigationPage() {
 
         <div className="border border-radius padding">
           <div className="units-row">
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Dashboard</a></li>
@@ -308,7 +308,7 @@ export default function NavigationPage() {
             </ul>
           </nav>
           <div className="units-row margin-top--extra">
-            <aside className="unit-20 tablet-unit-100">
+            <aside className="unit-20 phone-unit-100">
               <nav className="nav-stacked">
                 <ul>
                   <li className="active"><a href="#">Overview</a></li>
@@ -317,21 +317,21 @@ export default function NavigationPage() {
                 </ul>
               </nav>
             </aside>
-            <div className="unit-80 tablet-unit-100">
+            <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Revenue</h4>
                     <p className="text-3xl font-bold">$12,340</p>
                   </div>
                 </div>
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Users</h4>
                     <p className="text-3xl font-bold">1,234</p>
                   </div>
                 </div>
-                <div className="unit-33 tablet-unit-100">
+                <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
                     <h4 className="text-sm uppercase">Orders</h4>
                     <p className="text-3xl font-bold">567</p>

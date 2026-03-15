@@ -2,8 +2,8 @@ import CodeBlock from "../components/CodeBlock";
 
 export default function GridPage() {
   return (
-    <div className="units-container">
-      <section className="padding-top--extra padding-bottom--extra border-bottom">
+    <div>
+      <section className="padding-bottom--extra border-bottom">
         <p className="text-xs font-semibold uppercase">Layout</p>
         <h1 className="text-balance">Grid System</h1>
         <p className="lead no-orphan">
@@ -189,18 +189,18 @@ export default function GridPage() {
 
         <div className="border border-radius padding margin-top--extra">
           <div className="units-row">
-            <div className="unit-25 tablet-unit-100">
+            <div className="unit-25 phone-unit-100">
               <div className="border border-radius padding text-center text-sm">Sidebar (stacks on tablet)</div>
             </div>
-            <div className="unit-75 tablet-unit-100">
+            <div className="unit-75 phone-unit-100">
               <div className="border border-radius padding text-center text-sm">Content (stacks on tablet)</div>
             </div>
           </div>
         </div>
 
         <CodeBlock code={`<div class="units-row">
-  <div class="unit-25 tablet-unit-100">Sidebar</div>
-  <div class="unit-75 tablet-unit-100">Content</div>
+  <div class="unit-25 phone-unit-100">Sidebar</div>
+  <div class="unit-75 phone-unit-100">Content</div>
 </div>`} />
       </section>
 
@@ -250,17 +250,17 @@ export default function GridPage() {
         <h3>Equal Height</h3>
         <div className="border border-radius padding">
           <div className="units-row equal-height">
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="border border-radius padding text-center text-sm">
                 <p className="no-margin">Short card</p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="border border-radius padding text-center text-sm">
                 <p className="no-margin">Taller card with more content to demonstrate how equal-height stretches siblings</p>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100">
+            <div className="unit-33 phone-unit-100">
               <div className="border border-radius padding text-center text-sm">
                 <p className="no-margin">Medium card</p>
               </div>

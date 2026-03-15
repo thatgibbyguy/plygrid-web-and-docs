@@ -2,18 +2,32 @@ import { Link, useLocation } from "wouter";
 import { useState, useEffect, type ReactNode } from "react";
 import { Home } from "lucide-react";
 
-const navLinks = [
-  { path: "/grid", label: "Grid" },
-  { path: "/typography", label: "Typography" },
-  { path: "/controls", label: "Controls" },
-  { path: "/navigation", label: "Navigation" },
-  { path: "/tables", label: "Tables" },
-  { path: "/utilities", label: "Utilities" },
+const sections = [
+  { label: "Getting Started", items: [
+    { path: "/", label: "Introduction" },
+  ]},
+  { label: "Layout", items: [
+    { path: "/grid", label: "Grid" },
+  ]},
+  { label: "Design", items: [
+    { path: "/typography", label: "Typography" },
+  ]},
+  { label: "Components", items: [
+    { path: "/controls", label: "Controls" },
+    { path: "/navigation", label: "Navigation" },
+    { path: "/tables", label: "Tables" },
+  ]},
+  { label: "Configuration", items: [
+    { path: "/utilities", label: "Utilities" },
+  ]},
 ];
+
+const flatLinks = sections.flatMap((s) => s.items);
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [navOpen, setNavOpen] = useState(false);
+  const isHome = location === "/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,16 +39,20 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header className="navigation-fixed width-100">
         <nav className="navbar navbar--borderless">
           <ul className="hide-on-mobile">
-            <li className={location === "/" ? "active" : ""}>
+            <li className={isHome ? "active" : ""}>
               <Link href="/" aria-label="Home">
                 <Home size={16} />
               </Link>
             </li>
-            {navLinks.map((link) => (
-              <li key={link.path} className={location === link.path ? "active" : ""}>
-                <Link href={link.path}>{link.label}</Link>
-              </li>
-            ))}
+            <li className={location === "/grid" || location === "/typography" ? "active" : ""}>
+              <Link href="/grid">Docs</Link>
+            </li>
+            <li className={location === "/controls" || location === "/navigation" || location === "/tables" ? "active" : ""}>
+              <Link href="/controls">Components</Link>
+            </li>
+            <li className={location === "/utilities" ? "active" : ""}>
+              <Link href="/utilities">Utilities</Link>
+            </li>
           </ul>
         </nav>
         <div className="hide-on-desktop">
@@ -66,7 +84,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           {navOpen && (
             <nav className="nav-stacked">
               <ul>
-                {navLinks.map((link) => (
+                {flatLinks.map((link) => (
                   <li key={link.path} className={location === link.path ? "active" : ""}>
                     <Link href={link.path}>{link.label}</Link>
                   </li>
@@ -77,18 +95,51 @@ export default function Layout({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      <main className="padding-top--extra margin-top--extra">{children}</main>
+      <div className="padding-top--extra margin-top--extra">
+        {isHome ? (
+          <main>{children}</main>
+        ) : (
+          <div className="units-container">
+            <div className="units-row">
+              <aside className="unit-20 phone-unit-100 hide-on-mobile">
+                <nav className="padding-right no-link-style">
+                  {sections.map((section) => (
+                    <div key={section.label} className="bottom-margin">
+                      <p className="text-xs font-semibold uppercase no-margin padding-bottom">{section.label}</p>
+                      <ul className="flat-list">
+                        {section.items.map((item) => (
+                          <li key={item.path}>
+                            <Link
+                              href={item.path}
+                              className={`display--block padding-left padding-top padding-bottom text-sm ${location === item.path ? "font-semibold" : "text-secondary"}`}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </nav>
+              </aside>
+              <main className="unit-80 phone-unit-100">
+                {children}
+              </main>
+            </div>
+          </div>
+        )}
+      </div>
 
       <footer className="border-top padding-top--extra padding-bottom--extra text-sm">
         <div className="units-container">
           <div className="units-row">
-            <div className="unit-50 tablet-unit-100">
+            <div className="unit-50 phone-unit-100">
               <p className="no-orphan">
                 <strong>ply</strong> — A ratio-based, AI-ready CSS framework.
               </p>
               <p>MIT License. Built for humans and machines.</p>
             </div>
-            <div className="unit-50 tablet-unit-100 text-right">
+            <div className="unit-50 phone-unit-100 text-right">
               <p>~18KB gzipped. No JavaScript. No build step.</p>
               <p>
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>
