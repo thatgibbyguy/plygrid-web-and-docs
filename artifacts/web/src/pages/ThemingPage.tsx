@@ -211,55 +211,6 @@ document.documentElement.dataset.theme =
         </div>
       </section>
 
-      <section className="padding-top--extra padding-bottom--extra border-bottom" id="bundles">
-        <p className="text-xs font-semibold uppercase">Bundles</p>
-        <h2>Bundle Options</h2>
-        <p>Choose the right bundle for your project size requirements.</p>
-
-        <div className="units-row">
-          <div className="unit-25 tablet-unit-50 phone-unit-100">
-            <div className="border border-radius padding text-center bottom-margin">
-              <p className="text-3xl font-bold">~18KB</p>
-              <p className="text-sm">ply.min.css</p>
-              <p className="text-xs">Everything</p>
-            </div>
-          </div>
-          <div className="unit-25 tablet-unit-50 phone-unit-100">
-            <div className="border border-radius padding text-center bottom-margin">
-              <p className="text-3xl font-bold">~16KB</p>
-              <p className="text-sm">ply-core.min.css</p>
-              <p className="text-xs">Core features</p>
-            </div>
-          </div>
-          <div className="unit-25 tablet-unit-50 phone-unit-100">
-            <div className="border border-radius padding text-center bottom-margin">
-              <p className="text-3xl font-bold">~5KB</p>
-              <p className="text-sm">ply-essentials.min.css</p>
-              <p className="text-xs">Grid + helpers</p>
-            </div>
-          </div>
-          <div className="unit-25 tablet-unit-50 phone-unit-100">
-            <div className="border border-radius padding text-center bottom-margin">
-              <p className="text-3xl font-bold">~3KB</p>
-              <p className="text-sm">ply-helpers.min.css</p>
-              <p className="text-xs">Helpers only</p>
-            </div>
-          </div>
-        </div>
-
-        <CodeBlock code={`<!-- Full bundle -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
-
-<!-- Core (no labels, dropdowns, loaders, print) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-core.min.css">
-
-<!-- Essentials (grid + helpers only) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-essentials.min.css">
-
-<!-- Helpers only -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply-helpers.min.css">`} />
-      </section>
-
       <section className="padding-top--extra padding-bottom--extra" id="ai">
         <p className="text-xs font-semibold uppercase">AI</p>
         <h2>AI Integration</h2>
