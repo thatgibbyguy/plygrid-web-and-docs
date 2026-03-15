@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { useState, useEffect, type ReactNode } from "react";
-import { Home } from "lucide-react";
+import { Home, Sun, Moon, Monitor } from "lucide-react";
 
 const sections = [
   { label: "Getting Started", items: [
@@ -27,6 +27,12 @@ const flatLinks = sections.flatMap((s) => s.items);
 export default function Layout({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [navOpen, setNavOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return document.documentElement.getAttribute("data-theme") || "";
+    }
+    return "";
+  });
   const isHome = location === "/";
 
   useEffect(() => {
@@ -34,30 +40,72 @@ export default function Layout({ children }: { children: ReactNode }) {
     setNavOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }, [theme]);
+
   return (
     <>
       <header className="navigation-fixed width-100">
-        <nav className="navbar navbar--borderless">
-          <ul className="hide-on-mobile">
-            <li className={isHome ? "active" : ""}>
-              <Link href="/" aria-label="Home">
-                <Home size={16} />
-              </Link>
-            </li>
-            <li className={location === "/grid" || location === "/typography" ? "active" : ""}>
-              <Link href="/grid">Docs</Link>
-            </li>
-            <li className={location === "/controls" || location === "/navigation" || location === "/tables" ? "active" : ""}>
-              <Link href="/controls">Components</Link>
-            </li>
-            <li className={location === "/utilities" ? "active" : ""}>
-              <Link href="/utilities">Utilities</Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="hide-on-mobile">
+        <div className="units-row no-margin align-middle">
+          <div className="unit-auto no-padding">
+            <nav className="navbar navbar--borderless">
+              <ul>
+                <li className={isHome ? "active" : ""}>
+                  <Link href="/" aria-label="Home">
+                    <Home size={16} />
+                  </Link>
+                </li>
+                <li className={location === "/grid" || location === "/typography" ? "active" : ""}>
+                  <Link href="/grid">Docs</Link>
+                </li>
+                <li className={location === "/controls" || location === "/navigation" || location === "/tables" ? "active" : ""}>
+                  <Link href="/controls">Components</Link>
+                </li>
+                <li className={location === "/utilities" ? "active" : ""}>
+                  <Link href="/utilities">Utilities</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="unit-auto no-padding padding-right">
+            <div className="btn-group">
+              <button
+                className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
+                onClick={() => setTheme("")}
+                aria-label="Auto theme"
+                title="System"
+              >
+                <Monitor size={14} />
+              </button>
+              <button
+                className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
+                onClick={() => setTheme("light")}
+                aria-label="Light theme"
+                title="Light"
+              >
+                <Sun size={14} />
+              </button>
+              <button
+                className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
+                onClick={() => setTheme("dark")}
+                aria-label="Dark theme"
+                title="Dark"
+              >
+                <Moon size={14} />
+              </button>
+            </div>
+          </div>
+        </div>
+        </div>
         <div className="hide-on-desktop">
           <div className="units-row no-margin align-middle">
-            <div className="unit-auto no-padding">
+            <div className="phone-unit-50 no-padding">
               <div
                 className={`navigation-toggle${navOpen ? " navigation-toggle-show" : ""}`}
                 onClick={() => setNavOpen(!navOpen)}
@@ -75,10 +123,30 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <span>Menu</span>
               </div>
             </div>
-            <div className="unit-auto no-padding">
-              <Link href="/" className="padding display--inline-block" aria-label="Home">
-                <Home size={16} />
-              </Link>
+            <div className="phone-unit-50 no-padding text-right padding-right">
+              <div className="btn-group">
+                <button
+                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("")}
+                  aria-label="Auto theme"
+                >
+                  <Monitor size={14} />
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("light")}
+                  aria-label="Light theme"
+                >
+                  <Sun size={14} />
+                </button>
+                <button
+                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
+                  onClick={() => setTheme("dark")}
+                  aria-label="Dark theme"
+                >
+                  <Moon size={14} />
+                </button>
+              </div>
             </div>
           </div>
           {navOpen && (

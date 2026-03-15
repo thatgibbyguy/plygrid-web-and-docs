@@ -1,61 +1,17 @@
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
 import {
-  Sun, Moon, Monitor,
   Cpu, Accessibility, Feather,
   LayoutGrid, Type, ToggleLeft, Compass, Table2, Wrench,
   Zap, Smartphone, Keyboard, Globe, Puzzle, BarChart3
 } from "lucide-react";
 
 export default function Home() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return document.documentElement.getAttribute("data-theme") || "";
-    }
-    return "";
-  });
-
-  useEffect(() => {
-    if (theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-  }, [theme]);
-
   return (
     <>
       <section className="padding-top--extra padding-bottom--extra">
         <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <div className="btn-group align-center bottom-margin">
-                <button
-                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("")}
-                  aria-label="Auto theme"
-                  title="Auto"
-                >
-                  <Monitor size={14} />
-                </button>
-                <button
-                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("light")}
-                  aria-label="Light theme"
-                  title="Light"
-                >
-                  <Sun size={14} />
-                </button>
-                <button
-                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
-                  onClick={() => setTheme("dark")}
-                  aria-label="Dark theme"
-                  title="Dark"
-                >
-                  <Moon size={14} />
-                </button>
-              </div>
-
               <h1 className="text-5xl font-bold text-balance">Ship faster. Ship accessible.</h1>
               <p className="text-xl text-secondary no-orphan">
                 A semantic CSS framework that gives you responsive layouts, dark mode,
