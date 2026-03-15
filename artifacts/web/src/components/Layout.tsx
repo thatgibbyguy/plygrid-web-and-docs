@@ -4,7 +4,7 @@ import { Home, Sun, Moon, Monitor } from "lucide-react";
 
 const sections = [
   { label: "Getting Started", items: [
-    { path: "/", label: "Introduction" },
+    { path: "/get-started", label: "Get Started" },
   ]},
   { label: "Layout", items: [
     { path: "/grid", label: "Grid" },

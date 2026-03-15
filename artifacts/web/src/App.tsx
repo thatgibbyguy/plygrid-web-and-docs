@@ -1,6 +1,7 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import GetStartedPage from "./pages/GetStartedPage";
 import GridPage from "./pages/GridPage";
 import TypographyPage from "./pages/TypographyPage";
 import ControlsPage from "./pages/ControlsPage";
@@ -14,6 +15,7 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/get-started" component={GetStartedPage} />
         <Route path="/grid" component={GridPage} />
         <Route path="/typography" component={TypographyPage} />
         <Route path="/controls" component={ControlsPage} />

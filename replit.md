@@ -99,18 +99,20 @@ Utility scripts package. Each script is a `.ts` file in `src/` with a correspond
 
 Showcase site for the `plygrid` CSS framework (npm). Built with React + Vite. Swiss modernist design aesthetic.
 
-- **CSS Framework**: `plygrid@1.0.1` — ratio-based CSS grid framework. Import via `plygrid/dist/css/ply.min.css`. Reference: `artifacts/web/node_modules/plygrid/PLY.md`.
-- **Critical constraint**: Zero custom CSS and zero inline styles — exclusively plygrid classes throughout.
-- **Routing**: wouter, 6 pages — Home, Grid (/grid), Typography (/typography), Controls (/controls), Navigation (/navigation), Tables (/tables), Utilities (/utilities).
-- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Home.tsx hero with icon-only toggle buttons (Monitor/Sun/Moon from lucide-react).
+- **CSS Framework**: `plygrid@1.0.2` — ratio-based CSS grid framework. Sass import via `@use 'plygrid/src/scss/ply' as *` in `index.scss`. Reference: `artifacts/web/node_modules/plygrid/PLY.md`.
+- **Critical constraint**: Zero custom CSS and zero inline styles — exclusively plygrid classes plus thin Sass wrappers in `index.scss` (background colors, `color-blue`, `margin-left-auto`).
+- **Routing**: wouter, 7 pages — Home, Get Started (/get-started), Grid (/grid), Typography (/typography), Controls (/controls), Navigation (/navigation), Tables (/tables), Utilities (/utilities).
+- **Dark Mode**: `data-theme` attribute on `<html>`, managed by Layout.tsx header with icon-only toggle buttons (Monitor/Sun/Moon from lucide-react).
 - **No backend dependencies** — pure frontend showcase.
 - **Key files**:
   - `src/App.tsx` — route definitions (wouter)
-  - `src/index.css` — single line: `@import "plygrid/dist/css/ply.min.css";`
+  - `src/index.scss` — Sass import of plygrid + thin utility wrappers (background colors, color-blue, margin-left-auto, code overrides for blue section)
   - `src/components/Layout.tsx` — shadcn-style layout: minimal top navbar (`navbar navbar--borderless`) with Home icon + Docs/Components/Utilities links; inner pages get left sidebar (unit-20) with grouped section nav + main content (unit-80); Home page has no sidebar. Mobile: `navigation-toggle` hamburger with `nav-stacked`.
   - `src/components/CodeBlock.tsx` — native `<pre><code>` (ply auto-styles)
-  - `src/pages/` — 6 content pages + Home + 404 (ControlsPage merges buttons/forms/alerts; UtilitiesPage merges helpers/theming)
+  - `src/pages/` — 7 content pages + Home + 404 (ControlsPage merges buttons/forms/alerts; UtilitiesPage merges helpers/theming)
+  - `src/pages/GetStartedPage.tsx` — Two paths (CDN vs Sass), AI agent instructions, and "what you get" summary
 - **Layout architecture**: Follows shadcn/ui pattern — minimal top nav, grouped sidebar for inner pages (Getting Started / Layout / Design / Components / Configuration sections), centered hero on Home.
+- **Home page flow**: Hero → Stats bar → AI-native (blue bg, white cards) → 3 pillar cards (Just CSS, 18KB, WCAG AA) → Explore the docs (6 link cards) → Footer
 - **Known plygrid v1.0.1 quirk**: `tablet-unit-100` is documented in PLY.md but NOT compiled into ply.min.css. Use `phone-unit-100` instead for full-width stacking on small screens.
 - **v1.0.1 features in use**:
   - `equal-height` on `units-row` for same-height card rows (replaces display--flex workaround)

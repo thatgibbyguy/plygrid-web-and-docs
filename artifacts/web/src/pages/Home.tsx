@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import {
   Cpu, Accessibility, Feather,
   LayoutGrid, Type, ToggleLeft, Compass, Table2, Wrench,
-  Zap, Smartphone, Keyboard, Globe, Puzzle, BarChart3
+  Zap, Keyboard, Globe, Puzzle
 } from "lucide-react";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
               </p>
 
               <div className="padding-top">
-                <Link href="/grid" className="btn btn-blue">Get Started</Link>
+                <Link href="/get-started" className="btn btn-blue">Get Started</Link>
                 {" "}
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
               </div>
@@ -62,9 +62,9 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase text-inverse">AI-native</p>
               <h2 className="text-balance text-inverse">Built for humans and machines</h2>
               <p className="text-inverse no-orphan">
-                ply ships with PLY.md and ply-classes.json — a complete class reference
-                any coding agent can read. The same readable names that help you
-                also help AI generate correct UI on the first try.
+                ply ships with PLY.md — a complete class reference any coding agent
+                can read. One file in your context window and your AI writes correct,
+                accessible UI on the first try.
               </p>
             </div>
           </div>
@@ -75,30 +75,30 @@ export default function Home() {
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="background-white border-radius padding text-center">
                     <Cpu size={28} className="color-blue display--inline-block bottom-margin" />
-                    <h3 className="text-lg font-semibold">Machine-Readable Docs</h3>
+                    <h3 className="text-lg font-semibold">One-File Reference</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      PLY.md is designed for LLM context windows. Every class, every
-                      modifier, every responsive prefix — documented for agents.
+                      PLY.md fits in a single LLM context window. Every class,
+                      modifier, and responsive prefix — no doc-searching required.
                     </p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="background-white border-radius padding text-center">
                     <Zap size={28} className="color-blue display--inline-block bottom-margin" />
-                    <h3 className="text-lg font-semibold">Semantic Names</h3>
+                    <h3 className="text-lg font-semibold">Obvious Names</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      <code>unit-50</code> means 50%. <code>btn-blue</code> means a blue button.
-                      No shorthand to memorize, no ambiguity to resolve.
+                      <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
+                      No shorthand to memorize, no ambiguity to hallucinate.
                     </p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="background-white border-radius padding text-center">
                     <Keyboard size={28} className="color-blue display--inline-block bottom-margin" />
-                    <h3 className="text-lg font-semibold">Predictable Output</h3>
+                    <h3 className="text-lg font-semibold">~200 Classes</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      Ratio-based classes produce consistent results whether
-                      a human or an AI writes the markup.
+                      Small surface area means fewer wrong answers.
+                      Humans and agents pick the right class on the first try.
                     </p>
                   </div>
                 </div>
@@ -111,130 +111,36 @@ export default function Home() {
       <div className="units-container">
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Composable</p>
-              <h2 className="text-balance">Bring your own everything</h2>
-              <p className="text-secondary no-orphan">
-                ply handles layout, typography, and controls. You pick the icon library,
-                the charting library, the JS framework. It stays out of your way.
-              </p>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Puzzle size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Icon Library</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Lucide, Feather, Heroicons, Font Awesome — ply doesn't ship icons,
-                    so you're never locked into one set.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <BarChart3 size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Data Library</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Recharts, D3, Chart.js — drop in any visualization library.
-                    ply's grid gives it structure without fighting your styles.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Globe size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Any Framework</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    React, Vue, Svelte, plain HTML — ply is just CSS.
-                    No JavaScript opinions, no framework coupling.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="padding-top--extra padding-bottom--extra">
-          <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Built for speed</p>
-              <h2 className="text-balance">Develop fast. Load fast.</h2>
-              <p className="text-secondary no-orphan">
-                Readable class names mean less time in the docs. Semantic HTML means
-                tablet, phone, screen reader, and keyboard support is done on your first pass —
-                not bolted on later.
-              </p>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
-            <div className="unit-80 phone-unit-100">
-              <div className="units-row">
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Smartphone size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Multi-Modal First</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Responsive breakpoints, dark mode, reduced motion, and keyboard
-                    navigation — all built in, not afterthoughts.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Accessibility size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Accessible by Default</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    Focus-visible outlines, semantic markup, and WCAG AA contrast
-                    baked into the CSS itself. Ship compliant from day one.
-                  </p>
-                </div>
-                <div className="unit-33 phone-unit-100 text-center bottom-margin padding">
-                  <Feather size={28} className="color-blue display--inline-block bottom-margin" />
-                  <h3 className="text-lg font-semibold">Small Footprint</h3>
-                  <p className="text-sm text-secondary no-orphan no-margin">
-                    ~18KB gzipped. No JavaScript runtime. Perfect for low-bandwidth
-                    connections and offline-capable apps.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="padding-top--extra padding-bottom--extra">
-          <div className="units-row centered-content">
-            <div className="unit-80 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Get started</p>
-              <h2 className="text-balance">Two paths, one framework</h2>
-            </div>
-          </div>
-
-          <div className="units-row centered-content padding-top--extra">
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="border-radius padding border">
-                    <p className="text-xs font-semibold uppercase color-blue no-margin">Prototype</p>
-                    <h3 className="text-lg font-semibold">CDN</h3>
-                    <p className="text-sm text-secondary no-orphan">
-                      One link tag. No install, no build step. Great for wireframing ideas
-                      and apps that need to support low bandwidth or offline mode.
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="border border-radius padding text-center">
+                    <Puzzle size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">Just CSS</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      No JavaScript runtime. Works with React, Vue, Svelte, or plain HTML.
+                      Bring your own icons, charts, and framework.
                     </p>
-                    <p className="text-sm no-margin">
-                      <code>plygrid@1/dist/css/ply.min.css</code>
-                    </p>
-                    <p className="text-xs text-muted no-margin">via jsdelivr CDN</p>
                   </div>
                 </div>
-                <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="border-radius padding border">
-                    <p className="text-xs font-semibold uppercase color-blue no-margin">Customize</p>
-                    <h3 className="text-lg font-semibold">Sass</h3>
-                    <p className="text-sm text-secondary no-orphan">
-                      Full access to color variables, mixins, and the ability to extend
-                      ply at the Sass level. For when you're building a real product.
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="border border-radius padding text-center">
+                    <Feather size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">18KB Total</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      The entire framework gzipped. Dark mode, responsive grid,
+                      typography, forms, and nav — nothing to tree-shake.
                     </p>
-                    <p className="text-sm no-margin">
-                      <code>npm install plygrid</code>
+                  </div>
+                </div>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <div className="border border-radius padding text-center">
+                    <Accessibility size={28} className="color-blue display--inline-block bottom-margin" />
+                    <h3 className="text-lg font-semibold">WCAG AA Free</h3>
+                    <p className="text-sm text-secondary no-orphan no-margin">
+                      Focus outlines, semantic markup, and contrast ratios
+                      baked into the CSS. Ship compliant from your first div.
                     </p>
-                    <p className="text-xs text-muted no-margin">then import the Sass source</p>
                   </div>
                 </div>
               </div>
@@ -245,8 +151,7 @@ export default function Home() {
         <section className="padding-top--extra padding-bottom--extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Explore</p>
-              <h2 className="text-balance">Everything you need</h2>
+              <h2 className="text-balance">Explore the docs</h2>
               <p className="text-secondary no-orphan">
                 A complete design system in a single stylesheet.
               </p>
