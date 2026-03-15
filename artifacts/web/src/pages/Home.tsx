@@ -72,10 +72,10 @@ export default function Home() {
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn btn-outline">GitHub</a>
               </div>
             </div>
-            <div className="unit-33 tablet-unit-100 text-right">
-              <div className="btn-group">
+            <div className="unit-33 tablet-unit-100">
+              <div className="btn-group align-right">
                 <button
-                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : "btn-outline"}`}
+                  className={`btn btn-smaller ${theme === "" ? "btn-blue" : ""}`}
                   onClick={() => setTheme("")}
                   aria-label="Auto theme"
                   title="Auto"
@@ -83,7 +83,7 @@ export default function Home() {
                   <Monitor size={14} />
                 </button>
                 <button
-                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : "btn-outline"}`}
+                  className={`btn btn-smaller ${theme === "light" ? "btn-blue" : ""}`}
                   onClick={() => setTheme("light")}
                   aria-label="Light theme"
                   title="Light"
@@ -91,7 +91,7 @@ export default function Home() {
                   <Sun size={14} />
                 </button>
                 <button
-                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : "btn-outline"}`}
+                  className={`btn btn-smaller ${theme === "dark" ? "btn-blue" : ""}`}
                   onClick={() => setTheme("dark")}
                   aria-label="Dark theme"
                   title="Dark"
