@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import {
-  LayoutGrid, Type, ToggleLeft, Compass, Table2, Wrench,
+  LayoutGrid, Type, MousePointer2, Compass, Table2, Wrench,
   Eye, Moon, Activity, Monitor, BookOpen, FileJson,
-  ShieldCheck, Feather, Cpu,
+  ShieldCheck, Feather, Cpu, Palette, Bell,
 } from "lucide-react";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
               </p>
 
               <div className="padding-top">
-                <Link href="/get-started" className="btn btn-blue">Get Started</Link>
+                <Link href="/docs/installation" className="btn btn-blue">Get Started</Link>
                 {" "}
                 <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
               </div>
@@ -102,7 +102,7 @@ export default function Home() {
         <section className="padding-top-extra padding-bottom-extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase">Compliance</p>
+              <p className="text-xs font-semibold uppercase color-blue">Compliance</p>
               <h2 className="text-balance">What you stop worrying about</h2>
               <p className="text-secondary no-orphan">
                 Every feature below is on by default. No plugins, no overrides, no forgetting.
@@ -185,7 +185,7 @@ export default function Home() {
         <section className="padding-top-extra padding-bottom-extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase">AI native</p>
+              <p className="text-xs font-semibold uppercase color-blue">AI native</p>
               <h2 className="text-balance">One file. ~200 classes. No ambiguity.</h2>
               <p className="text-secondary no-orphan">
                 <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
@@ -214,45 +214,45 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/grid" className="display-block border border-radius padding cursor-finger">
+                  <Link href="/docs/grid" className="display-block border border-radius padding cursor-finger">
                     <LayoutGrid size={20} className="color-blue display-inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Grid</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Ratio-based flexbox with responsive prefixes</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/typography" className="display-block border border-radius padding cursor-finger">
+                  <Link href="/docs/typography" className="display-block border border-radius padding cursor-finger">
                     <Type size={20} className="color-blue display-inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Typography</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Type scale from text-xs to text-5xl</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/controls" className="display-block border border-radius padding cursor-finger">
-                    <ToggleLeft size={20} className="color-blue display-inline-block bottom-margin" />
-                    <h3 className="text-base font-semibold">Controls</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Buttons, forms, alerts, and labels</p>
+                  <Link href="/docs/colors" className="display-block border border-radius padding cursor-finger">
+                    <Palette size={20} className="color-blue display-inline-block bottom-margin" />
+                    <h3 className="text-base font-semibold">Colors & Theming</h3>
+                    <p className="text-sm text-muted no-margin no-orphan">Dark mode, custom properties, custom themes</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/navigation" className="display-block border border-radius padding cursor-finger">
+                  <Link href="/docs/buttons" className="display-block border border-radius padding cursor-finger">
+                    <MousePointer2 size={20} className="color-blue display-inline-block bottom-margin" />
+                    <h3 className="text-base font-semibold">Buttons</h3>
+                    <p className="text-sm text-muted no-margin no-orphan">Six colors, outline, ghost, groups</p>
+                  </Link>
+                </div>
+                <div className="unit-33 phone-unit-100 bottom-margin">
+                  <Link href="/docs/navigation" className="display-block border border-radius padding cursor-finger">
                     <Compass size={20} className="color-blue display-inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Navigation</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Navbar, pills, tabs, breadcrumbs</p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/tables" className="display-block border border-radius padding cursor-finger">
+                  <Link href="/docs/tables" className="display-block border border-radius padding cursor-finger">
                     <Table2 size={20} className="color-blue display-inline-block bottom-margin" />
                     <h3 className="text-base font-semibold">Tables</h3>
                     <p className="text-sm text-muted no-margin no-orphan">Bordered, striped, and hoverable</p>
-                  </Link>
-                </div>
-                <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/utilities" className="display-block border border-radius padding cursor-finger">
-                    <Wrench size={20} className="color-blue display-inline-block bottom-margin" />
-                    <h3 className="text-base font-semibold">Utilities</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Spacing, display, theming, dark mode</p>
                   </Link>
                 </div>
               </div>

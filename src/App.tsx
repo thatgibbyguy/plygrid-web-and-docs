@@ -1,13 +1,19 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import GetStartedPage from "./pages/GetStartedPage";
-import GridPage from "./pages/GridPage";
+import InstallationPage from "./pages/InstallationPage";
+import SemanticHtmlPage from "./pages/SemanticHtmlPage";
+import ColorsPage from "./pages/ColorsPage";
 import TypographyPage from "./pages/TypographyPage";
-import ControlsPage from "./pages/ControlsPage";
+import GridPage from "./pages/GridPage";
+import ButtonsPage from "./pages/ButtonsPage";
+import FormsPage from "./pages/FormsPage";
 import NavigationPage from "./pages/NavigationPage";
 import TablesPage from "./pages/TablesPage";
+import AlertsPage from "./pages/AlertsPage";
 import UtilitiesPage from "./pages/UtilitiesPage";
+import AccessibilityPage from "./pages/AccessibilityPage";
+import AIAgentsPage from "./pages/AIAgentsPage";
 import NotFound from "./pages/not-found";
 
 function Router() {
@@ -15,13 +21,19 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/get-started" component={GetStartedPage} />
-        <Route path="/grid" component={GridPage} />
-        <Route path="/typography" component={TypographyPage} />
-        <Route path="/controls" component={ControlsPage} />
-        <Route path="/navigation" component={NavigationPage} />
-        <Route path="/tables" component={TablesPage} />
-        <Route path="/utilities" component={UtilitiesPage} />
+        <Route path="/docs/installation" component={InstallationPage} />
+        <Route path="/docs/semantic-html" component={SemanticHtmlPage} />
+        <Route path="/docs/colors" component={ColorsPage} />
+        <Route path="/docs/typography" component={TypographyPage} />
+        <Route path="/docs/grid" component={GridPage} />
+        <Route path="/docs/buttons" component={ButtonsPage} />
+        <Route path="/docs/forms" component={FormsPage} />
+        <Route path="/docs/navigation" component={NavigationPage} />
+        <Route path="/docs/tables" component={TablesPage} />
+        <Route path="/docs/alerts" component={AlertsPage} />
+        <Route path="/docs/utilities" component={UtilitiesPage} />
+        <Route path="/docs/accessibility" component={AccessibilityPage} />
+        <Route path="/docs/ai-agents" component={AIAgentsPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -1,71 +1,205 @@
-import { useState } from "react";
+import { Link } from "wouter";
 import CodeBlock from "../components/CodeBlock";
 
 export default function UtilitiesPage() {
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    return document.documentElement.getAttribute("data-theme") || "auto";
-  });
-
-  const applyTheme = (theme: string) => {
-    setCurrentTheme(theme);
-    if (theme === "auto") {
-      document.documentElement.removeAttribute("data-theme");
-    } else {
-      document.documentElement.setAttribute("data-theme", theme);
-    }
-  };
-
   return (
     <div>
-      <section className="padding-bottom-extra border-bottom">
-        <p className="text-xs font-semibold uppercase">Configuration</p>
+      <section className="padding-top-extra padding-bottom-extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-blue">Helpers</p>
         <h1 className="text-balance">Utilities</h1>
         <p className="lead no-orphan">
-          Helper classes for spacing, display, visibility, borders, and dimensions — plus
-          dark mode toggling and full CSS custom property theming.
+          Helper classes for spacing, display, visibility, borders, dimensions,
+          text wrapping, and animations.
         </p>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="display">
-        <p className="text-xs font-semibold uppercase">Display</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="display"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Display</p>
         <h2>Display Utilities</h2>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>CSS</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>CSS</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><code>display-flex</code></td><td>display: flex</td></tr>
-            <tr><td><code>display-block</code></td><td>display: block</td></tr>
-            <tr><td><code>display-inline-block</code></td><td>display: inline-block</td></tr>
-            <tr><td><code>display-grid</code></td><td>display: grid</td></tr>
-            <tr><td><code>display-none</code></td><td>display: none</td></tr>
-            <tr><td><code>display-table</code></td><td>display: table</td></tr>
-            <tr><td><code>display-table-cell</code></td><td>display: table-cell</td></tr>
+            <tr>
+              <td>
+                <code>display-flex</code>
+              </td>
+              <td>display: flex</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-block</code>
+              </td>
+              <td>display: block</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-inline-block</code>
+              </td>
+              <td>display: inline-block</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-grid</code>
+              </td>
+              <td>display: grid</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-none</code>
+              </td>
+              <td>display: none</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-table</code>
+              </td>
+              <td>display: table</td>
+            </tr>
+            <tr>
+              <td>
+                <code>display-table-cell</code>
+              </td>
+              <td>display: table-cell</td>
+            </tr>
           </tbody>
         </table>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="position">
-        <p className="text-xs font-semibold uppercase">Position</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="flex-alignment"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Flex</p>
+        <h2>Flex Alignment</h2>
+        <p className="no-orphan">
+          Use with <code>display-flex</code> to align children along both axes.
+        </p>
+
+        <div className="units-row">
+          <div className="unit-50 phone-unit-100">
+            <h3>Align Items</h3>
+            <table className="table-stroked">
+              <tbody>
+                <tr><td><code>items-center</code></td><td>align-items: center</td></tr>
+                <tr><td><code>items-start</code></td><td>align-items: flex-start</td></tr>
+                <tr><td><code>items-end</code></td><td>align-items: flex-end</td></tr>
+                <tr><td><code>items-stretch</code></td><td>align-items: stretch</td></tr>
+                <tr><td><code>items-baseline</code></td><td>align-items: baseline</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="unit-50 phone-unit-100">
+            <h3>Justify Content</h3>
+            <table className="table-stroked">
+              <tbody>
+                <tr><td><code>justify-center</code></td><td>justify-content: center</td></tr>
+                <tr><td><code>justify-start</code></td><td>justify-content: flex-start</td></tr>
+                <tr><td><code>justify-end</code></td><td>justify-content: flex-end</td></tr>
+                <tr><td><code>justify-between</code></td><td>justify-content: space-between</td></tr>
+                <tr><td><code>justify-around</code></td><td>justify-content: space-around</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3>Legacy Alignment Classes</h3>
+        <p className="text-sm text-secondary no-orphan">
+          These older alignment classes are also available. The shorter <code>items-*</code> and <code>justify-*</code> classes above are preferred.
+        </p>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>fully-centered</code></td><td>Flex center on both axes</td></tr>
+            <tr><td><code>horizontally-centered</code></td><td>justify-content: center</td></tr>
+            <tr><td><code>vertically-centered-space-between</code></td><td>Vertical center, space-between</td></tr>
+            <tr><td><code>align-center</code></td><td>align-items: center + text-align center</td></tr>
+            <tr><td><code>align-middle</code></td><td>align-items: center</td></tr>
+            <tr><td><code>align-baseline</code></td><td>align-items: baseline</td></tr>
+            <tr><td><code>align-flex-start</code></td><td>align-items: flex-start</td></tr>
+            <tr><td><code>align-flex-end</code></td><td>align-items: flex-end</td></tr>
+            <tr><td><code>align-stretch</code></td><td>align-items: stretch</td></tr>
+            <tr><td><code>justify-flex-start</code></td><td>justify-content: flex-start</td></tr>
+            <tr><td><code>justify-flex-end</code></td><td>justify-content: flex-end</td></tr>
+            <tr><td><code>justify-space-between</code></td><td>justify-content: space-between</td></tr>
+            <tr><td><code>justify-space-around</code></td><td>justify-content: space-around</td></tr>
+          </tbody>
+        </table>
+
+        <CodeBlock
+          code={`<div class="display-flex items-center justify-between">
+  <span>Left</span>
+  <span>Right</span>
+</div>
+
+<div class="display-flex items-center gap-sm">
+  <img src="avatar.jpg" alt="">
+  <span>Username</span>
+</div>`}
+        />
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="position"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Position</p>
         <h2>Position Utilities</h2>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>CSS</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>CSS</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><code>fixed</code></td><td>position: fixed</td></tr>
-            <tr><td><code>absolute</code></td><td>position: absolute</td></tr>
-            <tr><td><code>relative</code></td><td>position: relative</td></tr>
-            <tr><td><code>static</code></td><td>position: static</td></tr>
-            <tr><td><code>sticky</code></td><td>position: sticky</td></tr>
+            <tr>
+              <td>
+                <code>fixed</code>
+              </td>
+              <td>position: fixed</td>
+            </tr>
+            <tr>
+              <td>
+                <code>absolute</code>
+              </td>
+              <td>position: absolute</td>
+            </tr>
+            <tr>
+              <td>
+                <code>relative</code>
+              </td>
+              <td>position: relative</td>
+            </tr>
+            <tr>
+              <td>
+                <code>static</code>
+              </td>
+              <td>position: static</td>
+            </tr>
+            <tr>
+              <td>
+                <code>sticky</code>
+              </td>
+              <td>position: sticky</td>
+            </tr>
           </tbody>
         </table>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="spacing">
-        <p className="text-xs font-semibold uppercase">Spacing</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="spacing"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Spacing</p>
         <h2>Margin & Padding</h2>
 
         <div className="units-row">
@@ -73,16 +207,78 @@ export default function UtilitiesPage() {
             <h3>Margin</h3>
             <table className="table-stroked">
               <tbody>
-                <tr><td><code>margin</code></td><td>All sides (0.75rem)</td></tr>
-                <tr><td><code>margin-top</code></td><td>Top margin</td></tr>
-                <tr><td><code>margin-bottom</code></td><td>Bottom margin</td></tr>
-                <tr><td><code>margin-left</code></td><td>Left margin</td></tr>
-                <tr><td><code>margin-right</code></td><td>Right margin</td></tr>
-                <tr><td><code>margin-top-extra</code></td><td>Double top margin</td></tr>
-                <tr><td><code>margin-bottom-extra</code></td><td>Double bottom margin</td></tr>
-                <tr><td><code>no-margin</code></td><td>Remove all margins</td></tr>
-                <tr><td><code>no-top-margin</code></td><td>Remove top margin</td></tr>
-                <tr><td><code>no-bottom-margin</code></td><td>Remove bottom margin</td></tr>
+                <tr>
+                  <td>
+                    <code>margin</code>
+                  </td>
+                  <td>All sides (0.75rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-top</code>
+                  </td>
+                  <td>Top margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-bottom</code>
+                  </td>
+                  <td>Bottom margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-left</code>
+                  </td>
+                  <td>Left margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-right</code>
+                  </td>
+                  <td>Right margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-top-extra</code>
+                  </td>
+                  <td>Double top margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-bottom-extra</code>
+                  </td>
+                  <td>Double bottom margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-left-extra</code>
+                  </td>
+                  <td>Double left margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-right-extra</code>
+                  </td>
+                  <td>Double right margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>no-margin</code>
+                  </td>
+                  <td>Remove all margins</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>no-top-margin</code>
+                  </td>
+                  <td>Remove top margin</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>no-bottom-margin</code>
+                  </td>
+                  <td>Remove bottom margin</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -90,14 +286,72 @@ export default function UtilitiesPage() {
             <h3>Padding</h3>
             <table className="table-stroked">
               <tbody>
-                <tr><td><code>padding</code></td><td>All sides (0.75rem)</td></tr>
-                <tr><td><code>padding-top</code></td><td>Top padding</td></tr>
-                <tr><td><code>padding-bottom</code></td><td>Bottom padding</td></tr>
-                <tr><td><code>padding-left</code></td><td>Left padding</td></tr>
-                <tr><td><code>padding-right</code></td><td>Right padding</td></tr>
-                <tr><td><code>padding-top-extra</code></td><td>Double top padding</td></tr>
-                <tr><td><code>no-padding</code></td><td>Remove all padding</td></tr>
-                <tr><td><code>no-spacing</code></td><td>Remove margin + padding</td></tr>
+                <tr>
+                  <td>
+                    <code>padding</code>
+                  </td>
+                  <td>All sides (0.75rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-top</code>
+                  </td>
+                  <td>Top padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-bottom</code>
+                  </td>
+                  <td>Bottom padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-left</code>
+                  </td>
+                  <td>Left padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-right</code>
+                  </td>
+                  <td>Right padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-top-extra</code>
+                  </td>
+                  <td>Double top padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-bottom-extra</code>
+                  </td>
+                  <td>Double bottom padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-left-extra</code>
+                  </td>
+                  <td>Double left padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-right-extra</code>
+                  </td>
+                  <td>Double right padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>no-padding</code>
+                  </td>
+                  <td>Remove all padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>no-spacing</code>
+                  </td>
+                  <td>Remove margin + padding</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -125,23 +379,55 @@ export default function UtilitiesPage() {
         </div>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="gap">
-        <p className="text-xs font-semibold uppercase">Gap</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="gap"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Gap</p>
         <h2>Gap Utilities</h2>
         <p className="no-orphan">
-          Apply consistent spacing between flex or grid children without margin hacks.
+          Apply consistent spacing between flex or grid children without margin
+          hacks.
         </p>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>Size</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>Size</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><code>gap-xs</code></td><td>0.25rem</td></tr>
-            <tr><td><code>gap-sm</code></td><td>0.5rem</td></tr>
-            <tr><td><code>gap</code></td><td>0.75rem</td></tr>
-            <tr><td><code>gap-lg</code></td><td>1.5rem</td></tr>
-            <tr><td><code>gap-xl</code></td><td>2rem</td></tr>
+            <tr>
+              <td>
+                <code>gap-xs</code>
+              </td>
+              <td>0.25rem</td>
+            </tr>
+            <tr>
+              <td>
+                <code>gap-sm</code>
+              </td>
+              <td>0.5rem</td>
+            </tr>
+            <tr>
+              <td>
+                <code>gap</code>
+              </td>
+              <td>0.75rem</td>
+            </tr>
+            <tr>
+              <td>
+                <code>gap-lg</code>
+              </td>
+              <td>1.5rem</td>
+            </tr>
+            <tr>
+              <td>
+                <code>gap-xl</code>
+              </td>
+              <td>2rem</td>
+            </tr>
           </tbody>
         </table>
 
@@ -149,134 +435,181 @@ export default function UtilitiesPage() {
         <div className="border border-radius padding">
           <p className="text-sm text-secondary">display-flex + gap-lg</p>
           <div className="display-flex gap-lg">
-            <div className="border border-radius padding text-center text-sm">A</div>
-            <div className="border border-radius padding text-center text-sm">B</div>
-            <div className="border border-radius padding text-center text-sm">C</div>
+            <div className="border border-radius padding text-center text-sm">
+              A
+            </div>
+            <div className="border border-radius padding text-center text-sm">
+              B
+            </div>
+            <div className="border border-radius padding text-center text-sm">
+              C
+            </div>
           </div>
         </div>
 
-        <CodeBlock code={`<div class="display-flex gap-lg">
+        <CodeBlock
+          code={`<div class="display-flex gap-lg">
   <div>A</div>
   <div>B</div>
   <div>C</div>
-</div>`} />
+</div>`}
+        />
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="borders">
-        <p className="text-xs font-semibold uppercase">Borders</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="borders"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Borders</p>
         <h2>Border Utilities</h2>
 
         <div className="border border-radius padding">
           <div className="units-row">
             <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border padding border-radius bottom-margin text-center">border</div>
+              <div className="border padding border-radius bottom-margin text-center">
+                border
+              </div>
             </div>
             <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-top padding bottom-margin text-center">border-top</div>
+              <div className="border-top padding bottom-margin text-center">
+                border-top
+              </div>
             </div>
             <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-bottom padding bottom-margin text-center">border-bottom</div>
+              <div className="border-bottom padding bottom-margin text-center">
+                border-bottom
+              </div>
             </div>
             <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-left padding bottom-margin text-center">border-left</div>
+              <div className="border-left padding bottom-margin text-center">
+                border-left
+              </div>
             </div>
             <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-right padding bottom-margin text-center">border-right</div>
+              <div className="border-right padding bottom-margin text-center">
+                border-right
+              </div>
             </div>
           </div>
         </div>
 
-        <p>Other: <code>no-border</code>, <code>border-radius</code>, <code>circle</code></p>
+        <p>
+          Other: <code>no-border</code>, <code>border-radius</code>,{" "}
+          <code>circle</code>
+        </p>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="width-height">
-        <p className="text-xs font-semibold uppercase">Dimensions</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="width-height"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Dimensions</p>
         <h2>Width & Height</h2>
 
         <p className="no-orphan">
-          Percentage-based width classes from <code>width-10</code> to <code>width-100</code>.
-          Responsive variants: <code>tablet-width-*</code>, <code>phone-width-*</code>,
-          <code>small-desktop-width-*</code>, <code>large-phone-width-*</code>.
+          Percentage-based width classes: <code>width-10</code>, <code>width-20</code>, <code>width-25</code>, <code>width-33</code>, <code>width-40</code>, <code>width-50</code>, <code>width-66</code>, <code>width-70</code>, <code>width-75</code>, <code>width-80</code>, <code>width-90</code>, <code>width-100</code>.
         </p>
 
         <div className="border border-radius padding">
-          {[100, 80, 60, 40, 20].map((w) => (
+          {[100, 90, 80, 75, 70, 66, 50, 40, 33, 25, 20, 10].map((w) => (
             <div key={w} className={`width-${w} bottom-margin`}>
-              <div className="border border-radius padding text-center text-sm">width-{w}</div>
+              <div className="border border-radius padding text-center text-sm">
+                width-{w}
+              </div>
             </div>
           ))}
         </div>
 
         <p className="no-orphan">
-          Height utilities: <code>height-100</code> through <code>height-10</code>,
-          plus <code>fill-height</code> and <code>fill-width</code>.
+          Height utilities use the same increments: <code>height-100</code>, <code>height-90</code>, <code>height-80</code>, <code>height-75</code>, <code>height-70</code>, <code>height-50</code>, <code>height-33</code>, <code>height-25</code>, <code>height-10</code>.
+        </p>
+
+        <p className="no-orphan">
+          Responsive width variants: <code>tablet-width-*</code>, <code>phone-width-*</code>,{" "}
+          <code>small-desktop-width-*</code>, <code>large-phone-width-*</code>.
         </p>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="visibility">
-        <p className="text-xs font-semibold uppercase">Visibility</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="visibility"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Visibility</p>
         <h2>Show & Hide</h2>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>Effect</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><code>hide</code></td><td>display: none</td></tr>
-            <tr><td><code>sr-only</code></td><td>Visually hidden, accessible to screen readers</td></tr>
-            <tr><td><code>hide-on-desktop</code></td><td>Hidden on desktop, visible on mobile</td></tr>
-            <tr><td><code>hide-on-mobile</code></td><td>Hidden on mobile, visible on desktop</td></tr>
+            <tr>
+              <td><code>hide</code></td>
+              <td>display: none</td>
+            </tr>
+            <tr>
+              <td><code>sr-only</code></td>
+              <td>Visually hidden, accessible to screen readers</td>
+            </tr>
+            <tr>
+              <td><code>skip-link</code></td>
+              <td>Hidden until focused — use as first focusable element in body</td>
+            </tr>
+            <tr>
+              <td><code>hide-on-desktop</code></td>
+              <td>Hidden on desktop, visible on mobile</td>
+            </tr>
+            <tr>
+              <td><code>hide-on-mobile</code></td>
+              <td>Hidden on mobile, visible on desktop</td>
+            </tr>
           </tbody>
         </table>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="text-colors">
-        <p className="text-xs font-semibold uppercase">Colors</p>
-        <h2>Text Color Utilities</h2>
-        <p className="no-orphan">
-          Theme-aware semantic text color classes that adapt to light and dark mode automatically.
-        </p>
-
-        <div className="border border-radius padding">
-          <p className="text-primary">text-primary — Body text color (theme-aware)</p>
-          <p className="text-secondary">text-secondary — Secondary/subdued text (theme-aware)</p>
-          <p className="text-tertiary">text-tertiary — Muted/tertiary text (theme-aware)</p>
-          <p className="text-muted">text-muted — Alias for text-tertiary</p>
-          <p className="success">success — Green status text</p>
-          <p className="error">error — Red status text</p>
-        </div>
-
-        <table>
-          <thead>
-            <tr><th>Class</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>text-primary</code></td><td>Body text color (theme-aware)</td></tr>
-            <tr><td><code>text-secondary</code></td><td>Secondary/subdued text (theme-aware)</td></tr>
-            <tr><td><code>text-tertiary</code></td><td>Muted/tertiary text (theme-aware)</td></tr>
-            <tr><td><code>text-muted</code></td><td>Alias for text-tertiary</td></tr>
-            <tr><td><code>text-inverse</code></td><td>Inverse text for dark backgrounds</td></tr>
-            <tr><td><code>success</code></td><td>Green status text</td></tr>
-            <tr><td><code>error</code></td><td>Red status text</td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="text-wrap">
-        <p className="text-xs font-semibold uppercase">Text Wrap</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="text-wrap"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Text Wrap</p>
         <h2>Text Wrap Utilities</h2>
         <p className="no-orphan">
-          Control how text breaks across lines — prevent orphaned words or balance heading line lengths.
+          Control how text breaks across lines — prevent orphaned words or
+          balance heading line lengths.
         </p>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>CSS</th><th>Use Case</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>CSS</th>
+              <th>Use Case</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><td><code>no-orphan</code></td><td>text-wrap: pretty</td><td>Prevents orphaned words on paragraphs</td></tr>
-            <tr><td><code>text-balance</code></td><td>text-wrap: balance</td><td>Balances line lengths for headings</td></tr>
-            <tr><td><code>nowrap</code></td><td>white-space: nowrap</td><td>Prevents all wrapping</td></tr>
+            <tr>
+              <td>
+                <code>no-orphan</code>
+              </td>
+              <td>text-wrap: pretty</td>
+              <td>Prevents orphaned words on paragraphs</td>
+            </tr>
+            <tr>
+              <td>
+                <code>text-balance</code>
+              </td>
+              <td>text-wrap: balance</td>
+              <td>Balances line lengths for headings</td>
+            </tr>
+            <tr>
+              <td>
+                <code>nowrap</code>
+              </td>
+              <td>white-space: nowrap</td>
+              <td>Prevents all wrapping</td>
+            </tr>
           </tbody>
         </table>
 
@@ -285,25 +618,36 @@ export default function UtilitiesPage() {
           <div className="units-row">
             <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">Without text-balance</p>
-              <h3>This heading demonstrates what happens without balanced text wrapping enabled</h3>
+              <h3>
+                This heading demonstrates what happens without balanced text
+                wrapping enabled
+              </h3>
             </div>
             <div className="unit-50 phone-unit-100">
               <p className="text-sm text-secondary">With text-balance</p>
-              <h3 className="text-balance">This heading demonstrates what happens with balanced text wrapping enabled</h3>
+              <h3 className="text-balance">
+                This heading demonstrates what happens with balanced text
+                wrapping enabled
+              </h3>
             </div>
           </div>
         </div>
 
-        <CodeBlock code={`<h2 class="text-balance">Balanced heading text</h2>
-<p class="no-orphan">Paragraph without orphaned words.</p>`} />
+        <CodeBlock
+          code={`<h2 class="text-balance">Balanced heading text</h2>
+<p class="no-orphan">Paragraph without orphaned words.</p>`}
+        />
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="link-reset">
-        <p className="text-xs font-semibold uppercase">Links</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="link-reset"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Links</p>
         <h2>Link Reset</h2>
         <p className="no-orphan">
-          Suppress link color and underline on all anchor elements inside a container.
-          Useful for card grids and clickable containers.
+          Suppress link color and underline on all anchor elements inside a
+          container. Useful for card grids and clickable containers.
         </p>
 
         <div className="border border-radius padding">
@@ -323,22 +667,272 @@ export default function UtilitiesPage() {
           </div>
         </div>
 
-        <CodeBlock code={`<div class="no-link-style">
+        <CodeBlock
+          code={`<div class="no-link-style">
   <a href="/page" class="border border-radius padding display-block">
     <h3>Card Title</h3>
     <p>Card text renders as plain text, not link-blue.</p>
   </a>
-</div>`} />
+</div>`}
+        />
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="animation">
-        <p className="text-xs font-semibold uppercase">Animation</p>
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="text-color"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Color</p>
+        <h2>Text Color</h2>
+
+        <h3>Semantic Text Colors</h3>
+        <div className="border border-radius padding">
+          <p className="text-primary no-margin bottom-margin">text-primary — Body text color</p>
+          <p className="text-secondary no-margin bottom-margin">text-secondary — Secondary text</p>
+          <p className="text-tertiary no-margin bottom-margin">text-tertiary — Muted text (alias: text-muted)</p>
+          <p className="text-inverse bg-blue padding-left padding-right no-margin bottom-margin">text-inverse — Inverse color</p>
+          <p className="text-on-color bg-blue padding-left padding-right no-margin bottom-margin">text-on-color — White text for colored backgrounds</p>
+          <p className="success no-margin bottom-margin">success — Green status text</p>
+          <p className="error no-margin">error — Red status text</p>
+        </div>
+
+        <h3>Named Colors</h3>
+        <div className="border border-radius padding">
+          <p className="color-blue no-margin bottom-margin">color-blue</p>
+          <p className="color-red no-margin bottom-margin">color-red</p>
+          <p className="color-green no-margin bottom-margin">color-green</p>
+          <p className="color-yellow no-margin bottom-margin">color-yellow</p>
+          <p className="color-black no-margin bottom-margin">color-black</p>
+          <p className="color-white bg-blue padding-left padding-right no-margin">color-white</p>
+        </div>
+
+        <h3>Opacity Scales</h3>
+        <p className="text-sm text-secondary no-orphan">
+          Black at 10–90% opacity: <code>color-gray-10</code>, <code>color-gray-20</code>, <code>color-gray-30</code>, <code>color-gray-40</code>, <code>color-gray-50</code>, <code>color-gray-60</code>, <code>color-gray-70</code>, <code>color-gray-80</code>, <code>color-gray-90</code>.
+        </p>
+        <p className="text-sm text-secondary no-orphan">
+          White at 10–90% opacity: <code>color-white-10</code>, <code>color-white-20</code>, <code>color-white-30</code>, <code>color-white-40</code>, <code>color-white-50</code>, <code>color-white-60</code>, <code>color-white-70</code>, <code>color-white-80</code>, <code>color-white-90</code>.
+        </p>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="backgrounds"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Background</p>
+        <h2>Background Utilities</h2>
+
+        <div className="border border-radius padding">
+          <div className="units-row">
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-blue text-on-color padding text-center border-radius">bg-blue</div>
+            </div>
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-red text-on-color padding text-center border-radius">bg-red</div>
+            </div>
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-green text-on-color padding text-center border-radius">bg-green</div>
+            </div>
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-yellow padding text-center border-radius">bg-yellow</div>
+            </div>
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-surface border padding text-center border-radius">bg-surface</div>
+            </div>
+            <div className="unit-33 phone-unit-100 bottom-margin">
+              <div className="bg-glass border padding text-center border-radius">bg-glass</div>
+            </div>
+          </div>
+        </div>
+
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>bg-blue</code></td><td>Blue background, WCAG AA with white text</td></tr>
+            <tr><td><code>bg-red</code></td><td>Red background, WCAG AA with white text</td></tr>
+            <tr><td><code>bg-green</code></td><td>Green background, WCAG AA with white text</td></tr>
+            <tr><td><code>bg-yellow</code></td><td>Yellow background, WCAG AA with dark text</td></tr>
+            <tr><td><code>bg-surface</code></td><td>Surface background (alias: background-white)</td></tr>
+            <tr><td><code>background-black</code></td><td>Black background</td></tr>
+            <tr><td><code>bg-glass</code></td><td>Frosted glass with backdrop blur</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="elevation"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Elevation</p>
+        <h2>Layers & Shadows</h2>
+        <p className="no-orphan">
+          Layer classes (<code>layer-0</code>, <code>layer-1</code>, <code>layer-2</code>, <code>layer-3</code>) combine a
+          background color with a matching shadow for consistent elevation.
+          Shadow classes (<code>shadow-1</code>, <code>shadow-2</code>, <code>shadow-3</code>) apply box-shadow only.
+        </p>
+
+        <div className="border border-radius padding">
+          <div className="units-row">
+            {[0, 1, 2, 3].map((n) => (
+              <div key={n} className="unit-25 phone-unit-50 bottom-margin">
+                <div className={`layer-${n} padding text-center border-radius`}>
+                  layer-{n}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="units-row">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="unit-33 phone-unit-100 bottom-margin">
+                <div className={`shadow-${n} padding text-center border-radius`}>
+                  shadow-{n}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="font-family"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Fonts</p>
+        <h2>Font Family</h2>
+
+        <div className="border border-radius padding">
+          <p className="sans no-margin bottom-margin"><code>sans</code> — System sans-serif font stack</p>
+          <p className="serif no-margin bottom-margin"><code>serif</code> — Georgia serif font family</p>
+          <p className="mono no-margin"><code>mono</code> — Monospace font family</p>
+        </div>
+
+        <p>
+          Legacy class: <code>code</code> applies inline code styling (prefer the native <code>&lt;code&gt;</code> element).
+        </p>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="cursors"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Cursors</p>
+        <h2>Cursor Utilities</h2>
+
+        <div className="units-row">
+          <div className="unit-50 phone-unit-100">
+            <table className="table-stroked">
+              <tbody>
+                <tr><td><code>cursor-pointer</code></td><td>Pointer hand</td></tr>
+                <tr><td><code>cursor-default</code></td><td>Default arrow</td></tr>
+                <tr><td><code>cursor-text</code></td><td>Text I-beam</td></tr>
+                <tr><td><code>cursor-move</code></td><td>Move crosshair</td></tr>
+                <tr><td><code>cursor-not-allowed</code></td><td>Not allowed</td></tr>
+                <tr><td><code>cursor-help</code></td><td>Help indicator</td></tr>
+                <tr><td><code>cursor-progress</code></td><td>Loading spinner</td></tr>
+                <tr><td><code>cursor-crosshair</code></td><td>Crosshair</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="unit-50 phone-unit-100">
+            <table className="table-stroked">
+              <tbody>
+                <tr><td><code>cursor-copy</code></td><td>Copy indicator</td></tr>
+                <tr><td><code>cursor-alias</code></td><td>Alias/shortcut</td></tr>
+                <tr><td><code>cursor-cell</code></td><td>Cell/plus</td></tr>
+                <tr><td><code>cursor-context-menu</code></td><td>Context menu</td></tr>
+                <tr><td><code>cursor-no-drop</code></td><td>No drop</td></tr>
+                <tr><td><code>cursor-all-scroll</code></td><td>All-scroll</td></tr>
+                <tr><td><code>cursor-none</code></td><td>Hidden cursor</td></tr>
+                <tr><td><code>cursor-ew-resize</code></td><td>Horizontal resize</td></tr>
+                <tr><td><code>cursor-ns-resize</code></td><td>Vertical resize</td></tr>
+                <tr><td><code>cursor-nesw-resize</code></td><td>Diagonal resize</td></tr>
+              </tbody>
+            </table>
+            <p className="text-sm text-secondary">
+              Also: <code>cursor-n-resize</code>, <code>cursor-e-resize</code>, <code>cursor-s-resize</code>, <code>cursor-w-resize</code>, <code>cursor-ne-resize</code>, <code>cursor-nw-resize</code>, <code>cursor-sw-resize</code>, <code>cursor-se-resize</code>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="components"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Components</p>
+        <h2>Component Utilities</h2>
+        <p className="no-orphan">
+          Pre-built component classes for common UI patterns. These require
+          JavaScript for interactivity but ply provides all the styling.
+        </p>
+
+        <h3>Accordion</h3>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>accordion-title</code></td><td>Clickable header</td></tr>
+            <tr><td><code>accordion-title-opened</code></td><td>Open state header</td></tr>
+            <tr><td><code>accordion-panel</code></td><td>Content panel (hidden by default)</td></tr>
+            <tr><td><code>accordion-toggle</code></td><td>Toggle indicator</td></tr>
+            <tr><td><code>accordion-toggle-closed</code></td><td>Plus icon indicator</td></tr>
+            <tr><td><code>accordion-toggle-opened</code></td><td>Minus icon indicator</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Dropdown</h3>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>dropdown</code></td><td>Absolute-positioned panel</td></tr>
+            <tr><td><code>caret</code></td><td>Down-pointing arrow indicator</td></tr>
+            <tr><td><code>caret-up</code></td><td>Up-pointing arrow indicator</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Modal</h3>
+        <p className="text-sm text-secondary no-orphan">
+          For most use cases, prefer the native <code>&lt;dialog&gt;</code> element which ply auto-styles.
+          These classes are for custom modal implementations.
+        </p>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>modal</code></td><td>Modal dialog box</td></tr>
+            <tr><td><code>modal-box</code></td><td>Full-screen overlay container</td></tr>
+            <tr><td><code>modal-blur</code></td><td>Blur background content</td></tr>
+            <tr><td><code>modal-close</code></td><td>Close button (top-right)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Tooltip</h3>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>tooltip</code></td><td>Base tooltip popup</td></tr>
+            <tr><td><code>tooltip-theme-blue</code></td><td>Blue tooltip</td></tr>
+            <tr><td><code>tooltip-theme-red</code></td><td>Red tooltip</td></tr>
+            <tr><td><code>tooltip-theme-green</code></td><td>Green tooltip</td></tr>
+            <tr><td><code>tooltip-theme-yellow</code></td><td>Yellow tooltip</td></tr>
+            <tr><td><code>tooltip-theme-white</code></td><td>White tooltip</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Loader & Embed</h3>
+        <table className="table-stroked">
+          <tbody>
+            <tr><td><code>loader</code></td><td>Spinning loader animation</td></tr>
+            <tr><td><code>flexible-embed</code></td><td>16:9 responsive iframe/video container</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="animation"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Animation</p>
         <h2>Animation Utilities</h2>
 
         <div className="border border-radius padding">
           <div className="units-row align-middle">
             <div className="unit-25 tablet-unit-50 text-center">
-              <div className="spinning border border-radius padding display-inline-block">⟳</div>
+              <div className="spinning border border-radius padding display-inline-block">
+                ⟳
+              </div>
               <p className="text-sm">spinning</p>
             </div>
             <div className="unit-25 tablet-unit-50 text-center">
@@ -349,26 +943,32 @@ export default function UtilitiesPage() {
           </div>
         </div>
 
-        <CodeBlock code={`<div class="spinning">Loading spinner</div>
-<div class="fade-in">Fades in on load</div>`} />
+        <CodeBlock
+          code={`<div class="spinning">Loading spinner</div>
+<div class="fade-in">Fades in on load</div>`}
+        />
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="misc">
-        <p className="text-xs font-semibold uppercase">Miscellaneous</p>
+      <section className="padding-top-extra padding-bottom-extra" id="misc">
+        <p className="text-xs font-semibold uppercase color-blue">
+          Miscellaneous
+        </p>
         <h2>Other Utilities</h2>
 
         <table>
           <thead>
-            <tr><th>Class</th><th>Effect</th></tr>
+            <tr>
+              <th>Class</th>
+              <th>Effect</th>
+            </tr>
           </thead>
           <tbody>
             <tr><td><code>clearfix</code></td><td>Clear floats</td></tr>
             <tr><td><code>flat-list</code></td><td>Remove list bullets and margin</td></tr>
             <tr><td><code>circle</code></td><td>border-radius: 100%</td></tr>
-            <tr><td><code>border-radius</code></td><td>Standard border radius</td></tr>
-            <tr><td><code>fill-width</code></td><td>100% width</td></tr>
-            <tr><td><code>fill-height</code></td><td>100% height</td></tr>
-            <tr><td><code>cursor-finger</code></td><td>Pointer cursor</td></tr>
+            <tr><td><code>border-radius</code></td><td>Standard border radius (0.25rem)</td></tr>
+            <tr><td><code>border-radius-lg</code></td><td>Large border radius (0.75rem)</td></tr>
+            <tr><td><code>border-radius-xl</code></td><td>Extra large border radius (1.5rem)</td></tr>
           </tbody>
         </table>
 
@@ -382,198 +982,17 @@ export default function UtilitiesPage() {
         </div>
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="dark-mode">
-        <p className="text-xs font-semibold uppercase">Dark Mode</p>
-        <h2>Toggle Dark Mode</h2>
-        <p className="no-orphan">
-          ply respects <code>prefers-color-scheme</code> automatically.
-          Force a mode with <code>data-theme</code> on the html element.
+      <section
+        className="padding-top-extra padding-bottom-extra"
+        id="next-steps"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Next</p>
+        <h2>Next Steps</h2>
+        <p className="text-secondary no-orphan">
+          Learn about built-in{" "}
+          <Link href="/docs/accessibility">accessibility</Link> features, or set
+          up your <Link href="/docs/ai-agents">AI agent</Link> to use ply.
         </p>
-
-        <div className="border border-radius padding">
-          <p className="text-sm bottom-margin">
-            Current: <strong>{currentTheme}</strong>
-          </p>
-          <div className="btn-group">
-            <button
-              className={`btn ${currentTheme === "auto" ? "btn-blue" : ""}`}
-              onClick={() => applyTheme("auto")}
-            >
-              Auto
-            </button>
-            <button
-              className={`btn ${currentTheme === "light" ? "btn-blue" : ""}`}
-              onClick={() => applyTheme("light")}
-            >
-              Light
-            </button>
-            <button
-              className={`btn ${currentTheme === "dark" ? "btn-blue" : ""}`}
-              onClick={() => applyTheme("dark")}
-            >
-              Dark
-            </button>
-          </div>
-        </div>
-
-        <CodeBlock code={`<!-- Auto (follows OS) -->
-<html>
-
-<!-- Force light -->
-<html data-theme="light">
-
-<!-- Force dark -->
-<html data-theme="dark">
-
-<!-- Toggle with JavaScript -->
-<script>
-document.documentElement.dataset.theme =
-  document.documentElement.dataset.theme === 'dark'
-    ? 'light' : 'dark';
-</script>`} />
-      </section>
-
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="css-vars">
-        <p className="text-xs font-semibold uppercase">Custom Properties</p>
-        <h2 className="text-balance">CSS Custom Properties</h2>
-        <p className="no-orphan">
-          Override <code>--ply-*</code> variables to create any theme.
-          All colors, backgrounds, borders, and component styles are customizable.
-        </p>
-
-        <h3>Backgrounds</h3>
-        <table className="table-stroked">
-          <thead>
-            <tr><th>Variable</th><th>Default (Light)</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>--ply-bg-body</code></td><td>#ffffff</td><td>Page background</td></tr>
-            <tr><td><code>--ply-bg-surface</code></td><td>#ffffff</td><td>Card/surface background</td></tr>
-            <tr><td><code>--ply-bg-surface-alt</code></td><td>#f4f4f4</td><td>Alternate surface</td></tr>
-            <tr><td><code>--ply-bg-muted</code></td><td>#e0e0e0</td><td>Muted background</td></tr>
-          </tbody>
-        </table>
-
-        <h3>Text Colors</h3>
-        <table className="table-stroked">
-          <thead>
-            <tr><th>Variable</th><th>Default</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>--ply-color-body</code></td><td>#161616</td><td>Primary text</td></tr>
-            <tr><td><code>--ply-color-headings</code></td><td>#161616</td><td>Heading text</td></tr>
-            <tr><td><code>--ply-color-secondary</code></td><td>#525252</td><td>Secondary text</td></tr>
-            <tr><td><code>--ply-color-muted</code></td><td>#6f6f6f</td><td>Muted text</td></tr>
-            <tr><td><code>--ply-color-placeholder</code></td><td>#a8a8a8</td><td>Placeholder text</td></tr>
-            <tr><td><code>--ply-color-text-inverse</code></td><td>#ffffff</td><td>Inverse (on dark bg)</td></tr>
-          </tbody>
-        </table>
-
-        <h3>Interactive</h3>
-        <table className="table-stroked">
-          <thead>
-            <tr><th>Variable</th><th>Default</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>--ply-color-link</code></td><td>#0f62fe</td><td>Link color</td></tr>
-            <tr><td><code>--ply-color-link-hover</code></td><td>#0043ce</td><td>Link hover</td></tr>
-            <tr><td><code>--ply-color-focus</code></td><td>#0f62fe</td><td>Focus ring</td></tr>
-            <tr><td><code>--ply-color-input-border</code></td><td>#8d8d8d</td><td>Input borders</td></tr>
-            <tr><td><code>--ply-color-input-bg</code></td><td>#f4f4f4</td><td>Input background</td></tr>
-            <tr><td><code>--ply-btn-default-bg</code></td><td>#393939</td><td>Default button bg</td></tr>
-            <tr><td><code>--ply-btn-default-hover</code></td><td>#4c4c4c</td><td>Default button hover</td></tr>
-          </tbody>
-        </table>
-
-        <h3>Navigation</h3>
-        <table className="table-stroked">
-          <thead>
-            <tr><th>Variable</th><th>Default</th><th>Description</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>--ply-nav-bg</code></td><td>#ffffff</td><td>Nav background</td></tr>
-            <tr><td><code>--ply-nav-color</code></td><td>#161616</td><td>Nav text</td></tr>
-            <tr><td><code>--ply-nav-border</code></td><td>#161616</td><td>Nav border</td></tr>
-            <tr><td><code>--ply-nav-hover</code></td><td>#e8e8e8</td><td>Nav hover</td></tr>
-            <tr><td><code>--ply-nav-active-bg</code></td><td>transparent</td><td>Nav active background</td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="custom-theme">
-        <p className="text-xs font-semibold uppercase">Custom</p>
-        <h2 className="text-balance">Creating a Custom Theme</h2>
-        <p className="no-orphan">
-          Define a new <code>data-theme</code> value and override the CSS custom properties.
-        </p>
-
-        <CodeBlock code={`[data-theme="brand"] {
-  --ply-bg-body: #fefce8;
-  --ply-color-body: #1a1a1a;
-  --ply-color-link: #b45309;
-  --ply-btn-default-bg: #b45309;
-  --ply-btn-default-hover: #92400e;
-  --ply-border-color: #fbbf24;
-  --ply-color-headings: #78350f;
-  --ply-nav-bg: #fef3c7;
-  --ply-nav-border: #f59e0b;
-}
-
-<html data-theme="brand">`} />
-      </section>
-
-      <section className="padding-top-extra padding-bottom-extra border-bottom" id="accessibility">
-        <p className="text-xs font-semibold uppercase">A11y</p>
-        <h2>Accessibility Features</h2>
-        <p className="no-orphan">ply includes these accessibility features by default — no configuration needed.</p>
-
-        <div className="units-row equal-height">
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">Focus Visible</h3>
-              <p className="text-sm no-margin no-orphan">All interactive elements show clear <code>:focus-visible</code> outlines for keyboard navigation.</p>
-            </div>
-          </div>
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">Reduced Motion</h3>
-              <p className="text-sm no-margin no-orphan">Animations respect <code>prefers-reduced-motion</code> — disabled automatically for users who prefer it.</p>
-            </div>
-          </div>
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">Color Contrast</h3>
-              <p className="text-sm no-margin no-orphan">All default color combinations meet WCAG AA contrast requirements out of the box.</p>
-            </div>
-          </div>
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">Screen Reader</h3>
-              <p className="text-sm no-margin no-orphan">The <code>sr-only</code> class hides content visually while keeping it accessible to assistive technology.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="padding-top-extra padding-bottom-extra" id="ai">
-        <p className="text-xs font-semibold uppercase">AI</p>
-        <h2>AI Integration</h2>
-        <p className="no-orphan">ply ships with machine-readable files so AI agents can use it without reading documentation.</p>
-
-        <div className="units-row equal-height">
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">PLY.md</h3>
-              <p className="text-sm no-margin no-orphan">Complete class reference, usage rules, anti-patterns, and copy-paste snippets in a Markdown format that AI agents parse natively.</p>
-            </div>
-          </div>
-          <div className="unit-50 phone-unit-100">
-            <div className="border border-radius padding bottom-margin">
-              <h3 className="text-lg font-semibold no-top-margin">ply-classes.json</h3>
-              <p className="text-sm no-margin no-orphan">Machine-readable JSON class map with categories, descriptions, and examples. Perfect for programmatic tool use.</p>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   );
