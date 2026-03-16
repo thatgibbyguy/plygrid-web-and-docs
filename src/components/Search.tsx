@@ -1,80 +1,107 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation } from "wouter";
 import { Search as SearchIcon } from "lucide-react";
+import classData from "plygrid/ply-classes.json";
 
 interface SearchEntry {
-  page: string;
+  label: string;
+  detail: string;
   path: string;
-  section?: string;
   sectionId?: string;
-  text: string;
 }
 
-const searchData: SearchEntry[] = [
-  // Get Started
-  { page: "Get Started", path: "/get-started", text: "CDN Sass install npm dark mode AI agents" },
-  { page: "Get Started", path: "/get-started", section: "CDN — Just the CSS", sectionId: "cdn", text: "CDN link tag prototype no build step stylesheet" },
-  { page: "Get Started", path: "/get-started", section: "Sass — Build Your Own", sectionId: "sass", text: "Sass npm install variables mixins colors customize build" },
-  { page: "Get Started", path: "/get-started", section: "Dark Mode", sectionId: "dark-mode", text: "dark mode light theme data-theme prefers-color-scheme toggle" },
-  { page: "Get Started", path: "/get-started", section: "For AI Agents", sectionId: "ai-agents", text: "AI agent PLY.md ply-classes.json context window prompt" },
+// Map categories to doc pages
+const categoryToPage: Record<string, { path: string; label: string }> = {
+  grid: { path: "/grid", label: "Grid" },
+  typography: { path: "/typography", label: "Typography" },
+  buttons: { path: "/controls", label: "Controls" },
+  forms: { path: "/controls", label: "Controls" },
+  notifications: { path: "/controls", label: "Controls" },
+  navigation: { path: "/navigation", label: "Navigation" },
+  tables: { path: "/tables", label: "Tables" },
+  helpers: { path: "/utilities", label: "Utilities" },
+};
 
-  // Grid
-  { page: "Grid", path: "/grid", text: "grid flexbox layout units container row responsive" },
-  { page: "Grid", path: "/grid", section: "Container, Row, and Units", sectionId: "basic", text: "units-container units-row unit basic layout" },
-  { page: "Grid", path: "/grid", section: "All Available Widths", sectionId: "all-widths", text: "unit-10 unit-20 unit-25 unit-33 unit-50 unit-75 unit-100 widths" },
-  { page: "Grid", path: "/grid", section: "Mixed Widths", sectionId: "mixed", text: "mixed widths combinations sidebar content" },
-  { page: "Grid", path: "/grid", section: "Nested Grids", sectionId: "nested", text: "nested grids units-row inside unit" },
-  { page: "Grid", path: "/grid", section: "Responsive Prefixes", sectionId: "responsive", text: "responsive phone tablet desktop breakpoint prefix" },
-  { page: "Grid", path: "/grid", section: "Row & Unit Modifiers", sectionId: "modifiers", text: "reverse split centered stacked equal-height modifiers" },
-  { page: "Grid", path: "/grid", section: "Push Units", sectionId: "offsets", text: "push offset margin-left unit-push" },
-  { page: "Grid", path: "/grid", section: "Fill Width Container", sectionId: "fullwidth", text: "fill-width full browser width edge-to-edge" },
+function buildSearchIndex(): SearchEntry[] {
+  const entries: SearchEntry[] = [];
 
-  // Typography
-  { page: "Typography", path: "/typography", text: "typography type scale font size weight heading text" },
-  { page: "Typography", path: "/typography", section: "Text Sizes", sectionId: "scale", text: "text-xs text-sm text-lg text-xl text-2xl text-5xl font size scale" },
+  // Classes
+  const classes = (classData as any).classes || {};
+  for (const [name, info] of Object.entries(classes)) {
+    const meta = info as any;
+    const page = categoryToPage[meta.category] || { path: "/utilities", label: "Utilities" };
+    entries.push({
+      label: name,
+      detail: meta.description || "",
+      path: page.path,
+    });
+  }
 
-  // Controls
-  { page: "Controls", path: "/controls", text: "buttons forms alerts labels controls interactive" },
-  { page: "Controls", path: "/controls", section: "Color Variants", sectionId: "button-colors", text: "btn btn-blue btn-red btn-green btn-yellow btn-black button color" },
+  // Custom properties
+  const props = (classData as any).customProperties || {};
+  for (const [group, vars] of Object.entries(props)) {
+    for (const [name, desc] of Object.entries(vars as Record<string, string>)) {
+      entries.push({
+        label: name,
+        detail: desc,
+        path: "/utilities",
+      });
+    }
+  }
 
-  // Navigation
-  { page: "Navigation", path: "/navigation", text: "navbar pills tabs breadcrumbs pagination navigation" },
-  { page: "Navigation", path: "/navigation", section: "Navbar", sectionId: "navbar", text: "navbar horizontal nav menu bar" },
+  // Semantic elements
+  const elements = (classData as any).semanticElements || {};
+  for (const [tag, info] of Object.entries(elements)) {
+    const meta = info as any;
+    entries.push({
+      label: `<${tag}>`,
+      detail: `${meta.styling} ${meta.tip}`,
+      path: "/get-started",
+    });
+  }
 
-  // Tables
-  { page: "Tables", path: "/tables", text: "table bordered striped hoverable data rows columns" },
+  // Static page entries
+  entries.push(
+    { label: "Get Started", detail: "CDN Sass install npm dark mode AI agents how to", path: "/get-started" },
+    { label: "Grid", detail: "grid flexbox layout units container row responsive breakpoint", path: "/grid" },
+    { label: "Typography", detail: "type scale font size weight heading text", path: "/typography" },
+    { label: "Controls", detail: "buttons forms alerts labels interactive", path: "/controls" },
+    { label: "Navigation", detail: "navbar pills tabs breadcrumbs pagination", path: "/navigation" },
+    { label: "Tables", detail: "table bordered striped hoverable data", path: "/tables" },
+    { label: "Utilities", detail: "spacing display visibility borders helpers gap flex", path: "/utilities" },
+  );
 
-  // Utilities
-  { page: "Utilities", path: "/utilities", text: "utilities spacing display visibility borders helpers" },
-  { page: "Utilities", path: "/utilities", section: "Display", sectionId: "display", text: "display-flex display-block display-none display-inline visibility" },
-];
+  return entries;
+}
 
 export default function Search() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [, setLocation] = useLocation();
 
+  const searchIndex = useMemo(() => buildSearchIndex(), []);
+
   const results = query.length > 0
-    ? searchData.filter((entry) => {
+    ? searchIndex.filter((entry) => {
         const q = query.toLowerCase();
         return (
-          entry.text.toLowerCase().includes(q) ||
-          entry.page.toLowerCase().includes(q) ||
-          (entry.section?.toLowerCase().includes(q) ?? false)
+          entry.label.toLowerCase().includes(q) ||
+          entry.detail.toLowerCase().includes(q)
         );
-      }).slice(0, 8)
+      }).slice(0, 10)
     : [];
 
   const close = useCallback(() => {
+    dialogRef.current?.close();
     setOpen(false);
     setQuery("");
     setSelectedIndex(0);
   }, []);
 
   const navigate = useCallback((entry: SearchEntry) => {
-    const hash = entry.sectionId ? `#${entry.sectionId}` : "";
     setLocation(entry.path);
     close();
     if (entry.sectionId) {
@@ -91,17 +118,15 @@ export default function Search() {
         e.preventDefault();
         setOpen(true);
       }
-      if (e.key === "Escape") {
-        close();
-      }
     };
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
-  }, [close]);
+  }, []);
 
-  // Focus input when opened
+  // Open/close dialog and focus input
   useEffect(() => {
     if (open) {
+      dialogRef.current?.showModal();
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [open]);
@@ -130,46 +155,53 @@ export default function Search() {
         <SearchIcon size={16} />
       </button>
 
-      {open && (
-        <div className="search-overlay" onClick={close}>
-          <div className="search-dialog" onClick={(e) => e.stopPropagation()}>
-            <div className="search-input-wrap">
-              <SearchIcon size={16} className="search-input-icon" />
-              <input
-                ref={inputRef}
-                type="text"
-                className="search-input"
-                placeholder="Search documentation..."
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setSelectedIndex(0);
-                }}
-                onKeyDown={handleKeyDown}
-              />
-            </div>
-            {results.length > 0 && (
-              <ul className="search-results flat-list">
-                {results.map((entry, i) => (
-                  <li key={`${entry.path}-${entry.sectionId || "root"}`}>
-                    <button
-                      className={`search-result-item ${i === selectedIndex ? "search-result-selected" : ""}`}
-                      onClick={() => navigate(entry)}
-                      onMouseEnter={() => setSelectedIndex(i)}
-                    >
-                      <span className="search-result-page text-xs text-secondary">{entry.page}</span>
-                      <span className="search-result-title">{entry.section || entry.page}</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-            {query.length > 0 && results.length === 0 && (
-              <p className="text-secondary text-sm padding">No results for "{query}"</p>
-            )}
-          </div>
+      <dialog
+        ref={dialogRef}
+        className="search-dialog bg-glass"
+        onClose={() => {
+          setOpen(false);
+          setQuery("");
+          setSelectedIndex(0);
+        }}
+        onClick={(e) => {
+          if (e.target === dialogRef.current) close();
+        }}
+      >
+        <div className="display-flex gap-sm padding" style={{ alignItems: "center", borderBottom: "1px solid var(--ply-border-color)" }}>
+          <SearchIcon size={16} className="text-secondary" />
+          <input
+            ref={inputRef}
+            type="text"
+            className="search-input"
+            placeholder="Search classes, properties, elements..."
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setSelectedIndex(0);
+            }}
+            onKeyDown={handleKeyDown}
+          />
         </div>
-      )}
+        {results.length > 0 && (
+          <ul className="flat-list padding-sm">
+            {results.map((entry, i) => (
+              <li key={`${entry.path}-${entry.label}`}>
+                <button
+                  className={`search-result-item ${i === selectedIndex ? "search-result-selected" : ""}`}
+                  onClick={() => navigate(entry)}
+                  onMouseEnter={() => setSelectedIndex(i)}
+                >
+                  <span className="text-sm font-semibold">{entry.label}</span>
+                  <span className="text-xs text-secondary" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "100%" }}>{entry.detail}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {query.length > 0 && results.length === 0 && (
+          <p className="text-secondary text-sm padding">No results for "{query}"</p>
+        )}
+      </dialog>
     </>
   );
 }
