@@ -40,7 +40,7 @@ export default function Home() {
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
                   <Feather size={32} className="color-blue display-inline-block bottom-margin" />
-                  <span className="text-2xl font-bold display-block">18KB</span>
+                  <span className="text-2xl font-bold display-block">19KB</span>
                   <span className="text-xs uppercase text-muted">Gzipped, zero JavaScript</span>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
@@ -186,7 +186,7 @@ export default function Home() {
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase color-blue">AI native</p>
-              <h2 className="text-balance">One file. ~200 classes. No ambiguity.</h2>
+              <h2 className="text-balance">One file. 400+ classes. No ambiguity.</h2>
               <p className="text-secondary no-orphan">
                 <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
                 No shorthand to memorize, no abstraction to hallucinate.

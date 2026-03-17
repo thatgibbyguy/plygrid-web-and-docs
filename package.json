@@ -23,6 +23,8 @@
     "wouter": "^3.3.5"
   },
   "dependencies": {
-    "plygrid": "^1.0.2"
+    "@astrojs/react": "^5.0.0",
+    "astro": "^6.0.5",
+    "plygrid": "^1.0.4"
   }
 }
