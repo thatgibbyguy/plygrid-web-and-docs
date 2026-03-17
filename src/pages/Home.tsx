@@ -1,8 +1,22 @@
 import { Link } from "wouter";
 import {
-  LayoutGrid, Type, MousePointer2, Compass, Table2, Wrench,
-  Eye, Moon, Activity, Monitor, BookOpen, FileJson,
-  ShieldCheck, Feather, Cpu, Palette, Bell,
+  LayoutGrid,
+  Type,
+  MousePointer2,
+  Compass,
+  Table2,
+  Wrench,
+  Eye,
+  Moon,
+  Activity,
+  Monitor,
+  BookOpen,
+  FileJson,
+  ShieldCheck,
+  Feather,
+  Cpu,
+  Palette,
+  Bell,
 } from "lucide-react";
 
 export default function Home() {
@@ -12,16 +26,26 @@ export default function Home() {
         <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-60 phone-unit-100 text-center">
-              <h1 className="text-5xl font-bold text-balance">Compliant UI from the first prompt.</h1>
+              <h1 className="text-5xl font-bold text-balance">
+                Compliant UI from the first prompt.
+              </h1>
               <p className="text-xl text-secondary no-orphan">
-                You or your AI writes ADA-compliant, accessible, WCAG 2.1+ interfaces out of the box.
-                No training. No audits to fail.
+                You or your AI writes ADA-compliant, accessible, WCAG 2.1+
+                interfaces out of the box. No training. No audits to fail.
               </p>
 
               <div className="padding-top">
-                <Link href="/docs/installation" className="btn btn-blue">Get Started</Link>
-                {" "}
-                <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
+                <Link href="/docs/installation" className="btn btn-blue">
+                  Get Started
+                </Link>{" "}
+                <a
+                  href="https://github.com/thatgibbyguy/ply"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn"
+                >
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
@@ -34,19 +58,38 @@ export default function Home() {
             <div className="unit-60 phone-unit-100">
               <div className="units-row">
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
-                  <ShieldCheck size={32} className="color-blue display-inline-block bottom-margin" />
-                  <span className="text-2xl font-bold display-block">WCAG 2.1 AA</span>
-                  <span className="text-xs uppercase text-muted">Every color, every mode</span>
+                  <ShieldCheck
+                    size={32}
+                    className="color-blue display-inline-block bottom-margin"
+                  />
+                  <span className="text-2xl font-bold display-block">
+                    WCAG 2.1 AA
+                  </span>
+                  <span className="text-xs uppercase text-muted">
+                    Every color, every mode
+                  </span>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
-                  <Feather size={32} className="color-blue display-inline-block bottom-margin" />
+                  <Feather
+                    size={32}
+                    className="color-blue display-inline-block bottom-margin"
+                  />
                   <span className="text-2xl font-bold display-block">19KB</span>
-                  <span className="text-xs uppercase text-muted">Gzipped, zero JavaScript</span>
+                  <span className="text-xs uppercase text-muted">
+                    Gzipped, zero JavaScript
+                  </span>
                 </div>
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
-                  <Cpu size={32} className="color-blue display-inline-block bottom-margin" />
-                  <span className="text-2xl font-bold display-block">AI Ready</span>
-                  <span className="text-xs uppercase text-muted">One file in context</span>
+                  <Cpu
+                    size={32}
+                    className="color-blue display-inline-block bottom-margin"
+                  />
+                  <span className="text-2xl font-bold display-block">
+                    AI Ready
+                  </span>
+                  <span className="text-xs uppercase text-muted">
+                    One file in context
+                  </span>
                 </div>
               </div>
             </div>
@@ -55,11 +98,15 @@ export default function Home() {
       </div>
 
       <div className="units-container">
-        <section className="bg-blue border-radius-xl padding-top-extra padding-bottom-extra">
+        <section className="bg-blue border-radius-xl padding-left-extra padding-right-extra padding-top-extra padding-bottom-extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase text-on-color">How it works</p>
-              <h2 className="text-balance text-on-color">Two steps. No configuration.</h2>
+              <p className="text-xs font-semibold uppercase text-on-color">
+                How it works
+              </p>
+              <h2 className="text-balance text-on-color">
+                Two steps. No configuration.
+              </h2>
             </div>
           </div>
 
@@ -67,11 +114,13 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
                 <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="background-white border-radius padding text-center">
+                  <div className="background-white border-radius padding padding-top-extra padding-bottom-extra text-center">
                     <span className="icon-badge bottom-margin">
                       <BookOpen size={22} />
                     </span>
-                    <h3 className="text-lg font-semibold">Give your agent PLY.md</h3>
+                    <h3 className="text-lg font-semibold">
+                      Give your agent PLY.md
+                    </h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
                       One Markdown file with every class, rule, and snippet.
                       Fits in a single context window. Your AI writes correct
@@ -80,14 +129,16 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="unit-50 phone-unit-100 bottom-margin">
-                  <div className="background-white border-radius padding text-center">
+                  <div className="background-white border-radius padding padding-top-extra padding-bottom-extra text-center">
                     <span className="icon-badge bottom-margin">
                       <FileJson size={22} />
                     </span>
-                    <h3 className="text-lg font-semibold">The CSS handles the rest</h3>
+                    <h3 className="text-lg font-semibold">
+                      The CSS handles the rest
+                    </h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      Contrast ratios, focus outlines, dark mode, reduced motion,
-                      screen reader support — baked into the stylesheet.
+                      Contrast ratios, focus outlines, dark mode, reduced
+                      motion, screen reader support — baked into the stylesheet.
                       Nothing to configure.
                     </p>
                   </div>
@@ -102,10 +153,13 @@ export default function Home() {
         <section className="padding-top-extra padding-bottom-extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">Compliance</p>
+              <p className="text-xs font-semibold uppercase color-blue">
+                Compliance
+              </p>
               <h2 className="text-balance">What you stop worrying about</h2>
               <p className="text-secondary no-orphan">
-                Every feature below is on by default. No plugins, no overrides, no forgetting.
+                Every feature below is on by default. No plugins, no overrides,
+                no forgetting.
               </p>
             </div>
           </div>
@@ -115,17 +169,23 @@ export default function Home() {
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <Eye size={28} className="color-blue display-inline-block bottom-margin" />
+                    <Eye
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Color Contrast</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      Every color combination passes WCAG AA.
-                      Light mode, dark mode, high contrast.
+                      Every color combination passes WCAG AA. Light mode, dark
+                      mode, high contrast.
                     </p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <Monitor size={28} className="color-blue display-inline-block bottom-margin" />
+                    <Monitor
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Focus Management</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
                       Visible <code>:focus-visible</code> outlines on every
@@ -135,7 +195,10 @@ export default function Home() {
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <Moon size={28} className="color-blue display-inline-block bottom-margin" />
+                    <Moon
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Dark Mode</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
                       Respects <code>prefers-color-scheme</code> automatically.
@@ -145,17 +208,23 @@ export default function Home() {
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <Activity size={28} className="color-blue display-inline-block bottom-margin" />
+                    <Activity
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Reduced Motion</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
-                      All animations respect <code>prefers-reduced-motion</code>.
-                      Disabled automatically for users who need it.
+                      All animations respect <code>prefers-reduced-motion</code>
+                      . Disabled automatically for users who need it.
                     </p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <LayoutGrid size={28} className="color-blue display-inline-block bottom-margin" />
+                    <LayoutGrid
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Screen Readers</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
                       <code>sr-only</code> for hidden labels, skip links,
@@ -165,7 +234,10 @@ export default function Home() {
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <LayoutGrid size={28} className="color-blue display-inline-block bottom-margin" />
+                    <LayoutGrid
+                      size={28}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-lg font-semibold">Responsive</h3>
                     <p className="text-sm text-secondary no-orphan no-margin">
                       Ratio-based grid collapses cleanly at every breakpoint.
@@ -185,12 +257,16 @@ export default function Home() {
         <section className="padding-top-extra padding-bottom-extra">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">AI native</p>
-              <h2 className="text-balance">One file. 400+ classes. No ambiguity.</h2>
+              <p className="text-xs font-semibold uppercase color-blue">
+                AI native
+              </p>
+              <h2 className="text-balance">
+                One file. 400+ classes. No ambiguity.
+              </h2>
               <p className="text-secondary no-orphan">
                 <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
-                No shorthand to memorize, no abstraction to hallucinate.
-                Your agent reads PLY.md once and builds correct UI from there.
+                No shorthand to memorize, no abstraction to hallucinate. Your
+                agent reads PLY.md once and builds correct UI from there.
               </p>
             </div>
           </div>
@@ -214,45 +290,95 @@ export default function Home() {
             <div className="unit-80 phone-unit-100">
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/grid" className="display-block border border-radius padding cursor-finger">
-                    <LayoutGrid size={20} className="color-blue display-inline-block bottom-margin" />
+                  <Link
+                    href="/docs/grid"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <LayoutGrid
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-base font-semibold">Grid</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Ratio-based flexbox with responsive prefixes</p>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Ratio-based flexbox with responsive prefixes
+                    </p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/typography" className="display-block border border-radius padding cursor-finger">
-                    <Type size={20} className="color-blue display-inline-block bottom-margin" />
+                  <Link
+                    href="/docs/typography"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <Type
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-base font-semibold">Typography</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Type scale from text-xs to text-5xl</p>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Type scale from text-xs to text-5xl
+                    </p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/colors" className="display-block border border-radius padding cursor-finger">
-                    <Palette size={20} className="color-blue display-inline-block bottom-margin" />
-                    <h3 className="text-base font-semibold">Colors & Theming</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Dark mode, custom properties, custom themes</p>
+                  <Link
+                    href="/docs/colors"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <Palette
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
+                    <h3 className="text-base font-semibold">
+                      Colors & Theming
+                    </h3>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Dark mode, custom properties, custom themes
+                    </p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/buttons" className="display-block border border-radius padding cursor-finger">
-                    <MousePointer2 size={20} className="color-blue display-inline-block bottom-margin" />
+                  <Link
+                    href="/docs/buttons"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <MousePointer2
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-base font-semibold">Buttons</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Six colors, outline, ghost, groups</p>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Six colors, outline, ghost, groups
+                    </p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/navigation" className="display-block border border-radius padding cursor-finger">
-                    <Compass size={20} className="color-blue display-inline-block bottom-margin" />
+                  <Link
+                    href="/docs/navigation"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <Compass
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-base font-semibold">Navigation</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Navbar, pills, tabs, breadcrumbs</p>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Navbar, pills, tabs, breadcrumbs
+                    </p>
                   </Link>
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
-                  <Link href="/docs/tables" className="display-block border border-radius padding cursor-finger">
-                    <Table2 size={20} className="color-blue display-inline-block bottom-margin" />
+                  <Link
+                    href="/docs/tables"
+                    className="display-block border border-radius padding cursor-finger"
+                  >
+                    <Table2
+                      size={20}
+                      className="color-blue display-inline-block bottom-margin"
+                    />
                     <h3 className="text-base font-semibold">Tables</h3>
-                    <p className="text-sm text-muted no-margin no-orphan">Bordered, striped, and hoverable</p>
+                    <p className="text-sm text-muted no-margin no-orphan">
+                      Bordered, striped, and hoverable
+                    </p>
                   </Link>
                 </div>
               </div>
