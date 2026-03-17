@@ -15,6 +15,7 @@ import {
   Feather,
   Cpu,
   Palette,
+  Smartphone,
 } from "lucide-react";
 
 export default function Home() {
@@ -86,7 +87,7 @@ export default function Home() {
                     className="color-blue display-inline-block bottom-margin"
                   />
                   <span className="text-2xl font-bold display-block">
-                    AI Ready
+                    AI Native
                   </span>
                   <span className="text-xs uppercase text-muted">
                     One file in context
@@ -151,13 +152,42 @@ export default function Home() {
       </div>
 
       <div className="units-container">
+        <section className="padding-top-extra padding-bottom-extra" aria-labelledby="ai-heading">
+          <div className="units-row centered-content">
+            <div className="unit-50 phone-unit-100 text-center">
+              <p className="text-xs font-semibold uppercase color-blue">
+                AI native
+              </p>
+              <h2 id="ai-heading" className="text-balance">
+                One file. 400 classes. Minimal tokens.
+              </h2>
+              <p className="text-secondary no-orphan">
+                The entire framework — every class, variable, and rule — fits
+                in a single context window. Obvious class names
+                like <code>padding-lg</code> eliminate hallucination, and
+                semantic HTML auto-styling cuts CSS-related tokens 30–50%
+                versus utility-class frameworks.
+              </p>
+              <div className="padding-top">
+                <Link href="/docs/ai-agents" className="btn btn-blue">
+                  See the AI workflow
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="units-row centered-content padding-top-extra">
+          <hr className="width-20" />
+        </div>
+
         <section className="padding-top-extra padding-bottom-extra" aria-labelledby="compliance-heading">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase color-blue">
                 Compliance
               </p>
-              <h2 id="compliance-heading" className="text-balance">What you stop worrying about</h2>
+              <h2 id="compliance-heading" className="text-balance">Compliance, built in</h2>
               <p className="text-secondary no-orphan">
                 Every feature below is on by default. No plugins, no overrides,
                 no forgetting.
@@ -240,7 +270,7 @@ export default function Home() {
                 </div>
                 <div className="unit-33 phone-unit-100 bottom-margin">
                   <div className="border border-radius padding text-center">
-                    <LayoutGrid
+                    <Smartphone
                       size={28}
                       aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
@@ -253,30 +283,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="units-row centered-content">
-          <hr className="width-50" />
-        </div>
-
-        <section className="padding-top-extra padding-bottom-extra" aria-labelledby="ai-heading">
-          <div className="units-row centered-content">
-            <div className="unit-50 phone-unit-100 text-center">
-              <p className="text-xs font-semibold uppercase color-blue">
-                AI native
-              </p>
-              <h2 id="ai-heading" className="text-balance">
-                One file. 400 classes. Minimal tokens.
-              </h2>
-              <p className="text-secondary no-orphan">
-                The entire framework fits in a single context window. 400
-                classes means your AI agent spends tokens building UI, not
-                parsing a sprawling API surface. <code>unit-50</code> = 50%.{" "}
-                <code>btn-blue</code> = blue button. No ambiguity, no
-                hallucination.
-              </p>
             </div>
           </div>
         </section>

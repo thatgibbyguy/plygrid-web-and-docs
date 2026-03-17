@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/johngibby/Documents/ply/plygrid-web-and-docs/src -type f \\\\\\(-name *.astro -o -name *.html -o -name *.jsx -o -name *.tsx \\\\\\))"
+    ]
+  }
+}
