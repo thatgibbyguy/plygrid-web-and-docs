@@ -1,0 +1,15 @@
+---
+import Layout from "./Layout.astro";
+import TableOfContents from "../components/TableOfContents";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<Layout title={`${title} — ply`}>
+  <slot />
+  <TableOfContents client:load slot="toc" />
+</Layout>

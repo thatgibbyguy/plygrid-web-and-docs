@@ -1,31 +1,31 @@
-import { Link } from "wouter";
-import CodeBlock from "../components/CodeBlock";
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+---
 
-export default function InstallationPage() {
-  return (
-    <>
-      <section className="padding-top-extra padding-bottom-extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-blue">
+<DocsLayout title="Installation">
+      <section class="padding-top-extra padding-bottom-extra border-bottom">
+        <p class="text-xs font-semibold uppercase color-blue">
           Getting Started
         </p>
-        <h1 className="text-balance">Installation</h1>
-        <p className="lead no-orphan">
+        <h1 class="text-balance">Installation</h1>
+        <p class="lead no-orphan">
           Two ways to use ply. Pick whichever fits your project.
         </p>
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="cdn"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Prototype</p>
+        <p class="text-xs font-semibold uppercase color-blue">Prototype</p>
         <h2>CDN — Just the CSS</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           One link tag. No install, no build step. You get the full grid,
           typography, buttons, forms, tables, navigation, dark mode, and WCAG AA
           contrast — all in one stylesheet.
         </p>
-        <p className="text-sm">
+        <p class="text-sm">
           Add this to your <code>&lt;head&gt;</code>:
         </p>
         <CodeBlock
@@ -33,12 +33,11 @@ export default function InstallationPage() {
         />
 
         <h3>What's included</h3>
-        <div className="units-row padding-top">
-          <div className="unit-50 phone-unit-100">
+        <div class="units-row padding-top">
+          <div class="unit-50 phone-unit-100">
             <ul>
               <li>
-                Ratio-based flexbox grid (<code>unit-25</code>,{" "}
-                <code>unit-50</code>, etc.)
+                Ratio-based flexbox grid (<code>unit-25</code>, <code>unit-50</code>, etc.)
               </li>
               <li>Responsive prefixes for every breakpoint</li>
               <li>
@@ -47,7 +46,7 @@ export default function InstallationPage() {
               <li>Buttons, button groups, and form controls</li>
             </ul>
           </div>
-          <div className="unit-50 phone-unit-100">
+          <div class="unit-50 phone-unit-100">
             <ul>
               <li>Navbar, pills, tabs, and breadcrumbs</li>
               <li>Bordered, striped, and hoverable tables</li>
@@ -60,33 +59,28 @@ export default function InstallationPage() {
         </div>
 
         <h3>How it works</h3>
-        <p className="no-orphan">
-          ply automatically styles semantic HTML elements —{" "}
-          <code>&lt;nav&gt;</code>, <code>&lt;table&gt;</code>,{" "}
-          <code>&lt;code&gt;</code>, <code>&lt;blockquote&gt;</code>,{" "}
-          <code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>, headings,
+        <p class="no-orphan">
+          ply automatically styles semantic HTML elements — <code>&lt;nav&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>, headings,
           and forms all get styled out of the box.
         </p>
-        <div className="alert alert-green alert-outline">
-          <span className="alert-content">
+        <div class="alert alert-green alert-outline">
+          <span class="alert-content">
             <strong>
               Start with semantic HTML before reaching for classes.
-            </strong>{" "}
-            ply gives you a lot for free — use native elements first, then add
+            </strong> ply gives you a lot for free — use native elements first, then add
             classes only when you need customization.
           </span>
         </div>
-        <p className="no-orphan">
+        <p class="no-orphan">
           For layout, wrap content in <code>units-container</code> for max-width
-          centering, then use <code>units-row</code> with <code>unit-*</code>{" "}
-          children. That's the entire grid model.
+          centering, then use <code>units-row</code> with <code>unit-*</code> children. That's the entire grid model.
         </p>
 
         <h3>Starter template result</h3>
-        <div className="border border-radius padding">
-          <nav className="navbar">
+        <div class="border border-radius padding">
+          <nav class="navbar">
             <ul>
-              <li className="active">
+              <li class="active">
                 <a href="#cdn">Home</a>
               </li>
               <li>
@@ -94,15 +88,15 @@ export default function InstallationPage() {
               </li>
             </ul>
           </nav>
-          <div className="units-row margin-top-extra">
-            <div className="unit-25 phone-unit-100">
+          <div class="units-row margin-top-extra">
+            <div class="unit-25 phone-unit-100">
               <h3>Sidebar</h3>
               <p>This stacks on mobile.</p>
             </div>
-            <div className="unit-75 phone-unit-100">
-              <p className="h1 no-top-margin">Hello ply</p>
+            <div class="unit-75 phone-unit-100">
+              <p class="h1 no-top-margin">Hello ply</p>
               <p>Semantic HTML, styled automatically.</p>
-              <button className="btn btn-blue">Get Started</button>
+              <button class="btn btn-blue">Get Started</button>
             </div>
           </div>
         </div>
@@ -143,12 +137,12 @@ export default function InstallationPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="sass"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Customize</p>
+        <p class="text-xs font-semibold uppercase color-blue">Customize</p>
         <h2>Sass — Build Your Own</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Install ply as a dependency and import the SCSS source. This gives you
           full access to the color palette, spacing variables, mixins, and the
           ability to extend ply at the Sass level.
@@ -158,15 +152,15 @@ export default function InstallationPage() {
         <CodeBlock code={`npm install plygrid`} />
 
         <h3>Import</h3>
-        <p className="text-sm">In your main stylesheet:</p>
+        <p class="text-sm">In your main stylesheet:</p>
         <CodeBlock code={`@use 'plygrid/src/scss/ply' as *;`} />
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           This gives you all compiled classes plus Sass variables, color maps,
           and mixins.
         </p>
 
         <h3>Use variables and mixins</h3>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Import individual modules to access the full color palette, spacing
           scale, breakpoints, and utility mixins.
         </p>
@@ -205,12 +199,12 @@ export default function InstallationPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="dark-mode"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Theming</p>
+        <p class="text-xs font-semibold uppercase color-blue">Theming</p>
         <h2>Dark Mode</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           ply automatically respects <code>prefers-color-scheme</code>. To
           manually control the theme, set the <code>data-theme</code> attribute
           on <code>&lt;html&gt;</code>.
@@ -225,7 +219,7 @@ export default function InstallationPage() {
 <!-- Follow system preference (default) -->
 <html>`}
         />
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           All ply colors use CSS custom properties (<code>var(--ply-*)</code>)
           that automatically adapt. Never hard-code color values — always use
           the provided variables or utility classes.
@@ -233,17 +227,14 @@ export default function InstallationPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra"
+        class="padding-top-extra padding-bottom-extra"
         id="next-steps"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Next</p>
+        <p class="text-xs font-semibold uppercase color-blue">Next</p>
         <h2>Next Steps</h2>
-        <p className="text-secondary no-orphan">
-          See what ply styles for free in{" "}
-          <Link href="/docs/semantic-html">Semantic HTML</Link>, or set up your
-          AI agent with <Link href="/docs/ai-agents">AI Agents</Link>.
+        <p class="text-secondary no-orphan">
+          See what ply styles for free in <a href="/docs/semantic-html">Semantic HTML</a>, or set up your
+          AI agent with <a href="/docs/ai-agents">AI Agents</a>.
         </p>
       </section>
-    </>
-  );
-}
+</DocsLayout>

@@ -1,23 +1,23 @@
-import { Link } from "wouter";
-import CodeBlock from "../components/CodeBlock";
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+---
 
-export default function UtilitiesPage() {
-  return (
-    <div>
-      <section className="padding-top-extra padding-bottom-extra border-bottom">
-        <p className="text-xs font-semibold uppercase color-blue">Helpers</p>
-        <h1 className="text-balance">Utilities</h1>
-        <p className="lead no-orphan">
+<DocsLayout title="Utilities">
+      <section class="padding-top-extra padding-bottom-extra border-bottom">
+        <p class="text-xs font-semibold uppercase color-blue">Helpers</p>
+        <h1 class="text-balance">Utilities</h1>
+        <p class="lead no-orphan">
           Helper classes for spacing, display, visibility, borders, dimensions,
           text wrapping, and animations.
         </p>
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="display"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Display</p>
+        <p class="text-xs font-semibold uppercase color-blue">Display</p>
         <h2>Display Utilities</h2>
 
         <table>
@@ -75,19 +75,19 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="flex-alignment"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Flex</p>
+        <p class="text-xs font-semibold uppercase color-blue">Flex</p>
         <h2>Flex Alignment</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Use with <code>display-flex</code> to align children along both axes.
         </p>
 
-        <div className="units-row">
-          <div className="unit-50 phone-unit-100">
+        <div class="units-row">
+          <div class="unit-50 phone-unit-100">
             <h3>Align Items</h3>
-            <table className="table-stroked">
+            <table class="table-stroked">
               <tbody>
                 <tr><td><code>items-center</code></td><td>align-items: center</td></tr>
                 <tr><td><code>items-start</code></td><td>align-items: flex-start</td></tr>
@@ -97,9 +97,9 @@ export default function UtilitiesPage() {
               </tbody>
             </table>
           </div>
-          <div className="unit-50 phone-unit-100">
+          <div class="unit-50 phone-unit-100">
             <h3>Justify Content</h3>
-            <table className="table-stroked">
+            <table class="table-stroked">
               <tbody>
                 <tr><td><code>justify-center</code></td><td>justify-content: center</td></tr>
                 <tr><td><code>justify-start</code></td><td>justify-content: flex-start</td></tr>
@@ -112,10 +112,10 @@ export default function UtilitiesPage() {
         </div>
 
         <h3>Legacy Alignment Classes</h3>
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           These older alignment classes are also available. The shorter <code>items-*</code> and <code>justify-*</code> classes above are preferred.
         </p>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>fully-centered</code></td><td>Flex center on both axes</td></tr>
             <tr><td><code>horizontally-centered</code></td><td>justify-content: center</td></tr>
@@ -147,10 +147,10 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="position"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Position</p>
+        <p class="text-xs font-semibold uppercase color-blue">Position</p>
         <h2>Position Utilities</h2>
 
         <table>
@@ -196,16 +196,16 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="spacing"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Spacing</p>
+        <p class="text-xs font-semibold uppercase color-blue">Spacing</p>
         <h2>Margin & Padding</h2>
 
-        <div className="units-row">
-          <div className="unit-50 phone-unit-100">
+        <div class="units-row">
+          <div class="unit-50 phone-unit-100">
             <h3>Margin</h3>
-            <table className="table-stroked">
+            <table class="table-stroked">
               <tbody>
                 <tr>
                   <td>
@@ -306,9 +306,9 @@ export default function UtilitiesPage() {
               </tbody>
             </table>
           </div>
-          <div className="unit-50 phone-unit-100">
+          <div class="unit-50 phone-unit-100">
             <h3>Padding</h3>
-            <table className="table-stroked">
+            <table class="table-stroked">
               <tbody>
                 <tr>
                   <td>
@@ -406,20 +406,20 @@ export default function UtilitiesPage() {
         </div>
 
         <h3>Visual Demo</h3>
-        <div className="border border-radius padding">
-          <div className="units-row">
-            <div className="unit-33 phone-unit-100">
-              <div className="padding border border-radius bottom-margin">
+        <div class="border border-radius padding">
+          <div class="units-row">
+            <div class="unit-33 phone-unit-100">
+              <div class="padding border border-radius bottom-margin">
                 <code>.padding</code>
               </div>
             </div>
-            <div className="unit-33 phone-unit-100">
-              <div className="padding-top padding-bottom border border-radius bottom-margin">
+            <div class="unit-33 phone-unit-100">
+              <div class="padding-top padding-bottom border border-radius bottom-margin">
                 <code>.padding-top .padding-bottom</code>
               </div>
             </div>
-            <div className="unit-33 phone-unit-100">
-              <div className="margin border border-radius padding bottom-margin">
+            <div class="unit-33 phone-unit-100">
+              <div class="margin border border-radius padding bottom-margin">
                 <code>.margin</code>
               </div>
             </div>
@@ -428,12 +428,12 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="gap"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Gap</p>
+        <p class="text-xs font-semibold uppercase color-blue">Gap</p>
         <h2>Gap Utilities</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Apply consistent spacing between flex or grid children without margin
           hacks.
         </p>
@@ -480,16 +480,16 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Visual Demo</h3>
-        <div className="border border-radius padding">
-          <p className="text-sm text-secondary">display-flex + gap-lg</p>
-          <div className="display-flex gap-lg">
-            <div className="border border-radius padding text-center text-sm">
+        <div class="border border-radius padding">
+          <p class="text-sm text-secondary">display-flex + gap-lg</p>
+          <div class="display-flex gap-lg">
+            <div class="border border-radius padding text-center text-sm">
               A
             </div>
-            <div className="border border-radius padding text-center text-sm">
+            <div class="border border-radius padding text-center text-sm">
               B
             </div>
-            <div className="border border-radius padding text-center text-sm">
+            <div class="border border-radius padding text-center text-sm">
               C
             </div>
           </div>
@@ -505,36 +505,36 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="borders"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Borders</p>
+        <p class="text-xs font-semibold uppercase color-blue">Borders</p>
         <h2>Border Utilities</h2>
 
-        <div className="border border-radius padding">
-          <div className="units-row">
-            <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border padding border-radius bottom-margin text-center">
+        <div class="border border-radius padding">
+          <div class="units-row">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border padding border-radius bottom-margin text-center">
                 border
               </div>
             </div>
-            <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-top padding bottom-margin text-center">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-top padding bottom-margin text-center">
                 border-top
               </div>
             </div>
-            <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-bottom padding bottom-margin text-center">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-bottom padding bottom-margin text-center">
                 border-bottom
               </div>
             </div>
-            <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-left padding bottom-margin text-center">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-left padding bottom-margin text-center">
                 border-left
               </div>
             </div>
-            <div className="unit-20 tablet-unit-50 phone-unit-100">
-              <div className="border-right padding bottom-margin text-center">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-right padding bottom-margin text-center">
                 border-right
               </div>
             </div>
@@ -542,47 +542,45 @@ export default function UtilitiesPage() {
         </div>
 
         <p>
-          Other: <code>no-border</code>, <code>border-radius</code>,{" "}
-          <code>circle</code>
+          Other: <code>no-border</code>, <code>border-radius</code>, <code>circle</code>
         </p>
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="width-height"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Dimensions</p>
+        <p class="text-xs font-semibold uppercase color-blue">Dimensions</p>
         <h2>Width & Height</h2>
 
-        <p className="no-orphan">
+        <p class="no-orphan">
           Percentage-based width classes: <code>width-10</code>, <code>width-20</code>, <code>width-25</code>, <code>width-33</code>, <code>width-40</code>, <code>width-50</code>, <code>width-66</code>, <code>width-70</code>, <code>width-75</code>, <code>width-80</code>, <code>width-90</code>, <code>width-100</code>.
         </p>
 
-        <div className="border border-radius padding">
+        <div class="border border-radius padding">
           {[100, 90, 80, 75, 70, 66, 50, 40, 33, 25, 20, 10].map((w) => (
-            <div key={w} className={`width-${w} bottom-margin`}>
-              <div className="border border-radius padding text-center text-sm">
+            <div class={`width-${w} bottom-margin`}>
+              <div class="border border-radius padding text-center text-sm">
                 width-{w}
               </div>
             </div>
           ))}
         </div>
 
-        <p className="no-orphan">
+        <p class="no-orphan">
           Height utilities use the same increments: <code>height-100</code>, <code>height-90</code>, <code>height-80</code>, <code>height-75</code>, <code>height-70</code>, <code>height-50</code>, <code>height-33</code>, <code>height-25</code>, <code>height-10</code>.
         </p>
 
-        <p className="no-orphan">
-          Responsive width variants: <code>tablet-width-*</code>, <code>phone-width-*</code>,{" "}
-          <code>small-desktop-width-*</code>, <code>large-phone-width-*</code>.
+        <p class="no-orphan">
+          Responsive width variants: <code>tablet-width-*</code>, <code>phone-width-*</code>, <code>small-desktop-width-*</code>, <code>large-phone-width-*</code>.
         </p>
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="visibility"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Visibility</p>
+        <p class="text-xs font-semibold uppercase color-blue">Visibility</p>
         <h2>Show & Hide</h2>
 
         <table>
@@ -618,12 +616,12 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="text-wrap"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Text Wrap</p>
+        <p class="text-xs font-semibold uppercase color-blue">Text Wrap</p>
         <h2>Text Wrap Utilities</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Control how text breaks across lines — prevent orphaned words or
           balance heading line lengths.
         </p>
@@ -662,18 +660,18 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Visual Demo</h3>
-        <div className="border border-radius padding">
-          <div className="units-row">
-            <div className="unit-50 phone-unit-100">
-              <p className="text-sm text-secondary">Without text-balance</p>
+        <div class="border border-radius padding">
+          <div class="units-row">
+            <div class="unit-50 phone-unit-100">
+              <p class="text-sm text-secondary">Without text-balance</p>
               <h3>
                 This heading demonstrates what happens without balanced text
                 wrapping enabled
               </h3>
             </div>
-            <div className="unit-50 phone-unit-100">
-              <p className="text-sm text-secondary">With text-balance</p>
-              <h3 className="text-balance">
+            <div class="unit-50 phone-unit-100">
+              <p class="text-sm text-secondary">With text-balance</p>
+              <h3 class="text-balance">
                 This heading demonstrates what happens with balanced text
                 wrapping enabled
               </h3>
@@ -688,27 +686,27 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="link-reset"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Links</p>
+        <p class="text-xs font-semibold uppercase color-blue">Links</p>
         <h2>Link Reset</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Suppress link color and underline on all anchor elements inside a
           container. Useful for card grids and clickable containers.
         </p>
 
-        <div className="border border-radius padding">
-          <div className="units-row">
-            <div className="unit-50 phone-unit-100">
-              <p className="text-sm text-secondary">Without no-link-style</p>
-              <div className="border border-radius padding bottom-margin">
+        <div class="border border-radius padding">
+          <div class="units-row">
+            <div class="unit-50 phone-unit-100">
+              <p class="text-sm text-secondary">Without no-link-style</p>
+              <div class="border border-radius padding bottom-margin">
                 <a href="#">This link has default styling</a>
               </div>
             </div>
-            <div className="unit-50 phone-unit-100">
-              <p className="text-sm text-secondary">With no-link-style</p>
-              <div className="border border-radius padding bottom-margin no-link-style">
+            <div class="unit-50 phone-unit-100">
+              <p class="text-sm text-secondary">With no-link-style</p>
+              <div class="border border-radius padding bottom-margin no-link-style">
                 <a href="#">This link has reset styling</a>
               </div>
             </div>
@@ -726,73 +724,73 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="text-color"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Color</p>
+        <p class="text-xs font-semibold uppercase color-blue">Color</p>
         <h2>Text Color</h2>
 
         <h3>Semantic Text Colors</h3>
-        <div className="border border-radius padding">
-          <p className="text-primary no-margin bottom-margin">text-primary — Body text color</p>
-          <p className="text-secondary no-margin bottom-margin">text-secondary — Secondary text</p>
-          <p className="text-tertiary no-margin bottom-margin">text-tertiary — Muted text (alias: text-muted)</p>
-          <p className="text-inverse bg-blue padding-left padding-right no-margin bottom-margin">text-inverse — Inverse color</p>
-          <p className="text-on-color bg-blue padding-left padding-right no-margin bottom-margin">text-on-color — White text for colored backgrounds</p>
-          <p className="success no-margin bottom-margin">success — Green status text</p>
-          <p className="error no-margin">error — Red status text</p>
+        <div class="border border-radius padding">
+          <p class="text-primary no-margin bottom-margin">text-primary — Body text color</p>
+          <p class="text-secondary no-margin bottom-margin">text-secondary — Secondary text</p>
+          <p class="text-tertiary no-margin bottom-margin">text-tertiary — Muted text (alias: text-muted)</p>
+          <p class="text-inverse bg-blue padding-left padding-right no-margin bottom-margin">text-inverse — Inverse color</p>
+          <p class="text-on-color bg-blue padding-left padding-right no-margin bottom-margin">text-on-color — White text for colored backgrounds</p>
+          <p class="success no-margin bottom-margin">success — Green status text</p>
+          <p class="error no-margin">error — Red status text</p>
         </div>
 
         <h3>Named Colors</h3>
-        <div className="border border-radius padding">
-          <p className="color-blue no-margin bottom-margin">color-blue</p>
-          <p className="color-red no-margin bottom-margin">color-red</p>
-          <p className="color-green no-margin bottom-margin">color-green</p>
-          <p className="color-yellow no-margin bottom-margin">color-yellow</p>
-          <p className="color-black no-margin bottom-margin">color-black</p>
-          <p className="color-white bg-blue padding-left padding-right no-margin">color-white</p>
+        <div class="border border-radius padding">
+          <p class="color-blue no-margin bottom-margin">color-blue</p>
+          <p class="color-red no-margin bottom-margin">color-red</p>
+          <p class="color-green no-margin bottom-margin">color-green</p>
+          <p class="color-yellow no-margin bottom-margin">color-yellow</p>
+          <p class="color-black no-margin bottom-margin">color-black</p>
+          <p class="color-white bg-blue padding-left padding-right no-margin">color-white</p>
         </div>
 
         <h3>Opacity Scales</h3>
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           Black at 10–90% opacity: <code>color-gray-10</code>, <code>color-gray-20</code>, <code>color-gray-30</code>, <code>color-gray-40</code>, <code>color-gray-50</code>, <code>color-gray-60</code>, <code>color-gray-70</code>, <code>color-gray-80</code>, <code>color-gray-90</code>.
         </p>
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           White at 10–90% opacity: <code>color-white-10</code>, <code>color-white-20</code>, <code>color-white-30</code>, <code>color-white-40</code>, <code>color-white-50</code>, <code>color-white-60</code>, <code>color-white-70</code>, <code>color-white-80</code>, <code>color-white-90</code>.
         </p>
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="backgrounds"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Background</p>
+        <p class="text-xs font-semibold uppercase color-blue">Background</p>
         <h2>Background Utilities</h2>
 
-        <div className="border border-radius padding">
-          <div className="units-row">
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-blue text-on-color padding text-center border-radius">bg-blue</div>
+        <div class="border border-radius padding">
+          <div class="units-row">
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-blue text-on-color padding text-center border-radius">bg-blue</div>
             </div>
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-red text-on-color padding text-center border-radius">bg-red</div>
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-red text-on-color padding text-center border-radius">bg-red</div>
             </div>
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-green text-on-color padding text-center border-radius">bg-green</div>
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-green text-on-color padding text-center border-radius">bg-green</div>
             </div>
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-yellow padding text-center border-radius">bg-yellow</div>
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-yellow padding text-center border-radius">bg-yellow</div>
             </div>
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-surface border padding text-center border-radius">bg-surface</div>
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-surface border padding text-center border-radius">bg-surface</div>
             </div>
-            <div className="unit-33 phone-unit-100 bottom-margin">
-              <div className="bg-glass border padding text-center border-radius">bg-glass</div>
+            <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="bg-glass border padding text-center border-radius">bg-glass</div>
             </div>
           </div>
         </div>
 
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>bg-blue</code></td><td>Blue background, WCAG AA with white text</td></tr>
             <tr><td><code>bg-red</code></td><td>Red background, WCAG AA with white text</td></tr>
@@ -806,31 +804,31 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="elevation"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Elevation</p>
+        <p class="text-xs font-semibold uppercase color-blue">Elevation</p>
         <h2>Layers & Shadows</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Layer classes (<code>layer-0</code>, <code>layer-1</code>, <code>layer-2</code>, <code>layer-3</code>) combine a
           background color with a matching shadow for consistent elevation.
           Shadow classes (<code>shadow-1</code>, <code>shadow-2</code>, <code>shadow-3</code>) apply box-shadow only.
         </p>
 
-        <div className="border border-radius padding">
-          <div className="units-row">
+        <div class="border border-radius padding">
+          <div class="units-row">
             {[0, 1, 2, 3].map((n) => (
-              <div key={n} className="unit-25 phone-unit-50 bottom-margin">
-                <div className={`layer-${n} padding text-center border-radius`}>
+              <div class="unit-25 phone-unit-50 bottom-margin">
+                <div class={`layer-${n} padding text-center border-radius`}>
                   layer-{n}
                 </div>
               </div>
             ))}
           </div>
-          <div className="units-row">
+          <div class="units-row">
             {[1, 2, 3].map((n) => (
-              <div key={n} className="unit-33 phone-unit-100 bottom-margin">
-                <div className={`shadow-${n} padding text-center border-radius`}>
+              <div class="unit-33 phone-unit-100 bottom-margin">
+                <div class={`shadow-${n} padding text-center border-radius`}>
                   shadow-{n}
                 </div>
               </div>
@@ -840,16 +838,16 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="font-family"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Fonts</p>
+        <p class="text-xs font-semibold uppercase color-blue">Fonts</p>
         <h2>Font Family</h2>
 
-        <div className="border border-radius padding">
-          <p className="sans no-margin bottom-margin"><code>sans</code> — System sans-serif font stack</p>
-          <p className="serif no-margin bottom-margin"><code>serif</code> — Georgia serif font family</p>
-          <p className="mono no-margin"><code>mono</code> — Monospace font family</p>
+        <div class="border border-radius padding">
+          <p class="sans no-margin bottom-margin"><code>sans</code> — System sans-serif font stack</p>
+          <p class="serif no-margin bottom-margin"><code>serif</code> — Georgia serif font family</p>
+          <p class="mono no-margin"><code>mono</code> — Monospace font family</p>
         </div>
 
         <p>
@@ -858,15 +856,15 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="cursors"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Cursors</p>
+        <p class="text-xs font-semibold uppercase color-blue">Cursors</p>
         <h2>Cursor Utilities</h2>
 
-        <div className="units-row">
-          <div className="unit-50 phone-unit-100">
-            <table className="table-stroked">
+        <div class="units-row">
+          <div class="unit-50 phone-unit-100">
+            <table class="table-stroked">
               <tbody>
                 <tr><td><code>cursor-pointer</code></td><td>Pointer hand</td></tr>
                 <tr><td><code>cursor-default</code></td><td>Default arrow</td></tr>
@@ -879,8 +877,8 @@ export default function UtilitiesPage() {
               </tbody>
             </table>
           </div>
-          <div className="unit-50 phone-unit-100">
-            <table className="table-stroked">
+          <div class="unit-50 phone-unit-100">
+            <table class="table-stroked">
               <tbody>
                 <tr><td><code>cursor-copy</code></td><td>Copy indicator</td></tr>
                 <tr><td><code>cursor-alias</code></td><td>Alias/shortcut</td></tr>
@@ -894,7 +892,7 @@ export default function UtilitiesPage() {
                 <tr><td><code>cursor-nesw-resize</code></td><td>Diagonal resize</td></tr>
               </tbody>
             </table>
-            <p className="text-sm text-secondary">
+            <p class="text-sm text-secondary">
               Also: <code>cursor-n-resize</code>, <code>cursor-e-resize</code>, <code>cursor-s-resize</code>, <code>cursor-w-resize</code>, <code>cursor-ne-resize</code>, <code>cursor-nw-resize</code>, <code>cursor-sw-resize</code>, <code>cursor-se-resize</code>
             </p>
           </div>
@@ -902,18 +900,18 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="components"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Components</p>
+        <p class="text-xs font-semibold uppercase color-blue">Components</p>
         <h2>Component Utilities</h2>
-        <p className="no-orphan">
+        <p class="no-orphan">
           Pre-built component classes for common UI patterns. These require
           JavaScript for interactivity but ply provides all the styling.
         </p>
 
         <h3>Accordion</h3>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>accordion-title</code></td><td>Clickable header</td></tr>
             <tr><td><code>accordion-title-opened</code></td><td>Open state header</td></tr>
@@ -925,7 +923,7 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Dropdown</h3>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>dropdown</code></td><td>Absolute-positioned panel</td></tr>
             <tr><td><code>caret</code></td><td>Down-pointing arrow indicator</td></tr>
@@ -934,11 +932,11 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Modal</h3>
-        <p className="text-sm text-secondary no-orphan">
+        <p class="text-sm text-secondary no-orphan">
           For most use cases, prefer the native <code>&lt;dialog&gt;</code> element which ply auto-styles.
           These classes are for custom modal implementations.
         </p>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>modal</code></td><td>Modal dialog box</td></tr>
             <tr><td><code>modal-box</code></td><td>Full-screen overlay container</td></tr>
@@ -948,7 +946,7 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Tooltip</h3>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>tooltip</code></td><td>Base tooltip popup</td></tr>
             <tr><td><code>tooltip-theme-blue</code></td><td>Blue tooltip</td></tr>
@@ -960,7 +958,7 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Loader & Embed</h3>
-        <table className="table-stroked">
+        <table class="table-stroked">
           <tbody>
             <tr><td><code>loader</code></td><td>Spinning loader animation</td></tr>
             <tr><td><code>flexible-embed</code></td><td>16:9 responsive iframe/video container</td></tr>
@@ -969,22 +967,22 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra border-bottom"
+        class="padding-top-extra padding-bottom-extra border-bottom"
         id="animation"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Animation</p>
+        <p class="text-xs font-semibold uppercase color-blue">Animation</p>
         <h2>Animation Utilities</h2>
 
-        <div className="border border-radius padding">
-          <div className="units-row align-middle">
-            <div className="unit-25 tablet-unit-50 text-center">
-              <div className="spinning border border-radius padding display-inline-block">
+        <div class="border border-radius padding">
+          <div class="units-row align-middle">
+            <div class="unit-25 tablet-unit-50 text-center">
+              <div class="spinning border border-radius padding display-inline-block">
                 ⟳
               </div>
-              <p className="text-sm">spinning</p>
+              <p class="text-sm">spinning</p>
             </div>
-            <div className="unit-25 tablet-unit-50 text-center">
-              <div className="fade-in border border-radius padding display-inline-block">
+            <div class="unit-25 tablet-unit-50 text-center">
+              <div class="fade-in border border-radius padding display-inline-block">
                 fade-in
               </div>
             </div>
@@ -997,8 +995,8 @@ export default function UtilitiesPage() {
         />
       </section>
 
-      <section className="padding-top-extra padding-bottom-extra" id="misc">
-        <p className="text-xs font-semibold uppercase color-blue">
+      <section class="padding-top-extra padding-bottom-extra" id="misc">
+        <p class="text-xs font-semibold uppercase color-blue">
           Miscellaneous
         </p>
         <h2>Other Utilities</h2>
@@ -1021,8 +1019,8 @@ export default function UtilitiesPage() {
         </table>
 
         <h3>Flat List</h3>
-        <div className="border border-radius padding">
-          <ul className="flat-list">
+        <div class="border border-radius padding">
+          <ul class="flat-list">
             <li>Item one — no bullet</li>
             <li>Item two — no margin</li>
             <li>Item three — clean list</li>
@@ -1031,17 +1029,14 @@ export default function UtilitiesPage() {
       </section>
 
       <section
-        className="padding-top-extra padding-bottom-extra"
+        class="padding-top-extra padding-bottom-extra"
         id="next-steps"
       >
-        <p className="text-xs font-semibold uppercase color-blue">Next</p>
+        <p class="text-xs font-semibold uppercase color-blue">Next</p>
         <h2>Next Steps</h2>
-        <p className="text-secondary no-orphan">
-          Learn about built-in{" "}
-          <Link href="/docs/accessibility">accessibility</Link> features, or set
-          up your <Link href="/docs/ai-agents">AI agent</Link> to use ply.
+        <p class="text-secondary no-orphan">
+          Learn about built-in <a href="/docs/accessibility">accessibility</a> features, or set
+          up your <a href="/docs/ai-agents">AI agent</a> to use ply.
         </p>
       </section>
-    </div>
-  );
-}
+</DocsLayout>

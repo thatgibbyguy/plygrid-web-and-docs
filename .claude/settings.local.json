@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find /Users/johngibby/Documents/ply/plygrid-web-and-docs/src -type f \\\\\\(-name *.astro -o -name *.html -o -name *.jsx -o -name *.tsx \\\\\\))"
+      "Bash(find /Users/johngibby/Documents/ply/plygrid-web-and-docs/src -type f \\\\\\(-name *.astro -o -name *.html -o -name *.jsx -o -name *.tsx \\\\\\))",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(rm /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/*.tsx /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/Home.tsx /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/not-found.tsx)",
+      "Bash(ls /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/*.tsx)",
+      "Bash(npx astro:*)"
     ]
   }
 }

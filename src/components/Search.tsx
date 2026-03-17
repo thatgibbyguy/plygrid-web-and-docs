@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { useLocation } from "wouter";
 import { Search as SearchIcon } from "lucide-react";
 import classData from "plygrid/ply-classes.json";
 
@@ -23,16 +22,13 @@ const categoryToPage: Record<string, { path: string; label: string }> = {
 };
 
 // Map class names to section IDs on their doc pages
-// Order matters — first match wins
 const sectionRules: Array<{ test: (name: string) => boolean; sectionId: string }> = [
-  // Buttons
   { test: (n) => /^btn-(outline|o-)/.test(n), sectionId: "button-outline" },
   { test: (n) => /^btn-ghost/.test(n), sectionId: "button-ghost" },
   { test: (n) => /^btn-(big|small|lg|sm|xs|smaller)/.test(n), sectionId: "button-sizes" },
   { test: (n) => /^btn-(square|straight|single)/.test(n), sectionId: "button-shapes" },
   { test: (n) => /^btn-group/.test(n), sectionId: "button-groups" },
   { test: (n) => /^(btn|align-right|align-left|fill-width|rounded)/.test(n), sectionId: "button-colors" },
-  // Grid
   { test: (n) => /^(push-|offset-|unit-push)/.test(n), sectionId: "offsets" },
   { test: (n) => /^(tablet-|phone-|desktop-)/.test(n), sectionId: "responsive" },
   { test: (n) => /^(equal-height|reverse|stacked|split|centered-content)/.test(n), sectionId: "modifiers" },
@@ -40,7 +36,6 @@ const sectionRules: Array<{ test: (name: string) => boolean; sectionId: string }
   { test: (n) => /^blocks-/.test(n), sectionId: "blocks" },
   { test: (n) => /^block-first/.test(n), sectionId: "blocks" },
   { test: (n) => /^(units-|unit-|centered|fill-height)/.test(n), sectionId: "basic" },
-  // Navigation
   { test: (n) => /^navbar-pills/.test(n), sectionId: "pills" },
   { test: (n) => /^nav-tabs/.test(n), sectionId: "tabs" },
   { test: (n) => /^nav-stacked/.test(n), sectionId: "stacked" },
@@ -50,14 +45,12 @@ const sectionRules: Array<{ test: (name: string) => boolean; sectionId: string }
   { test: (n) => /^navbar-vertical/.test(n), sectionId: "vertical" },
   { test: (n) => /^navigation-(toggle|fixed)/.test(n), sectionId: "mobile-toggle" },
   { test: (n) => /^navbar/.test(n), sectionId: "navbar" },
-  // Tables
   { test: (n) => /table.*bordered/.test(n), sectionId: "bordered" },
   { test: (n) => /table.*strip/.test(n), sectionId: "striped" },
   { test: (n) => /table.*hover/.test(n), sectionId: "hoverable" },
   { test: (n) => /table.*(simple|stroked)/.test(n), sectionId: "simple" },
   { test: (n) => /table.*flat/.test(n), sectionId: "flat" },
   { test: (n) => /table.*container/.test(n), sectionId: "responsive" },
-  // Alerts
   { test: (n) => /^(alert|tools-alert).*outline/.test(n), sectionId: "alert-outline" },
   { test: (n) => /^(alert|tools-alert).*ghost/.test(n), sectionId: "alert-ghost" },
   { test: (n) => /^(alert|tools-alert).*(dismiss|icon|content)/.test(n), sectionId: "alert-reference" },
@@ -65,13 +58,11 @@ const sectionRules: Array<{ test: (name: string) => boolean; sectionId: string }
   { test: (n) => /^badge/.test(n), sectionId: "badges" },
   { test: (n) => /^(message|tools-message)/.test(n), sectionId: "messages" },
   { test: (n) => /^(alert|tools-alert)/.test(n), sectionId: "alerts" },
-  // Forms
   { test: (n) => /^input-(big|small|lg|sm|xs)/.test(n), sectionId: "input-sizes" },
   { test: (n) => /^input-(error|success|gray)/.test(n), sectionId: "input-states" },
   { test: (n) => /^input-(groups|prepend|append)/.test(n), sectionId: "input-groups" },
   { test: (n) => /^(autocomplete|typeahead|filterbox|multiselect|tools-droparea|input-search|input-on-black|select-outlined|btn-append|form-desc|form-list|form-inline-list)/.test(n), sectionId: "form-reference" },
   { test: (n) => /^(form)/.test(n), sectionId: "forms" },
-  // Typography
   { test: (n) => /^(text-xs|text-sm|text-lg|text-xl|text-base|text-2xl|text-3xl|text-4xl|text-5xl)$/.test(n), sectionId: "scale" },
   { test: (n) => /^(lead|lead-subhead)/.test(n), sectionId: "headings" },
   { test: (n) => /^font-(bold|semibold|medium|light|normal)/.test(n), sectionId: "weights" },
@@ -79,7 +70,6 @@ const sectionRules: Array<{ test: (name: string) => boolean; sectionId: string }
   { test: (n) => /^text-(left|center|right|justify|centered)/.test(n), sectionId: "alignment" },
   { test: (n) => /^leading-/.test(n), sectionId: "line-height" },
   { test: (n) => /^h[1-6]$/.test(n), sectionId: "headings" },
-  // Utilities
   { test: (n) => /^(items-|justify-center|justify-start|justify-end|justify-between|justify-around)/.test(n), sectionId: "flex-alignment" },
   { test: (n) => /^(fully-centered|horizontally-centered|vertically-centered|align-center|align-middle|align-baseline|align-flex|align-stretch|justify-flex|justify-space)/.test(n), sectionId: "flex-alignment" },
   { test: (n) => /^display-/.test(n), sectionId: "display" },
@@ -109,7 +99,6 @@ function classToSectionId(name: string): string | undefined {
   return undefined;
 }
 
-// Map semantic element tags to section IDs on the semantic HTML page
 const tagToSectionId: Record<string, string> = {
   nav: "nav", table: "table", code: "code", pre: "code",
   kbd: "kbd", blockquote: "blockquote", mark: "mark",
@@ -123,7 +112,6 @@ const tagToSectionId: Record<string, string> = {
 function buildSearchIndex(): SearchEntry[] {
   const entries: SearchEntry[] = [];
 
-  // Classes
   const classes = (classData as any).classes || {};
   for (const [name, info] of Object.entries(classes)) {
     const meta = info as any;
@@ -136,7 +124,6 @@ function buildSearchIndex(): SearchEntry[] {
     });
   }
 
-  // Custom properties
   const props = (classData as any).customProperties || {};
   for (const [group, vars] of Object.entries(props)) {
     for (const [name, desc] of Object.entries(vars as Record<string, string>)) {
@@ -149,7 +136,6 @@ function buildSearchIndex(): SearchEntry[] {
     }
   }
 
-  // Semantic elements
   const elements = (classData as any).semanticElements || {};
   for (const [tag, info] of Object.entries(elements)) {
     const meta = info as any;
@@ -161,7 +147,6 @@ function buildSearchIndex(): SearchEntry[] {
     });
   }
 
-  // Static page entries
   entries.push(
     { label: "Installation", detail: "CDN Sass install npm dark mode AI agents how to get started", path: "/docs/installation" },
     { label: "Semantic HTML", detail: "auto-styled elements nav table code blockquote details dialog", path: "/docs/semantic-html" },
@@ -191,7 +176,6 @@ export default function Search() {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const [, setLocation] = useLocation();
 
   const searchIndex = useMemo(() => buildSearchIndex(), []);
 
@@ -210,21 +194,14 @@ export default function Search() {
     setOpen(false);
     setQuery("");
     setSelectedIndex(0);
-    // Restore focus to the trigger button (WCAG 2.4.3)
     setTimeout(() => triggerRef.current?.focus(), 0);
   }, []);
 
   const navigate = useCallback((entry: SearchEntry) => {
-    setLocation(entry.path);
-    close();
-    if (entry.sectionId) {
-      setTimeout(() => {
-        document.getElementById(entry.sectionId!)?.scrollIntoView({ behavior: "smooth" });
-      }, 150);
-    }
-  }, [setLocation, close]);
+    const url = entry.sectionId ? `${entry.path}#${entry.sectionId}` : entry.path;
+    window.location.href = url;
+  }, []);
 
-  // Cmd+K / Ctrl+K to open
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -236,7 +213,6 @@ export default function Search() {
     return () => document.removeEventListener("keydown", handler);
   }, []);
 
-  // Open/close dialog and focus input
   useEffect(() => {
     if (open) {
       dialogRef.current?.showModal();
@@ -244,7 +220,6 @@ export default function Search() {
     }
   }, [open]);
 
-  // Keyboard nav inside results
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
