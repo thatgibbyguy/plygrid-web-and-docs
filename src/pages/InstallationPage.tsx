@@ -100,7 +100,7 @@ export default function InstallationPage() {
               <p>This stacks on mobile.</p>
             </div>
             <div className="unit-75 phone-unit-100">
-              <h1 className="no-top-margin">Hello ply</h1>
+              <p className="h1 no-top-margin">Hello ply</p>
               <p>Semantic HTML, styled automatically.</p>
               <button className="btn btn-blue">Get Started</button>
             </div>

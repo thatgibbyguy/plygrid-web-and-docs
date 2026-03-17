@@ -68,13 +68,13 @@ export default function TypographyPage() {
         </p>
 
         <h3>Heading Elements</h3>
-        <div className="border border-radius padding">
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
+        <div className="border border-radius padding" role="presentation">
+          <p className="h1 no-top-margin">Heading 1</p>
+          <p className="h2">Heading 2</p>
+          <p className="h3">Heading 3</p>
+          <p className="h4">Heading 4</p>
+          <p className="h5">Heading 5</p>
+          <p className="h6">Heading 6</p>
         </div>
 
         <div className="border border-radius padding">
@@ -240,6 +240,54 @@ function hello() {
 }`}</code>
           </pre>
         </div>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="font-tokens"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Theming</p>
+        <h2>Typography Custom Properties</h2>
+        <p className="no-orphan">
+          Override font families across your entire theme with three CSS custom
+          properties. These work the same way as color variables — one override
+          propagates everywhere.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Default</th>
+              <th>Used by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--ply-font-body</code></td>
+              <td>System sans-serif stack</td>
+              <td>Body text, form controls</td>
+            </tr>
+            <tr>
+              <td><code>--ply-font-heading</code></td>
+              <td>System sans-serif stack</td>
+              <td>h1–h6, heading classes</td>
+            </tr>
+            <tr>
+              <td><code>--ply-font-mono</code></td>
+              <td>System monospace stack</td>
+              <td>code, pre, kbd, samp</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <CodeBlock
+          code={`[data-theme="brand"] {
+  --ply-font-body: "Palatino Linotype", Palatino, Georgia, serif;
+  --ply-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ply-font-mono: "Fira Code", "Source Code Pro", monospace;
+}`}
+        />
       </section>
 
       <section className="padding-top-extra padding-bottom-extra" id="details">

@@ -263,6 +263,30 @@ export default function UtilitiesPage() {
                 </tr>
                 <tr>
                   <td>
+                    <code>margin-xs</code>
+                  </td>
+                  <td>Extra small (0.25rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-sm</code>
+                  </td>
+                  <td>Small (0.5rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-lg</code>
+                  </td>
+                  <td>Large (1.5rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>margin-xl</code>
+                  </td>
+                  <td>Extra large (2rem)</td>
+                </tr>
+                <tr>
+                  <td>
                     <code>no-margin</code>
                   </td>
                   <td>Remove all margins</td>
@@ -339,6 +363,30 @@ export default function UtilitiesPage() {
                     <code>padding-right-extra</code>
                   </td>
                   <td>Double right padding</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-xs</code>
+                  </td>
+                  <td>Extra small (0.25rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-sm</code>
+                  </td>
+                  <td>Small (0.5rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-lg</code>
+                  </td>
+                  <td>Large (1.5rem)</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>padding-xl</code>
+                  </td>
+                  <td>Extra large (2rem)</td>
                 </tr>
                 <tr>
                   <td>

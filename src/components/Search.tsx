@@ -176,10 +176,13 @@ function buildSearchIndex(): SearchEntry[] {
     { label: "Utilities", detail: "spacing display visibility borders helpers gap flex animation", path: "/docs/utilities" },
     { label: "Accessibility", detail: "WCAG focus skip-link sr-only reduced-motion contrast a11y", path: "/docs/accessibility" },
     { label: "AI Agents", detail: "PLY.md ply-classes.json Claude Cursor AI coding agent machine-readable", path: "/docs/ai-agents" },
+    { label: "Compliance", detail: "ADA Title II WCAG 2.1 AA Section 508 accessibility audit VPAT government", path: "/docs/compliance" },
   );
 
   return entries;
 }
+
+const listboxId = "search-listbox";
 
 export default function Search() {
   const [open, setOpen] = useState(false);
@@ -187,6 +190,7 @@ export default function Search() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const [, setLocation] = useLocation();
 
   const searchIndex = useMemo(() => buildSearchIndex(), []);
@@ -206,6 +210,8 @@ export default function Search() {
     setOpen(false);
     setQuery("");
     setSelectedIndex(0);
+    // Restore focus to the trigger button (WCAG 2.4.3)
+    setTimeout(() => triggerRef.current?.focus(), 0);
   }, []);
 
   const navigate = useCallback((entry: SearchEntry) => {
@@ -251,20 +257,24 @@ export default function Search() {
     }
   };
 
+  const activeDescendant = results.length > 0 ? `search-option-${selectedIndex}` : undefined;
+
   return (
     <>
       <button
+        ref={triggerRef}
         className="btn btn-ghost btn-icon"
         onClick={() => setOpen(true)}
         aria-label="Search documentation"
         title="Search"
       >
-        <SearchIcon size={16} />
+        <SearchIcon size={16} aria-hidden="true" />
       </button>
 
       <dialog
         ref={dialogRef}
-        className="search-dialog bg-glass"
+        className="search-dialog"
+        aria-label="Search documentation"
         onClose={() => {
           setOpen(false);
           setQuery("");
@@ -275,11 +285,17 @@ export default function Search() {
         }}
       >
         <div className={`display-flex items-center gap-sm padding${results.length > 0 ? " border-bottom" : ""}`}>
-          <SearchIcon size={16} className="text-secondary" />
+          <SearchIcon size={16} className="text-secondary" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
             className="search-input"
+            role="combobox"
+            aria-label="Search classes, properties, and elements"
+            aria-expanded={results.length > 0}
+            aria-controls={listboxId}
+            aria-activedescendant={activeDescendant}
+            aria-autocomplete="list"
             placeholder="Search classes, properties, elements..."
             value={query}
             onChange={(e) => {
@@ -290,13 +306,19 @@ export default function Search() {
           />
         </div>
         {results.length > 0 && (
-          <ul className="flat-list padding-sm">
+          <ul id={listboxId} role="listbox" className="flat-list padding-sm" aria-label="Search results">
             {results.map((entry, i) => (
-              <li key={`${entry.path}-${entry.label}`}>
+              <li
+                key={`${entry.path}-${entry.label}`}
+                id={`search-option-${i}`}
+                role="option"
+                aria-selected={i === selectedIndex}
+              >
                 <button
                   className={`search-result-item ${i === selectedIndex ? "search-result-selected" : ""}`}
                   onClick={() => navigate(entry)}
                   onMouseEnter={() => setSelectedIndex(i)}
+                  tabIndex={-1}
                 >
                   <span className="text-sm font-semibold">{entry.label}</span>
                   <span className="text-xs text-secondary" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: "100%" }}>{entry.detail}</span>
@@ -306,7 +328,7 @@ export default function Search() {
           </ul>
         )}
         {query.length > 0 && results.length === 0 && (
-          <p className="text-secondary text-sm padding">No results for "{query}"</p>
+          <p className="text-secondary text-sm padding" role="status">No results for &ldquo;{query}&rdquo;</p>
         )}
       </dialog>
     </>

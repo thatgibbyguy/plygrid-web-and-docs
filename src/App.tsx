@@ -14,6 +14,8 @@ import AlertsPage from "./pages/AlertsPage";
 import UtilitiesPage from "./pages/UtilitiesPage";
 import AccessibilityPage from "./pages/AccessibilityPage";
 import AIAgentsPage from "./pages/AIAgentsPage";
+import CompliancePage from "./pages/CompliancePage";
+import VpatPage from "./pages/VpatPage";
 import NotFound from "./pages/not-found";
 
 function Router() {
@@ -34,6 +36,8 @@ function Router() {
         <Route path="/docs/utilities" component={UtilitiesPage} />
         <Route path="/docs/accessibility" component={AccessibilityPage} />
         <Route path="/docs/ai-agents" component={AIAgentsPage} />
+        <Route path="/docs/compliance" component={CompliancePage} />
+        <Route path="/docs/vpat" component={VpatPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

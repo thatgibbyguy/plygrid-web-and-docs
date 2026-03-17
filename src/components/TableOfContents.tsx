@@ -62,7 +62,7 @@ export default function TableOfContents() {
   if (items.length === 0) return null;
 
   return (
-    <nav className="toc-sidebar no-link-style">
+    <nav className="toc-sidebar no-link-style" aria-label="On this page">
       <p className="text-xs font-semibold uppercase no-margin padding-bottom">On This Page</p>
       <ul className="flat-list">
         {items.map((item) => (
