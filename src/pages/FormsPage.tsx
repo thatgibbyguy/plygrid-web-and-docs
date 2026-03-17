@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { Link } from "wouter";
 import CodeBlock from "../components/CodeBlock";
 
 export default function FormsPage() {
+  const dialogTriggerRef = useRef<HTMLButtonElement>(null);
   return (
     <div>
       <section className="padding-top-extra padding-bottom-extra border-bottom">
@@ -163,17 +165,17 @@ export default function FormsPage() {
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="input-groups">
               <span className="input-prepend">$</span>
-              <input type="text" placeholder="Amount" />
+              <input type="text" placeholder="Amount" aria-label="Dollar amount" />
               <span className="input-append">.00</span>
             </div>
             <div className="bottom-margin-extra"></div>
             <div className="input-groups">
               <span className="input-prepend">https://</span>
-              <input type="text" placeholder="example.com" />
+              <input type="text" placeholder="example.com" aria-label="Website URL" />
             </div>
             <div className="bottom-margin-extra"></div>
             <div className="input-groups">
-              <input type="text" placeholder="Search..." />
+              <input type="text" placeholder="Search..." aria-label="Search" />
               <span className="input-append">
                 <button className="btn btn-blue btn-sm">Go</button>
               </span>
@@ -201,7 +203,7 @@ export default function FormsPage() {
           <form className="form" onSubmit={(e) => e.preventDefault()}>
             <div className="units-row">
               <div className="unit-50 phone-unit-100">
-                <h4>Checkboxes</h4>
+                <p className="h4">Checkboxes</p>
                 <label>
                   <input type="checkbox" defaultChecked /> Grid System
                 </label>
@@ -216,7 +218,7 @@ export default function FormsPage() {
                 </label>
               </div>
               <div className="unit-50 phone-unit-100">
-                <h4>Radio Buttons</h4>
+                <p className="h4">Radio Buttons</p>
                 <label>
                   <input type="radio" name="plan" defaultChecked /> Starter
                 </label>
@@ -245,8 +247,8 @@ export default function FormsPage() {
             className="form form-inline"
             onSubmit={(e) => e.preventDefault()}
           >
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Name" aria-label="Name" />
+            <input type="email" placeholder="Email" aria-label="Email" />
             <button className="btn btn-blue" type="submit">
               Subscribe
             </button>
@@ -328,6 +330,7 @@ export default function FormsPage() {
 
         <div className="border border-radius padding">
           <button
+            ref={dialogTriggerRef}
             className="btn btn-blue"
             onClick={() => {
               const dialog = document.getElementById(
@@ -338,8 +341,8 @@ export default function FormsPage() {
           >
             Open Dialog
           </button>
-          <dialog id="demo-dialog">
-            <h3>Dialog Title</h3>
+          <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
+            <h3 id="demo-dialog-title">Dialog Title</h3>
             <p>
               This is a native HTML dialog element styled by ply. No JavaScript
               framework needed for the styling.
@@ -358,6 +361,7 @@ export default function FormsPage() {
                     "demo-dialog",
                   ) as HTMLDialogElement;
                   dialog?.close();
+                  setTimeout(() => dialogTriggerRef.current?.focus(), 0);
                 }}
               >
                 Cancel
@@ -369,6 +373,7 @@ export default function FormsPage() {
                     "demo-dialog",
                   ) as HTMLDialogElement;
                   dialog?.close();
+                  setTimeout(() => dialogTriggerRef.current?.focus(), 0);
                 }}
               >
                 Submit

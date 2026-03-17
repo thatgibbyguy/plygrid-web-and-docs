@@ -122,22 +122,25 @@ export default function ColorsPage() {
           <p className="text-sm bottom-margin">
             Current: <strong>{currentTheme}</strong>
           </p>
-          <div className="btn-group">
+          <div className="btn-group" role="group" aria-label="Theme selection">
             <button
               className={`btn ${currentTheme === "auto" ? "btn-blue" : ""}`}
               onClick={() => applyTheme("auto")}
+              aria-pressed={currentTheme === "auto"}
             >
               Auto
             </button>
             <button
               className={`btn ${currentTheme === "light" ? "btn-blue" : ""}`}
               onClick={() => applyTheme("light")}
+              aria-pressed={currentTheme === "light"}
             >
               Light
             </button>
             <button
               className={`btn ${currentTheme === "dark" ? "btn-blue" : ""}`}
               onClick={() => applyTheme("dark")}
+              aria-pressed={currentTheme === "dark"}
             >
               Dark
             </button>
@@ -252,8 +255,8 @@ document.documentElement.dataset.theme =
               <td>
                 <code>--ply-color-muted</code>
               </td>
-              <td>#6f6f6f</td>
-              <td>Muted text</td>
+              <td>#767676</td>
+              <td>Muted text (supplementary)</td>
             </tr>
             <tr>
               <td>
@@ -334,6 +337,40 @@ document.documentElement.dataset.theme =
           </tbody>
         </table>
 
+        <h3>Typography</h3>
+        <table className="table-stroked">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>--ply-font-body</code>
+              </td>
+              <td>System sans-serif</td>
+              <td>Body text, form controls</td>
+            </tr>
+            <tr>
+              <td>
+                <code>--ply-font-heading</code>
+              </td>
+              <td>System sans-serif</td>
+              <td>Headings (h1–h6)</td>
+            </tr>
+            <tr>
+              <td>
+                <code>--ply-font-mono</code>
+              </td>
+              <td>System monospace</td>
+              <td>Code, pre, kbd, samp</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h3>Navigation</h3>
         <table className="table-stroked">
           <thead>
@@ -397,6 +434,7 @@ document.documentElement.dataset.theme =
 
         <CodeBlock
           code={`[data-theme="brand"] {
+  /* Colors */
   --ply-bg-body: #fefce8;
   --ply-color-body: #1a1a1a;
   --ply-color-link: #b45309;
@@ -406,6 +444,11 @@ document.documentElement.dataset.theme =
   --ply-color-headings: #78350f;
   --ply-nav-bg: #fef3c7;
   --ply-nav-border: #f59e0b;
+
+  /* Typography (optional) */
+  --ply-font-body: "Palatino Linotype", Palatino, Georgia, serif;
+  --ply-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ply-font-mono: "Fira Code", "Source Code Pro", monospace;
 }
 
 <html data-theme="brand">`}

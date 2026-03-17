@@ -5,7 +5,6 @@ import {
   MousePointer2,
   Compass,
   Table2,
-  Wrench,
   Eye,
   Moon,
   Activity,
@@ -16,17 +15,16 @@ import {
   Feather,
   Cpu,
   Palette,
-  Bell,
 } from "lucide-react";
 
 export default function Home() {
   return (
     <>
-      <section className="padding-top-extra padding-bottom-extra">
+      <section className="padding-top-extra padding-bottom-extra" aria-labelledby="hero-heading">
         <div className="units-container">
           <div className="units-row centered-content">
             <div className="unit-60 phone-unit-100 text-center">
-              <h1 className="text-5xl font-bold text-balance">
+              <h1 id="hero-heading" className="text-5xl font-bold text-balance">
                 Compliant UI from the first prompt.
               </h1>
               <p className="text-xl text-secondary no-orphan">
@@ -60,6 +58,7 @@ export default function Home() {
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
                   <ShieldCheck
                     size={32}
+                    aria-hidden="true"
                     className="color-blue display-inline-block bottom-margin"
                   />
                   <span className="text-2xl font-bold display-block">
@@ -72,6 +71,7 @@ export default function Home() {
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
                   <Feather
                     size={32}
+                    aria-hidden="true"
                     className="color-blue display-inline-block bottom-margin"
                   />
                   <span className="text-2xl font-bold display-block">19KB</span>
@@ -82,6 +82,7 @@ export default function Home() {
                 <div className="unit-33 phone-unit-100 text-center bottom-margin">
                   <Cpu
                     size={32}
+                    aria-hidden="true"
                     className="color-blue display-inline-block bottom-margin"
                   />
                   <span className="text-2xl font-bold display-block">
@@ -98,13 +99,13 @@ export default function Home() {
       </div>
 
       <div className="units-container">
-        <section className="bg-blue border-radius-xl padding-left-extra padding-right-extra padding-top-extra padding-bottom-extra">
+        <section className="bg-blue border-radius-xl padding-left-extra padding-right-extra padding-top-extra padding-bottom-extra" aria-labelledby="how-heading">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase text-on-color">
                 How it works
               </p>
-              <h2 className="text-balance text-on-color">
+              <h2 id="how-heading" className="text-balance text-on-color">
                 Two steps. No configuration.
               </h2>
             </div>
@@ -150,13 +151,13 @@ export default function Home() {
       </div>
 
       <div className="units-container">
-        <section className="padding-top-extra padding-bottom-extra">
+        <section className="padding-top-extra padding-bottom-extra" aria-labelledby="compliance-heading">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase color-blue">
                 Compliance
               </p>
-              <h2 className="text-balance">What you stop worrying about</h2>
+              <h2 id="compliance-heading" className="text-balance">What you stop worrying about</h2>
               <p className="text-secondary no-orphan">
                 Every feature below is on by default. No plugins, no overrides,
                 no forgetting.
@@ -171,6 +172,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <Eye
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Color Contrast</h3>
@@ -184,6 +186,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <Monitor
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Focus Management</h3>
@@ -197,6 +200,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <Moon
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Dark Mode</h3>
@@ -210,6 +214,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <Activity
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Reduced Motion</h3>
@@ -223,6 +228,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <LayoutGrid
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Screen Readers</h3>
@@ -236,6 +242,7 @@ export default function Home() {
                   <div className="border border-radius padding text-center">
                     <LayoutGrid
                       size={28}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-lg font-semibold">Responsive</h3>
@@ -254,19 +261,21 @@ export default function Home() {
           <hr className="width-50" />
         </div>
 
-        <section className="padding-top-extra padding-bottom-extra">
+        <section className="padding-top-extra padding-bottom-extra" aria-labelledby="ai-heading">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
               <p className="text-xs font-semibold uppercase color-blue">
                 AI native
               </p>
-              <h2 className="text-balance">
-                One file. 400+ classes. No ambiguity.
+              <h2 id="ai-heading" className="text-balance">
+                One file. 400 classes. Minimal tokens.
               </h2>
               <p className="text-secondary no-orphan">
-                <code>unit-50</code> = 50%. <code>btn-blue</code> = blue button.
-                No shorthand to memorize, no abstraction to hallucinate. Your
-                agent reads PLY.md once and builds correct UI from there.
+                The entire framework fits in a single context window. 400
+                classes means your AI agent spends tokens building UI, not
+                parsing a sprawling API surface. <code>unit-50</code> = 50%.{" "}
+                <code>btn-blue</code> = blue button. No ambiguity, no
+                hallucination.
               </p>
             </div>
           </div>
@@ -276,10 +285,10 @@ export default function Home() {
           <hr className="width-20" />
         </div>
 
-        <section className="padding-top-extra padding-bottom-extra">
+        <section className="padding-top-extra padding-bottom-extra" aria-labelledby="docs-heading">
           <div className="units-row centered-content">
             <div className="unit-50 phone-unit-100 text-center">
-              <h2 className="text-balance">Explore the docs</h2>
+              <h2 id="docs-heading" className="text-balance">Explore the docs</h2>
               <p className="text-secondary no-orphan">
                 Everything in one stylesheet. Nothing to configure.
               </p>
@@ -296,6 +305,7 @@ export default function Home() {
                   >
                     <LayoutGrid
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">Grid</h3>
@@ -311,6 +321,7 @@ export default function Home() {
                   >
                     <Type
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">Typography</h3>
@@ -326,6 +337,7 @@ export default function Home() {
                   >
                     <Palette
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">
@@ -343,6 +355,7 @@ export default function Home() {
                   >
                     <MousePointer2
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">Buttons</h3>
@@ -358,6 +371,7 @@ export default function Home() {
                   >
                     <Compass
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">Navigation</h3>
@@ -373,6 +387,7 @@ export default function Home() {
                   >
                     <Table2
                       size={20}
+                      aria-hidden="true"
                       className="color-blue display-inline-block bottom-margin"
                     />
                     <h3 className="text-base font-semibold">Tables</h3>

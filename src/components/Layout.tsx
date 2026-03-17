@@ -28,6 +28,10 @@ const sections = [
     { path: "/docs/utilities", label: "Utilities" },
     { path: "/docs/accessibility", label: "Accessibility" },
   ]},
+  { label: "Compliance", items: [
+    { path: "/docs/compliance", label: "Title II & WCAG" },
+    { path: "/docs/vpat", label: "VPAT 2.5" },
+  ]},
 ];
 
 const flatLinks = sections.flatMap((s) => s.items);
@@ -65,6 +69,15 @@ export default function Layout({ children }: { children: ReactNode }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     setNavOpen(false);
+    // Update page title for WCAG 2.4.2
+    const current = flatLinks.find((link) => link.path === location);
+    document.title = current ? `${current.label} — ply` : "ply — CSS Framework";
+    // Shift focus to main content after SPA navigation (WCAG 2.4.1)
+    const main = document.getElementById("main");
+    if (main) {
+      main.setAttribute("tabindex", "-1");
+      main.focus({ preventScroll: true });
+    }
   }, [location]);
 
   useEffect(() => {
@@ -75,15 +88,17 @@ export default function Layout({ children }: { children: ReactNode }) {
   const isGettingStarted = ["/docs/installation", "/docs/semantic-html", "/docs/ai-agents", "/docs/colors", "/docs/typography", "/docs/grid"].includes(location);
   const isComponents = ["/docs/buttons", "/docs/forms", "/docs/navigation", "/docs/tables", "/docs/alerts"].includes(location);
   const isHelpers = ["/docs/utilities", "/docs/accessibility"].includes(location);
+  const isCompliance = ["/docs/compliance"].includes(location);
 
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <header className="navigation-fixed width-100">
-        <nav className="navbar navbar-borderless hide-on-mobile">
+        <nav className="navbar navbar-borderless hide-on-mobile" aria-label="Main">
           <ul className="items-center">
             <li className={isHome ? "active" : ""}>
               <Link href="/" aria-label="Home">
-                <Home size={16} />
+                <Home size={16} aria-hidden="true" />
               </Link>
             </li>
             <li className={isGettingStarted ? "active" : ""}>
@@ -94,6 +109,9 @@ export default function Layout({ children }: { children: ReactNode }) {
             </li>
             <li className={isHelpers ? "active" : ""}>
               <Link href="/docs/utilities">Helpers</Link>
+            </li>
+            <li className={isCompliance ? "active" : ""}>
+              <Link href="/docs/compliance">Compliance</Link>
             </li>
             <li className="margin-left-auto display-flex gap-sm items-center">
               <Search />
@@ -108,25 +126,18 @@ export default function Layout({ children }: { children: ReactNode }) {
             </li>
           </ul>
         </nav>
-        <nav className="navbar navbar-borderless hide-on-desktop">
+        <nav className="navbar navbar-borderless hide-on-desktop" aria-label="Main">
           <ul>
             <li>
-              <span
+              <button
                 className={`navigation-toggle display-inline-block${navOpen ? " navigation-toggle-show" : ""}`}
                 onClick={() => setNavOpen(!navOpen)}
-                role="button"
-                tabIndex={0}
                 aria-expanded={navOpen}
+                aria-controls="mobile-nav"
                 aria-label="Toggle navigation"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setNavOpen(!navOpen);
-                  }
-                }}
               >
                 <span>Menu</span>
-              </span>
+              </button>
             </li>
             <li className="margin-left-auto display-flex gap-sm items-center">
               <Search />
@@ -141,7 +152,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             </li>
           </ul>
           {navOpen && (
-            <nav className="nav-stacked">
+            <nav className="nav-stacked" id="mobile-nav" aria-label="Documentation menu">
               <ul>
                 {flatLinks.map((link) => (
                   <li key={link.path} className={location === link.path ? "active" : ""}>
@@ -156,14 +167,14 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <div className="padding-top-extra margin-top-extra">
         {isHome ? (
-          <main>{children}</main>
+          <main id="main">{children}</main>
         ) : (
           <div className="doc-layout">
-            <aside className="doc-sidebar hide-on-mobile">
-              <nav className="doc-sidebar-inner no-link-style">
+            <aside className="doc-sidebar hide-on-mobile" aria-label="Documentation navigation">
+              <nav className="doc-sidebar-inner no-link-style" aria-label="Documentation">
                 {sections.map((section) => (
                   <div key={section.label} className="bottom-margin">
-                    <p className="text-xs font-semibold uppercase text-tertiary no-margin padding-left padding-bottom" style={{ paddingLeft: "0.75rem" }}>
+                    <p className="text-xs font-semibold uppercase text-tertiary no-margin padding-left padding-bottom" style={{ paddingLeft: "0.75rem" }} role="presentation">
                       {section.label}
                     </p>
                     <ul className="flat-list">
@@ -182,17 +193,17 @@ export default function Layout({ children }: { children: ReactNode }) {
                 ))}
               </nav>
             </aside>
-            <main className="doc-content">
+            <main id="main" className="doc-content">
               {children}
             </main>
-            <aside className="doc-toc hide-on-mobile">
+            <aside className="doc-toc hide-on-mobile" aria-label="Table of contents">
               <TableOfContents key={location} />
             </aside>
           </div>
         )}
       </div>
 
-      <footer className="padding-top padding-bottom text-sm text-muted">
+      <footer className="padding-top padding-bottom text-sm text-muted" aria-label="Site footer">
         <div className="units-container">
           <p className="text-center no-margin">
             <strong>ply</strong> · MIT License ·{" "}

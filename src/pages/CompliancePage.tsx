@@ -1,0 +1,390 @@
+import { Link } from "wouter";
+
+export default function CompliancePage() {
+  return (
+    <div>
+      <section className="padding-top-extra padding-bottom-extra border-bottom">
+        <p className="text-xs font-semibold uppercase color-blue">Compliance</p>
+        <h1 className="text-balance">ADA Title II & WCAG 2.1 AA</h1>
+        <p className="lead no-orphan">
+          State and local government web content must conform to WCAG 2.1 Level
+          AA under ADA Title II (28 CFR Part 35). ply meets these requirements
+          at the framework level — your output is compliant from the first line
+          of markup.
+        </p>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="deadline"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Timeline</p>
+        <h2>The Deadline</h2>
+        <p className="no-orphan">
+          As of June 2024, the Department of Justice requires state and local
+          government entities to make their web content and mobile apps conform
+          to WCAG 2.1 Level AA. Compliance deadlines depend on population size:
+        </p>
+
+        <div className="units-row equal-height">
+          <div className="unit-50 phone-unit-100">
+            <div className="border border-radius padding bottom-margin">
+              <h3 className="text-lg font-semibold no-top-margin">
+                Large entities
+              </h3>
+              <p className="text-sm no-margin no-orphan">
+                Populations of 50,000 or more — <strong>April 24, 2026</strong>
+              </p>
+            </div>
+          </div>
+          <div className="unit-50 phone-unit-100">
+            <div className="border border-radius padding bottom-margin">
+              <h3 className="text-lg font-semibold no-top-margin">
+                Small entities
+              </h3>
+              <p className="text-sm no-margin no-orphan">
+                Populations under 50,000 — <strong>April 26, 2027</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="alert alert-blue alert-outline alert-stack alert-ghost"
+          role="note"
+        >
+          <p className="bottom-margin">
+            <strong>Need help meeting your deadline?</strong> We offer
+            compliance consulting — audits, remediation, and implementation for
+            organizations that need to meet WCAG 2.1 AA requirements.
+          </p>
+          <a href="mailto:john@plycss.com?subject=Title%20II%20Compliance%20Consultation">
+            Schedule a consultation to get started.
+          </a>
+        </div>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="framework-level"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Built in</p>
+        <h2>What ply handles at the framework level</h2>
+        <p className="no-orphan">
+          These WCAG 2.1 AA success criteria are met automatically when you use
+          ply. No configuration, no plugins, no audits to schedule.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th>How ply meets it</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>1.4.3</strong> Contrast (Minimum)
+              </td>
+              <td>
+                Light theme: <code>#161616</code> on <code>#ffffff</code>{" "}
+                (~15.4:1). Dark theme: <code>#f4f4f4</code> on{" "}
+                <code>#161616</code> (~13.9:1). Both exceed 4.5:1 AA
+                requirement.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>1.4.4</strong> Resize Text
+              </td>
+              <td>
+                All typography uses <code>rem</code>/<code>em</code> units.
+                Content scales to 200% without loss of functionality.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>1.4.10</strong> Reflow
+              </td>
+              <td>
+                Responsive grid reflows to single column at 320px. No horizontal
+                scrolling required.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>1.4.11</strong> Non-text Contrast
+              </td>
+              <td>
+                Input borders, focus indicators, and button backgrounds all
+                exceed 3:1 against their backgrounds.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>2.1.1</strong> Keyboard
+              </td>
+              <td>
+                <code>:focus-visible</code> outlines on all interactive
+                elements. <code>.skip-link</code> for bypass navigation. No
+                keyboard traps.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>2.2.2</strong> Pause, Stop, Hide
+              </td>
+              <td>
+                <code>prefers-reduced-motion: reduce</code> disables all
+                animations and transitions automatically.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>2.4.7</strong> Focus Visible
+              </td>
+              <td>
+                2px solid outline with 2px offset on every focusable element —
+                buttons, links, inputs, nav items, dropdowns.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>1.3.1</strong> Info and Relationships
+              </td>
+              <td>
+                Auto-styles semantic HTML (<code>&lt;nav&gt;</code>,{" "}
+                <code>&lt;table&gt;</code>, <code>&lt;details&gt;</code>,{" "}
+                <code>&lt;dialog&gt;</code>, headings). Visual presentation
+                follows semantic structure.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>1.3.2</strong> Meaningful Sequence
+              </td>
+              <td>
+                Flexbox layout preserves DOM order. No CSS <code>order</code>{" "}
+                properties that break reading sequence.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="media-queries"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Automatic</p>
+        <h2>Accessibility media queries</h2>
+        <p className="no-orphan">
+          ply responds to user preferences at the OS level. These activate
+          automatically with no application code required.
+        </p>
+
+        <div className="units-row equal-height">
+          <div className="unit-100">
+            <div className="border border-radius padding bottom-margin">
+              <h3 className="text-lg font-semibold no-top-margin">Dark mode</h3>
+              <p className="text-sm no-margin no-orphan">
+                <code>prefers-color-scheme: dark</code> — all colors adapt with
+                WCAG AA contrast maintained. Only activates when no{" "}
+                <code>data-theme</code> is set.
+              </p>
+            </div>
+          </div>
+          <div className="unit-100">
+            <div className="border border-radius padding bottom-margin">
+              <h3 className="text-lg font-semibold no-top-margin">
+                Reduced motion
+              </h3>
+              <p className="text-sm no-margin no-orphan">
+                <code>prefers-reduced-motion: reduce</code> — all animations and
+                transitions disabled via universal selector.
+              </p>
+            </div>
+          </div>
+          <div className="unit-100">
+            <div className="border border-radius padding bottom-margin">
+              <h3 className="text-lg font-semibold no-top-margin">
+                High contrast
+              </h3>
+              <p className="text-sm no-margin no-orphan">
+                <code>prefers-contrast: more</code> — text switches to pure
+                black/white, borders strengthen for maximum distinction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="application-level"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Your part</p>
+        <h2 className="text-balance">What needs application-level attention</h2>
+        <p className="no-orphan">
+          ply provides the visual infrastructure for compliance. These criteria
+          require attention at the application level:
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Concern</th>
+              <th>What to do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alt text on images</td>
+              <td>
+                Add <code>alt</code> to every <code>&lt;img&gt;</code>. Use{" "}
+                <code>alt=""</code> for decorative images.
+              </td>
+            </tr>
+            <tr>
+              <td>ARIA on custom widgets</td>
+              <td>
+                Custom dropdowns, modals, and tabs need{" "}
+                <code>aria-expanded</code>, <code>aria-controls</code>,{" "}
+                <code>role</code>.
+              </td>
+            </tr>
+            <tr>
+              <td>Heading hierarchy</td>
+              <td>
+                One <code>&lt;h1&gt;</code> per page. Use h2–h6 in sequence, no
+                skipping.
+              </td>
+            </tr>
+            <tr>
+              <td>Custom color contrast</td>
+              <td>
+                If you override <code>--ply-*</code> variables, verify 4.5:1 for
+                text and 3:1 for UI components.
+              </td>
+            </tr>
+            <tr>
+              <td>Keyboard operability</td>
+              <td>
+                Custom JS components (tabs, accordions, drag-and-drop) must work
+                with keyboard alone.
+              </td>
+            </tr>
+            <tr>
+              <td>Form labels</td>
+              <td>
+                Associate <code>&lt;label&gt;</code> elements with inputs using{" "}
+                <code>for</code>/<code>id</code>.
+              </td>
+            </tr>
+            <tr>
+              <td>Page language</td>
+              <td>
+                Set <code>lang</code> attribute on <code>&lt;html&gt;</code>.
+              </td>
+            </tr>
+            <tr>
+              <td>Error identification</td>
+              <td>
+                Use ARIA and JavaScript to programmatically identify and
+                describe form errors.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="zero-js"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">
+          Architecture
+        </p>
+        <h2>Zero JavaScript, zero ARIA failures</h2>
+        <p className="no-orphan">
+          Most accessibility failures in JavaScript frameworks come from
+          mismanaged ARIA state — a dropdown that says{" "}
+          <code>aria-expanded="false"</code> when it's open, a modal that
+          doesn't trap focus, a live region that never updates.
+        </p>
+        <p className="no-orphan">
+          ply is CSS-only. There is no JavaScript to mismanage state. Browser
+          native behaviors handle focus trapping (<code>&lt;dialog&gt;</code>),
+          disclosure (<code>&lt;details&gt;</code>), and form validation. The
+          attack surface for ARIA conformance bugs is zero at the framework
+          level.
+        </p>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="vpat"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">
+          Documentation
+        </p>
+        <h2>VPAT 2.5</h2>
+        <p className="no-orphan">
+          ply publishes a Voluntary Product Accessibility Template (VPAT 2.5,
+          WCAG 2.1 Edition) documenting conformance against all Level A and
+          Level AA success criteria.
+        </p>
+        <p className="no-orphan">
+          The evaluation covers 33 Level A criteria and 16 Level AA criteria. Of
+          these, ply <strong>Supports</strong> all criteria within its scope as
+          a CSS framework. Criteria outside the scope of a CSS-only framework
+          (multimedia, page titles, form logic) are marked{" "}
+          <strong>Not Applicable</strong>.
+        </p>
+        <Link href="/docs/vpat" className="btn btn-outline">
+          View Full VPAT
+        </Link>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra border-bottom"
+        id="ai-compliance"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">
+          AI + Compliance
+        </p>
+        <h2>Why this matters for AI-generated content</h2>
+        <p className="no-orphan">
+          AI coding tools generate markup fast. Most of it is{" "}
+          <code>&lt;div&gt;</code> soup with broken semantics — no landmarks, no
+          heading hierarchy, no focus management. That output fails
+          accessibility audits before a human ever reviews it.
+        </p>
+        <p className="no-orphan">
+          ply inverts this. Because the framework styles semantic HTML elements
+          directly, the fastest way to build with ply is also the accessible
+          way. Your AI agent uses <code>&lt;nav&gt;</code> instead of{" "}
+          <code>&lt;div className="nav"&gt;</code> because ply makes it look
+          right with less code. Compliance becomes a side effect of taking the
+          path of least resistance.
+        </p>
+      </section>
+
+      <section
+        className="padding-top-extra padding-bottom-extra"
+        id="next-steps"
+      >
+        <p className="text-xs font-semibold uppercase color-blue">Next</p>
+        <h2>Next Steps</h2>
+        <p className="text-secondary no-orphan">
+          See how ply handles{" "}
+          <Link href="/docs/accessibility">accessibility features</Link> at the
+          framework level, or set up your{" "}
+          <Link href="/docs/ai-agents">AI agent</Link> to generate compliant
+          markup automatically.
+        </p>
+      </section>
+    </div>
+  );
+}

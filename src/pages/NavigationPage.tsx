@@ -42,9 +42,8 @@ export default function NavigationPage() {
         <CodeBlock
           code={`<nav class="navbar">
   <ul>
-    <li class="active"><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
+    <li class="active"><a href="/" aria-current="page">Home</a></li>
+    <li><a href="/about">About</a></li>
   </ul>
 </nav>`}
         />
@@ -462,39 +461,43 @@ export default function NavigationPage() {
         <h2>Page Navigation</h2>
 
         <div className="border border-radius padding">
-          <ul className="pagination">
-            <li>
-              <a href="#">&laquo;</a>
-            </li>
-            <li>
-              <a href="#">1</a>
-            </li>
-            <li className="active">
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-            <li>
-              <a href="#">&raquo;</a>
-            </li>
-          </ul>
+          <nav aria-label="Pagination">
+            <ul className="pagination">
+              <li>
+                <a href="#" aria-label="Previous page">&laquo;</a>
+              </li>
+              <li>
+                <a href="#">1</a>
+              </li>
+              <li className="active">
+                <a href="#" aria-current="page">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#" aria-label="Next page">&raquo;</a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <CodeBlock
-          code={`<ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li class="active"><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>`}
+          code={`<nav aria-label="Pagination">
+  <ul class="pagination">
+    <li><a href="#" aria-label="Previous page">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li class="active"><a href="#" aria-current="page">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#" aria-label="Next page">&raquo;</a></li>
+  </ul>
+</nav>`}
         />
       </section>
 
@@ -616,19 +619,19 @@ export default function NavigationPage() {
               <div className="units-row equal-height">
                 <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
-                    <h4 className="text-sm uppercase">Revenue</h4>
+                    <p className="h4 text-sm uppercase">Revenue</p>
                     <p className="text-3xl font-bold">$12,340</p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
-                    <h4 className="text-sm uppercase">Users</h4>
+                    <p className="h4 text-sm uppercase">Users</p>
                     <p className="text-3xl font-bold">1,234</p>
                   </div>
                 </div>
                 <div className="unit-33 phone-unit-100">
                   <div className="border border-radius padding">
-                    <h4 className="text-sm uppercase">Orders</h4>
+                    <p className="h4 text-sm uppercase">Orders</p>
                     <p className="text-3xl font-bold">567</p>
                   </div>
                 </div>

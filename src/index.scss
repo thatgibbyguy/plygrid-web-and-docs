@@ -9,7 +9,7 @@
   height: 3rem;
   border-radius: 50%;
   background-color: var(--ply-blue-1);
-  color: #fff;
+  color: var(--ply-color-text-inverse, #fff);
 }
 
 .bg-blue code,
@@ -50,6 +50,8 @@
 
 .doc-sidebar-link-active {
   color: var(--ply-text-color);
+  border-left: 2px solid var(--ply-color-link, #0f62fe);
+  padding-left: calc(0.75rem - 2px);
 }
 
 .doc-content {
@@ -81,7 +83,7 @@
   padding: 0.2rem 0;
 }
 
-// Search dialog — uses native <dialog> + ply's bg-glass
+// Search dialog — uses native <dialog> with opaque background for contrast compliance
 .search-dialog {
   max-width: 520px;
   width: 90%;
@@ -89,15 +91,32 @@
   overflow: hidden;
   margin-top: 15vh;
   padding: 0;
+  background: var(--ply-bg-surface, #ffffff);
+  border: 1px solid var(--ply-border-color, #e0e0e0);
 }
 
 .search-input {
   flex: 1;
   border: none;
-  outline: none;
   background: transparent;
   font-size: 1rem;
   color: var(--ply-text-color);
+
+  &:focus {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus, #0f62fe);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
 
   &::placeholder {
     color: var(--ply-text-muted);

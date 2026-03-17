@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { Link } from "wouter";
 import CodeBlock from "../components/CodeBlock";
 
 export default function SemanticHtmlPage() {
+  const dialogTriggerRef = useRef<HTMLButtonElement>(null);
   return (
     <div>
       <section className="padding-top-extra padding-bottom-extra border-bottom">
@@ -26,13 +28,13 @@ export default function SemanticHtmlPage() {
           and line-height.
         </p>
 
-        <div className="border border-radius padding">
-          <h1 className="no-top-margin">Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
+        <div className="border border-radius padding" role="presentation">
+          <p className="h1 no-top-margin">Heading 1</p>
+          <p className="h2">Heading 2</p>
+          <p className="h3">Heading 3</p>
+          <p className="h4">Heading 4</p>
+          <p className="h5">Heading 5</p>
+          <p className="h6">Heading 6</p>
         </div>
       </section>
 
@@ -239,6 +241,7 @@ export default function SemanticHtmlPage() {
 
         <div className="border border-radius padding">
           <button
+            ref={dialogTriggerRef}
             className="btn btn-blue"
             onClick={() => {
               const dialog = document.getElementById(
@@ -249,8 +252,8 @@ export default function SemanticHtmlPage() {
           >
             Open Dialog
           </button>
-          <dialog id="semantic-dialog">
-            <h3>Native Dialog</h3>
+          <dialog id="semantic-dialog" aria-labelledby="semantic-dialog-title">
+            <h3 id="semantic-dialog-title">Native Dialog</h3>
             <p>
               This dialog is styled automatically by ply. Use{" "}
               <code>.showModal()</code> to open it.
@@ -263,6 +266,7 @@ export default function SemanticHtmlPage() {
                     "semantic-dialog",
                   ) as HTMLDialogElement;
                   dialog?.close();
+                  setTimeout(() => dialogTriggerRef.current?.focus(), 0);
                 }}
               >
                 Close

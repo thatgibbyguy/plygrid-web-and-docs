@@ -60,13 +60,13 @@ export default function AlertsPage() {
         </div>
 
         <CodeBlock
-          code={`<div class="alert alert-blue">
+          code={`<div class="alert alert-blue" role="status">
   <span class="alert-content">Info message here.</span>
 </div>
-<div class="alert alert-green">
+<div class="alert alert-green" role="status">
   <span class="alert-content">Success!</span>
 </div>
-<div class="alert alert-red">
+<div class="alert alert-red" role="alert">
   <span class="alert-content">Error occurred.</span>
 </div>`}
         />

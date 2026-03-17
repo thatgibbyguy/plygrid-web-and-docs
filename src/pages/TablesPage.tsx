@@ -70,17 +70,13 @@ export default function TablesPage() {
                   <td>{row.email}</td>
                   <td>{row.role}</td>
                   <td>
-                    <span
-                      className={
-                        row.status === "Active"
-                          ? "success"
-                          : row.status === "Inactive"
-                            ? "error"
-                            : ""
-                      }
-                    >
-                      {row.status}
-                    </span>
+                    {row.status === "Active" ? (
+                      <span className="success">● Active</span>
+                    ) : row.status === "Inactive" ? (
+                      <span className="error">● Inactive</span>
+                    ) : (
+                      <span>○ Pending</span>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -436,17 +432,13 @@ export default function TablesPage() {
                   <td>{row.email}</td>
                   <td>{row.role}</td>
                   <td>
-                    <span
-                      className={
-                        row.status === "Active"
-                          ? "success"
-                          : row.status === "Inactive"
-                            ? "error"
-                            : ""
-                      }
-                    >
-                      {row.status}
-                    </span>
+                    {row.status === "Active" ? (
+                      <span className="success">● Active</span>
+                    ) : row.status === "Inactive" ? (
+                      <span className="error">● Inactive</span>
+                    ) : (
+                      <span>○ Pending</span>
+                    )}
                   </td>
                 </tr>
               ))}

@@ -39,7 +39,7 @@ export default function AccessibilityPage() {
             onSubmit={(e) => e.preventDefault()}
             style={{ marginTop: "0.75rem" }}
           >
-            <input type="text" placeholder="Input field" />
+            <input type="text" placeholder="Input field" aria-label="Example input field" />
           </form>
         </div>
 
