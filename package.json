@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.0",
+    "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.5",
     "plygrid": "^1.0.4"
   }

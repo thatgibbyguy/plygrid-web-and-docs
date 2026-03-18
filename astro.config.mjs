@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 import path from "path";
 import { existsSync } from "fs";
 
@@ -8,7 +9,8 @@ const localPly = path.resolve(import.meta.dirname, "..");
 const useLocalPly = existsSync(path.join(localPly, "src/scss/_ply.scss"));
 
 export default defineConfig({
-  integrations: [react()],
+  site: "https://plycss.com",
+  integrations: [react(), sitemap()],
   vite: {
     resolve: {
       alias: {
