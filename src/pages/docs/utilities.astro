@@ -203,37 +203,26 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <h2>Margin & Padding</h2>
 
         <h3>All-Sides Scale</h3>
-        <div class="units-row">
-          <div class="unit-50 phone-unit-100">
-            <h4>Margin</h4>
-            <table class="table-stroked">
-              <tbody>
-                <tr><td><code>margin-xs</code></td><td>0.25rem</td></tr>
-                <tr><td><code>margin-sm</code></td><td>0.5rem</td></tr>
-                <tr><td><code>margin</code></td><td>0.75rem (default)</td></tr>
-                <tr><td><code>margin-lg</code></td><td>1.5rem</td></tr>
-                <tr><td><code>margin-xl</code></td><td>2rem</td></tr>
-                <tr><td><code>no-margin</code></td><td>Remove all margins</td></tr>
-                <tr><td><code>no-top-margin</code></td><td>Remove top margin</td></tr>
-                <tr><td><code>no-bottom-margin</code></td><td>Remove bottom margin</td></tr>
-                <tr><td><code>no-spacing</code></td><td>Remove margin + padding</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="unit-50 phone-unit-100">
-            <h4>Padding</h4>
-            <table class="table-stroked">
-              <tbody>
-                <tr><td><code>padding-xs</code></td><td>0.25rem</td></tr>
-                <tr><td><code>padding-sm</code></td><td>0.5rem</td></tr>
-                <tr><td><code>padding</code></td><td>0.75rem (default)</td></tr>
-                <tr><td><code>padding-lg</code></td><td>1.5rem</td></tr>
-                <tr><td><code>padding-xl</code></td><td>2rem</td></tr>
-                <tr><td><code>no-padding</code></td><td>Remove all padding</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Margin</th>
+              <th>Padding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0.25rem</td><td><code>margin-xs</code></td><td><code>padding-xs</code></td></tr>
+            <tr><td>0.5rem</td><td><code>margin-sm</code></td><td><code>padding-sm</code></td></tr>
+            <tr><td>0.75rem (default)</td><td><code>margin</code></td><td><code>padding</code></td></tr>
+            <tr><td>1.5rem</td><td><code>margin-lg</code></td><td><code>padding-lg</code></td></tr>
+            <tr><td>2rem</td><td><code>margin-xl</code></td><td><code>padding-xl</code></td></tr>
+            <tr><td>Remove all</td><td><code>no-margin</code></td><td><code>no-padding</code></td></tr>
+            <tr><td>Remove top</td><td><code>no-top-margin</code></td><td><code>no-top-padding</code></td></tr>
+            <tr><td>Remove bottom</td><td><code>no-bottom-margin</code></td><td><code>no-bottom-padding</code></td></tr>
+            <tr><td>Remove all spacing</td><td colspan="2"><code>no-spacing</code></td></tr>
+          </tbody>
+        </table>
 
         <h3>Directional Scale</h3>
         <p class="text-secondary">Works for both <code>margin</code> and <code>padding</code>. Replace <code>*</code> below with either.</p>
