@@ -1,0 +1,279 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+---
+
+<DocsLayout title="Dialogs">
+  <section class="padding-top-extra padding-bottom-extra border-bottom">
+    <p class="text-xs font-semibold uppercase color-blue">Components</p>
+    <h1 class="text-balance">Dialogs</h1>
+    <p class="lead no-orphan">
+      Extended patterns for the native <code>&lt;dialog&gt;</code> element — sizes,
+      structured layouts, scrollable bodies, confirmation patterns, and stacked/nested dialogs.
+    </p>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="structured">
+    <p class="text-xs font-semibold uppercase color-blue">Layout</p>
+    <h2>Structured Dialog</h2>
+    <p class="no-orphan">
+      Use <code>dialog-header</code>, <code>dialog-body</code>, and <code>dialog-footer</code> for
+      a consistent header/body/footer layout. Add <code>dialog-close</code> for the dismiss button.
+    </p>
+
+    <div class="border border-radius padding">
+      <button class="btn btn-blue" onclick="document.getElementById('structured-dialog').showModal()">
+        Open Structured Dialog
+      </button>
+      <dialog id="structured-dialog" aria-labelledby="structured-title">
+        <div class="dialog-header">
+          <h3 id="structured-title">Edit Profile</h3>
+          <button class="dialog-close" onclick="document.getElementById('structured-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <form class="form">
+            <label>
+              Display Name
+              <input type="text" placeholder="Jane Cooper" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="jane@example.com" />
+            </label>
+            <label>
+              Bio
+              <textarea rows="3" placeholder="Tell us about yourself..."></textarea>
+            </label>
+          </form>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-outline" onclick="document.getElementById('structured-dialog').close()">Cancel</button>
+          <button class="btn btn-blue" onclick="document.getElementById('structured-dialog').close()">Save</button>
+        </div>
+      </dialog>
+    </div>
+
+    <CodeBlock code={`<dialog id="my-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-header">
+    <h3 id="dialog-title">Edit Profile</h3>
+    <button class="dialog-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="dialog-body">
+    <form class="form">
+      <label>Name <input type="text"></label>
+    </form>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn btn-outline">Cancel</button>
+    <button class="btn btn-blue">Save</button>
+  </div>
+</dialog>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="sizes">
+    <p class="text-xs font-semibold uppercase color-blue">Sizes</p>
+    <h2>Dialog Sizes</h2>
+    <p class="no-orphan">
+      Use <code>dialog-sm</code>, the default, or <code>dialog-lg</code> to
+      control the maximum width. <code>dialog-full</code> takes up nearly the entire viewport.
+    </p>
+
+    <div class="border border-radius padding display-flex gap-sm flex-wrap">
+      <button class="btn btn-sm" onclick="document.getElementById('sm-dialog').showModal()">Small</button>
+      <button class="btn btn-sm" onclick="document.getElementById('default-dialog').showModal()">Default</button>
+      <button class="btn btn-sm" onclick="document.getElementById('lg-dialog').showModal()">Large</button>
+
+      <dialog id="sm-dialog" class="dialog-sm" aria-label="Small dialog">
+        <div class="dialog-header">
+          <h3>Small Dialog</h3>
+          <button class="dialog-close" onclick="document.getElementById('sm-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>Max-width 24rem. Good for simple messages.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-blue btn-sm" onclick="document.getElementById('sm-dialog').close()">OK</button>
+        </div>
+      </dialog>
+
+      <dialog id="default-dialog" aria-label="Default dialog">
+        <div class="dialog-header">
+          <h3>Default Dialog</h3>
+          <button class="dialog-close" onclick="document.getElementById('default-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>Default browser width for <code>&lt;dialog&gt;</code>. Good for forms and content.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-blue btn-sm" onclick="document.getElementById('default-dialog').close()">OK</button>
+        </div>
+      </dialog>
+
+      <dialog id="lg-dialog" class="dialog-lg" aria-label="Large dialog">
+        <div class="dialog-header">
+          <h3>Large Dialog</h3>
+          <button class="dialog-close" onclick="document.getElementById('lg-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>Max-width 48rem. Good for data tables, previews, or complex forms.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-blue btn-sm" onclick="document.getElementById('lg-dialog').close()">OK</button>
+        </div>
+      </dialog>
+    </div>
+
+    <CodeBlock code={`<dialog class="dialog-sm">...</dialog>  <!-- 24rem -->
+<dialog>...</dialog>                     <!-- Default -->
+<dialog class="dialog-lg">...</dialog>   <!-- 48rem -->
+<dialog class="dialog-full">...</dialog> <!-- Viewport -->`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="confirm">
+    <p class="text-xs font-semibold uppercase color-blue">Pattern</p>
+    <h2>Confirmation Dialog</h2>
+    <p class="no-orphan">
+      Use <code>dialog-confirm</code> for a compact, centered confirmation prompt.
+    </p>
+
+    <div class="border border-radius padding">
+      <button class="btn btn-red btn-outline" onclick="document.getElementById('confirm-dialog').showModal()">
+        Delete Item
+      </button>
+      <dialog id="confirm-dialog" class="dialog-confirm" aria-labelledby="confirm-title">
+        <div class="dialog-body">
+          <h3 id="confirm-title">Delete this item?</h3>
+          <p class="text-secondary">This action cannot be undone. The item and all associated data will be permanently removed.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-outline" onclick="document.getElementById('confirm-dialog').close()">Cancel</button>
+          <button class="btn btn-red" onclick="document.getElementById('confirm-dialog').close()">Delete</button>
+        </div>
+      </dialog>
+    </div>
+
+    <CodeBlock code={`<dialog class="dialog-confirm" aria-labelledby="confirm-title">
+  <div class="dialog-body">
+    <h3 id="confirm-title">Delete this item?</h3>
+    <p class="text-secondary">This cannot be undone.</p>
+  </div>
+  <div class="dialog-footer">
+    <button class="btn btn-outline">Cancel</button>
+    <button class="btn btn-red">Delete</button>
+  </div>
+</dialog>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="scrollable">
+    <p class="text-xs font-semibold uppercase color-blue">Pattern</p>
+    <h2>Scrollable Dialog</h2>
+    <p class="no-orphan">
+      Add <code>dialog-scroll</code> to make the body scroll while keeping
+      header and footer pinned.
+    </p>
+
+    <div class="border border-radius padding">
+      <button class="btn btn-blue" onclick="document.getElementById('scroll-dialog').showModal()">
+        Open Scrollable Dialog
+      </button>
+      <dialog id="scroll-dialog" class="dialog-scroll" aria-labelledby="scroll-title">
+        <div class="dialog-header">
+          <h3 id="scroll-title">Terms of Service</h3>
+          <button class="dialog-close" onclick="document.getElementById('scroll-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+          <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-outline" onclick="document.getElementById('scroll-dialog').close()">Decline</button>
+          <button class="btn btn-blue" onclick="document.getElementById('scroll-dialog').close()">Accept</button>
+        </div>
+      </dialog>
+    </div>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="stacked">
+    <p class="text-xs font-semibold uppercase color-blue">Advanced</p>
+    <h2>Stacked Dialogs</h2>
+    <p class="no-orphan">
+      Use <code>dialog-layer-1</code>, <code>dialog-layer-2</code>, <code>dialog-layer-3</code> to
+      layer dialogs on top of each other. Each layer gets progressively lighter backdrop opacity.
+    </p>
+
+    <div class="border border-radius padding">
+      <button class="btn btn-blue" onclick="document.getElementById('layer1-dialog').showModal()">
+        Open Stacked Dialogs
+      </button>
+
+      <dialog id="layer1-dialog" class="dialog-layer-1" aria-labelledby="layer1-title">
+        <div class="dialog-header">
+          <h3 id="layer1-title">Layer 1 — Main Dialog</h3>
+          <button class="dialog-close" onclick="document.getElementById('layer1-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>This is the base dialog. Click below to open a nested dialog on top.</p>
+          <button class="btn btn-blue btn-sm" onclick="document.getElementById('layer2-dialog').showModal()">
+            Open Nested Dialog
+          </button>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-outline" onclick="document.getElementById('layer1-dialog').close()">Close</button>
+        </div>
+      </dialog>
+
+      <dialog id="layer2-dialog" class="dialog-layer-2 dialog-sm" aria-labelledby="layer2-title">
+        <div class="dialog-header">
+          <h3 id="layer2-title">Layer 2 — Nested Dialog</h3>
+          <button class="dialog-close" onclick="document.getElementById('layer2-dialog').close()" aria-label="Close">&times;</button>
+        </div>
+        <div class="dialog-body">
+          <p>This dialog sits above the first one with a lighter backdrop.</p>
+        </div>
+        <div class="dialog-footer">
+          <button class="btn btn-outline" onclick="document.getElementById('layer2-dialog').close()">Close</button>
+        </div>
+      </dialog>
+    </div>
+
+    <CodeBlock code={`<dialog class="dialog-layer-1">
+  <!-- Base dialog -->
+  <button onclick="nestedDialog.showModal()">Open Nested</button>
+</dialog>
+
+<dialog class="dialog-layer-2 dialog-sm">
+  <!-- Nested dialog — lighter backdrop, higher z-index -->
+</dialog>
+
+<dialog class="dialog-layer-3">
+  <!-- Third level if needed -->
+</dialog>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra" id="reference">
+    <p class="text-xs font-semibold uppercase color-blue">Reference</p>
+    <h2>Class Reference</h2>
+
+    <table class="table-stroked">
+      <thead>
+        <tr><th>Class</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>dialog-sm</code></td><td>Small dialog (24rem max-width)</td></tr>
+        <tr><td><code>dialog-lg</code></td><td>Large dialog (48rem max-width)</td></tr>
+        <tr><td><code>dialog-full</code></td><td>Full viewport dialog</td></tr>
+        <tr><td><code>dialog-header</code></td><td>Flex header with title and close button</td></tr>
+        <tr><td><code>dialog-body</code></td><td>Padded content area</td></tr>
+        <tr><td><code>dialog-footer</code></td><td>Right-aligned action button bar</td></tr>
+        <tr><td><code>dialog-close</code></td><td>Styled close button for dialog header</td></tr>
+        <tr><td><code>dialog-confirm</code></td><td>Compact centered confirmation dialog</td></tr>
+        <tr><td><code>dialog-scroll</code></td><td>Scrollable body with pinned header/footer</td></tr>
+        <tr><td><code>dialog-layer-1/2/3</code></td><td>Z-index layers for stacked dialogs</td></tr>
+      </tbody>
+    </table>
+  </section>
+</DocsLayout>

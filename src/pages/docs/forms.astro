@@ -320,6 +320,118 @@ import CodeBlock from "../../components/CodeBlock.astro";
         </table>
       </section>
 
+      <section
+        class="padding-top-extra padding-bottom-extra border-bottom"
+        id="datepicker"
+      >
+        <p class="text-xs font-semibold uppercase color-blue">Native</p>
+        <h2>Date & Time Pickers</h2>
+        <p class="no-orphan">
+          Native HTML date and time inputs are styled automatically by ply
+          inside a <code>.form</code> wrapper. No JavaScript datepicker library needed — the
+          browser provides an accessible, localizable picker.
+        </p>
+
+        <div class="border border-radius padding">
+          <form class="form">
+            <div class="units-row">
+              <div class="unit-50 phone-unit-100">
+                <label>
+                  Date
+                  <input type="date" />
+                </label>
+                <label>
+                  Date &amp; Time
+                  <input type="datetime-local" />
+                </label>
+                <label>
+                  Month
+                  <input type="month" />
+                </label>
+              </div>
+              <div class="unit-50 phone-unit-100">
+                <label>
+                  Time
+                  <input type="time" />
+                </label>
+                <label>
+                  Date Range (start)
+                  <input type="date" />
+                </label>
+                <label>
+                  Date Range (end)
+                  <input type="date" />
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <CodeBlock
+          code={`<form class="form">
+  <label>
+    Date
+    <input type="date">
+  </label>
+  <label>
+    Date & Time
+    <input type="datetime-local">
+  </label>
+  <label>
+    Time
+    <input type="time">
+  </label>
+  <label>
+    Month
+    <input type="month">
+  </label>
+</form>`}
+        />
+
+        <h3>With Validation States</h3>
+        <div class="border border-radius padding">
+          <form class="form">
+            <div class="units-row">
+              <div class="unit-33 phone-unit-100">
+                <label>
+                  Start Date
+                  <input type="date" class="input-success" value="2026-03-01" />
+                </label>
+                <span class="success">Valid date</span>
+              </div>
+              <div class="unit-33 phone-unit-100">
+                <label>
+                  End Date
+                  <input type="date" class="input-error" value="2026-02-15" />
+                </label>
+                <span class="error">End must be after start</span>
+              </div>
+              <div class="unit-33 phone-unit-100">
+                <label>
+                  Optional Date
+                  <input type="date" class="input-gray" />
+                </label>
+                <span class="form-desc">Leave blank if not applicable</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <CodeBlock
+          code={`<label>
+  Start Date
+  <input type="date" class="input-success" value="2026-03-01">
+</label>
+<span class="success">Valid date</span>
+
+<label>
+  End Date
+  <input type="date" class="input-error" value="2026-02-15">
+</label>
+<span class="error">End must be after start</span>`}
+        />
+      </section>
+
       <section class="padding-top-extra padding-bottom-extra" id="dialog">
         <p class="text-xs font-semibold uppercase color-blue">Modal</p>
         <h2>Dialog Element</h2>

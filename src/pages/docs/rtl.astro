@@ -1,0 +1,189 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+---
+
+<DocsLayout title="RTL Support">
+  <section class="padding-top-extra padding-bottom-extra border-bottom">
+    <p class="text-xs font-semibold uppercase color-blue">Internationalization</p>
+    <h1 class="text-balance">RTL Support</h1>
+    <p class="lead no-orphan">
+      Full right-to-left layout mirroring for Arabic, Hebrew, Farsi, and other
+      RTL languages. Add <code>dir="rtl"</code> to your <code>&lt;html&gt;</code>
+      element and ply handles the rest.
+    </p>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="basic">
+    <p class="text-xs font-semibold uppercase color-blue">Setup</p>
+    <h2>Basic Usage</h2>
+    <p class="no-orphan">
+      Set <code>dir="rtl"</code> on the <code>&lt;html&gt;</code> element for a
+      full page RTL layout, or on any container for scoped RTL.
+    </p>
+
+    <CodeBlock code={`<!-- Full page RTL -->
+<html lang="ar" dir="rtl">
+
+<!-- Scoped RTL section -->
+<div dir="rtl">
+  <p>This content flows right-to-left.</p>
+</div>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="grid">
+    <p class="text-xs font-semibold uppercase color-blue">Layout</p>
+    <h2>Grid Mirroring</h2>
+    <p class="no-orphan">
+      The grid system automatically mirrors in RTL mode. Columns that start
+      from the left will start from the right instead.
+    </p>
+
+    <div class="border border-radius padding">
+      <p class="text-sm text-secondary">LTR (default):</p>
+      <div class="units-row bottom-margin">
+        <div class="unit-25"><div class="bg-blue-pastel padding-sm border-radius text-center text-sm">Sidebar</div></div>
+        <div class="unit-75"><div class="bg-surface-alt padding-sm border-radius text-center text-sm">Main Content</div></div>
+      </div>
+
+      <p class="text-sm text-secondary">RTL (<code>dir="rtl"</code>):</p>
+      <div dir="rtl">
+        <div class="units-row">
+          <div class="unit-25"><div class="bg-blue-pastel padding-sm border-radius text-center text-sm">الشريط الجانبي</div></div>
+          <div class="unit-75"><div class="bg-surface-alt padding-sm border-radius text-center text-sm">المحتوى الرئيسي</div></div>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div dir="rtl">
+  <div class="units-row">
+    <div class="unit-25">Sidebar</div>
+    <div class="unit-75">Main Content</div>
+  </div>
+</div>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="navigation">
+    <p class="text-xs font-semibold uppercase color-blue">Components</p>
+    <h2>Navigation</h2>
+    <p class="no-orphan">
+      Navbars automatically mirror in RTL. Items align to the right and flow leftward.
+    </p>
+
+    <div class="border border-radius padding">
+      <div dir="rtl">
+        <nav class="navbar">
+          <ul>
+            <li class="active"><a href="#navigation">الرئيسية</a></li>
+            <li><a href="#navigation">حول</a></li>
+            <li><a href="#navigation">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="forms">
+    <p class="text-xs font-semibold uppercase color-blue">Components</p>
+    <h2>Forms</h2>
+    <p class="no-orphan">
+      Form labels align right, select arrows flip to the left side, and
+      input groups reverse their prepend/append order.
+    </p>
+
+    <div class="border border-radius padding">
+      <div dir="rtl">
+        <form class="form">
+          <label>
+            البريد الإلكتروني
+            <input type="email" placeholder="user@example.com" />
+          </label>
+          <label>
+            الدولة
+            <select>
+              <option>المملكة العربية السعودية</option>
+              <option>الإمارات العربية المتحدة</option>
+              <option>مصر</option>
+            </select>
+          </label>
+          <button class="btn btn-blue" type="submit">إرسال</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="utilities">
+    <p class="text-xs font-semibold uppercase color-blue">Mirrored</p>
+    <h2>Mirrored Utilities</h2>
+    <p class="no-orphan">
+      Directional utilities like <code>margin-left</code>, <code>padding-right</code>,
+      <code>float-left</code>, <code>text-left</code>, and <code>text-right</code>
+      are automatically mirrored inside <code>dir="rtl"</code>.
+    </p>
+
+    <table class="table-stroked">
+      <thead>
+        <tr><th>LTR Class</th><th>RTL Behavior</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>text-left</code></td><td>Becomes <code>text-align: right</code></td></tr>
+        <tr><td><code>text-right</code></td><td>Becomes <code>text-align: left</code></td></tr>
+        <tr><td><code>margin-left</code></td><td>Becomes <code>margin-right</code></td></tr>
+        <tr><td><code>margin-right</code></td><td>Becomes <code>margin-left</code></td></tr>
+        <tr><td><code>margin-left-auto</code></td><td>Becomes <code>margin-right: auto</code></td></tr>
+        <tr><td><code>float-left</code></td><td>Becomes <code>float: right</code></td></tr>
+        <tr><td><code>float-right</code></td><td>Becomes <code>float: left</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="logical">
+    <p class="text-xs font-semibold uppercase color-blue">Bidirectional</p>
+    <h2>Logical Property Helpers</h2>
+    <p class="no-orphan">
+      For truly bidirectional layouts, use CSS logical property utilities that
+      work correctly in both LTR and RTL without mirroring overrides.
+    </p>
+
+    <table class="table-stroked">
+      <thead>
+        <tr><th>Class</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>margin-inline-start</code></td><td>Margin on the start side (left in LTR, right in RTL)</td></tr>
+        <tr><td><code>margin-inline-end</code></td><td>Margin on the end side (right in LTR, left in RTL)</td></tr>
+        <tr><td><code>padding-inline-start</code></td><td>Padding on the start side</td></tr>
+        <tr><td><code>padding-inline-end</code></td><td>Padding on the end side</td></tr>
+        <tr><td><code>border-inline-start</code></td><td>Border on the start side</td></tr>
+        <tr><td><code>border-inline-end</code></td><td>Border on the end side</td></tr>
+      </tbody>
+    </table>
+
+    <CodeBlock code={`<!-- Works in both LTR and RTL automatically -->
+<div class="margin-inline-start padding-inline-end">
+  Content with directional spacing
+</div>`} />
+  </section>
+
+  <section class="padding-top-extra padding-bottom-extra" id="opt-out">
+    <p class="text-xs font-semibold uppercase color-blue">Control</p>
+    <h2>Opting Out</h2>
+    <p class="no-orphan">
+      Use <code>no-rtl</code> on any element inside an RTL context to force
+      LTR direction. Useful for code blocks, phone numbers, or other content
+      that should always be left-to-right.
+    </p>
+
+    <div class="border border-radius padding">
+      <div dir="rtl">
+        <p>هذا النص يتدفق من اليمين إلى اليسار.</p>
+        <pre class="no-rtl"><code>const greeting = "Hello, World!";</code></pre>
+      </div>
+    </div>
+
+    <CodeBlock code={`<div dir="rtl">
+  <p>Arabic text flows right-to-left.</p>
+  <pre class="no-rtl"><code>Code stays left-to-right.</code></pre>
+</div>`} />
+  </section>
+</DocsLayout>

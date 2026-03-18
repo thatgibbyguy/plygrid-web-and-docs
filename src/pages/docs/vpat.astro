@@ -9,7 +9,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
       <h1 class="text-balance">VPAT 2.5 — WCAG 2.1 Edition</h1>
       <p class="lead no-orphan">
         Voluntary Product Accessibility Template for <strong>ply CSS
-        Framework v1.0.5</strong>. Evaluated March 2026 via source code
+        Framework v1.0.6</strong>. Evaluated March 2026 via source code
         review of SCSS components, compiled CSS analysis, and manual
         inspection of rendered output. Contact: <a href="https://github.com/thatgibbyguy/ply/issues">
           GitHub Issues
@@ -114,7 +114,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
               ply auto-styles semantic HTML elements (
               <code>&lt;nav&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;details&gt;</code>, <code>&lt;dialog&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;mark&gt;</code>, headings <code>&lt;h1&gt;</code>–
               <code>&lt;h6&gt;</code>) so that visual presentation follows
-              semantic structure.
+              semantic structure. Step indicators use semantic <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> with CSS counters for automatic numbering. Dialog sections use semantic <code>&lt;header&gt;</code>/<code>&lt;footer&gt;</code> elements.
             </td>
           </tr>
           <tr>
@@ -124,7 +124,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>Supports</td>
             <td>
               ply's layout system uses CSS flexbox for visual arrangement
-              without altering DOM order. Reading order follows source order.
+              without altering DOM order. Reading order follows source order. Multi-step form indicators maintain visual order matching DOM sequence. RTL support via <code>dir="rtl"</code> preserves meaningful reading order through logical property mirroring.
             </td>
           </tr>
           <tr>
@@ -166,7 +166,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
               ply provides <code>:focus-visible</code> outlines on all
               interactive elements: links, buttons, form inputs, nav items,
               dropdown items, <code>&lt;summary&gt;</code> elements, and <code>[tabindex]</code>. The <code>.skip-link</code> class
-              enables keyboard bypass navigation. All interactions are
+              enables keyboard bypass navigation. Sortable table headers (<code>th.sortable</code>) are focusable with <code>:focus-visible</code>. Pagination links receive focus. Dialog close buttons have <code>:focus-visible</code> outlines. All interactions are
               CSS-based and do not require pointer-specific input.
             </td>
           </tr>
@@ -202,7 +202,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               ply respects <code>prefers-reduced-motion: reduce</code> by
               disabling all animations and transitions via a universal
-              selector. Default animations are limited to subtle hover
+              selector. Dialog open animations and step indicator transitions are suppressed when reduced motion is preferred. Default animations are limited to subtle hover
               transitions and are not auto-playing or continuous.
             </td>
           </tr>
@@ -401,7 +401,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               ply does not restrict display to a single orientation.
               Responsive breakpoints adapt layout to both portrait and
-              landscape viewports.
+              landscape viewports. Dialog patterns work in both portrait and landscape orientations.
             </td>
           </tr>
           <tr>
@@ -423,7 +423,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               Light theme: <code>#161616</code> on <code>#ffffff</code> (~15.4:1). Dark theme: <code>#f4f4f4</code> on <code>#161616</code> (~13.9:1). Secondary text: ~7.5:1 light,
               ~9.6:1 dark. Link colors: ~4.6:1 light, ~8.1:1 dark. All
-              exceed the 4.5:1 AA minimum. <code>prefers-contrast: more</code> further increases contrast
+              exceed the 4.5:1 AA minimum. Pagination outlined controls, step indicator states (completed, error, active), and sort indicators using <code>--ply-color-body</code> and <code>--ply-color-muted</code> all meet contrast requirements. <code>prefers-contrast: more</code> further increases contrast
               to pure black/white.
             </td>
           </tr>
@@ -467,7 +467,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               Form input borders (~3.5:1 light, ~3.1:1 dark), focus
               indicators (~4.6:1 light, ~5.5:1 dark), and button backgrounds
-              all meet the 3:1 minimum. <code>prefers-contrast: more</code> enhances all borders to
+              all meet the 3:1 minimum. Pagination borders, sort arrow indicators, and step circle borders all meet 3:1 against background. <code>prefers-contrast: more</code> enhances all borders to
               pure black or white.
             </td>
           </tr>
@@ -490,7 +490,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               ply's hover/focus interactions are limited to visual style
               changes. The framework does not display additional content on
-              hover or focus that would obscure other content. CSS-based
+              hover or focus that would obscure other content. Sortable table headers show a hover background state. CSS-based
               dropdown menus can be dismissed by moving focus.
             </td>
           </tr>
@@ -524,8 +524,8 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               ply provides <code>:focus-visible</code> outlines on all
               interactive elements — buttons, links, inputs, nav items,
-              dropdowns, form controls, modal close buttons, and accordion
-              titles. Consistent indicator: 2px solid outline with 2px
+              dropdowns, form controls, modal close buttons, accordion
+              titles, sortable table headers, pagination links, and dialog close buttons. Consistent indicator: 2px solid outline with 2px
               offset.
             </td>
           </tr>
@@ -660,6 +660,9 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           animations and transitions via universal selector in <code>_reset.scss</code>
         </li>
         <li>
+          Dialog open animations and multi-step form transitions respect reduced motion preferences
+        </li>
+        <li>
           Default animations limited to subtle hover transitions (no
           auto-playing, looping, or flashing content)
         </li>
@@ -712,6 +715,58 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
         <li>
           <code>max-width: 100%</code> on images, video, and embedded content
           for responsive media
+        </li>
+      </ul>
+
+      <h3>Table Interaction</h3>
+      <ul>
+        <li>
+          Sort indicators on <code>th.sortable</code> with keyboard access and <code>:focus-visible</code> outlines
+        </li>
+        <li>
+          Pagination with outlined and solid variants, disabled states, and focus management
+        </li>
+        <li>
+          Table filter using input-groups pattern; ghost icon buttons for table actions
+        </li>
+      </ul>
+
+      <h3>Multi-Step Forms</h3>
+      <ul>
+        <li>
+          Step indicators using semantic <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> with CSS counters for automatic numbering
+        </li>
+        <li>
+          Completed, active, and error states with accessible contrast ratios
+        </li>
+        <li>
+          Step transitions respect <code>prefers-reduced-motion: reduce</code>
+        </li>
+      </ul>
+
+      <h3>Dialog Patterns</h3>
+      <ul>
+        <li>
+          Structured layouts with semantic header, body, and footer sections
+        </li>
+        <li>
+          Size variants, stacked/nested dialogs with z-index layering, and scrollable body
+        </li>
+        <li>
+          Open animation with <code>prefers-reduced-motion: reduce</code> support; <code>:focus-visible</code> on close button
+        </li>
+      </ul>
+
+      <h3>RTL Support</h3>
+      <ul>
+        <li>
+          Full layout mirroring via <code>dir="rtl"</code> — grid, navigation, and form components mirror automatically
+        </li>
+        <li>
+          Logical property helpers for consistent spacing in both directions
+        </li>
+        <li>
+          <code>.no-rtl</code> opt-out class for elements that should not mirror (e.g., code blocks, phone numbers)
         </li>
       </ul>
 
