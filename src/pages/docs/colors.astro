@@ -154,7 +154,7 @@ document.documentElement.dataset.theme =
     </section>
 
     <section
-      class="padding-top-extra padding-bottom-extra border-bottom"
+      class="padding-top-extra padding-bottom-extra"
       id="css-vars"
     >
       <p class="text-xs font-semibold uppercase color-blue">
@@ -311,15 +311,15 @@ document.documentElement.dataset.theme =
             <td>
               <code>--ply-btn-default-bg</code>
             </td>
-            <td>#393939</td>
-            <td>Default button bg</td>
+            <td>#0353e9</td>
+            <td>Primary button &amp; link color</td>
           </tr>
           <tr>
             <td>
-              <code>--ply-btn-default-hover</code>
+              <code>--ply-btn-secondary-bg</code>
             </td>
-            <td>#4c4c4c</td>
-            <td>Default button hover</td>
+            <td>#393939</td>
+            <td>Secondary button bg</td>
           </tr>
         </tbody>
       </table>
@@ -408,43 +408,64 @@ document.documentElement.dataset.theme =
     </section>
 
     <section
-      class="padding-top-extra padding-bottom-extra"
+      class="padding-top-extra padding-bottom-extra border-bottom"
       id="custom-theme"
     >
       <p class="text-xs font-semibold uppercase color-blue">Custom</p>
       <h2 class="text-balance">Creating a Custom Theme</h2>
       <p class="no-orphan">
         Define a new <code>data-theme</code> value and override the CSS custom
-        properties. This lets you create any brand theme while keeping dark
-        mode, accessibility, and all component styles working.
+        properties. This lets you create any brand theme while keeping
+        accessibility and all component styles working.
       </p>
 
-      <CodeBlock
-        code={`[data-theme="brand"] {
-  /* Colors */
-  --ply-bg-body: #fefce8;
-  --ply-color-body: #1a1a1a;
-  --ply-color-link: #b45309;
-  --ply-btn-default-bg: #b45309;
-  --ply-btn-default-hover: #92400e;
-  --ply-border-color: #fbbf24;
-  --ply-color-headings: #78350f;
-  --ply-nav-bg: #fef3c7;
-  --ply-nav-border: #f59e0b;
+      <div class="border border-radius padding">
+        <div class="btn-group" role="group" aria-label="Theme preview">
+          <button class="btn btn-primary" data-color-theme-btn="default" aria-pressed="true">Default</button>
+          <button class="btn btn-secondary" data-color-theme-btn="warm" aria-pressed="false">Warm Theme</button>
+        </div>
+      </div>
 
-  /* Typography (optional) */
-  --ply-font-body: "Palatino Linotype", Palatino, Georgia, serif;
-  --ply-font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --ply-font-mono: "Fira Code", "Source Code Pro", monospace;
+      <CodeBlock
+        code={`[data-theme="warm"] {
+  /* Backgrounds */
+  --ply-bg-body: #faf5f0;
+  --ply-bg-surface: #f5ebe0;
+  --ply-bg-muted: #e6d5c3;
+
+  /* Text */
+  --ply-color-body: #1c1917;
+  --ply-color-headings: #44240e;
+  --ply-color-secondary: #6b4226;
+
+  /* Buttons & Links */
+  --ply-btn-default-bg: #92400e;
+  --ply-btn-secondary-bg: #78350f;
+  --ply-btn-default-color: #fff;
+
+  /* Typography */
+  --ply-font-body: Palatino, "Palatino Linotype", Georgia, serif;
+  --ply-font-heading: Palatino, "Palatino Linotype", Georgia, serif;
+
+  /* Navigation */
+  --ply-nav-bg: #f5ebe0;
+  --ply-nav-border: #c2956b;
+  --ply-border-color: #d4a574;
+  --ply-color-focus: #92400e;
+
+  /* Inputs */
+  --ply-color-input-border: #c2956b;
+  --ply-color-input-bg: #faf5f0;
 }
 
-<html data-theme="brand">`}
+<html data-theme="warm">`}
       />
 
       <p class="no-orphan">
-        You can override as many or as few properties as you need. Any
-        property you don't override keeps its default value for the current
-        light/dark mode.
+        Override as many or as few properties as you need. Any
+        property you don't override keeps its default value.
+        See the <a href="/docs/buttons#button-primary-secondary">buttons page</a> for
+        how primary and secondary buttons respond to themes.
       </p>
     </section>
 
@@ -463,6 +484,31 @@ document.documentElement.dataset.theme =
   </div>
 
   <script>
+    // Warm theme toggle
+    let colorSavedTheme: string | null = null;
+    document.querySelectorAll('[data-color-theme-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const value = (btn as HTMLElement).dataset.colorThemeBtn;
+        if (value === 'warm') {
+          colorSavedTheme = document.documentElement.getAttribute('data-theme');
+          document.documentElement.setAttribute('data-theme', 'warm');
+        } else {
+          if (colorSavedTheme) {
+            document.documentElement.setAttribute('data-theme', colorSavedTheme);
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+          }
+          colorSavedTheme = null;
+        }
+        document.querySelectorAll('[data-color-theme-btn]').forEach(b => {
+          const isActive = (b as HTMLElement).dataset.colorThemeBtn === value;
+          b.setAttribute('aria-pressed', String(isActive));
+          b.classList.toggle('btn-primary', isActive);
+          b.classList.toggle('btn-secondary', !isActive);
+        });
+      });
+    });
+
     function initThemeToggle() {
       const buttons = document.querySelectorAll('[data-theme-value]');
       const display = document.getElementById('current-theme');
@@ -499,3 +545,41 @@ document.documentElement.dataset.theme =
     initThemeToggle();
   </script>
 </DocsLayout>
+
+<style is:global>
+  [data-theme="warm"] {
+    --ply-bg-body: #faf5f0;
+    --ply-bg-surface: #f5ebe0;
+    --ply-bg-surface-alt: #ede0d4;
+    --ply-bg-muted: #e6d5c3;
+    --ply-color-body: #1c1917;
+    --ply-color-headings: #44240e;
+    --ply-color-secondary: #6b4226;
+    --ply-color-muted: #8b6f56;
+    --ply-color-placeholder: #a89279;
+    --ply-color-text-inverse: #fff;
+    --ply-border-color: #d4a574;
+    --ply-border-strong: #a87c4f;
+    --ply-color-link: var(--ply-btn-default-bg);
+    --ply-color-link-hover: #78350f;
+    --ply-color-focus: #92400e;
+    --ply-btn-default-bg: #92400e;
+    --ply-btn-secondary-bg: #78350f;
+    --ply-btn-default-color: #fff;
+    --ply-btn-secondary-color: #fff;
+    --ply-nav-bg: #f5ebe0;
+    --ply-nav-color: #1c1917;
+    --ply-nav-border: #c2956b;
+    --ply-nav-hover: #ede0d4;
+    --ply-color-field-bg: #f5ebe0;
+    --ply-color-input-border: #c2956b;
+    --ply-color-input-bg: #faf5f0;
+    --ply-color-code-bg: #f5ebe0;
+    --ply-color-code-border: #d4a574;
+    --ply-layer-0: #faf5f0;
+    --ply-layer-1: #f5ebe0;
+    --ply-layer-2: #ede0d4;
+    --ply-font-body: Palatino, "Palatino Linotype", Georgia, serif;
+    --ply-font-heading: Palatino, "Palatino Linotype", Georgia, serif;
+  }
+</style>

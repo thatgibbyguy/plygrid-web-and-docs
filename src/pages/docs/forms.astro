@@ -474,6 +474,138 @@ import CodeBlock from "../../components/CodeBlock.astro";
         </div>
       </section>
 
+      <section class="padding-top-extra padding-bottom-extra border-bottom" id="horizontal-steps">
+        <p class="text-xs font-semibold uppercase color-blue">Multi-Step</p>
+        <h2>Step Indicators</h2>
+        <p class="no-orphan">
+          Use <code>&lt;ol class="steps"&gt;</code> with <code>&lt;li class="step"&gt;</code> children.
+          Mark the current step with <code>active</code> and previous steps with <code>completed</code>.
+        </p>
+
+        <div class="border border-radius padding padding-top-extra">
+          <ol class="steps">
+            <li class="step completed"><span class="step-label">Account</span></li>
+            <li class="step completed"><span class="step-label">Profile</span></li>
+            <li class="step active"><span class="step-label">Payment</span></li>
+            <li class="step"><span class="step-label">Confirm</span></li>
+          </ol>
+        </div>
+
+        <CodeBlock code={`<ol class="steps">
+  <li class="step completed"><span class="step-label">Account</span></li>
+  <li class="step completed"><span class="step-label">Profile</span></li>
+  <li class="step active"><span class="step-label">Payment</span></li>
+  <li class="step"><span class="step-label">Confirm</span></li>
+</ol>`} />
+      </section>
+
+      <section class="padding-top-extra padding-bottom-extra border-bottom" id="step-states">
+        <p class="text-xs font-semibold uppercase color-blue">States</p>
+        <h2>Step States</h2>
+
+        <div class="border border-radius padding padding-top-extra">
+          <ol class="steps">
+            <li class="step completed"><span class="step-label">Details</span></li>
+            <li class="step step-error"><span class="step-label">Verification</span></li>
+            <li class="step active"><span class="step-label">Review</span></li>
+            <li class="step"><span class="step-label">Submit</span></li>
+          </ol>
+        </div>
+
+        <CodeBlock code={`<li class="step completed">...</li>  <!-- Checkmark -->
+<li class="step step-error">...</li>  <!-- Error -->
+<li class="step active">...</li>       <!-- Current (blue) -->
+<li class="step">...</li>              <!-- Upcoming (gray) -->`} />
+      </section>
+
+      <section class="padding-top-extra padding-bottom-extra border-bottom" id="vertical-steps">
+        <p class="text-xs font-semibold uppercase color-blue">Vertical</p>
+        <h2>Vertical Steps</h2>
+
+        <div class="border border-radius padding padding-top-extra">
+          <div class="units-row">
+            <div class="unit-50 phone-unit-100">
+              <ol class="steps steps-vertical">
+                <li class="step completed">
+                  <div class="step-content">
+                    <span class="step-label">Create account</span>
+                    <span class="step-desc">Set up your email and password</span>
+                  </div>
+                </li>
+                <li class="step active">
+                  <div class="step-content">
+                    <span class="step-label">Add team members</span>
+                    <span class="step-desc">Invite colleagues to your workspace</span>
+                  </div>
+                </li>
+                <li class="step">
+                  <div class="step-content">
+                    <span class="step-label">Configure integrations</span>
+                    <span class="step-desc">Connect your tools</span>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <CodeBlock code={`<ol class="steps steps-vertical">
+  <li class="step completed">
+    <div class="step-content">
+      <span class="step-label">Create account</span>
+      <span class="step-desc">Set up your email and password</span>
+    </div>
+  </li>
+  <li class="step active">...</li>
+</ol>`} />
+      </section>
+
+      <section class="padding-top-extra padding-bottom-extra border-bottom" id="full-example">
+        <p class="text-xs font-semibold uppercase color-blue">Example</p>
+        <h2>Full Multi-Step Form</h2>
+
+        <div class="border border-radius padding padding-top-extra">
+          <ol class="steps">
+            <li class="step completed"><span class="step-label">Account</span></li>
+            <li class="step active"><span class="step-label">Profile</span></li>
+            <li class="step"><span class="step-label">Confirm</span></li>
+          </ol>
+
+          <div class="step-panel active">
+            <form class="form">
+              <label>
+                Full Name
+                <input type="text" placeholder="Jane Cooper" />
+              </label>
+              <label>
+                Bio
+                <textarea rows="3" placeholder="Tell us about yourself..."></textarea>
+              </label>
+            </form>
+          </div>
+
+          <div class="step-nav">
+            <button class="btn btn-secondary">Back</button>
+            <button class="btn btn-primary">Continue</button>
+          </div>
+        </div>
+
+        <CodeBlock code={`<ol class="steps">
+  <li class="step completed">...</li>
+  <li class="step active">...</li>
+  <li class="step">...</li>
+</ol>
+
+<div class="step-panel active">
+  <form class="form">...</form>
+</div>
+
+<div class="step-nav">
+  <button class="btn btn-secondary">Back</button>
+  <button class="btn btn-primary">Continue</button>
+</div>`} />
+      </section>
+
       <section
         class="padding-top-extra padding-bottom-extra"
         id="next-steps"

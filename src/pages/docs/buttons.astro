@@ -8,25 +8,85 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <p class="text-xs font-semibold uppercase color-blue">Components</p>
     <h1 class="text-balance">Buttons</h1>
     <p class="lead no-orphan">
-      Six color variants, outline and ghost styles, four sizes, button
-      groups, and full keyboard accessibility out of the box.
+      Primary and secondary actions, static color variants, outline and ghost
+      styles, four sizes, button groups, and full keyboard accessibility out of
+      the box.
     </p>
+  </section>
+
+  <section
+    class="padding-top-extra padding-bottom-extra border-bottom"
+    id="button-primary-secondary"
+  >
+    <p class="text-xs font-semibold uppercase color-blue">Themeable</p>
+    <h2>Primary & Secondary</h2>
+    <p class="no-orphan">
+      Use <code>btn-primary</code> for the main call-to-action and
+      <code>btn-secondary</code> (or plain <code>btn</code>) for secondary
+      actions. Both respond to custom themes via <code>--ply-btn-default-bg</code>
+      and <code>--ply-btn-secondary-bg</code>.
+    </p>
+
+    <div class="border border-radius padding">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-primary-outline">Primary Outline</button>
+      <button class="btn btn-secondary-outline">Secondary Outline</button>
+      <button class="btn btn-ghost">Ghost</button>
+    </div>
+
+    <CodeBlock
+      code={`<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-primary-outline">Primary Outline</button>
+<button class="btn btn-secondary-outline">Secondary Outline</button>
+<button class="btn btn-ghost">Ghost</button>`}
+    />
+
+    <h3>Theming</h3>
+    <p class="no-orphan">
+      Override <code>--ply-btn-default-bg</code> in a custom theme to change the
+      primary button and link colors together. Secondary follows
+      <code>--ply-btn-secondary-bg</code>. Color buttons (<code>btn-blue</code>,
+      etc.) are immune to theming.
+    </p>
+
+    <div class="border border-radius padding">
+      <div class="btn-group" role="group" aria-label="Theme selection">
+        <button class="btn btn-primary" data-theme-btn="default" aria-pressed="true">Default Theme</button>
+        <button class="btn btn-secondary" data-theme-btn="warm" aria-pressed="false">Warm Theme</button>
+      </div>
+    </div>
+
+    <CodeBlock
+      code={`[data-theme="warm"] {
+  --ply-btn-default-bg: #92400e;   /* Primary button + links */
+  --ply-btn-secondary-bg: #78350f; /* Secondary button */
+  --ply-btn-default-color: #fff;   /* Primary text */
+  --ply-btn-secondary-color: #fff; /* Secondary text */
+}
+/* See Colors & Theming for the full warm theme definition. */`}
+    />
   </section>
 
   <section
     class="padding-top-extra padding-bottom-extra border-bottom"
     id="button-colors"
   >
-    <p class="text-xs font-semibold uppercase color-blue">Colors</p>
+    <p class="text-xs font-semibold uppercase color-blue">Static</p>
     <h2>Color Variants</h2>
+    <p class="no-orphan">
+      Static color buttons use hardcoded values and are immune to theming. Use
+      them for color-coded actions (e.g., delete&nbsp;=&nbsp;red,
+      success&nbsp;=&nbsp;green).
+    </p>
 
     <div class="border border-radius padding">
-      <button class="btn">Default</button> <button class="btn btn-blue">Blue</button> <button class="btn btn-red">Red</button> <button class="btn btn-green">Green</button> <button class="btn btn-yellow">Yellow</button> <button class="btn btn-black">Black</button> <button class="btn btn-white">White</button>
+      <button class="btn btn-blue">Blue</button> <button class="btn btn-red">Red</button> <button class="btn btn-green">Green</button> <button class="btn btn-yellow">Yellow</button> <button class="btn btn-black">Black</button> <button class="btn btn-white">White</button>
     </div>
 
     <CodeBlock
-      code={`<button class="btn">Default</button>
-<button class="btn btn-blue">Blue</button>
+      code={`<button class="btn btn-blue">Blue</button>
 <button class="btn btn-red">Red</button>
 <button class="btn btn-green">Green</button>
 <button class="btn btn-yellow">Yellow</button>
@@ -83,7 +143,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h2>Button Sizes</h2>
 
     <div class="border border-radius padding">
-      <button class="btn btn-blue btn-big">Large (btn-big)</button> <button class="btn btn-blue">Default</button> <button class="btn btn-blue btn-small">Small (btn-sm)</button> <button class="btn btn-blue btn-smaller">
+      <button class="btn btn-primary btn-big">Large (btn-big)</button> <button class="btn btn-primary">Default</button> <button class="btn btn-primary btn-small">Small (btn-sm)</button> <button class="btn btn-primary btn-smaller">
         Extra Small (btn-xs)
       </button>
     </div>
@@ -141,7 +201,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h2>Active & Disabled</h2>
 
     <div class="border border-radius padding">
-      <button class="btn btn-active">Active</button> <button class="btn btn-disabled">Disabled</button> <button class="btn btn-blue" disabled>
+      <button class="btn btn-active">Active</button> <button class="btn btn-disabled">Disabled</button> <button class="btn btn-primary" disabled>
         Native Disabled
       </button>
     </div>
@@ -161,7 +221,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h2>Square Buttons</h2>
 
     <div class="border border-radius padding">
-      <button class="btn btn-blue btn-straight">Square Corners (btn-straight)</button> <button class="btn btn-outline btn-square">
+      <button class="btn btn-primary btn-straight">Square Corners (btn-straight)</button> <button class="btn btn-outline btn-square">
         Alias: btn-square
       </button>
     </div>
@@ -169,16 +229,16 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h3>Single Button Container</h3>
     <div class="border border-radius padding">
       <div class="btn-single">
-        <button class="btn btn-blue">Single Button</button>
+        <button class="btn btn-primary">Single Button</button>
       </div>
     </div>
 
     <CodeBlock
-      code={`<button class="btn btn-blue btn-straight">No border-radius</button>
+      code={`<button class="btn btn-primary btn-straight">No border-radius</button>
 <button class="btn btn-square">Alias for btn-straight</button>
 
 <div class="btn-single">
-  <button class="btn btn-blue">Single Button</button>
+  <button class="btn btn-primary">Single Button</button>
 </div>`}
     />
   </section>
@@ -192,7 +252,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <div class="border border-radius padding">
       <div class="btn-group">
-        <button class="btn btn-blue">Save</button>
+        <button class="btn btn-primary">Save</button>
         <button class="btn">Cancel</button>
         <button class="btn btn-red">Delete</button>
       </div>
@@ -217,7 +277,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h3>Full Width & Rounded</h3>
     <div class="border border-radius padding">
       <div class="btn-group fill-width">
-        <button class="btn btn-blue">Option A</button>
+        <button class="btn btn-primary">Option A</button>
         <button class="btn">Option B</button>
         <button class="btn">Option C</button>
       </div>
@@ -231,7 +291,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <CodeBlock
       code={`<div class="btn-group">
-  <button class="btn btn-blue">Save</button>
+  <button class="btn btn-primary">Save</button>
   <button class="btn">Cancel</button>
 </div>
 
@@ -255,3 +315,68 @@ import CodeBlock from "../../components/CodeBlock.astro";
     </p>
   </section>
 </DocsLayout>
+
+<script>
+  let savedTheme: string | null = null;
+
+  document.querySelectorAll('[data-theme-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = (btn as HTMLElement).dataset.themeBtn;
+      if (value === 'warm') {
+        savedTheme = document.documentElement.getAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', 'warm');
+      } else {
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        savedTheme = null;
+      }
+      document.querySelectorAll('[data-theme-btn]').forEach(b => {
+        const isActive = (b as HTMLElement).dataset.themeBtn === value;
+        b.setAttribute('aria-pressed', String(isActive));
+        b.classList.toggle('btn-primary', isActive);
+        b.classList.toggle('btn-secondary', !isActive);
+      });
+    });
+  });
+</script>
+
+<style is:global>
+  [data-theme="warm"] {
+    --ply-bg-body: #faf5f0;
+    --ply-bg-surface: #f5ebe0;
+    --ply-bg-surface-alt: #ede0d4;
+    --ply-bg-muted: #e6d5c3;
+    --ply-color-body: #1c1917;
+    --ply-color-headings: #44240e;
+    --ply-color-secondary: #6b4226;
+    --ply-color-muted: #8b6f56;
+    --ply-color-placeholder: #a89279;
+    --ply-color-text-inverse: #fff;
+    --ply-border-color: #d4a574;
+    --ply-border-strong: #a87c4f;
+    --ply-color-link: var(--ply-btn-default-bg);
+    --ply-color-link-hover: #78350f;
+    --ply-color-focus: #92400e;
+    --ply-btn-default-bg: #92400e;
+    --ply-btn-secondary-bg: #78350f;
+    --ply-btn-default-color: #fff;
+    --ply-btn-secondary-color: #fff;
+    --ply-nav-bg: #f5ebe0;
+    --ply-nav-color: #1c1917;
+    --ply-nav-border: #c2956b;
+    --ply-nav-hover: #ede0d4;
+    --ply-color-field-bg: #f5ebe0;
+    --ply-color-input-border: #c2956b;
+    --ply-color-input-bg: #faf5f0;
+    --ply-color-code-bg: #f5ebe0;
+    --ply-color-code-border: #d4a574;
+    --ply-layer-0: #faf5f0;
+    --ply-layer-1: #f5ebe0;
+    --ply-layer-2: #ede0d4;
+    --ply-font-body: Palatino, "Palatino Linotype", Georgia, serif;
+    --ply-font-heading: Palatino, "Palatino Linotype", Georgia, serif;
+  }
+</style>

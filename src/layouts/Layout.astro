@@ -20,19 +20,14 @@ const sections = [
   { label: "Design", items: [
     { path: "/docs/colors", label: "Colors & Theming" },
     { path: "/docs/typography", label: "Typography" },
-  ]},
-  { label: "Layout", items: [
     { path: "/docs/grid", label: "Grid" },
   ]},
   { label: "Components", items: [
     { path: "/docs/buttons", label: "Buttons" },
     { path: "/docs/forms", label: "Forms" },
-    { path: "/docs/multi-step-forms", label: "Multi-Step Forms" },
     { path: "/docs/navigation", label: "Navigation" },
     { path: "/docs/tables", label: "Tables" },
-    { path: "/docs/table-interactive", label: "Table Interaction" },
-    { path: "/docs/dialogs", label: "Dialogs" },
-    { path: "/docs/alerts", label: "Alerts" },
+    { path: "/docs/alerts", label: "Dialogs & Alerts" },
   ]},
   { label: "Helpers", items: [
     { path: "/docs/utilities", label: "Utilities" },
@@ -49,7 +44,7 @@ const flatLinks = sections.flatMap((s) => s.items);
 
 const isHome = currentPath === "/";
 const isGettingStarted = ["/docs/installation", "/docs/semantic-html", "/docs/ai-agents", "/docs/colors", "/docs/typography", "/docs/grid"].includes(currentPath);
-const isComponents = ["/docs/buttons", "/docs/forms", "/docs/multi-step-forms", "/docs/navigation", "/docs/tables", "/docs/table-interactive", "/docs/dialogs", "/docs/alerts"].includes(currentPath);
+const isComponents = ["/docs/buttons", "/docs/forms", "/docs/navigation", "/docs/tables", "/docs/alerts"].includes(currentPath);
 const isHelpers = ["/docs/utilities", "/docs/accessibility", "/docs/rtl"].includes(currentPath);
 const isCompliance = ["/docs/compliance"].includes(currentPath);
 ---
