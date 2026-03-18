@@ -165,26 +165,17 @@ const isCompliance = ["/docs/compliance"].includes(currentPath);
         </main>
       ) : (
         <div class="doc-layout">
-          <aside class="doc-sidebar hide-on-mobile" aria-label="Documentation navigation">
-            <nav class="doc-sidebar-inner no-link-style" aria-label="Documentation">
+          <aside class="doc-sidebar hide-on-mobile padding-top" aria-label="Documentation navigation">
+            <nav class="nav-stacked" aria-label="Documentation">
               {sections.map((section) => (
-                <div class="bottom-margin">
-                  <p class="text-xs font-semibold uppercase text-tertiary no-margin padding-left-sm padding-bottom" role="presentation">
-                    {section.label}
-                  </p>
-                  <ul class="flat-list">
-                    {section.items.map((item) => (
-                      <li>
-                        <a
-                          href={item.path}
-                          class={`doc-sidebar-link display-block text-sm ${currentPath === item.path ? "font-semibold doc-sidebar-link-active" : "text-secondary"}`}
-                        >
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul class="padding-bottom-extra">
+                  <li><span class="text-xs font-semibold uppercase text-tertiary">{section.label}</span></li>
+                  {section.items.map((item) => (
+                    <li class={currentPath === item.path ? "active" : ""}>
+                      <a href={item.path}>{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
               ))}
             </nav>
           </aside>

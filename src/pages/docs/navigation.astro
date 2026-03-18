@@ -375,6 +375,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
   >
     <p class="text-xs font-semibold uppercase color-blue">Vertical</p>
     <h2>Stacked Navigation</h2>
+    <p>Clean vertical nav with a blue accent on the active item. Use <code>li.active</code> to mark the current page. Non-link labels use <code>&lt;span&gt;</code> for section headings.</p>
 
     <div class="border border-radius padding">
       <div class="units-row">
@@ -404,6 +405,45 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <CodeBlock
       code={`<nav class="nav-stacked">
+  <ul>
+    <li class="active"><a href="#">Dashboard</a></li>
+    <li><a href="#">Analytics</a></li>
+    <li><a href="#">Users</a></li>
+  </ul>
+</nav>`}
+    />
+
+    <h3 class="padding-top-extra">Blocked Variant</h3>
+    <p>Add <code>nav-stacked-blocked</code> for filled rows with background and bottom borders.</p>
+
+    <div class="border border-radius padding">
+      <div class="units-row">
+        <div class="unit-33 phone-unit-100">
+          <nav class="nav-stacked nav-stacked-blocked">
+            <ul>
+              <li class="active">
+                <a href="#">Dashboard</a>
+              </li>
+              <li>
+                <a href="#">Analytics</a>
+              </li>
+              <li>
+                <a href="#">Users</a>
+              </li>
+              <li>
+                <a href="#">Settings</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <CodeBlock
+      code={`<nav class="nav-stacked nav-stacked-blocked">
   <ul>
     <li class="active"><a href="#">Dashboard</a></li>
     <li><a href="#">Analytics</a></li>
@@ -567,7 +607,8 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <tr><td><code>navbar-vertical</code></td><td>Vertical sidebar layout</td></tr>
         <tr><td><code>navbar-stack</code></td><td>Wrap items on mobile</td></tr>
         <tr><td><code>navbar-pills</code></td><td>Pill-style navigation</td></tr>
-        <tr><td><code>nav-stacked</code></td><td>Stacked vertical list</td></tr>
+        <tr><td><code>nav-stacked</code></td><td>Stacked vertical list with blue accent active state</td></tr>
+        <tr><td><code>nav-stacked-blocked</code></td><td>Filled row variant with background and borders</td></tr>
         <tr><td><code>nav-tabs</code></td><td>Tab navigation</td></tr>
         <tr><td><code>nav-stats</code></td><td>Navigation with stats/badges</td></tr>
         <tr><td><code>breadcrumbs</code></td><td>Breadcrumb navigation</td></tr>
