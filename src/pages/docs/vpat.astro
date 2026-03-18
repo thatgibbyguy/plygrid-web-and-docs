@@ -422,8 +422,12 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>Supports</td>
             <td>
               Light theme: <code>#161616</code> on <code>#ffffff</code> (~15.4:1). Dark theme: <code>#f4f4f4</code> on <code>#161616</code> (~13.9:1). Secondary text: ~7.5:1 light,
-              ~9.6:1 dark. Link colors: ~4.6:1 light, ~8.1:1 dark. All
-              exceed the 4.5:1 AA minimum. Pagination outlined controls, step indicator states (completed, error, active), and sort indicators using <code>--ply-color-body</code> and <code>--ply-color-muted</code> all meet contrast requirements. <code>prefers-contrast: more</code> further increases contrast
+              ~9.6:1 dark. Link colors derive from <code>--ply-btn-default-bg</code>: ~6.1:1 light (#0353e9), ~7.7:1 dark (#78a9ff).
+              Button contrast: <code>btn-primary</code> 6.1:1 light / 7.7:1 dark; <code>btn-secondary</code> 11.6:1 light / 7.6:1 dark;
+              <code>btn-secondary-outline</code> text uses <code>--ply-color-muted</code> (#767676 light, #8d8d8d dark) for 4.5:1+ in both modes.
+              Static color buttons use hardcoded WCAG AA values: <code>btn-blue</code> 5.0:1, <code>btn-red</code> 5.0:1, <code>btn-green</code> 5.0:1, <code>btn-yellow</code> 12.5:1 (dark text).
+              Toast messages use WCAG AA colors (#0f62fe blue, #198038 green, #da1e28 red, #f1c21b yellow with dark text).
+              Pagination outlined controls, step indicator states, and sort indicators all meet contrast requirements. <code>prefers-contrast: more</code> further increases contrast
               to pure black/white.
             </td>
           </tr>
@@ -523,7 +527,10 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>Supports</td>
             <td>
               ply provides <code>:focus-visible</code> outlines on all
-              interactive elements — buttons, links, inputs, nav items,
+              interactive elements — buttons (<code>btn-primary</code>, <code>btn-secondary</code>,
+              <code>btn-primary-outline</code>, <code>btn-secondary-outline</code>,
+              <code>btn-ghost</code>, <code>btn-icon</code>, and all color variants),
+              links, inputs, nav items,
               dropdowns, form controls, modal close buttons, accordion
               titles, sortable table headers, pagination links, and dialog close buttons. Consistent indicator: 2px solid outline with 2px
               offset.
@@ -590,8 +597,9 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
             <td>
               Status messages and <code>role="status"</code> / <code>aria-live</code> regions require JavaScript and ARIA
               attributes, which are application-level concerns. ply provides
-              visual styling for alerts and notifications usable with
-              appropriate ARIA roles.
+              visual styling for alerts, toast messages (<code>.message</code>), and notifications.
+              Use <code>role="status"</code> with <code>aria-live="polite"</code> for informational toasts;
+              <code>role="alert"</code> with <code>aria-live="assertive"</code> for errors.
             </td>
           </tr>
         </tbody>
@@ -639,8 +647,14 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
           Muted/tertiary text (supplementary content only): <code>#767676</code> light (~4.5:1), <code>#8d8d8d</code> dark (~4.3:1)
         </li>
         <li>
-          Default button text uses <code>--ply-btn-default-color</code> token
-          — both modes exceed 4.5:1
+          <code>btn-primary</code> uses <code>--ply-btn-default-bg</code> / <code>--ply-btn-default-color</code> (6.1:1 light, 7.7:1 dark);
+          <code>btn-secondary</code> uses <code>--ply-btn-secondary-bg</code> / <code>--ply-btn-secondary-color</code> (11.6:1 light, 7.6:1 dark)
+        </li>
+        <li>
+          Static color buttons (<code>btn-blue</code>, <code>btn-red</code>, <code>btn-green</code>, <code>btn-yellow</code>) use hardcoded WCAG AA values immune to theming
+        </li>
+        <li>
+          Toast messages use <code>--ply-bg-*</code> custom properties for WCAG AA backgrounds; <code>z-index: 110</code> ensures visibility above fixed navigation
         </li>
         <li>
           <code>prefers-color-scheme: dark</code> automatic dark mode with
