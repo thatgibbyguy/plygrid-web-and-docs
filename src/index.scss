@@ -38,7 +38,7 @@
 }
 
 .doc-sidebar-link {
-  padding: 0.4rem 0.75rem;
+  padding: 0.4rem 0.5rem;
   border-radius: 0.375rem;
   transition: background 0.15s ease, color 0.15s ease;
 
@@ -51,7 +51,7 @@
 .doc-sidebar-link-active {
   color: var(--ply-text-color);
   border-left: 2px solid var(--ply-color-link, #0f62fe);
-  padding-left: calc(0.75rem - 2px);
+  padding-left: calc(0.5rem - 2px);
 }
 
 .doc-content {
