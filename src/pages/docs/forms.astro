@@ -158,7 +158,12 @@ import CodeBlock from "../../components/CodeBlock.astro";
       >
         <p class="text-xs font-semibold uppercase color-blue">Groups</p>
         <h2>Input Groups</h2>
+        <p class="no-orphan">
+          Wrap inputs with <code>.input-groups</code> and use <code>.input-prepend</code> / <code>.input-append</code> for text addons.
+          <strong>Buttons must be wrapped</strong> in <code>.input-append</code> or <code>.btn-append</code> — a bare button directly inside <code>.input-groups</code> won't attach correctly.
+        </p>
 
+        <h3>Text Addons</h3>
         <div class="border border-radius padding">
           <form class="form">
             <div class="input-groups">
@@ -171,21 +176,60 @@ import CodeBlock from "../../components/CodeBlock.astro";
               <span class="input-prepend">https://</span>
               <input type="text" placeholder="example.com" aria-label="Website URL" />
             </div>
-            <div class="bottom-margin-extra"></div>
+          </form>
+        </div>
+
+        <CodeBlock
+          code={`<!-- Text addons -->
+<div class="input-groups">
+  <span class="input-prepend">$</span>
+  <input type="text" placeholder="Amount">
+  <span class="input-append">.00</span>
+</div>
+
+<div class="input-groups">
+  <span class="input-prepend">https://</span>
+  <input type="text" placeholder="example.com">
+</div>`}
+        />
+
+        <h3>Button Addons</h3>
+        <p class="no-orphan">
+          Use <code>.input-append</code> or <code>.btn-append</code> to attach a button. Outline buttons automatically match the input border, and button scale transforms are disabled inside input groups.
+        </p>
+        <div class="border border-radius padding">
+          <form class="form">
             <div class="input-groups">
               <input type="text" placeholder="Search..." aria-label="Search" />
               <span class="input-append">
-                <button class="btn btn-blue btn-sm">Go</button>
+                <button class="btn btn-blue">Search</button>
               </span>
+            </div>
+            <div class="bottom-margin-extra"></div>
+            <div class="input-groups">
+              <input type="text" placeholder="Enter URL" aria-label="URL" />
+              <div class="btn-append">
+                <button class="btn btn-primary-outline">Go</button>
+              </div>
             </div>
           </form>
         </div>
 
         <CodeBlock
-          code={`<div class="input-groups">
-  <span class="input-prepend">$</span>
-  <input type="text" placeholder="Amount">
-  <span class="input-append">.00</span>
+          code={`<!-- Button via input-append -->
+<div class="input-groups">
+  <input type="text" placeholder="Search...">
+  <span class="input-append">
+    <button class="btn btn-blue">Search</button>
+  </span>
+</div>
+
+<!-- Button via btn-append (also works with outline buttons) -->
+<div class="input-groups">
+  <input type="text" placeholder="Enter URL">
+  <div class="btn-append">
+    <button class="btn btn-primary-outline">Go</button>
+  </div>
 </div>`}
         />
       </section>
