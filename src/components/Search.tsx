@@ -152,7 +152,7 @@ function buildSearchIndex(): SearchEntry[] {
     { label: "Semantic HTML", detail: "auto-styled elements nav table code blockquote details dialog", path: "/docs/semantic-html" },
     { label: "Colors & Theming", detail: "color palette dark mode light custom theme CSS properties variables", path: "/docs/colors" },
     { label: "Typography", detail: "type scale font size weight heading text", path: "/docs/typography" },
-    { label: "Grid", detail: "grid flexbox layout units container row responsive breakpoint", path: "/docs/grid" },
+    { label: "Grid", detail: "grid flexbox layout units container row responsive breakpoint push offset blocks equal-height split stacked", path: "/docs/grid" },
     { label: "Buttons", detail: "button color outline ghost sizes groups interactive", path: "/docs/buttons" },
     { label: "Forms", detail: "input select textarea checkbox radio validation inline", path: "/docs/forms" },
     { label: "Navigation", detail: "navbar pills tabs breadcrumbs pagination stacked", path: "/docs/navigation" },

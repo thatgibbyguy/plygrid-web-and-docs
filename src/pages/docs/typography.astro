@@ -22,24 +22,24 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h2>Text Sizes</h2>
 
     <div class="border border-radius padding">
-      <p class="text-5xl font-bold no-margin bottom-margin">
+      <p class="text-5xl font-bold no-margin margin-bottom">
         text-5xl — 60px
       </p>
-      <p class="text-4xl font-bold no-margin bottom-margin">
+      <p class="text-4xl font-bold no-margin margin-bottom">
         text-4xl — 48px
       </p>
-      <p class="text-3xl font-bold no-margin bottom-margin">
+      <p class="text-3xl font-bold no-margin margin-bottom">
         text-3xl — 36px
       </p>
-      <p class="text-2xl font-bold no-margin bottom-margin">
+      <p class="text-2xl font-bold no-margin margin-bottom">
         text-2xl — 30px
       </p>
-      <p class="text-xl no-margin bottom-margin">text-xl — 24px</p>
-      <p class="text-lg no-margin bottom-margin">text-lg — 18px</p>
-      <p class="text-base no-margin bottom-margin">
+      <p class="text-xl no-margin margin-bottom">text-xl — 24px</p>
+      <p class="text-lg no-margin margin-bottom">text-lg — 18px</p>
+      <p class="text-base no-margin margin-bottom">
         text-base — 16px (default)
       </p>
-      <p class="text-sm no-margin bottom-margin">text-sm — 14px</p>
+      <p class="text-sm no-margin margin-bottom">text-sm — 14px</p>
       <p class="text-xs no-margin">text-xs — 12px</p>
     </div>
 
@@ -156,15 +156,25 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <h2>Leading</h2>
 
     <div class="border border-radius padding">
-      <div class="units-row">
+      <div class="units-row equal-height">
         <div class="unit-50 phone-unit-100">
-          <p class="leading-tight border padding bottom-margin">
+          <p class="leading-tight border padding no-margin">
             <strong>leading-tight (1.25)</strong>
             <br />
             The quick brown fox jumps over the lazy dog. Pack my box with
             five dozen liquor jugs.
           </p>
-          <p class="leading-snug border padding">
+        </div>
+        <div class="unit-50 phone-unit-100">
+          <p class="leading-normal border padding no-margin">
+            <strong>leading-normal (1.5)</strong>
+            <br />
+            The quick brown fox jumps over the lazy dog. Pack my box with
+            five dozen liquor jugs.
+          </p>
+        </div>
+        <div class="unit-50 phone-unit-100">
+          <p class="leading-snug border padding no-margin">
             <strong>leading-snug (1.375)</strong>
             <br />
             The quick brown fox jumps over the lazy dog. Pack my box with
@@ -172,13 +182,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
           </p>
         </div>
         <div class="unit-50 phone-unit-100">
-          <p class="leading-normal border padding bottom-margin">
-            <strong>leading-normal (1.5)</strong>
-            <br />
-            The quick brown fox jumps over the lazy dog. Pack my box with
-            five dozen liquor jugs.
-          </p>
-          <p class="leading-relaxed border padding">
+          <p class="leading-relaxed border padding no-margin">
             <strong>leading-relaxed (1.625)</strong>
             <br />
             The quick brown fox jumps over the lazy dog. Pack my box with

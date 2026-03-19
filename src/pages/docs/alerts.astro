@@ -327,7 +327,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
       Add an <code>alert-dismiss</code> button to make alerts closeable.
     </p>
 
-    <button id="reset-btn" class="btn btn-sm btn-outline bottom-margin" style="display:none" onclick="document.querySelectorAll('#dismissible-alerts .alert').forEach(a=>a.style.display='');this.style.display='none'">Reset all dismissed alerts</button>
+    <button id="reset-btn" class="btn btn-sm btn-outline margin-bottom" style="display:none" onclick="document.querySelectorAll('#dismissible-alerts .alert').forEach(a=>a.style.display='');this.style.display='none'">Reset all dismissed alerts</button>
 
     <div id="dismissible-alerts" class="border border-radius padding">
       <div class="alert alert-blue" role="alert">
@@ -384,12 +384,12 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <p class="text-xs font-semibold uppercase color-blue">Labels</p>
     <h2>Inline Labels & Status</h2>
 
-    <div class="border border-radius padding bottom-margin">
+    <div class="border border-radius padding margin-bottom">
       <span class="label">Default</span> <span class="label label-blue">Blue</span> <span class="label label-red">Red</span> <span class="label label-green">Green</span> <span class="label label-yellow">Yellow</span> <span class="label label-black">Black</span> <span class="label label-white">White</span>
     </div>
 
     <h3>Outlined Labels</h3>
-    <div class="border border-radius padding bottom-margin">
+    <div class="border border-radius padding margin-bottom">
       <span class="label label-outline">Outline</span> <span class="label label-outline label-blue">Blue</span> <span class="label label-outline label-red">Red</span> <span class="label label-outline label-green">Green</span>
     </div>
 
@@ -404,7 +404,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
     <p class="text-xs font-semibold uppercase color-blue">Badges</p>
     <h2>Badges</h2>
 
-    <div class="border border-radius padding bottom-margin">
+    <div class="border border-radius padding margin-bottom">
       <span class="badge">1</span> <span class="badge badge-blue">5</span> <span class="badge badge-red">99+</span> <span class="badge badge-green">3</span> <span class="badge badge-yellow">!</span> <span class="badge badge-black">0</span> <span class="badge badge-white">7</span>
     </div>
 
@@ -435,36 +435,36 @@ import CodeBlock from "../../components/CodeBlock.astro";
       <button class="btn btn-sm btn-yellow" data-toast="toast-yellow">Yellow</button>
     </div>
 
-    <div id="toast-default" class="message" style="display:none" role="status" aria-live="polite">
+    <div id="toast-default" class="alert message" style="display:none" role="status" aria-live="polite">
       <span class="alert-content">Default toast notification.</span>
-      <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false">&times;</button>
+      <button class="alert-dismiss" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false"></button>
     </div>
-    <div id="toast-blue" class="message message-blue" style="display:none" role="status" aria-live="polite">
+    <div id="toast-blue" class="alert alert-blue message" style="display:none" role="status" aria-live="polite">
       <span class="alert-content"><strong>Info:</strong> Something you should know.</span>
-      <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false">&times;</button>
+      <button class="alert-dismiss" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false"></button>
     </div>
-    <div id="toast-green" class="message message-green" style="display:none" role="status" aria-live="polite">
+    <div id="toast-green" class="alert alert-green message" style="display:none" role="status" aria-live="polite">
       <span class="alert-content"><strong>Success:</strong> Changes saved.</span>
-      <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false">&times;</button>
+      <button class="alert-dismiss" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false"></button>
     </div>
-    <div id="toast-red" class="message message-red" style="display:none" role="alert" aria-live="assertive">
+    <div id="toast-red" class="alert alert-red message" style="display:none" role="alert" aria-live="assertive">
       <span class="alert-content"><strong>Error:</strong> Something went wrong.</span>
-      <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false">&times;</button>
+      <button class="alert-dismiss" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false"></button>
     </div>
-    <div id="toast-yellow" class="message message-yellow" style="display:none" role="status" aria-live="polite">
+    <div id="toast-yellow" class="alert alert-yellow message" style="display:none" role="status" aria-live="polite">
       <span class="alert-content"><strong>Warning:</strong> Check your input.</span>
-      <button class="btn btn-ghost btn-black btn-icon btn-xs" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false">&times;</button>
+      <button class="alert-dismiss" aria-label="Dismiss" onclick="this.parentElement.style.display='none';return false"></button>
     </div>
 
-    <CodeBlock code={`<div class="message message-green" role="status" aria-live="polite">
+    <CodeBlock code={`<div class="alert alert-green message" role="status" aria-live="polite">
   <span class="alert-content"><strong>Saved!</strong> Changes applied.</span>
-  <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss">&times;</button>
+  <button class="alert-dismiss" aria-label="Dismiss"></button>
 </div>
 
 <!-- For errors, use role="alert" and aria-live="assertive" -->
-<div class="message message-red" role="alert" aria-live="assertive">
+<div class="alert alert-red message" role="alert" aria-live="assertive">
   <span class="alert-content">Error occurred.</span>
-  <button class="btn btn-ghost btn-white btn-icon btn-xs" aria-label="Dismiss">&times;</button>
+  <button class="alert-dismiss" aria-label="Dismiss"></button>
 </div>`} />
 
     <h3>Accessibility</h3>
@@ -477,12 +477,12 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <table class="table-stroked">
       <tbody>
-        <tr><td><code>message</code></td><td>Base toast (fixed top-right)</td></tr>
-        <tr><td><code>message-blue</code></td><td>Blue toast</td></tr>
-        <tr><td><code>message-red</code></td><td>Red toast</td></tr>
-        <tr><td><code>message-green</code></td><td>Green toast</td></tr>
-        <tr><td><code>message-yellow</code></td><td>Yellow toast</td></tr>
-        <tr><td><code>message-black</code></td><td>Black toast</td></tr>
+        <tr><td><code>alert message</code></td><td>Base toast (fixed top-right)</td></tr>
+        <tr><td><code>alert alert-blue message</code></td><td>Blue toast</td></tr>
+        <tr><td><code>alert alert-red message</code></td><td>Red toast</td></tr>
+        <tr><td><code>alert alert-green message</code></td><td>Green toast</td></tr>
+        <tr><td><code>alert alert-yellow message</code></td><td>Yellow toast</td></tr>
+        <tr><td><code>alert alert-black message</code></td><td>Black toast</td></tr>
       </tbody>
     </table>
   </section>
@@ -526,12 +526,12 @@ import CodeBlock from "../../components/CodeBlock.astro";
   <script>
     document.querySelectorAll('[data-toast]').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.message').forEach(m => {
+        document.querySelectorAll('.alert.message').forEach(m => {
           (m as HTMLElement).style.display = 'none';
         });
         const toast = document.getElementById((btn as HTMLElement).dataset.toast!);
         if (toast) {
-          toast.style.display = 'block';
+          toast.style.display = 'flex';
           setTimeout(() => { toast.style.display = 'none'; }, 5000);
         }
       });

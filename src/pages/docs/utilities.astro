@@ -279,17 +279,17 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <div class="border border-radius padding">
           <div class="units-row">
             <div class="unit-33 phone-unit-100">
-              <div class="padding border border-radius bottom-margin">
+              <div class="padding border border-radius margin-bottom">
                 <code>.padding</code>
               </div>
             </div>
             <div class="unit-33 phone-unit-100">
-              <div class="padding-top padding-bottom border border-radius bottom-margin">
+              <div class="padding-top padding-bottom border border-radius margin-bottom">
                 <code>.padding-top .padding-bottom</code>
               </div>
             </div>
             <div class="unit-33 phone-unit-100">
-              <div class="margin border border-radius padding bottom-margin">
+              <div class="margin border border-radius padding margin-bottom">
                 <code>.margin</code>
               </div>
             </div>
@@ -384,27 +384,27 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <div class="border border-radius padding">
           <div class="units-row">
             <div class="unit-20 tablet-unit-50 phone-unit-100">
-              <div class="border padding border-radius bottom-margin text-center">
+              <div class="border padding border-radius margin-bottom text-center">
                 border
               </div>
             </div>
             <div class="unit-20 tablet-unit-50 phone-unit-100">
-              <div class="border-top padding bottom-margin text-center">
+              <div class="border-top padding margin-bottom text-center">
                 border-top
               </div>
             </div>
             <div class="unit-20 tablet-unit-50 phone-unit-100">
-              <div class="border-bottom padding bottom-margin text-center">
+              <div class="border-bottom padding margin-bottom text-center">
                 border-bottom
               </div>
             </div>
             <div class="unit-20 tablet-unit-50 phone-unit-100">
-              <div class="border-left padding bottom-margin text-center">
+              <div class="border-left padding margin-bottom text-center">
                 border-left
               </div>
             </div>
             <div class="unit-20 tablet-unit-50 phone-unit-100">
-              <div class="border-right padding bottom-margin text-center">
+              <div class="border-right padding margin-bottom text-center">
                 border-right
               </div>
             </div>
@@ -429,7 +429,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
         <div class="border border-radius padding">
           {[100, 90, 80, 75, 70, 66, 50, 40, 33, 25, 20, 10].map((w) => (
-            <div class={`width-${w} bottom-margin`}>
+            <div class={`width-${w} margin-bottom`}>
               <div class="border border-radius padding text-center text-sm">
                 width-{w}
               </div>
@@ -570,13 +570,13 @@ import CodeBlock from "../../components/CodeBlock.astro";
           <div class="units-row">
             <div class="unit-50 phone-unit-100">
               <p class="text-sm text-secondary">Without no-link-style</p>
-              <div class="border border-radius padding bottom-margin">
+              <div class="border border-radius padding margin-bottom">
                 <a href="#">This link has default styling</a>
               </div>
             </div>
             <div class="unit-50 phone-unit-100">
               <p class="text-sm text-secondary">With no-link-style</p>
-              <div class="border border-radius padding bottom-margin no-link-style">
+              <div class="border border-radius padding margin-bottom no-link-style">
                 <a href="#">This link has reset styling</a>
               </div>
             </div>
@@ -602,22 +602,22 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
         <h3>Semantic Text Colors</h3>
         <div class="border border-radius padding">
-          <p class="text-primary no-margin bottom-margin">text-primary — Body text color</p>
-          <p class="text-secondary no-margin bottom-margin">text-secondary — Secondary text</p>
-          <p class="text-tertiary no-margin bottom-margin">text-tertiary — Muted text (alias: text-muted)</p>
-          <p class="text-inverse bg-blue padding-left padding-right no-margin bottom-margin">text-inverse — Inverse color</p>
-          <p class="text-on-color bg-blue padding-left padding-right no-margin bottom-margin">text-on-color — White text for colored backgrounds</p>
-          <p class="success no-margin bottom-margin">success — Green status text</p>
+          <p class="text-primary no-margin margin-bottom">text-primary — Body text color</p>
+          <p class="text-secondary no-margin margin-bottom">text-secondary — Secondary text</p>
+          <p class="text-tertiary no-margin margin-bottom">text-tertiary — Muted text (alias: text-muted)</p>
+          <p class="text-inverse bg-blue padding-left padding-right no-margin margin-bottom">text-inverse — Inverse color</p>
+          <p class="text-on-color bg-blue padding-left padding-right no-margin margin-bottom">text-on-color — White text for colored backgrounds</p>
+          <p class="success no-margin margin-bottom">success — Green status text</p>
           <p class="error no-margin">error — Red status text</p>
         </div>
 
         <h3>Named Colors</h3>
         <div class="border border-radius padding">
-          <p class="color-blue no-margin bottom-margin">color-blue</p>
-          <p class="color-red no-margin bottom-margin">color-red</p>
-          <p class="color-green no-margin bottom-margin">color-green</p>
-          <p class="color-yellow no-margin bottom-margin">color-yellow</p>
-          <p class="color-black no-margin bottom-margin">color-black</p>
+          <p class="color-blue no-margin margin-bottom">color-blue</p>
+          <p class="color-red no-margin margin-bottom">color-red</p>
+          <p class="color-green no-margin margin-bottom">color-green</p>
+          <p class="color-yellow no-margin margin-bottom">color-yellow</p>
+          <p class="color-black no-margin margin-bottom">color-black</p>
           <p class="color-white bg-blue padding-left padding-right no-margin">color-white</p>
         </div>
 
@@ -639,22 +639,22 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
         <div class="border border-radius padding">
           <div class="units-row">
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-blue text-on-color padding text-center border-radius">bg-blue</div>
             </div>
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-red text-on-color padding text-center border-radius">bg-red</div>
             </div>
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-green text-on-color padding text-center border-radius">bg-green</div>
             </div>
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-yellow padding text-center border-radius">bg-yellow</div>
             </div>
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-surface border padding text-center border-radius">bg-surface</div>
             </div>
-            <div class="unit-33 phone-unit-100 bottom-margin">
+            <div class="unit-33 phone-unit-100 margin-bottom">
               <div class="bg-glass border padding text-center border-radius">bg-glass</div>
             </div>
           </div>
@@ -666,8 +666,8 @@ import CodeBlock from "../../components/CodeBlock.astro";
             <tr><td><code>bg-red</code></td><td>Red background, WCAG AA with white text</td></tr>
             <tr><td><code>bg-green</code></td><td>Green background, WCAG AA with white text</td></tr>
             <tr><td><code>bg-yellow</code></td><td>Yellow background, WCAG AA with dark text</td></tr>
-            <tr><td><code>bg-surface</code></td><td>Surface background (alias: background-white)</td></tr>
-            <tr><td><code>background-black</code></td><td>Black background</td></tr>
+            <tr><td><code>bg-surface</code></td><td>Surface background (alias: bg-white)</td></tr>
+            <tr><td><code>bg-black</code></td><td>Black background</td></tr>
             <tr><td><code>bg-glass</code></td><td>Frosted glass with backdrop blur</td></tr>
           </tbody>
         </table>
@@ -688,7 +688,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <div class="border border-radius padding">
           <div class="units-row">
             {[0, 1, 2, 3].map((n) => (
-              <div class="unit-25 phone-unit-50 bottom-margin">
+              <div class="unit-25 phone-unit-50 margin-bottom">
                 <div class={`layer-${n} padding text-center border-radius`}>
                   layer-{n}
                 </div>
@@ -697,7 +697,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
           </div>
           <div class="units-row">
             {[1, 2, 3].map((n) => (
-              <div class="unit-33 phone-unit-100 bottom-margin">
+              <div class="unit-33 phone-unit-100 margin-bottom">
                 <div class={`shadow-${n} padding text-center border-radius`}>
                   shadow-{n}
                 </div>
@@ -715,8 +715,8 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <h2>Font Family</h2>
 
         <div class="border border-radius padding">
-          <p class="sans no-margin bottom-margin"><code>sans</code> — System sans-serif font stack</p>
-          <p class="serif no-margin bottom-margin"><code>serif</code> — Georgia serif font family</p>
+          <p class="sans no-margin margin-bottom"><code>sans</code> — System sans-serif font stack</p>
+          <p class="serif no-margin margin-bottom"><code>serif</code> — Georgia serif font family</p>
           <p class="mono no-margin"><code>mono</code> — Monospace font family</p>
         </div>
 
@@ -773,50 +773,12 @@ import CodeBlock from "../../components/CodeBlock.astro";
           JavaScript for interactivity but ply provides all the styling.
         </p>
 
-        <h3>Accordion</h3>
-        <table class="table-stroked">
-          <tbody>
-            <tr><td><code>accordion-title</code></td><td>Clickable header</td></tr>
-            <tr><td><code>accordion-title-opened</code></td><td>Open state header</td></tr>
-            <tr><td><code>accordion-panel</code></td><td>Content panel (hidden by default)</td></tr>
-            <tr><td><code>accordion-toggle</code></td><td>Toggle indicator</td></tr>
-            <tr><td><code>accordion-toggle-closed</code></td><td>Plus icon indicator</td></tr>
-            <tr><td><code>accordion-toggle-opened</code></td><td>Minus icon indicator</td></tr>
-          </tbody>
-        </table>
-
         <h3>Dropdown</h3>
         <table class="table-stroked">
           <tbody>
             <tr><td><code>dropdown</code></td><td>Absolute-positioned panel</td></tr>
             <tr><td><code>caret</code></td><td>Down-pointing arrow indicator</td></tr>
             <tr><td><code>caret-up</code></td><td>Up-pointing arrow indicator</td></tr>
-          </tbody>
-        </table>
-
-        <h3>Modal</h3>
-        <p class="text-sm text-secondary no-orphan">
-          For most use cases, prefer the native <code>&lt;dialog&gt;</code> element which ply auto-styles.
-          These classes are for custom modal implementations.
-        </p>
-        <table class="table-stroked">
-          <tbody>
-            <tr><td><code>modal</code></td><td>Modal dialog box</td></tr>
-            <tr><td><code>modal-box</code></td><td>Full-screen overlay container</td></tr>
-            <tr><td><code>modal-blur</code></td><td>Blur background content</td></tr>
-            <tr><td><code>modal-close</code></td><td>Close button (top-right)</td></tr>
-          </tbody>
-        </table>
-
-        <h3>Tooltip</h3>
-        <table class="table-stroked">
-          <tbody>
-            <tr><td><code>tooltip</code></td><td>Base tooltip popup</td></tr>
-            <tr><td><code>tooltip-theme-blue</code></td><td>Blue tooltip</td></tr>
-            <tr><td><code>tooltip-theme-red</code></td><td>Red tooltip</td></tr>
-            <tr><td><code>tooltip-theme-green</code></td><td>Green tooltip</td></tr>
-            <tr><td><code>tooltip-theme-yellow</code></td><td>Yellow tooltip</td></tr>
-            <tr><td><code>tooltip-theme-white</code></td><td>White tooltip</td></tr>
           </tbody>
         </table>
 

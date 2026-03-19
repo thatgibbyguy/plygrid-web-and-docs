@@ -564,17 +564,24 @@ import CodeBlock from "../../components/CodeBlock.astro";
       </p>
 
       <div class="border border-radius padding">
-        <div class="units-row">
+        <div class="units-row stacked">
           <div class="unit-33 unit-push-33">
             <div class="border border-radius padding text-center text-sm">
-              unit-33 push-33
+              unit-33 + unit-push-33
+            </div>
+          </div>
+        </div>
+        <div class="units-row stacked">
+          <div class="unit-50 unit-push-25">
+            <div class="border border-radius padding text-center text-sm">
+              unit-50 + unit-push-25
             </div>
           </div>
         </div>
         <div class="units-row">
-          <div class="unit-50 unit-push-25">
+          <div class="unit-25 unit-push-75">
             <div class="border border-radius padding text-center text-sm">
-              unit-50 push-25
+              unit-25 + unit-push-75
             </div>
           </div>
         </div>
@@ -607,16 +614,17 @@ import CodeBlock from "../../components/CodeBlock.astro";
       <p class="text-xs font-semibold uppercase color-blue">Blocks</p>
       <h2>Block Layouts</h2>
       <p class="no-orphan">
-        Equal-width block columns using float. Simpler than the unit grid for
+        Equal-width block columns using flexbox. Designed for lists — wrap
+        <code>&lt;li&gt;</code> elements in a <code>blocks-*</code> container for
         uniform layouts.
       </p>
 
       <div class="border border-radius padding">
-        <div class="blocks-3">
-          <div class="border border-radius padding text-center text-sm bottom-margin">Block</div>
-          <div class="border border-radius padding text-center text-sm bottom-margin">Block</div>
-          <div class="border border-radius padding text-center text-sm bottom-margin">Block</div>
-        </div>
+        <ul class="blocks-3">
+          <li class="border border-radius padding text-center text-sm">Block</li>
+          <li class="border border-radius padding text-center text-sm">Block</li>
+          <li class="border border-radius padding text-center text-sm">Block</li>
+        </ul>
       </div>
 
       <table class="table-stroked">
@@ -626,18 +634,17 @@ import CodeBlock from "../../components/CodeBlock.astro";
           <tr><td><code>blocks-4</code></td><td>4-column layout</td></tr>
           <tr><td><code>blocks-5</code></td><td>5-column layout</td></tr>
           <tr><td><code>blocks-6</code></td><td>6-column layout</td></tr>
-          <tr><td><code>block-first</code></td><td>Clear float for first block in new row</td></tr>
           <tr><td><code>blocks-mobile-50</code></td><td>2-column on mobile</td></tr>
           <tr><td><code>blocks-mobile-33</code></td><td>3-column on mobile</td></tr>
         </tbody>
       </table>
 
       <CodeBlock
-        code={`<div class="blocks-3">
-  <div>Column 1</div>
-  <div>Column 2</div>
-  <div>Column 3</div>
-</div>`}
+        code={`<ul class="blocks-3">
+  <li>Column 1</li>
+  <li>Column 2</li>
+  <li>Column 3</li>
+</ul>`}
       />
     </section>
 
