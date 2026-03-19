@@ -340,6 +340,86 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <section
       class="padding-top-extra padding-bottom-extra border-bottom"
+      id="container-queries"
+    >
+      <p class="text-xs font-semibold uppercase color-blue">Container</p>
+      <h2>Container Queries</h2>
+      <p class="no-orphan">
+        Container queries let units respond to their parent's width instead of the
+        viewport. Add <code>container-query</code> to a parent element, then use
+        container prefixes on units inside it.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Container Prefix</th>
+            <th>Breakpoint</th>
+            <th>Mirrors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>container-small-desktop-unit-*</code></td>
+            <td>&le; 1024px</td>
+            <td><code>small-desktop-unit-*</code></td>
+          </tr>
+          <tr>
+            <td><code>container-tablet-unit-*</code></td>
+            <td>&le; 767px</td>
+            <td><code>tablet-unit-*</code></td>
+          </tr>
+          <tr>
+            <td><code>container-large-phone-unit-*</code></td>
+            <td>&le; 650px</td>
+            <td><code>large-phone-unit-*</code></td>
+          </tr>
+          <tr>
+            <td><code>container-phone-unit-*</code></td>
+            <td>&le; 480px</td>
+            <td><code>phone-unit-*</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="margin-top-extra no-orphan">
+        Resize the demo below by dragging the right edge. The columns
+        stack when the container (not the viewport) becomes narrow.
+      </p>
+
+      <div style="resize: horizontal; overflow: auto; border: 2px dashed var(--ply-border-color); padding: 1rem; min-width: 200px; max-width: 100%;">
+        <div class="container-query">
+          <div class="units-row">
+            <div class="unit-50 container-tablet-unit-100">
+              <div class="border border-radius padding text-center text-sm">
+                Left — stacks at 767px container
+              </div>
+            </div>
+            <div class="unit-50 container-tablet-unit-100">
+              <div class="border border-radius padding text-center text-sm">
+                Right — stacks at 767px container
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <CodeBlock
+        code={`<div class="container-query">
+  <div class="units-row">
+    <div class="unit-50 container-tablet-unit-100">
+      Stacks when container is narrow
+    </div>
+    <div class="unit-50 container-tablet-unit-100">
+      Stacks when container is narrow
+    </div>
+  </div>
+</div>`}
+      />
+    </section>
+
+    <section
+      class="padding-top-extra padding-bottom-extra border-bottom"
       id="modifiers"
     >
       <p class="text-xs font-semibold uppercase color-blue">Modifiers</p>
