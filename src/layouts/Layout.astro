@@ -8,7 +8,7 @@ interface Props {
 }
 
 import pkg from "../../package.json";
-const plyVersion = pkg.dependencies?.['@plycss/ply']?.replace(/[\^~]/, "") ?? "unknown";
+const plyVersion = pkg.dependencies?.['ply-css']?.replace(/[\^~]/, "") ?? "unknown";
 
 const { title, description = "ply — A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility, dark mode, and an 18.5KB footprint. 457 classes, zero JavaScript." } = Astro.props;
 const currentPath = Astro.url.pathname;
@@ -195,7 +195,7 @@ const isCompliance = ["/docs/compliance"].includes(currentPath);
           <strong>ply</strong> · v{plyVersion} · MIT License ·
           <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>
           {" · "}
-          <a href="https://www.npmjs.com/package/@plycss/ply" target="_blank" rel="noopener noreferrer">npm</a>
+          <a href="https://www.npmjs.com/package/ply-css" target="_blank" rel="noopener noreferrer">npm</a>
         </p>
       </div>
     </footer>
