@@ -12,5 +12,5 @@ const { title, description } = Astro.props;
 
 <Layout title={`${title} — ply`} description={description}>
   <slot />
-  <TableOfContents client:load slot="toc" />
+  <TableOfContents client:idle slot="toc" />
 </Layout>
