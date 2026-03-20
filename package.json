@@ -24,6 +24,6 @@
     "@astrojs/react": "^5.0.0",
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.5",
-    "ply-css": "^1.3.0"
+    "ply-css": "^1.3.1"
   }
 }
