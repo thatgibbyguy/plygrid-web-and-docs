@@ -381,7 +381,10 @@ import CodeBlock from "../../components/CodeBlock.astro";
         <p class="text-xs font-semibold uppercase color-blue">Borders</p>
         <h2>Border Utilities</h2>
 
-        <div class="border border-radius padding">
+        <p>All border classes use <code>var(--ply-border-color)</code> so they respond to themes.</p>
+
+        <h3>Add Borders</h3>
+        <div class="border border-radius padding margin-bottom">
           <div class="units-row">
             <div class="unit-20 tablet-unit-50 phone-unit-100">
               <div class="border padding border-radius margin-bottom text-center">
@@ -411,8 +414,70 @@ import CodeBlock from "../../components/CodeBlock.astro";
           </div>
         </div>
 
+        <h3>Thick Borders (3px)</h3>
+        <div class="border border-radius padding margin-bottom">
+          <div class="units-row">
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-thick padding border-radius margin-bottom text-center">
+                border-thick
+              </div>
+            </div>
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-top-thick padding margin-bottom text-center">
+                border-top-thick
+              </div>
+            </div>
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-bottom-thick padding margin-bottom text-center">
+                border-bottom-thick
+              </div>
+            </div>
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-left-thick padding margin-bottom text-center">
+                border-left-thick
+              </div>
+            </div>
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div class="border-right-thick padding margin-bottom text-center">
+                border-right-thick
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Remove Borders</h3>
         <p>
-          Other: <code>no-border</code>, <code>border-radius</code>, <code>circle</code>
+          <code>no-border</code> removes all borders.
+          Directional: <code>no-border-top</code>, <code>no-border-right</code>, <code>no-border-bottom</code>, <code>no-border-left</code>.
+        </p>
+        <div class="border border-radius padding margin-bottom">
+          <div class="units-row">
+            <div class="unit-25 tablet-unit-50 phone-unit-100">
+              <div class="border no-border-top padding margin-bottom text-center">
+                no-border-top
+              </div>
+            </div>
+            <div class="unit-25 tablet-unit-50 phone-unit-100">
+              <div class="border no-border-bottom padding margin-bottom text-center">
+                no-border-bottom
+              </div>
+            </div>
+            <div class="unit-25 tablet-unit-50 phone-unit-100">
+              <div class="border no-border-left padding margin-bottom text-center">
+                no-border-left
+              </div>
+            </div>
+            <div class="unit-25 tablet-unit-50 phone-unit-100">
+              <div class="border no-border-right padding margin-bottom text-center">
+                no-border-right
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Border Radius</h3>
+        <p>
+          <code>border-radius</code> (default), <code>border-radius-lg</code> (0.75rem), <code>border-radius-xl</code> (1.5rem), <code>circle</code> (100%).
         </p>
       </section>
 

@@ -62,14 +62,14 @@ export default function TableOfContents() {
   if (items.length === 0) return null;
 
   return (
-    <nav className="toc-sidebar no-link-style" aria-label="On this page">
+    <nav className="padding-top no-link-style" aria-label="On this page">
       <p className="text-xs font-semibold uppercase no-margin padding-bottom">On This Page</p>
       <ul className="flat-list">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className={`toc-link display-block text-sm ${
+              className={`padding-xs display-block text-sm ${
                 activeId === item.id ? "font-semibold" : "text-secondary"
               }`}
               onClick={(e) => {

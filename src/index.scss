@@ -1,41 +1,45 @@
 @use "plygrid/src/scss/ply" as *;
 
 // Doc-site specific styles
+:root {
+  --navbar-height: 4.5rem;
+}
+
 .icon-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: var(--ply-space-xxl, 3rem);
+  height: var(--ply-space-xxl, 3rem);
   border-radius: 50%;
-  color: var(--ply-color-text-inverse, #fff);
+  color: var(--ply-color-text-inverse);
 }
 
 .bg-blue code,
 .bg-blue pre {
   background-color: var(--ply-bg-glass);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--ply-bg-glass);
 }
 
 // Three-column doc layout
 .doc-layout {
   display: flex;
-  padding: 0 2rem;
+  padding: 0 var(--ply-space-xl, 2rem);
 }
 
 .doc-sidebar {
   width: 200px;
   flex-shrink: 0;
   position: sticky;
-  top: 4.5rem;
-  height: calc(100vh - 4.5rem);
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
 }
 
 .doc-content {
   flex: 1;
   min-width: 0;
-  padding: 1rem 2rem 0;
+  padding: var(--ply-space-md, 0.75rem) var(--ply-space-xl, 2rem) 0;
 
   > :first-child > :first-child {
     margin-top: 0;
@@ -46,21 +50,13 @@
   width: 180px;
   flex-shrink: 0;
   position: sticky;
-  top: 4.5rem;
-  height: calc(100vh - 4.5rem);
+  top: var(--navbar-height);
+  height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
-  padding-left: 1rem;
+  padding-left: var(--ply-space-md, 0.75rem);
 }
 
-.toc-sidebar {
-  padding-top: 1rem;
-}
-
-.toc-link {
-  padding: 0.2rem 0;
-}
-
-// Search dialog — uses native <dialog> with opaque background for contrast compliance
+// Search dialog — uses native <dialog> with overrides for search UX
 .search-dialog {
   max-width: 520px;
   width: 90%;
@@ -77,26 +73,20 @@
   border: none;
   background: transparent;
   font-size: 1rem;
-  color: var(--ply-text-color);
+  color: var(--ply-color-body);
 
-  &:focus {
-    outline: 2px solid var(--ply-color-focus, #0f62fe);
+  &:focus-visible {
+    outline: 2px solid var(--ply-color-focus);
     outline-offset: 2px;
-    border-radius: 0.25rem;
+    border-radius: var(--ply-btn-border-radius, 0.25rem);
   }
 
   &:focus:not(:focus-visible) {
     outline: none;
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--ply-color-focus, #0f62fe);
-    outline-offset: 2px;
-    border-radius: 0.25rem;
-  }
-
   &::placeholder {
-    color: var(--ply-text-muted);
+    color: var(--ply-color-placeholder);
   }
 }
 
@@ -105,13 +95,13 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: var(--ply-space-sm, 0.5rem) var(--ply-space-md, 0.75rem);
   border: none;
-  border-radius: 0.375rem;
+  border-radius: var(--ply-btn-border-radius, 0.25rem);
   background: transparent;
   cursor: pointer;
   text-align: left;
-  color: var(--ply-text-color);
+  color: var(--ply-color-body);
   font-size: 0.875rem;
 }
 
@@ -119,20 +109,16 @@
   background: var(--ply-bg-muted);
 }
 
-// Mobile: full-width content only
+// Mobile: collapse toc and sidebar
 @media (max-width: 1024px) {
   .doc-toc {
     display: none;
-  }
-
-  .doc-content {
-    border-left: none;
   }
 }
 
 @media (max-width: 767px) {
   .doc-layout {
-    padding: 0 1rem;
+    padding: 0 var(--ply-space-md, 0.75rem);
   }
 
   .doc-content {

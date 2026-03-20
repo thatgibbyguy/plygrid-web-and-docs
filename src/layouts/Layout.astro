@@ -10,7 +10,7 @@ interface Props {
 import pkg from "../../package.json";
 const plyVersion = pkg.dependencies?.plygrid?.replace(/[\^~]/, "") ?? "unknown";
 
-const { title, description = "ply — A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility, dark mode, and a ~21KB footprint. 421 classes, zero JavaScript." } = Astro.props;
+const { title, description = "ply — A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility, dark mode, and an 18.5KB footprint. 457 classes, zero JavaScript." } = Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(currentPath, Astro.site);
 
@@ -127,7 +127,7 @@ const isCompliance = ["/docs/compliance"].includes(currentPath);
         <ul>
           <li>
             <button
-              class="navigation-toggle display-inline-block"
+              class="navigation-toggle display-inline-block no-border-top no-border-left"
               id="mobile-nav-toggle"
               aria-expanded="false"
               aria-controls="mobile-nav"
