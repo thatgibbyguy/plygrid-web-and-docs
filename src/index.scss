@@ -112,40 +112,6 @@
   background: var(--ply-bg-muted);
 }
 
-@keyframes dark-drift {
-  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
-  33%  { background-position: 30% 10%, 70% 20%, 20% 80%, 0 0; }
-  66%  { background-position: 60% 5%, 40% 15%, 80% 90%, 0 0; }
-  100% { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
-}
-
-[data-theme="dark"] body {
-  background:
-    radial-gradient(ellipse 80% 60% at var(--_glow-pos-1, 20% 0%), rgba(69, 137, 255, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at var(--_glow-pos-2, 85% 10%), rgba(3, 83, 233, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 40% at var(--_glow-pos-3, 50% 100%), rgba(69, 137, 255, 0.04) 0%, transparent 50%),
-    var(--ply-bg-body, #262626);
-  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
-  background-attachment: fixed;
-  animation: dark-drift 30s ease-in-out infinite;
-}
-
-[data-theme="dark"] body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.01) 2px,
-    rgba(0, 0, 0, 0.01) 4px
-  );
-  mix-blend-mode: multiply;
-}
-
 // Mobile: collapse toc and sidebar
 @media (max-width: 1024px) {
   .doc-toc {
