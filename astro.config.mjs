@@ -15,7 +15,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@": path.resolve(import.meta.dirname, "src"),
-        ...(useLocalPly && { plycss: localPly }),
+        ...(useLocalPly && { '@plycss/ply': localPly }),
       },
     },
     css: {
@@ -25,10 +25,10 @@ export default defineConfig({
             importers: [
               {
                 findFileUrl(url) {
-                  if (url.startsWith("plycss/")) {
+                  if (url.startsWith("@plycss/ply/")) {
                     const resolved = path.join(
                       localPly,
-                      url.slice("plycss/".length),
+                      url.slice("@plycss/ply/".length),
                     );
                     return new URL(`file://${resolved}`);
                   }
