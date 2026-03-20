@@ -1,8 +1,11 @@
 @use "plygrid/src/scss/ply" as *;
+@import "@fontsource-variable/inter";
 
 // Doc-site specific styles
 :root {
   --navbar-height: 4.5rem;
+  --ply-font-body: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ply-font-heading: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .icon-badge {

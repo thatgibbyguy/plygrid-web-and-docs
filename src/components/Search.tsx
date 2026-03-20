@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo, useId } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import classData from "plygrid/ply-classes.json";
 
@@ -167,9 +167,9 @@ function buildSearchIndex(): SearchEntry[] {
   return entries;
 }
 
-const listboxId = "search-listbox";
-
 export default function Search() {
+  const instanceId = useId();
+  const listboxId = `search-listbox-${instanceId}`;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
