@@ -60,7 +60,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
           <div class="border border-radius padding margin-bottom">
             <h3 class="text-lg font-semibold no-top-margin">classes</h3>
             <p class="text-sm no-margin no-orphan">
-              421 classes with category, description, and usage examples.
+              457 classes with category, description, and usage examples.
             </p>
           </div>
         </div>
@@ -186,6 +186,121 @@ Reference ply-classes.json for the complete class list.`}
           </div>
         </div>
       </div>
+    </section>
+
+    <section
+      class="padding-top-extra padding-bottom-extra border-bottom"
+      id="token-efficiency"
+    >
+      <p class="text-xs font-semibold uppercase color-blue">By the Numbers</p>
+      <h2>Token Efficiency</h2>
+      <p class="no-orphan">
+        ply was designed for AI consumption from the start — small class vocabulary, semantic HTML auto-styling, and a single context file. A <a href="https://replit.com" target="_blank" rel="noopener">Replit</a>-generated analysis compared ply against Bootstrap and Tailwind across three dimensions.
+      </p>
+
+      <h3>Upfront context cost</h3>
+      <p class="text-secondary text-sm no-orphan">What it takes to give an AI agent complete framework knowledge.</p>
+      <table class="table-stroked">
+        <thead>
+          <tr>
+            <th>Framework</th>
+            <th>Total classes</th>
+            <th>Context file</th>
+            <th>Fits in one window?</th>
+            <th>Tokens to full knowledge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ply</strong></td>
+            <td>457</td>
+            <td><code>PLY.md</code> — purpose-built for AI</td>
+            <td>Yes (~8,700 tokens)</td>
+            <td><strong>~8,700</strong></td>
+          </tr>
+          <tr>
+            <td>Bootstrap 5</td>
+            <td>1,200+</td>
+            <td>None official</td>
+            <td>No (500+ pages of HTML docs)</td>
+            <td>~15,000–25,000</td>
+          </tr>
+          <tr>
+            <td>Tailwind CSS</td>
+            <td>12,000+ (with variants)</td>
+            <td>None official</td>
+            <td>No (400+ pages of HTML docs)</td>
+            <td>~30,000–60,000+</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Per-element output cost</h3>
+      <p class="text-secondary text-sm no-orphan">A card with title, description, and button — the same component in each framework.</p>
+
+      <div class="units-row gap">
+        <div class="unit-33 phone-unit-100">
+          <p class="text-sm font-semibold no-orphan margin-bottom-xs">ply — 27 tokens</p>
+          <CodeBlock code={`<div class="bg-surface border-radius padding">
+  <h3>Title</h3>
+  <p class="text-secondary">Description.</p>
+  <button class="btn btn-primary">Action</button>
+</div>`} />
+        </div>
+        <div class="unit-33 phone-unit-100">
+          <p class="text-sm font-semibold no-orphan margin-bottom-xs">Bootstrap — 42 tokens</p>
+          <CodeBlock code={`<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Title</h5>
+    <p class="card-text text-muted">Description.</p>
+    <a href="#" class="btn btn-primary">Action</a>
+  </div>
+</div>`} />
+        </div>
+        <div class="unit-33 phone-unit-100">
+          <p class="text-sm font-semibold no-orphan margin-bottom-xs">Tailwind — 68 tokens</p>
+          <CodeBlock code={`<div class="bg-white rounded-lg p-6 shadow-md
+     dark:bg-gray-800">
+  <h3 class="text-lg font-semibold
+       text-gray-900 dark:text-white">Title</h3>
+  <p class="mt-2 text-gray-600
+      dark:text-gray-300">Description.</p>
+  <button class="mt-4 rounded-lg bg-blue-600
+      px-4 py-2 text-white hover:bg-blue-700">
+    Action
+  </button>
+</div>`} />
+        </div>
+      </div>
+
+      <h3>Hallucination risk</h3>
+      <table class="table-stroked">
+        <thead>
+          <tr>
+            <th>Framework</th>
+            <th>Risk</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ply</strong></td>
+            <td>Very low</td>
+            <td>457 obvious class names (<code>unit-50</code>, <code>btn-blue</code>). Full knowledge fits in context — no gaps for the agent to fill in.</td>
+          </tr>
+          <tr>
+            <td>Bootstrap</td>
+            <td>Medium</td>
+            <td>Component API has gotchas (<code>card-body</code> required inside <code>card</code>, <code>navbar-expand-lg</code> vs <code>navbar-expand-md</code>). Agents generate plausible-but-wrong combinations.</td>
+          </tr>
+          <tr>
+            <td>Tailwind</td>
+            <td>High</td>
+            <td>12,000+ utilities with responsive/state prefixes. Agents frequently generate non-existent utilities, wrong prefix orders, or miss required <code>dark:</code> duplicates.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-xs text-secondary">Analysis generated by Replit. Token counts are estimates based on representative component patterns.</p>
     </section>
 
     <section
