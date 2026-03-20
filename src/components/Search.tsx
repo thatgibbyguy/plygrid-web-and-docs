@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo, useId } from "react";
 import { Search as SearchIcon } from "lucide-react";
-import classData from "plygrid/ply-classes.json";
+import classData from "plycss/ply-classes.json";
 
 interface SearchEntry {
   label: string;

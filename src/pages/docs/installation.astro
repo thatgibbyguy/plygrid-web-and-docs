@@ -29,7 +29,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
           Add this to your <code>&lt;head&gt;</code>:
         </p>
         <CodeBlock
-          code={`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">`}
+          code={`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plycss@1/dist/css/ply.min.css">`}
         />
 
         <h3>What's included</h3>
@@ -107,7 +107,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plygrid@1/dist/css/ply.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plycss@1/dist/css/ply.min.css">
   <title>My App</title>
 </head>
 <body>
@@ -149,11 +149,11 @@ import CodeBlock from "../../components/CodeBlock.astro";
         </p>
 
         <h3>Install</h3>
-        <CodeBlock code={`npm install plygrid`} />
+        <CodeBlock code={`npm install plycss`} />
 
         <h3>Import</h3>
         <p class="text-sm">In your main stylesheet:</p>
-        <CodeBlock code={`@use 'plygrid/src/scss/ply' as *;`} />
+        <CodeBlock code={`@use 'plycss/src/scss/ply' as *;`} />
         <p class="text-sm text-secondary no-orphan">
           This gives you all compiled classes plus Sass variables, color maps,
           and mixins.
@@ -165,9 +165,9 @@ import CodeBlock from "../../components/CodeBlock.astro";
           scale, breakpoints, and utility mixins.
         </p>
         <CodeBlock
-          code={`@use "plygrid/src/scss/components/colors" as colors;
-@use "plygrid/src/scss/components/variables" as variables;
-@use "plygrid/src/scss/components/mixins" as mixins;
+          code={`@use "plycss/src/scss/components/colors" as colors;
+@use "plycss/src/scss/components/variables" as variables;
+@use "plycss/src/scss/components/mixins" as mixins;
 
 .custom-card {
   background: colors.$color-blue-pastel;
