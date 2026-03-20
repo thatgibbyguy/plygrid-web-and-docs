@@ -6,7 +6,14 @@
       "Bash(npm run:*)",
       "Bash(rm /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/*.tsx /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/Home.tsx /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/not-found.tsx)",
       "Bash(ls /Users/johngibby/Documents/ply/plygrid-web-and-docs/src/pages/*.tsx)",
-      "Bash(npx astro:*)"
+      "Bash(npx astro:*)",
+      "Skill(update-config)",
+      "Bash(ls /Users/johngibby/.claude/mcp*.json)",
+      "mcp__lighthouse__run_audit",
+      "Bash(cat /Users/johngibby/Documents/ply/plygrid-web-and-docs/.github/workflows/*.yml)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
