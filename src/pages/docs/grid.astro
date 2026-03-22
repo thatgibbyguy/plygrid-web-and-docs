@@ -555,6 +555,52 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
     <section
       class="padding-top-extra padding-bottom-extra border-bottom"
+      id="gap"
+    >
+      <p class="text-xs font-semibold uppercase color-blue">Spacing</p>
+      <h2>Custom Gap</h2>
+      <p class="no-orphan">
+        Rows have a default 1rem gap between units. Use gap helpers to adjust spacing.
+      </p>
+
+      <h3>Gap Sizes</h3>
+      <div class="border border-radius padding">
+        {["gap-xs", "gap-sm", "gap", "gap-lg", "gap-xl", "gap-xxl"].map((g) => (
+          <div>
+            <p class="text-sm text-secondary no-margin padding-bottom-sm"><code>{g}</code></p>
+            <div class={`units-row ${g}`}>
+              <div class="unit-33">
+                <div class="border border-radius padding text-center text-sm">33%</div>
+              </div>
+              <div class="unit-33">
+                <div class="border border-radius padding text-center text-sm">33%</div>
+              </div>
+              <div class="unit-33">
+                <div class="border border-radius padding text-center text-sm">33%</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <CodeBlock
+        code={`<!-- Tighter gap -->
+<div class="units-row gap-sm">
+  <div class="unit-50">…</div>
+  <div class="unit-50">…</div>
+</div>
+
+<!-- Wider gap -->
+<div class="units-row gap-xl">
+  <div class="unit-33">…</div>
+  <div class="unit-33">…</div>
+  <div class="unit-33">…</div>
+</div>`}
+      />
+    </section>
+
+    <section
+      class="padding-top-extra padding-bottom-extra border-bottom"
       id="offsets"
     >
       <p class="text-xs font-semibold uppercase color-blue">Offsets</p>
