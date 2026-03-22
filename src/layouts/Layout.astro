@@ -10,7 +10,7 @@ interface Props {
 import pkg from "../../package.json";
 const plyVersion = pkg.dependencies?.['ply-css']?.replace(/[\^~]/, "") ?? "unknown";
 
-const { title, description = "ply — A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility, dark mode, and an 18.5KB footprint. 457 classes, zero JavaScript." } = Astro.props;
+const { title, description = "ply — A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility, dark mode, and an ~21KB footprint. 457 classes, zero JavaScript." } = Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(currentPath, Astro.site);
 

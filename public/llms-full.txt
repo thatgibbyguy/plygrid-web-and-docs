@@ -1,6 +1,6 @@
 # plycss (ply) — Complete Documentation
 
-> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~20KB gzipped). 421 utility classes, 60+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plycss` or use the CDN.
+> ply is a ratio-based, AI-ready CSS framework with built-in dark mode, WCAG 2.1 AA accessibility, and a small footprint (~21KB gzipped). 457 utility classes, 120+ CSS custom properties, 13 auto-styled semantic elements. No JavaScript. No build step. Install via npm as `plycss` or use the CDN.
 
 ---
 
@@ -41,7 +41,7 @@ Core bundle (no labels, dropdowns, loaders, print):
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ply-css@1/dist/css/ply-core.min.css">
 ```
 
-Bundles: `ply.min.css` (~20KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~6KB, grid+helpers), `ply-helpers.min.css` (~4KB, helpers only).
+Bundles: `ply.min.css` (~21KB gzip, everything), `ply-core.min.css` (~17KB, grid+buttons+forms+nav+alerts+tables+typography+helpers), `ply-essentials.min.css` (~7KB, grid+helpers), `ply-helpers.min.css` (~5KB, helpers only).
 
 ---
 
@@ -262,7 +262,7 @@ Override `--ply-*` custom properties to theme the entire app with one CSS block:
 <html data-theme="brand">
 ```
 
-Setting any `data-theme` value prevents auto dark mode from interfering. All 60+ `--ply-*` variables are listed in the `customProperties` section of `ply-classes.json`.
+Setting any `data-theme` value prevents auto dark mode from interfering. All 120+ `--ply-*` variables are listed in the `customProperties` section of `ply-classes.json`.
 
 **Important:** If you override colors, verify 4.5:1 contrast for normal text and 3:1 for large text (18px bold / 24px) and UI components (WCAG 1.4.3).
 
@@ -799,7 +799,7 @@ ply is built for AI code generation:
 
 1. **Single-dash class names** read like English — `units-row`, `equal-height`, `padding`, `border-radius`
 2. **No abbreviation guessing** — `padding-lg` not `pl-6`, `margin-top` not `mt-4`
-3. **421 documented classes** in `ply-classes.json` — machine-readable reference
+3. **457 documented classes** in `ply-classes.json` — machine-readable reference
 4. **Semantic HTML first** — auto-styled elements reduce class clutter
 5. **AI-friendly aliases** — `btn-lg`/`btn-big`, `btn-sm`/`btn-small`, `alert`/`tools-alert` all work
 

@@ -3,13 +3,13 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 import CodeBlock from "../../components/CodeBlock.astro";
 ---
 
-<DocsLayout title="Colors & Theming" description="ply color system with 100+ CSS custom properties, automatic dark mode, custom themes, and WCAG AA contrast in every mode.">
+<DocsLayout title="Colors & Theming" description="ply color system with 120+ CSS custom properties, automatic dark mode, custom themes, and WCAG AA contrast in every mode.">
   <div>
     <section class="padding-top-extra padding-bottom-extra border-bottom">
       <p class="text-xs font-semibold uppercase color-blue">Design</p>
       <h1 class="text-balance">Colors & Theming</h1>
       <p class="lead no-orphan">
-        Theme-aware text colors, automatic dark mode, 60 CSS custom
+        Theme-aware text colors, automatic dark mode, 120+ CSS custom
         properties, and the ability to create fully custom themes.
       </p>
     </section>
@@ -412,6 +412,57 @@ document.documentElement.dataset.theme =
           </tr>
         </tbody>
       </table>
+
+      <h3>Color Surfaces & Borders</h3>
+      <p class="no-orphan">
+        Theme-aware surface and border colors for each palette color. Pastel in light mode,
+        dark muted in dark mode.
+      </p>
+      <table class="table-stroked">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Light</th>
+            <th>Dark</th>
+            <th>Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code set:html="--ply-&#123;color&#125;-surface" /></td>
+            <td>Pastel</td>
+            <td>Dark muted</td>
+            <td>Card/badge background</td>
+          </tr>
+          <tr>
+            <td><code set:html="--ply-&#123;color&#125;-border" /></td>
+            <td>Light tint</td>
+            <td>Medium dark</td>
+            <td>Colored borders</td>
+          </tr>
+          <tr>
+            <td><code set:html="--ply-&#123;color&#125;-1" /></td>
+            <td>Base</td>
+            <td>Lighter</td>
+            <td>Text on surface, icons</td>
+          </tr>
+          <tr>
+            <td><code set:html="--ply-&#123;color&#125;-2" /></td>
+            <td>Darker</td>
+            <td>Medium</td>
+            <td>Emphasis</td>
+          </tr>
+          <tr>
+            <td><code set:html="--ply-&#123;color&#125;-3" /></td>
+            <td>Darkest</td>
+            <td>Lightest</td>
+            <td>Subtle accent</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-secondary text-sm no-orphan">
+        Available for: blue, red, green, yellow, indigo, purple, pink, orange, teal, cyan.
+      </p>
     </section>
 
     <section
@@ -474,6 +525,138 @@ document.documentElement.dataset.theme =
         See the <a href="/docs/buttons#button-primary-secondary">buttons page</a> for
         how primary and secondary buttons respond to themes.
       </p>
+    </section>
+
+    <section
+      class="padding-top-extra padding-bottom-extra border-bottom"
+      id="palette"
+    >
+      <p class="text-xs font-semibold uppercase color-blue">Palette</p>
+      <h2>Color Palette</h2>
+      <p class="no-orphan">
+        10 colors at 3 intensity levels, available as CSS custom properties.
+        All values adapt to light and dark mode automatically.
+      </p>
+
+      <div class="border border-radius padding">
+        {["blue", "red", "green", "yellow", "indigo", "purple", "pink", "orange", "teal", "cyan"].map((color) => (
+          <div class="units-row equal-height">
+            <div class="unit-10 tablet-unit-100 display-flex" style="align-items: center;">
+              <p class="text-sm font-semibold no-margin">{color}</p>
+            </div>
+            <div class="unit-25 tablet-unit-20">
+              <div class="palette-swatch" style={`background: var(--ply-${color}-surface); border: 1px solid var(--ply-${color}-border); color: var(--ply-${color}-1);`}>
+                surface
+              </div>
+            </div>
+            <div class="unit-auto tablet-unit-20">
+              <div class="palette-swatch" style={`background: var(--ply-${color}-1); color: #fff;`}>
+                -1
+              </div>
+            </div>
+            <div class="unit-auto tablet-unit-20">
+              <div class="palette-swatch" style={`background: var(--ply-${color}-2); color: var(--ply-${color}-surface);`}>
+                -2
+              </div>
+            </div>
+            <div class="unit-auto tablet-unit-20">
+              <div class="palette-swatch" style={`background: var(--ply-${color}-3); color: var(--ply-${color}-surface);`}>
+                -3
+              </div>
+            </div>
+            <div class="unit-25 tablet-unit-20">
+              <div class="palette-swatch" style={`background: var(--ply-bg-surface); border: 2px solid var(--ply-${color}-border); color: var(--ply-${color}-1);`}>
+                border
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3>Color Surfaces</h3>
+      <p class="no-orphan">
+        Theme-aware surface colors for cards, badges, and alerts. Pastel in light mode,
+        dark muted in dark mode. Pair <code>-surface</code> with <code>-border</code> for borders
+        and <code>-1</code> for text.
+      </p>
+
+      <div class="border border-radius padding">
+        <div class="units-row equal-height">
+          {["blue", "green", "red", "yellow", "purple"].map((color) => (
+            <div class="unit-20 tablet-unit-50 phone-unit-100">
+              <div style={`background: var(--ply-${color}-surface); border: 1px solid var(--ply-${color}-border); color: var(--ply-${color}-1); padding: 1rem; border-radius: 0.25rem; text-align: center;`}>
+                <p class="text-sm no-margin font-semibold">{color}</p>
+                <p class="text-xs no-margin" style="opacity: 0.75;">surface + border + -1</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <CodeBlock
+        code={`/* Theme-aware colored card — works in light and dark mode */
+.card-info {
+  background: var(--ply-blue-surface);
+  border: 1px solid var(--ply-blue-border);
+  color: var(--ply-blue-1);
+}
+
+.card-success {
+  background: var(--ply-green-surface);
+  border: 1px solid var(--ply-green-border);
+  color: var(--ply-green-1);
+}
+
+.card-danger {
+  background: var(--ply-red-surface);
+  border: 1px solid var(--ply-red-border);
+  color: var(--ply-red-1);
+}`}
+      />
+
+      <h3>Brand Background Classes</h3>
+      <p class="no-orphan">
+        Four colors have utility classes for quick backgrounds. These are static — same
+        in light and dark mode — and designed for white text.
+      </p>
+      <div class="border border-radius padding">
+        <div class="units-row">
+          {["blue", "red", "green", "yellow"].map((color) => (
+            <div class="unit-25 tablet-unit-50">
+              <div class={`bg-${color} text-center padding border-radius`} style={color === "yellow" ? "color: #161616;" : "color: #fff;"}>
+                .bg-{color}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h3>Sass Palette</h3>
+      <p class="no-orphan">
+        With <code>npm install ply-css</code>, you get the full Sass palette:
+        base, dark, light, and pastel variants for every color, plus a 10-step neutral scale.
+      </p>
+
+      <CodeBlock
+        code={`@use "ply-css/src/scss/components/colors" as colors;
+
+// Base
+color: colors.$color-blue;        // #2575ed
+color: colors.$color-indigo;      // #4f46e5
+
+// Dark — deeper shade
+color: colors.$color-blue-dark;   // #1a52a5
+
+// Light — softer tint
+background: colors.$color-blue-light;  // #92baf6
+
+// Pastel — subtle background
+background: colors.$color-blue-pastel; // #d3e3fb
+
+// Neutrals (50–900)
+background: colors.$color-neutral-100; // #f5f5f5
+color: colors.$color-neutral-700;      // #404040`}
+      />
     </section>
 
     <section
@@ -588,5 +771,15 @@ document.documentElement.dataset.theme =
     --ply-layer-2: #ede0d4;
     --ply-font-body: Palatino, "Palatino Linotype", Georgia, serif;
     --ply-font-heading: Palatino, "Palatino Linotype", Georgia, serif;
+  }
+
+  .palette-swatch {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    padding: 0.75rem 0.5rem;
   }
 </style>
