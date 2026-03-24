@@ -274,6 +274,32 @@ import CodeBlock from "../../components/CodeBlock.astro";
       </div>
     </div>
 
+    <h3>Joined</h3>
+    <p class="no-orphan">
+      Add <code>joined</code> to connect buttons with no gap. A 1px divider
+      separates buttons; border-radius is applied only to the outer edges. Use
+      for segmented controls, toolbars, and pagination-style groups.
+    </p>
+    <div class="border border-radius padding">
+      <div class="btn-group joined">
+        <button class="btn">Week</button>
+        <button class="btn btn-primary">Month</button>
+        <button class="btn">Year</button>
+      </div>
+      <div class="margin-bottom-lg"></div>
+      <div class="btn-group joined">
+        <button class="btn btn-ghost btn-icon" aria-label="Bold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg>
+        </button>
+        <button class="btn btn-ghost btn-icon" aria-label="Italic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg>
+        </button>
+        <button class="btn btn-ghost btn-icon" aria-label="Underline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+        </button>
+      </div>
+    </div>
+
     <h3>Full Width & Rounded</h3>
     <div class="border border-radius padding">
       <div class="btn-group fill-width">
@@ -293,6 +319,13 @@ import CodeBlock from "../../components/CodeBlock.astro";
       code={`<div class="btn-group">
   <button class="btn btn-primary">Save</button>
   <button class="btn">Cancel</button>
+</div>
+
+<!-- Joined: no gap, connected edges -->
+<div class="btn-group joined">
+  <button class="btn">Week</button>
+  <button class="btn btn-primary">Month</button>
+  <button class="btn">Year</button>
 </div>
 
 <div class="btn-group fill-width">

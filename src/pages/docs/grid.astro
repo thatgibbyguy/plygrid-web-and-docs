@@ -3,7 +3,7 @@ import DocsLayout from "../../layouts/DocsLayout.astro";
 import CodeBlock from "../../components/CodeBlock.astro";
 ---
 
-<DocsLayout title="Grid" description="Ratio-based flexbox grid with 17 unit widths, 7 responsive breakpoints, and row modifiers like equal-height and split.">
+<DocsLayout title="Grid" description="Ratio-based flexbox grid with 17 unit widths, 7 responsive breakpoints, and row modifiers like equal-height and joined.">
   <div>
     <section class="padding-top-extra padding-bottom-extra border-bottom">
       <p class="text-xs font-semibold uppercase color-blue">Layout</p>
@@ -442,9 +442,9 @@ import CodeBlock from "../../components/CodeBlock.astro";
           </tr>
           <tr>
             <td>
-              <code>split</code>
+              <code>joined</code>
             </td>
-            <td>Remove gutters</td>
+            <td>Remove gutters (<code>split</code> kept as alias)</td>
           </tr>
           <tr>
             <td>
@@ -499,9 +499,9 @@ import CodeBlock from "../../components/CodeBlock.astro";
         </div>
       </div>
 
-      <h3>Split (No Gutters)</h3>
+      <h3>Joined (No Gutters)</h3>
       <div class="border border-radius padding">
-        <div class="units-row split">
+        <div class="units-row joined">
           <div class="unit-33">
             <div class="border border-radius padding text-center text-sm">
               No gap
