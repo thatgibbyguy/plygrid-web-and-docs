@@ -477,7 +477,7 @@ import CodeBlock from "../../components/CodeBlock.astro";
 
         <h3>Border Radius</h3>
         <p>
-          <code>border-radius</code> (default), <code>border-radius-lg</code> (0.75rem), <code>border-radius-xl</code> (1.5rem), <code>circle</code> (100%).
+          <code>border-radius</code> uses <code>var(--ply-border-radius)</code> (default 0.25rem, themeable). Also <code>border-radius-lg</code>, <code>border-radius-xl</code>, <code>circle</code> (100%).
         </p>
       </section>
 
@@ -902,9 +902,9 @@ import CodeBlock from "../../components/CodeBlock.astro";
             <tr><td><code>clearfix</code></td><td>Clear floats</td></tr>
             <tr><td><code>flat-list</code></td><td>Remove list bullets and margin</td></tr>
             <tr><td><code>circle</code></td><td>border-radius: 100%</td></tr>
-            <tr><td><code>border-radius</code></td><td>Standard border radius (0.25rem)</td></tr>
-            <tr><td><code>border-radius-lg</code></td><td>Large border radius (0.75rem)</td></tr>
-            <tr><td><code>border-radius-xl</code></td><td>Extra large border radius (1.5rem)</td></tr>
+            <tr><td><code>border-radius</code></td><td>var(--ply-border-radius) — default 0.25rem, themeable</td></tr>
+            <tr><td><code>border-radius-lg</code></td><td>3&times; border-radius</td></tr>
+            <tr><td><code>border-radius-xl</code></td><td>6&times; border-radius</td></tr>
           </tbody>
         </table>
 
