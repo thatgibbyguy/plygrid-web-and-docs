@@ -227,6 +227,74 @@ import CodeBlock from "../../components/CodeBlock.astro";
       </section>
 
       <section
+        class="padding-top-extra padding-bottom-extra border-bottom"
+        id="tree-shaking"
+      >
+        <p class="text-xs font-semibold uppercase color-blue">Optimize</p>
+        <h2>Tree-Shaking</h2>
+        <p class="no-orphan">
+          For production, purge unused ply classes to get bundle sizes as low as ~5KB gzipped. ply ships a built-in purge tool that auto-safelists dynamically-toggled classes (<code>active</code>, <code>sort-asc</code>, responsive grid variants) so they aren't incorrectly removed.
+        </p>
+
+        <h3>PostCSS Plugin</h3>
+        <p class="no-orphan">
+          The recommended approach for projects with an existing PostCSS pipeline.
+        </p>
+        <CodeBlock code={`npm install -D @fullhuman/postcss-purgecss`} />
+        <CodeBlock
+          code={`// postcss.config.js
+const plyPurge = require('ply-css/purge');
+
+module.exports = {
+  plugins: [
+    plyPurge({ content: ['./src/**/*.{html,jsx,tsx,vue}'] }),
+  ],
+};`}
+        />
+
+        <h3>CLI</h3>
+        <p class="no-orphan">
+          For standalone use or CI pipelines.
+        </p>
+        <CodeBlock code={`npm install -D purgecss`} />
+        <CodeBlock
+          code={`npx ply-purge --css node_modules/ply-css/dist/css/ply.min.css \\
+              --content 'src/**/*.{html,jsx,tsx}' \\
+              -o public/ply.css`}
+        />
+
+        <h3>Results</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Before</th>
+              <th>After (gzipped)</th>
+              <th>Reduction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single page</td>
+              <td>21 KB</td>
+              <td>~5 KB</td>
+              <td>~75%</td>
+            </tr>
+            <tr>
+              <td>Multi-page app</td>
+              <td>21 KB</td>
+              <td>~11 KB</td>
+              <td>~48%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="text-sm text-secondary no-orphan">
+          Extend the safelist with <code>--safelist &lt;class&gt;</code> (CLI) or the <code>safelist</code> option (PostCSS plugin) for any custom JS-toggled classes.
+        </p>
+      </section>
+
+      <section
         class="padding-top-extra padding-bottom-extra"
         id="next-steps"
       >
