@@ -53,6 +53,7 @@ const isGettingStarted = ["/docs/installation", "/docs/semantic-html", "/docs/ai
 const isComponents = ["/docs/buttons", "/docs/forms", "/docs/navigation", "/docs/tables", "/docs/alerts"].includes(currentPath);
 const isHelpers = ["/docs/utilities", "/docs/accessibility", "/docs/rtl"].includes(currentPath);
 const isCompliance = ["/docs/compliance"].includes(currentPath);
+const isResources = ["/docs/resources"].includes(currentPath);
 ---
 
 <!doctype html>
@@ -108,6 +109,9 @@ const isCompliance = ["/docs/compliance"].includes(currentPath);
           </li>
           <li class={isCompliance ? "active" : ""}>
             <a href="/docs/compliance">Compliance</a>
+          </li>
+          <li class={isResources ? "active" : ""}>
+            <a href="/docs/resources">Resources</a>
           </li>
           <li class="margin-left-auto display-flex gap-sm items-center">
             <Search client:idle />
