@@ -1,0 +1,75 @@
+---
+import DocsLayout from "../../layouts/DocsLayout.astro";
+
+const FIGMA_URL = "https://www.figma.com/design/TCVYvIiyczmKhFpy7Bkc5F/Ply";
+---
+
+<DocsLayout
+  title="Design Resources"
+  description="Design resources for ply — the Figma component library and the upcoming Claude design instruction set."
+>
+  <div>
+    <section class="padding-top-extra padding-bottom-extra border-bottom">
+      <p class="text-xs font-semibold uppercase color-blue">Resources</p>
+      <h1 class="text-balance">Design Resources</h1>
+      <p class="lead no-orphan">
+        Everything you need to design with ply outside of code — the full Figma
+        component library, built entirely from ply variables, plus tooling to
+        keep your AI design work on-system.
+      </p>
+    </section>
+
+    <section class="padding-top-extra padding-bottom-extra border-bottom" id="figma">
+      <p class="text-xs font-semibold uppercase color-blue">Figma</p>
+      <h2>Figma Component Library</h2>
+      <p class="no-orphan">
+        The complete ply component library in Figma. Every component is built
+        from the same design tokens as the framework — colors, spacing, radius,
+        and the shared control sizing scale all map to <code>--ply-*</code>
+        variables, so what you design is what ships. Page structure mirrors this
+        documentation: Design, then Buttons, Forms, Navigation, Tables, and
+        Dialogs &amp; Alerts.
+      </p>
+      <div class="border border-radius padding margin-top">
+        <h3 class="no-margin">ply for Figma</h3>
+        <p class="text-secondary no-orphan">
+          Components, variables, and text styles for light and dark mode.
+        </p>
+        <a class="btn btn-primary" href={FIGMA_URL} target="_blank" rel="noopener noreferrer">
+          Open in Figma
+        </a>
+      </div>
+    </section>
+
+    <section class="padding-top-extra padding-bottom-extra border-bottom" id="claude-design">
+      <p class="text-xs font-semibold uppercase color-blue">AI Design</p>
+      <h2>Claude Design Instruction Set</h2>
+      <p class="no-orphan">
+        A drop-in instruction set that teaches Claude to design with ply&rsquo;s
+        components and variables — keeping generated layouts on-system, themeable,
+        and accessible from the first prompt.
+      </p>
+      <div class="border border-radius padding margin-top">
+        <h3 class="no-margin">
+          Claude Design Instructions
+          <span class="badge badge-yellow margin-left-sm">Coming soon</span>
+        </h3>
+        <p class="text-secondary no-orphan">
+          In progress. Check back soon — or follow along on
+          <a href="https://github.com/thatgibbyguy/ply" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+        <button class="btn" disabled aria-disabled="true">Coming soon</button>
+      </div>
+    </section>
+
+    <section class="padding-top-extra padding-bottom-extra">
+      <p class="text-xs font-semibold uppercase color-blue">More</p>
+      <h2>Looking for code?</h2>
+      <p class="no-orphan">
+        Start with <a href="/docs/installation">Installation</a>, browse the
+        <a href="/docs/buttons">components</a>, or read the
+        <a href="/docs/ai-agents">AI Agents</a> guide for PLY.md.
+      </p>
+    </section>
+  </div>
+</DocsLayout>

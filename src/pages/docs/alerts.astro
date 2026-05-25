@@ -419,6 +419,52 @@ import CodeBlock from "../../components/CodeBlock.astro";
     />
   </section>
 
+  <section class="padding-top-extra padding-bottom-extra border-bottom" id="accordion">
+    <p class="text-xs font-semibold uppercase color-blue">Disclosure</p>
+    <h2>Accordion</h2>
+    <p class="no-orphan">
+      Collapsible content built on native <code>&lt;details&gt;</code> and
+      <code>&lt;summary&gt;</code> &mdash; no JavaScript. ply styles the toggle with a
+      right-aligned caret that rotates when open. Each item opens independently.
+    </p>
+
+    <div class="margin-bottom">
+      <details>
+        <summary>What is ply?</summary>
+        <p>
+          A ratio-based, AI-ready CSS framework with WCAG 2.1 AA accessibility,
+          dark mode, and a ~5KB tree-shaken footprint.
+        </p>
+      </details>
+      <details open>
+        <summary>Does it need JavaScript?</summary>
+        <p>
+          No. The accordion uses the native <code>&lt;details&gt;</code> element,
+          so it works with zero JavaScript and is accessible by default.
+        </p>
+      </details>
+      <details>
+        <summary>How do I theme the caret?</summary>
+        <p>
+          The caret color follows <code>--ply-color-secondary</code> and inherits
+          your theme automatically.
+        </p>
+      </details>
+    </div>
+
+    <CodeBlock
+      code={`<details>
+  <summary>What is ply?</summary>
+  <p>A ratio-based, AI-ready CSS framework.</p>
+</details>
+
+<details open>
+  <summary>Does it need JavaScript?</summary>
+  <p>No. It uses the native &lt;details&gt; element.</p>
+</details>`}
+    />
+  </section>
+
   <section class="padding-top-extra padding-bottom-extra border-bottom" id="messages">
     <p class="text-xs font-semibold uppercase color-blue">Toast</p>
     <h2>Toast Messages</h2>

@@ -333,6 +333,13 @@ function buildSearchIndex(): SearchEntry[] {
       path: "/docs/alerts",
     },
     {
+      label: "Accordion",
+      detail:
+        "accordion details summary disclosure collapse expand toggle FAQ caret no JavaScript",
+      path: "/docs/alerts",
+      sectionId: "accordion",
+    },
+    {
       label: "Utilities",
       detail: "spacing display visibility borders helpers gap flex animation",
       path: "/docs/utilities",
