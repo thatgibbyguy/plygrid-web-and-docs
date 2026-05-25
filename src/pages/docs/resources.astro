@@ -1,9 +1,10 @@
 ---
 import DocsLayout from "../../layouts/DocsLayout.astro";
 
-// Figma source file shipped with the docs (served from /public). Linking the
-// downloadable .fig rather than a hosted figma.com URL.
+// Two ways to get the library: download the .fig shipped in-repo, or clone the
+// public Figma file (duplicates into the user's own workspace).
 const FIGMA_FILE = "/resources/ply-css.fig";
+const FIGMA_URL = "https://www.figma.com/design/fWGThrArRvnqzpAOYmQSLY/ply-css";
 ---
 
 <DocsLayout
@@ -34,9 +35,14 @@ const FIGMA_FILE = "/resources/ply-css.fig";
         light and dark mode. Download the <code>.fig</code> and drag it into
         Figma (File &rarr; Import).
       </p>
-      <a class="btn btn-ghost margin-top" href={FIGMA_FILE} download>
-        Download Figma file (.fig)
-      </a>
+      <div class="display-flex gap-sm margin-top">
+        <a class="btn btn-ghost" href={FIGMA_URL} target="_blank" rel="noopener noreferrer">
+          Clone from Figma
+        </a>
+        <a class="btn btn-ghost" href={FIGMA_FILE} download>
+          Download .fig
+        </a>
+      </div>
     </section>
 
     <section class="padding-top-extra padding-bottom-extra border-bottom" id="claude-design">
