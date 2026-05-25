@@ -1,7 +1,9 @@
 ---
 import DocsLayout from "../../layouts/DocsLayout.astro";
 
-const FIGMA_URL = "https://www.figma.com/design/TCVYvIiyczmKhFpy7Bkc5F/Ply";
+// Figma source file shipped with the docs (served from /public). Linking the
+// downloadable .fig rather than a hosted figma.com URL.
+const FIGMA_FILE = "/resources/ply-css.fig";
 ---
 
 <DocsLayout
@@ -34,9 +36,11 @@ const FIGMA_URL = "https://www.figma.com/design/TCVYvIiyczmKhFpy7Bkc5F/Ply";
         <h3 class="no-margin">ply for Figma</h3>
         <p class="text-secondary no-orphan">
           Components, variables, and text styles for light and dark mode.
+          Download the <code>.fig</code> and drag it into Figma
+          (File &rarr; Import).
         </p>
-        <a class="btn btn-primary" href={FIGMA_URL} target="_blank" rel="noopener noreferrer">
-          Open in Figma
+        <a class="btn btn-primary" href={FIGMA_FILE} download>
+          Download Figma file (.fig)
         </a>
       </div>
     </section>
